@@ -1183,6 +1183,9 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.pse__Work_Calendar__c</field>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>c2g__codaInvoice__c.External_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
