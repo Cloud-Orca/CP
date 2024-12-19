@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hi,<br />
+<br />
+A new Opportunity has been created in the <strong>Tax</strong> type with the following details:<br />
+Opportunity Name:&nbsp;{{{Opportunity.Name}}}<br />
+Amount:&nbsp;{{{Opportunity.Amount}}}<br />
+Region:&nbsp;{{{Opportunity.Region__c}}}<br />
+Owner:&nbsp;{{{Opportunity.OwnerFullName}}}<br />
+Close Date:&nbsp;{{{Opportunity.CloseDate}}}<br />
+<br />
+To View the Opportunity: {{{Opportunity.Link}}}<br />
+<br />
+<br />
+Kind regards,<br />
+<br />
+Salesforce</body>
+</html>
