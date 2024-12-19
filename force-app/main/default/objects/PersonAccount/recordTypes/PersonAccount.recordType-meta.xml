@@ -1369,6 +1369,10 @@
             <fullName>VC Backed</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>VC Investor</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>UK_Registered_Entity__c</picklist>
