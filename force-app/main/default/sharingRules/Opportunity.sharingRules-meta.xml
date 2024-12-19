@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CF_Confidentiality</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CF Confidentiality</label>
+        <sharedTo>
+            <group>Corporate_Finance_Group</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Corporate Finance</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>CP_Law</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CP Law</label>
+        <sharedTo>
+            <group>CP_Law</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>CP Law</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity_Area__c</field>
+            <operation>equals</operation>
+            <value>Law</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Corporate_Opportunity</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Corporate Opportunity</label>
+        <sharedTo>
+            <group>Deals_Group</group>
+        </sharedTo>
+        <booleanFilter>(1 AND 2) OR 3</booleanFilter>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Corporate Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>notEqual</operation>
+            <value>TT,Corporate Finance,TS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Deals</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Open_Opportunity</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Open Opportunity</label>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Corporate Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value></value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Pensions_Confidentiality</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Pensions Confidentiality</label>
+        <sharedTo>
+            <group>Pensions</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Pensions</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Ring_Fenced_Confidentiality</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Ring Fenced Confidentiality</label>
+        <sharedTo>
+            <group>Ring_Fenced</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Ring Fenced</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sports_and_Media_Confidentiality</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sports and Media Confidentiality</label>
+        <sharedTo>
+            <group>Sports_and_Media</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Sports and Media</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TS_Confidentiality</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>TS Confidentiality</label>
+        <sharedTo>
+            <group>Transaction_Services</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>TS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TT_Confidentiality</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>TT Confidentiality</label>
+        <sharedTo>
+            <group>Transaction_Tax</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>TT</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>UHNWI_Confidentiality</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>UHNWI Confidentiality</label>
+        <sharedTo>
+            <group>UHNWI</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>CP_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>UHNWI</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

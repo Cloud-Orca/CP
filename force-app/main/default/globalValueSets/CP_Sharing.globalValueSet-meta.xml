@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CP Law</fullName>
+        <default>false</default>
+        <label>CP Law</label>
+    </customValue>
+    <customValue>
+        <fullName>UHNWI</fullName>
+        <default>false</default>
+        <label>UHNWI</label>
+    </customValue>
+    <customValue>
+        <fullName>Sports and Media</fullName>
+        <default>false</default>
+        <label>Sports and Media</label>
+    </customValue>
+    <customValue>
+        <fullName>Ring Fenced</fullName>
+        <default>false</default>
+        <label>Ring Fenced</label>
+    </customValue>
+    <customValue>
+        <fullName>Confidential</fullName>
+        <default>false</default>
+        <label>Confidential</label>
+    </customValue>
+    <customValue>
+        <fullName>Corporate Finance</fullName>
+        <default>false</default>
+        <label>Corporate Finance</label>
+    </customValue>
+    <customValue>
+        <fullName>TS</fullName>
+        <default>false</default>
+        <label>TS</label>
+    </customValue>
+    <customValue>
+        <fullName>TT</fullName>
+        <default>false</default>
+        <label>TT</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensions</fullName>
+        <default>false</default>
+        <label>Pensions</label>
+    </customValue>
+    <customValue>
+        <fullName>VIP</fullName>
+        <default>false</default>
+        <label>VIP</label>
+    </customValue>
+    <customValue>
+        <fullName>Deals</fullName>
+        <default>false</default>
+        <label>Deals</label>
+    </customValue>
+    <masterLabel>CP Sharing</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

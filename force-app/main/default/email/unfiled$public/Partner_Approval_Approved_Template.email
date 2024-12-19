@@ -1,0 +1,12 @@
+Hi,
+
+Opportunity has been approved.
+
+Name: {!Opportunity.Name}
+Owner: {!Opportunity.OwnerFullName}
+Opportunity Area: {!Opportunity.Opportunity_Area__c}
+Opportunity Type Area: {!Opportunity.Opportunity_Type_Area__c}
+Assignment Type: {!Opportunity.Opportunity_Type__c}
+URL: {!Opportunity.Link}
+
+Thank you!

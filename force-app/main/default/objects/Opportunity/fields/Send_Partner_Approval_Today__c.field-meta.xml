@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Partner_Approval_Today__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(WEEKDAY( Approval_Submitted_Date__c ), 
+ 
+
+5, Approval_Submitted_Date__c +4,
+ 
+
+6, Approval_Submitted_Date__c +4,
+ 
+
+7, Approval_Submitted_Date__c +3, 
+ 
+
+Approval_Submitted_Date__c +2) = today()</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Send Partner Approval Today</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>
