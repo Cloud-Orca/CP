@@ -1231,6 +1231,7 @@
         <recordType>PersonAccount.PersonAccount</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <tabVisibilities>
         <tab>pse__Proj__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
