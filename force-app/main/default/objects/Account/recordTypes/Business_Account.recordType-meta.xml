@@ -186,49 +186,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>CP_Confidential_Area__c</picklist>
-        <values>
-            <fullName>CP Law</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Confidential</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Corporate Finance</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Ring Fenced</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Sports and Media</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TS</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>TT</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>UHNWI</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>VIP</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>CP_Deal_Sector__c</picklist>
         <values>
             <fullName>TBC</fullName>
@@ -1373,10 +1330,6 @@
         </values>
         <values>
             <fullName>VC Backed</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>VC Investor</fullName>
             <default>false</default>
         </values>
     </picklistValues>
