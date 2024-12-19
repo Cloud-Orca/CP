@@ -26,7 +26,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>South</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7) AND 8</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7) AND 8 AND 9</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CP_Office__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -83,6 +83,13 @@
                     <numberValue>25000.0</numberValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tax</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Tax_Email_Notification_Alert</targetReference>
             </connector>
@@ -90,7 +97,7 @@
         </rules>
         <rules>
             <name>Midlands</name>
-            <conditionLogic>(1 OR 2) AND 3</conditionLogic>
+            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.CP_Office__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -110,6 +117,13 @@
                 <operator>GreaterThan</operator>
                 <rightValue>
                     <numberValue>50000.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Opportunity_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tax</stringValue>
                 </rightValue>
             </conditions>
             <connector>
