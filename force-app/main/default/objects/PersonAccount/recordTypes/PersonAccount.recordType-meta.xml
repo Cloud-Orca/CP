@@ -200,6 +200,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Deals</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Pensions</fullName>
             <default>false</default>
         </values>

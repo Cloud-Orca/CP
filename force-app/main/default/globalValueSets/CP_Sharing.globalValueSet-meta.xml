@@ -50,6 +50,11 @@
         <default>false</default>
         <label>VIP</label>
     </customValue>
+    <customValue>
+        <fullName>Deals</fullName>
+        <default>false</default>
+        <label>Deals</label>
+    </customValue>
     <masterLabel>CP Sharing</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
