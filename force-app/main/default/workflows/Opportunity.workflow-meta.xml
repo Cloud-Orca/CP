@@ -75,6 +75,14 @@
         <senderType>CurrentUser</senderType>
         <template>unfiled$public/Partner_Approval_Approved_Template</template>
     </alerts>
+    <alerts>
+        <fullName>Tax_Email_Notification_Alert</fullName>
+        <ccEmails>sf-development@cloudorca.com</ccEmails>
+        <description>Tax Email Notification Alert</description>
+        <protected>false</protected>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Tax_Email_Notification_Template_1734623553860</template>
+    </alerts>
     <fieldUpdates>
         <fullName>Approve</fullName>
         <field>Audit_Partner_Approval_Status__c</field>
