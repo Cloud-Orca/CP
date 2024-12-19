@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>CF_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>CF Sharing</label>
+        <sharedTo>
+            <group>Corporate_Finance_Group</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Corporate Finance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Corporate Finance</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Law_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Law Sharing</label>
+        <sharedTo>
+            <group>CP_Law</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>CP Law</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>CP Law</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Pension_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Pension Sharing</label>
+        <sharedTo>
+            <group>Pensions</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Pensions</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Pensions</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Ring_Fenced_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Ring Fenced Sharing</label>
+        <sharedTo>
+            <group>Ring_Fenced</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Ring Fenced</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Ring Fenced</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Sports_and_Media_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Sports and Media Sharing</label>
+        <sharedTo>
+            <group>Sports_and_Media</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Sports and Media</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>Sports and Media</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TS_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>TS Sharing</label>
+        <sharedTo>
+            <group>Transaction_Services</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>TS</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>TS</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>TT_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>TT Sharing</label>
+        <sharedTo>
+            <group>Transaction_Tax</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>TT</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>TT</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>UHNWI</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>UHNWI</label>
+        <sharedTo>
+            <group>UHNWI</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>UHNWI</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>UHNWI</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>VIP_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>VIP Sharing</label>
+        <sharedTo>
+            <group>VIP_Access</group>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Opportunity_Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>VIP</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Confidential_Area__c</field>
+            <operation>equals</operation>
+            <value>VIP</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>
