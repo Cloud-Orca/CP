@@ -1174,6 +1174,8 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.pse__Variance_at_Completion__c</field>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaInvoiceLineItem__c.External_Id__c</field>
         <readable>true</readable>
@@ -1845,10 +1847,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SendCustomNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendExternalEmailAvailable</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
