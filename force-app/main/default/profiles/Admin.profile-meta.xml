@@ -1174,11 +1174,14 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.pse__Variance_at_Completion__c</field>
+        <editable>true</editable>
+        <field>c2g__codaInvoiceLineItem__c.External_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.pse__Work_Calendar__c</field>
+        <field>c2g__codaInvoice__c.External_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
@@ -1201,6 +1204,7 @@
     <layoutAssignments>
         <layout>pse__Proj__c-FFX PSA Project Detail Layout</layout>
     </layoutAssignments>
+
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
@@ -1222,7 +1226,6 @@
         <recordType>PersonAccount.PersonAccount</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
-    <tabVisibilities>
         <tab>pse__Proj__c</tab>
         <visibility>DefaultOn</visibility>
     </tabVisibilities>
