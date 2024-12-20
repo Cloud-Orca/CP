@@ -202,16 +202,6 @@
                 <identifier>RecordWin_Probability_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CP_Confidential_Area__c</fieldItem>
-                <identifier>RecordCP_Confidential_Area__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -262,15 +252,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Close_Lost_Reason__c</fieldItem>
-                <identifier>RecordClose_Lost_Reason__cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.StageName}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Closed Lost</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <fieldItem>Record.CP_Office__c</fieldItem>
+                <identifier>RecordCP_Office_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -460,6 +443,23 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Close_Lost_Reason__c</fieldItem>
+                <identifier>RecordClose_Lost_Reason__cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.StageName}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Closed Lost</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
