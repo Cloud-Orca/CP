@@ -973,13 +973,6 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection18</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!$User.Department}</leftValue>
-                        <operator>CONTAINS</operator>
-                        <rightValue>Deal</rightValue>
-                    </criteria>
-                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -1125,10 +1118,21 @@
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection15</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
                     <criteria>
                         <leftValue>{!$User.Department}</leftValue>
                         <operator>CONTAINS</operator>
                         <rightValue>Deals - Corporate Finance</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Department}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Tax - Transaction Tax</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Department}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Deals - Transaction Services</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
