@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Document_Sent_to_Client__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>After internal approval, send the Engagement Document to the client using the &quot;Send from DocuSign&quot; button on the Case. Clearly communicate the next steps to the client, including signing and returning the document.</inlineHelpText>
+    <label>Engagement Document Sent to Client</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

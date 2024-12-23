@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flags_Reviewed_and_Addressed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>The Risk Team has assessed all flagged items identified during the initial Smart Search (e.g., PEP, RCA, SIP, or other concerns). Ensure all risks are documented and addressed. If additional information is required, return the Case to the Lifecycle Coordinator (LC) with specific questions or clarification requests.</inlineHelpText>
+    <label>Flags Reviewed and Addressed</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
