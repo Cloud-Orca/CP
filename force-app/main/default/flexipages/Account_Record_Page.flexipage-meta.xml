@@ -662,58 +662,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.CP_Deals_Sector__c</fieldItem>
-                <identifier>RecordCP_Deals__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-2b1ee55d-fb39-4318-9cc7-4ce158f1e0c3</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CP_Deals_Subsector__c</fieldItem>
-                <identifier>RecordCP_Deals_Subsector__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-9c192b27-745b-4a0b-9ae0-32497e1c9a08</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-2b1ee55d-fb39-4318-9cc7-4ce158f1e0c3</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column19</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-9c192b27-745b-4a0b-9ae0-32497e1c9a08</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column20</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-265798e3-a734-42d6-b0f7-adb4e1452c26</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Audit_Client__c</fieldItem>
                 <identifier>RecordAudit_Client__cField</identifier>
             </fieldInstance>
@@ -757,6 +705,58 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-e3413502-d7ce-4678-b740-1fffd0f4d398</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CP_Deals_Sector__c</fieldItem>
+                <identifier>RecordCP_Deals__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-2b1ee55d-fb39-4318-9cc7-4ce158f1e0c3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CP_Deals_Subsector__c</fieldItem>
+                <identifier>RecordCP_Deals_Subsector__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-9c192b27-745b-4a0b-9ae0-32497e1c9a08</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-2b1ee55d-fb39-4318-9cc7-4ce158f1e0c3</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column19</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-9c192b27-745b-4a0b-9ae0-32497e1c9a08</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column20</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-265798e3-a734-42d6-b0f7-adb4e1452c26</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -1051,6 +1051,24 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
+                    <value>Facet-e3413502-d7ce-4678-b740-1fffd0f4d398</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Audit Information</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection12</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
                     <value>Facet-265798e3-a734-42d6-b0f7-adb4e1452c26</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1087,24 +1105,6 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>columns</name>
-                    <value>Facet-e3413502-d7ce-4678-b740-1fffd0f4d398</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>Audit Information</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection12</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
                     <value>Facet-442aa12c-7803-4df5-beea-338052708422</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -1118,10 +1118,21 @@
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection15</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
                     <criteria>
                         <leftValue>{!$User.Department}</leftValue>
                         <operator>CONTAINS</operator>
                         <rightValue>Deals - Corporate Finance</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Department}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Tax - Transaction Tax</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Department}</leftValue>
+                        <operator>CONTAINS</operator>
+                        <rightValue>Deals - Transaction Services</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
