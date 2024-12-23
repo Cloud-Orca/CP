@@ -1196,12 +1196,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Confidential_Area__c</field>
+            <field>Remove_Acquisition_Marker__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Opportunity_Confidential_Area__c</field>
+            <field>CT_Name_Original__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <masterLabel>Projects</masterLabel>

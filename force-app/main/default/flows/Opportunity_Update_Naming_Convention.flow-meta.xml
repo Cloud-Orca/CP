@@ -82,7 +82,7 @@
     <formulas>
         <name>renewalOppName_formula</name>
         <dataType>String</dataType>
-        <expression>{!$Record.Account.Name}&amp;&quot; - Renewal - &quot;&amp;TEXT({!$Record.Type})</expression>
+        <expression>{!$Record.Account.Name}&amp;&quot; - &quot;&amp;TEXT({!$Record.Opportunity_Area__c})&amp;&quot; - &quot;&amp;TEXT(YEAR({!$Flow.CurrentDate}))</expression>
     </formulas>
     <interviewLabel>Opportunity - Update Naming Convention {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity - Update Naming Convention</label>
