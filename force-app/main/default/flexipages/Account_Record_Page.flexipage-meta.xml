@@ -808,6 +808,16 @@
                 <identifier>RecordDo_Not_Create_Case_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Source__c</fieldItem>
+                <identifier>RecordSource_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-8489c695-e9d4-433b-95fe-91476d4bd306</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -837,6 +847,16 @@
                         <rightValue>WebLead</rightValue>
                     </criteria>
                 </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Source_Type__c</fieldItem>
+                <identifier>RecordSource_Type_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-5466a760-bbdf-49a6-a94c-4bb570c678b8</name>
