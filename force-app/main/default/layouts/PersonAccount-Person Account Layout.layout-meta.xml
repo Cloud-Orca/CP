@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>DataDotComCompanyHierarchy</excludeButtons>
+    <excludeButtons>DataDotComAccountInsights</excludeButtons>
+    <excludeButtons>DataDotComClean</excludeButtons>
     <excludeButtons>DisableCustomerPortalAccount</excludeButtons>
     <excludeButtons>DisablePartnerPortalAccount</excludeButtons>
     <excludeButtons>IncludeOffline</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -671,6 +673,16 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.ContentPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>1</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>LogACall</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>2</sortOrder>
@@ -689,6 +701,11 @@
             <actionName>FeedItem.LinkPost</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>GenerateDonorReceipt</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>27</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>FeedItem.PollPost</actionName>
@@ -734,16 +751,6 @@
             <actionName>CreateSalesSummaries</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>14</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>0</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.ContentPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>1</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>SalesAIRelationshipGraph</actionName>
@@ -804,11 +811,6 @@
             <actionName>CreatePartnerChannelQuickAction</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>26</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>GenerateDonorReceipt</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>27</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>Entitlements</actionName>
@@ -902,6 +904,24 @@
             <quickActionName>SendEmail</quickActionName>
         </quickActionListItems>
     </quickActionList>
+    <relatedLists>
+        <fields>CONTACT.FULL_NAME</fields>
+        <fields>CONTACT.ACCOUNT_NAME</fields>
+        <fields>CONTACT.TITLE</fields>
+        <fields>CONTACT.EMAIL</fields>
+        <fields>CONTACT.PHONE1</fields>
+        <fields>ACCCONRELATION.ROLES</fields>
+        <relatedList>RelatedAccountContactRelationList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedAccountContactRoleList</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>FULL_NAME</fields>
+        <fields>ACCOUNT.NAME</fields>
+        <fields>CONTACT.PHONE1</fields>
+        <relatedList>Contact.ffpsai__ExpenseReimbursementAccount__c</relatedList>
+    </relatedLists>
     <relatedLists>
         <fields>OPPORTUNITY.NAME</fields>
         <fields>Opportunity_Area__c</fields>
@@ -1149,7 +1169,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00hKE000000pzPn</masterLabel>
+        <masterLabel>00hJ5000000luhT</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
