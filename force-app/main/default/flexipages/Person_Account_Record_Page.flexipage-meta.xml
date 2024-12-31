@@ -195,8 +195,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Linked_Account__c</fieldItem>
-                <identifier>RecordLinked_Account__cField</identifier>
+                <fieldItem>Record.ParentId</fieldItem>
+                <identifier>RecordParentIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -205,8 +205,18 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
-                <identifier>RecordConfidential_Account_Area_cField</identifier>
+                <fieldItem>Record.PersonReportsToId</fieldItem>
+                <identifier>RecordPersonReportsToIdField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Linked_Account__c</fieldItem>
+                <identifier>RecordLinked_Account__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
