@@ -165,32 +165,6 @@
                 <identifier>RecordData_Origination_Lookup__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
-                <identifier>RecordLast_R_D_Survey_Send_Date_pcField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
-                <identifier>RecordLast_R_D_Survey_Send_Date_pcField2</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.CP_Confidential_Area__c</fieldItem>
-                <identifier>RecordCP_Confidential_Area__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -432,24 +406,14 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.CT_Account_access__c</fieldItem>
-                <identifier>RecordCT_Account_access_cField</identifier>
+                <fieldItem>Record.CP_Confidential_Area__c</fieldItem>
+                <identifier>RecordCP_Confidential_Area__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-8ad89d04-1fb6-42c5-82c1-d7609ca62c67</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
-                <identifier>RecordConfidential_Account_Area_cField2</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-1f2224f7-2e65-4edb-af7e-ecdf1700834e</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -526,6 +490,16 @@
                 <identifier>RecordUnsubscribed__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_pcField2</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-294acc5e-e98f-4ce0-b481-f4e82fae7330</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -548,6 +522,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Preferences_Updated_On__c</fieldItem>
                 <identifier>RecordPreferences_Updated_On__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Last_R_D_Survey_Send_Date__pc</fieldItem>
+                <identifier>RecordLast_R_D_Survey_Send_Date_pcField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-a0463939-042c-4839-b1dc-652715973a75</name>
