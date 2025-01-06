@@ -58,6 +58,10 @@
                 <behavior>Edit</behavior>
                 <field>ownerid__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>External_Account_ID__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
