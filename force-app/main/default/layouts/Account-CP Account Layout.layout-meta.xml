@@ -65,6 +65,10 @@
                 <behavior>Edit</behavior>
                 <field>CP_Confidential_Area__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CP_External_ID__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -528,6 +532,10 @@
         <fields>Date__c</fields>
         <fields>Subject__c</fields>
         <relatedList>Confidential_Note__c.Account__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>CP_Note__c.Account__c</relatedList>
     </relatedLists>
     <relatedObjects>ParentId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>

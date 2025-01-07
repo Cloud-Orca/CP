@@ -175,6 +175,12 @@
                 <identifier>RecordData_Origination_Lookup__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.CP_External_ID__c</fieldItem>
+                <identifier>RecordCP_External_ID__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -205,8 +211,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Linked_Account__c</fieldItem>
-                <identifier>RecordLinked_Account__cField</identifier>
+                <fieldItem>Record.PersonReportsToId</fieldItem>
+                <identifier>RecordPersonReportsToIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -215,8 +221,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Confidential_Account_Area__c</fieldItem>
-                <identifier>RecordConfidential_Account_Area_cField</identifier>
+                <fieldItem>Record.Linked_Account__c</fieldItem>
+                <identifier>RecordLinked_Account__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
