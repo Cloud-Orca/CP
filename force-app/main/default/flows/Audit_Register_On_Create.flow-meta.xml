@@ -23,7 +23,8 @@
             <label>Parent Company Exist</label>
         </rules>
     </decisions>
-    <description>Assigns initial values when Audit Register Record is created</description>
+    <description>Assigns initial values when Audit Register Record is created
+Updated new field for Project Manager to pull in the PM from the Project</description>
     <environments>Default</environments>
     <interviewLabel>Audit Register: On Create {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Audit Register: On Create</label>
@@ -70,6 +71,12 @@
             <field>Client_Type__c</field>
             <value>
                 <elementReference>$Record.Project__r.pse__Account__r.Type_of_Business__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Project_Manager__c</field>
+            <value>
+                <elementReference>$Record.Project_Manager__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
