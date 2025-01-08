@@ -7,7 +7,7 @@
         <locationX>308</locationX>
         <locationY>755</locationY>
         <customErrorMessages>
-            <errorMessage>Only a member of the Risk team or LC Team can create a Service Line</errorMessage>
+            <errorMessage>Only an LC or Risk Team member is able to make an Account Inactive.</errorMessage>
             <isFieldError>false</isFieldError>
         </customErrorMessages>
     </customErrors>
@@ -41,8 +41,8 @@
         </rules>
     </decisions>
     <environments>Default</environments>
-    <interviewLabel>Service Line - Risk/LC Team Flow Validation {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Service Line - Risk/LC Team Flow Validation</label>
+    <interviewLabel>Account: Inactive Validation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account: Inactive Validation</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -90,7 +90,7 @@
             <field>GroupId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_LC_Group.Id</elementReference>
+                <elementReference>Get_Lifecycle_Coordinator.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -98,8 +98,8 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
-        <name>Get_LC_Group</name>
-        <label>Get LC Group</label>
+        <name>Get_Lifecycle_Coordinator</name>
+        <label>Get Lifecycle Coordinator</label>
         <locationX>176</locationX>
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -116,9 +116,9 @@
         </filters>
         <filters>
             <field>Type</field>
-            <operator>EqualTo</operator>
+            <operator>NotEqualTo</operator>
             <value>
-                <stringValue>Regular</stringValue>
+                <stringValue>Queue</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -132,7 +132,7 @@
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_LC_Group</targetReference>
+            <targetReference>Get_Lifecycle_Coordinator</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -144,9 +144,9 @@
         </filters>
         <filters>
             <field>Type</field>
-            <operator>EqualTo</operator>
+            <operator>NotEqualTo</operator>
             <value>
-                <stringValue>Regular</stringValue>
+                <stringValue>gr</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -159,9 +159,17 @@
         <connector>
             <targetReference>Get_Risk_and_Compliance</targetReference>
         </connector>
-        <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false</filterFormula>
-        <object>Service_Line__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <filterFormula>AND(
+{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
+OR(
+   TEXT({!$Record.Type}) = &apos;Inactive&apos;,
+   TEXT({!$Record.Account_Status__c}) = &apos;Inactive&apos;
+  ),
+{!$Record.Bypass_Validation__c} = false,
+ISCHANGED({!$Record.Bypass_Validation__c} ) = false
+)</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
