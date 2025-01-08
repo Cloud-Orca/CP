@@ -5,9 +5,9 @@
         <name>Display_Error</name>
         <label>Display Error</label>
         <locationX>308</locationX>
-        <locationY>755</locationY>
+        <locationY>647</locationY>
         <customErrorMessages>
-            <errorMessage>Only a member of the Risk team or LC Team can create a Service Line</errorMessage>
+            <errorMessage>Only a member the Risk team can change an Account to a Client.</errorMessage>
             <isFieldError>false</isFieldError>
         </customErrorMessages>
     </customErrors>
@@ -15,7 +15,7 @@
         <name>Found_Running_User</name>
         <label>Found Running User?</label>
         <locationX>176</locationX>
-        <locationY>647</locationY>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>Display_Error</targetReference>
         </defaultConnector>
@@ -41,8 +41,8 @@
         </rules>
     </decisions>
     <environments>Default</environments>
-    <interviewLabel>Service Line - Risk/LC Team Flow Validation {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Service Line - Risk/LC Team Flow Validation</label>
+    <interviewLabel>Account: Risk Team Validation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Account: Risk Team Validation</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -66,12 +66,12 @@
         <name>Get_Group_Member</name>
         <label>Get Group Member</label>
         <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Found_Running_User</targetReference>
         </connector>
-        <filterLogic>(1 OR 3) AND 2</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>GroupId</field>
             <operator>EqualTo</operator>
@@ -86,43 +86,8 @@
                 <elementReference>$User.Id</elementReference>
             </value>
         </filters>
-        <filters>
-            <field>GroupId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_LC_Group.Id</elementReference>
-            </value>
-        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>GroupMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_LC_Group</name>
-        <label>Get LC Group</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Group_Member</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Lifecycle Coordinator</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Regular</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Group</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -132,7 +97,7 @@
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_LC_Group</targetReference>
+            <targetReference>Get_Group_Member</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -144,9 +109,9 @@
         </filters>
         <filters>
             <field>Type</field>
-            <operator>EqualTo</operator>
+            <operator>NotEqualTo</operator>
             <value>
-                <stringValue>Regular</stringValue>
+                <stringValue>Queue</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -159,9 +124,13 @@
         <connector>
             <targetReference>Get_Risk_and_Compliance</targetReference>
         </connector>
-        <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false</filterFormula>
-        <object>Service_Line__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false &amp;&amp;
+TEXT({!$Record.Type}) = &apos;Client&apos; &amp;&amp;
+ISCHANGED({!$Record.Type}) &amp;&amp;
+{!$Record.Bypass_Validation__c} = false &amp;&amp;
+ISCHANGED({!$Record.Bypass_Validation__c} ) = false</filterFormula>
+        <object>Account</object>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
