@@ -4,7 +4,7 @@
     <customErrors>
         <name>Display_Error</name>
         <label>Display Error</label>
-        <locationX>264</locationX>
+        <locationX>308</locationX>
         <locationY>755</locationY>
         <customErrorMessages>
             <errorMessage>Only a member of the Risk team or LC Team can create a Service Line</errorMessage>
@@ -118,7 +118,7 @@
             <field>Type</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Queue</stringValue>
+                <stringValue>Regular</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -146,7 +146,7 @@
             <field>Type</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Queue</stringValue>
+                <stringValue>Regular</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
