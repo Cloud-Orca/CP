@@ -20,6 +20,13 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Opportunity.Connector</value>
+                            <visibilityRule>
+                                <criteria>
+                                    <leftValue>{!Record.RecordType.Name}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Corporate Opportunity</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Opportunity.Source</value>
