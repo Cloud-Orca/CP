@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>pse__Type__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Flights</fullName>
+                <default>false</default>
+                <label>Flights</label>
+            </value>
+            <value>
+                <fullName>Hotel</fullName>
+                <default>false</default>
+                <label>Hotel</label>
+            </value>
+            <value>
+                <fullName>Motor Expenses</fullName>
+                <default>false</default>
+                <label>Motor Expenses</label>
+            </value>
+            <value>
+                <fullName>Other Travel</fullName>
+                <default>false</default>
+                <label>Other Travel</label>
+            </value>
+            <value>
+                <fullName>Taxi</fullName>
+                <default>false</default>
+                <label>Taxi</label>
+            </value>
+            <value>
+                <fullName>Train</fullName>
+                <default>false</default>
+                <label>Train</label>
+            </value>
+            <value>
+                <fullName>Mileage</fullName>
+                <default>false</default>
+                <label>Mileage</label>
+            </value>
+            <value>
+                <fullName>Lunch Allowance</fullName>
+                <default>false</default>
+                <label>Lunch Allowance</label>
+            </value>
+            <value>
+                <fullName>Team meals/drinks</fullName>
+                <default>false</default>
+                <label>Team meals/drinks</label>
+            </value>
+            <value>
+                <fullName>Client meals/drinks</fullName>
+                <default>false</default>
+                <label>Client meals/drinks</label>
+            </value>
+            <value>
+                <fullName>Exam fees</fullName>
+                <default>false</default>
+                <label>Exam fees</label>
+            </value>
+            <value>
+                <fullName>Subscriptions/memberships</fullName>
+                <default>false</default>
+                <label>Subscriptions/memberships</label>
+            </value>
+            <value>
+                <fullName>Computer Equipment</fullName>
+                <default>false</default>
+                <label>Computer Equipment</label>
+            </value>
+            <value>
+                <fullName>Overnight stay meal allowance</fullName>
+                <default>false</default>
+                <label>Overnight stay meal allowance</label>
+            </value>
+            <value>
+                <fullName>Other (please detail)</fullName>
+                <default>false</default>
+                <label>Other (please detail)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
