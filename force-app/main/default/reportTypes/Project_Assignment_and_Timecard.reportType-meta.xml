@@ -1196,12 +1196,12 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Remove_Acquisition_Marker__c</field>
+            <field>Confidential_Area__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CT_Name_Original__c</field>
+            <field>Opportunity_Confidential_Area__c</field>
             <table>pse__Proj__c</table>
         </columns>
         <masterLabel>Projects</masterLabel>
@@ -1825,6 +1825,11 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Estimated_Revenue__c</field>
+            <table>pse__Proj__c.pse__Assignments__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Work_Activity__c</field>
             <table>pse__Proj__c.pse__Assignments__r</table>
         </columns>
         <masterLabel>Assignments</masterLabel>
