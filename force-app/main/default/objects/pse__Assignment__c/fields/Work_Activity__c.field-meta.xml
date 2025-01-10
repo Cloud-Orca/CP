@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Work_Activity__c</fullName>
+    <externalId>false</externalId>
+    <label>Work Activity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Holiday</fullName>
+                <default>false</default>
+                <label>Holiday</label>
+            </value>
+            <value>
+                <fullName>Planning</fullName>
+                <default>false</default>
+                <label>Planning</label>
+            </value>
+            <value>
+                <fullName>Finalisation</fullName>
+                <default>false</default>
+                <label>Finalisation</label>
+            </value>
+            <value>
+                <fullName>Study Leave</fullName>
+                <default>false</default>
+                <label>Study Leave</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Interim</fullName>
+                <default>false</default>
+                <label>Interim</label>
+            </value>
+            <value>
+                <fullName>Resource Admin</fullName>
+                <default>false</default>
+                <label>Resource Admin</label>
+            </value>
+            <value>
+                <fullName>Stocktake</fullName>
+                <default>false</default>
+                <label>Stocktake</label>
+            </value>
+            <value>
+                <fullName>Ad-hoc</fullName>
+                <default>false</default>
+                <label>Ad-hoc</label>
+            </value>
+            <value>
+                <fullName>Prep &amp; Review</fullName>
+                <default>false</default>
+                <label>Prep &amp; Review</label>
+            </value>
+            <value>
+                <fullName>Tagging</fullName>
+                <default>false</default>
+                <label>Tagging</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Non-chargeable</fullName>
+                <default>false</default>
+                <label>Non-chargeable</label>
+            </value>
+            <value>
+                <fullName>NFP Hold</fullName>
+                <default>false</default>
+                <label>NFP Hold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
