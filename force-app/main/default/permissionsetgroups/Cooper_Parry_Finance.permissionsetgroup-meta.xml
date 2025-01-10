@@ -90,5 +90,5 @@
     <permissionSets>psaws__PSA_Workspaces_Services_Revenue_Forecasting</permissionSets>
     <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
     <permissionSets>pse__PSALightningComponentApexClassAccess</permissionSets>
-    <status>Updated</status>
+    <status>Updating</status>
 </PermissionSetGroup>
