@@ -18,7 +18,7 @@ public class SmartSearchCompCont {
 
     @AuraEnabled
     public static UKIndividualResponse searchNameToSmartSearch(Id recordId, Beneficial_Owner__c benOwnerToSearch){
-        //try {
+        try {
             UKIndividualResponse resp = new UKIndividualResponse();
             resp.isPass = false;
             resp.subjectId = '';
@@ -75,9 +75,9 @@ public class SmartSearchCompCont {
                 }
             }
             return resp;
-        //} catch (Exception e) {
-            //throw new AuraHandledException(e.getMessage());
-        //}
+        } catch (Exception e) {
+           throw new AuraHandledException(e.getMessage());
+        }
     }
 
     @AuraEnabled
