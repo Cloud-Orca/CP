@@ -4,7 +4,7 @@
     <decisions>
         <name>Account_has_CP_Office</name>
         <label>Account has CP Office?</label>
-        <locationX>446</locationX>
+        <locationX>275</locationX>
         <locationY>503</locationY>
         <defaultConnector>
             <targetReference>Update_Opp_Name</targetReference>
@@ -29,7 +29,7 @@
     <decisions>
         <name>Opportunity_Area</name>
         <label>Opportunity Area</label>
-        <locationX>644</locationX>
+        <locationX>473</locationX>
         <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -51,7 +51,7 @@
     <decisions>
         <name>Record_Type</name>
         <label>Record Type</label>
-        <locationX>347</locationX>
+        <locationX>176</locationX>
         <locationY>287</locationY>
         <defaultConnector>
             <targetReference>Opportunity_Area</targetReference>
@@ -67,12 +67,10 @@
                     <stringValue>Renewal</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Update_Renewal_Opp</targetReference>
-            </connector>
             <label>Renewal</label>
         </rules>
     </decisions>
+    <description>Updating Opp Name - removed Renewal Update</description>
     <environments>Default</environments>
     <formulas>
         <name>F_OppName</name>
@@ -108,7 +106,7 @@
     <recordUpdates>
         <name>Update_Opp_Name</name>
         <label>Update Opp Name</label>
-        <locationX>578</locationX>
+        <locationX>407</locationX>
         <locationY>611</locationY>
         <inputAssignments>
             <field>Name</field>
@@ -121,7 +119,7 @@
     <recordUpdates>
         <name>Update_Opp_Name_and_CP_Office</name>
         <label>Update Opp Name and CP Office</label>
-        <locationX>314</locationX>
+        <locationX>143</locationX>
         <locationY>611</locationY>
         <inputAssignments>
             <field>CP_Office__c</field>
@@ -137,21 +135,8 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <recordUpdates>
-        <name>Update_Renewal_Opp</name>
-        <label>Update Renewal Opp</label>
-        <locationX>50</locationX>
-        <locationY>395</locationY>
-        <inputAssignments>
-            <field>Name</field>
-            <value>
-                <elementReference>renewalOppName_formula</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
-        <locationX>221</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Record_Type</targetReference>
