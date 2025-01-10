@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Generic</fullName>
+        <default>false</default>
+        <label>Generic</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit</fullName>
+        <default>false</default>
+        <label>Audit</label>
+    </customValue>
+    <customValue>
+        <fullName>Capital Allowance</fullName>
+        <default>false</default>
+        <label>Capital Allowance</label>
+    </customValue>
+    <customValue>
+        <fullName>Futures</fullName>
+        <default>false</default>
+        <label>Futures</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP</fullName>
+        <default>false</default>
+        <label>NFP</label>
+    </customValue>
+    <customValue>
+        <fullName>Pensions</fullName>
+        <default>false</default>
+        <label>Pensions</label>
+    </customValue>
+    <customValue>
+        <fullName>Projects</fullName>
+        <default>false</default>
+        <label>Projects</label>
+    </customValue>
+    <customValue>
+        <fullName>RnD</fullName>
+        <default>false</default>
+        <label>RnD</label>
+    </customValue>
+    <customValue>
+        <fullName>Tax</fullName>
+        <default>false</default>
+        <label>Tax</label>
+    </customValue>
+    <customValue>
+        <fullName>Transaction Services</fullName>
+        <default>false</default>
+        <label>Transaction Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Transaction Tax</fullName>
+        <default>false</default>
+        <label>Transaction Tax</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT</fullName>
+        <default>false</default>
+        <label>VAT</label>
+    </customValue>
+    <masterLabel>DocuSign Documents</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
