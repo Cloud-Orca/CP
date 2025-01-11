@@ -66,6 +66,10 @@
         <visibility>Available</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>CP_Services_Delivery_Workspace</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Project_Management_Workspace</tab>
         <visibility>Available</visibility>
     </tabSettings>
