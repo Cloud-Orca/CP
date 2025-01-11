@@ -2,6 +2,7 @@
 <PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry Finance part2</label>
+    <mutingPermissionSets>Cooper_Parry_Finance_part2_Muted2</mutingPermissionSets>
     <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
     <permissionSets>Finance_Revenue_Recognition_Custom_Fields</permissionSets>
     <permissionSets>c2g__AccountingAgedAnalysisDefinitionReadAccess</permissionSets>
