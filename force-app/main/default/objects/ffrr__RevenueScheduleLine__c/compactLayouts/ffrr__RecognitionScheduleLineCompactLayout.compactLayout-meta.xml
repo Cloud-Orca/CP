@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ffrr__RecognitionScheduleLineCompactLayout</fullName>
+    <fields>Name</fields>
+    <fields>ffrr__RevenueSchedule__c</fields>
+    <fields>ffrr__RevenueAsCurrency__c</fields>
+    <fields>ffrr__CostAsCurrency__c</fields>
+    <fields>ffrr__PeriodStart__c</fields>
+    <fields>ffrr__PeriodEnd__c</fields>
+    <label>RecognitionScheduleLineCompactLayout</label>
+</CompactLayout>
