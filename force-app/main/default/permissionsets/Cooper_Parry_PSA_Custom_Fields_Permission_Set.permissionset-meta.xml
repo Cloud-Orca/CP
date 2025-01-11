@@ -46,6 +46,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Practice__c.CT_Default_Recognition_Template__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Practice__c.CT_Expected_Recovery_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Practice__c.CT_Rate_Practice__c</field>
         <readable>true</readable>

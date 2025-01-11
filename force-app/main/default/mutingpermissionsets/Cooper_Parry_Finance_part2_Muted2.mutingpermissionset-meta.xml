@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MutingPermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <label>Cooper Parry Managers Muted</label>
+    <label>Cooper Parry Finance part2 Muted2</label>
     <tabSettings>
         <tab>CP_Resource_Management_Workspace</tab>
         <visibility>Available</visibility>
@@ -15,10 +15,6 @@
     </tabSettings>
     <tabSettings>
         <tab>psaws__projman_workspace</tab>
-        <visibility>Available</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>pse__Billing_Events_Awaiting_Release</tab>
         <visibility>Available</visibility>
     </tabSettings>
 </MutingPermissionSet>
