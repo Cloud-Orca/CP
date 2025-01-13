@@ -62,6 +62,12 @@ Updated new field for Project Manager to pull in the PM from the Project</descri
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>CP_Practice__c</field>
+            <value>
+                <elementReference>$Record.Project__r.pse__Practice__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Client_Code__c</field>
             <value>
                 <elementReference>$Record.Project__r.pse__Account__c</elementReference>
@@ -76,19 +82,13 @@ Updated new field for Project Manager to pull in the PM from the Project</descri
         <inputAssignments>
             <field>Project_Manager__c</field>
             <value>
-                <elementReference>$Record.Project_Manager__c</elementReference>
+                <elementReference>$Record.Project__r.pse__Project_Manager__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>RP_RD__c</field>
             <value>
                 <elementReference>$Record.Project__r.CT_Project_Partner__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Service_Line__c</field>
-            <value>
-                <elementReference>$Record.Project__r.pse__Practice__c</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
