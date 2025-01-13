@@ -12,10 +12,6 @@ RecordType.DeveloperName = &quot;CP_Opportunity&quot;,
 RecordType.DeveloperName = &quot;Corporate_Opportunity&quot;
 ),
 TEXT(StageName) &lt;&gt; &quot;Flirt&quot;
-),
-AND(
-RecordType.DeveloperName = &quot;Renewal&quot;,
-TEXT(StageName) &lt;&gt; &quot;Proposed&quot;
 )
 )
 )</errorConditionFormula>
