@@ -40,6 +40,7 @@
             <label>Yes Found User</label>
         </rules>
     </decisions>
+    <description>Only allowing groups - Risk and Compliance or Lifecycle Coordinators to move account from Inactive</description>
     <environments>Default</environments>
     <interviewLabel>Account: Inactive Validation {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account: Inactive Validation</label>
@@ -146,7 +147,7 @@
             <field>Type</field>
             <operator>NotEqualTo</operator>
             <value>
-                <stringValue>gr</stringValue>
+                <stringValue>Queue</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
