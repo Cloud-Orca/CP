@@ -217,6 +217,16 @@
                 <identifier>RecordCP_Confidential_Area_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Onboarding_Completed__c</fieldItem>
+                <identifier>RecordOnboarding_Completed_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-f31cfb4a-cff9-4183-ab78-8e77ec6894f0</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -995,10 +1005,21 @@
                 <componentName>ffscpq:opportunityActionsLauncherPanel</componentName>
                 <identifier>ffscpq_opportunityActionsLauncherPanel</identifier>
                 <visibilityRule>
+                    <booleanFilter>(1 AND 2) OR (2 AND 3)</booleanFilter>
                     <criteria>
-                        <leftValue>{!Record.Account.Previously_Onboarded__c}</leftValue>
+                        <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
                         <operator>EQUAL</operator>
-                        <rightValue>Yes</rightValue>
+                        <rightValue>Renewal</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.IsWon}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Onboarding_Completed__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
