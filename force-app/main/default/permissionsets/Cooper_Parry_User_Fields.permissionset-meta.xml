@@ -51,6 +51,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>ffscpq__Estimate_Line_Set__c.External_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>ffscpq__Estimate__c.CT_Current_Esimate__c</field>
         <readable>true</readable>
@@ -187,11 +192,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>pse__Expense__c.CT_Expense_VAT_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>pse__Expense__c.CT_Lost_Receipt_Comment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -238,6 +238,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>pse__Milestone__c.CT_Billing_Account__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Milestone__c.CT_From_Line_Set__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
