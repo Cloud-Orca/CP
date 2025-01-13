@@ -206,8 +206,6 @@
     </dashboardGridLayout>
     <dashboardType>LoggedInUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <owner>roy.dennis@cooperparry</owner>
-    <runningUser>roy.dennis@cooperparry</runningUser>
     <textColor>#000000</textColor>
     <title>Risk and Compliance Home Page Dashboard</title>
     <titleColor>#000000</titleColor>
