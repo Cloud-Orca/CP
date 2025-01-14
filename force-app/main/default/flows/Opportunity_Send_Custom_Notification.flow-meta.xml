@@ -40,7 +40,7 @@
         </inputParameters>
         <nameSegment>customNotificationAction</nameSegment>
     </actionCalls>
-    <apiVersion>63.0</apiVersion>
+    <apiVersion>62.0</apiVersion>
     <assignments>
         <name>Assign_Recipient</name>
         <label>Assign Recipient</label>
