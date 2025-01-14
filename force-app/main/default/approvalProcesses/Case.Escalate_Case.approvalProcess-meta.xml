@@ -9,42 +9,58 @@
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
-        <field>Name</field>
+        <field>CaseNumber</field>
         <field>Owner</field>
+        <field>CreatedDate</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
         <assignedApprover>
             <approver>
-                <type>adhoc</type>
+                <name>Escalation_Team_Queue</name>
+                <type>queue</type>
             </approver>
+            <whenMultipleApprovers>FirstResponse</whenMultipleApprovers>
         </assignedApprover>
-        <label>THG Audit Resourcing Approval</label>
-        <name>Step_1</name>
+        <label>Escalation</label>
+        <name>Escalation</name>
     </approvalStep>
+    <emailTemplate>unfiled$public/Escalated_Case_Template</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
         <action>
-            <name>THG_Audit_Resourcing_to_Approved</name>
+            <name>Escalation_Approved_Set_to_True</name>
             <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator_for_Escalation</name>
+            <type>Alert</type>
         </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
-            <name>THG_Audit_Resourcing_to_Rejected</name>
+            <name>Escalation_Rejected_set_to_True</name>
             <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator_for_Escalation</name>
+            <type>Alert</type>
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>THG_Audit_Resourcing_to_Submitted</name>
+            <name>Escalation_Rejected_set_to_False</name>
+            <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Move_status_to_Escalated</name>
             <type>FieldUpdate</type>
         </action>
     </initialSubmissionActions>
-    <label>THG Audit Resourcing Approval</label>
-    <processOrder>3</processOrder>
+    <label>Escalate Case</label>
+    <processOrder>5</processOrder>
     <recordEditability>AdminOnly</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>
