@@ -733,6 +733,9 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>optimizeResourcesForRequestsPage</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>projectResourceRequestActions_showAddRRFromTemplate</name>
                     <value>false</value>
                 </componentInstanceProperties>
