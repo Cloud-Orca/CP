@@ -9,8 +9,9 @@
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
-        <field>Name</field>
+        <field>CaseNumber</field>
         <field>Owner</field>
+        <field>CreatedDate</field>
     </approvalPageFields>
     <approvalStep>
         <allowDelegate>false</allowDelegate>
@@ -19,32 +20,41 @@
                 <type>adhoc</type>
             </approver>
         </assignedApprover>
-        <label>THG Audit Resourcing Approval</label>
-        <name>Step_1</name>
+        <label>Engagement Pack Approval</label>
+        <name>Engagement_Pack_Approval</name>
     </approvalStep>
+    <emailTemplate>unfiled$public/Engagement_Pack_Request</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
         <action>
-            <name>THG_Audit_Resourcing_to_Approved</name>
+            <name>Send_Email_to_Lifecycle_Coordinator_Engagement_Pack</name>
+            <type>Alert</type>
+        </action>
+        <action>
+            <name>Update_Engagement_Approval</name>
             <type>FieldUpdate</type>
         </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>false</finalApprovalRecordLock>
     <finalRejectionActions>
         <action>
-            <name>THG_Audit_Resourcing_to_Rejected</name>
+            <name>Engagement_Pack_set_to_True</name>
             <type>FieldUpdate</type>
+        </action>
+        <action>
+            <name>Send_Email_to_Lifecycle_Coordinator_Engagement_Pack</name>
+            <type>Alert</type>
         </action>
     </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
-            <name>THG_Audit_Resourcing_to_Submitted</name>
+            <name>Engagement_Pack_set_to_False</name>
             <type>FieldUpdate</type>
         </action>
     </initialSubmissionActions>
-    <label>THG Audit Resourcing Approval</label>
-    <processOrder>3</processOrder>
+    <label>Engagement Pack Approval</label>
+    <processOrder>6</processOrder>
     <recordEditability>AdminOnly</recordEditability>
     <showApprovalHistory>true</showApprovalHistory>
 </ApprovalProcess>
