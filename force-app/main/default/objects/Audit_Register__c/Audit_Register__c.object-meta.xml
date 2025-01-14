@@ -161,10 +161,11 @@
     <externalSharingModel>Private</externalSharingModel>
     <label>Audit Register</label>
     <nameField>
+        <displayFormat>AUD-{00000}</displayFormat>
         <label>Audit Register Name</label>
         <trackFeedHistory>false</trackFeedHistory>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Audit Registers</pluralLabel>
     <searchLayouts></searchLayouts>
