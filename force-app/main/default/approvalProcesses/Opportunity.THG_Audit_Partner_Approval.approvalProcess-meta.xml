@@ -3,6 +3,9 @@
     <active>true</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
+        <type>allInternalUsers</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
         <type>owner</type>
     </allowedSubmitters>
     <approvalPageFields>
@@ -19,6 +22,7 @@
         <label>Step 1</label>
         <name>Step_1</name>
     </approvalStep>
+    <emailTemplate>unfiled$public/Audit_Approval_Request</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
         <action>
@@ -31,6 +35,12 @@
         </action>
     </finalApprovalActions>
     <finalApprovalRecordLock>false</finalApprovalRecordLock>
+    <finalRejectionActions>
+        <action>
+            <name>Set_THG_Status_to_Rejected</name>
+            <type>FieldUpdate</type>
+        </action>
+    </finalRejectionActions>
     <finalRejectionRecordLock>false</finalRejectionRecordLock>
     <initialSubmissionActions>
         <action>
