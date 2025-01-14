@@ -3,6 +3,9 @@
     <active>true</active>
     <allowRecall>true</allowRecall>
     <allowedSubmitters>
+        <type>allInternalUsers</type>
+    </allowedSubmitters>
+    <allowedSubmitters>
         <submitter>Lifecycle_Coordinator</submitter>
         <type>group</type>
     </allowedSubmitters>
