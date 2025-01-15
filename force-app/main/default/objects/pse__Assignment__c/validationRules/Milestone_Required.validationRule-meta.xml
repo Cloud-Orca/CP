@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Milestone_Required</fullName>
+    <active>true</active>
+    <description>Milestone Required</description>
+    <errorConditionFormula>AND((ISNULL(pse__Milestone__c) ||  pse__Milestone__c == &apos;&apos; ), pse__Project__r.pse__Is_Billable__c ==TRUE)</errorConditionFormula>
+    <errorMessage>Please enter a Milestone for Billable Projects</errorMessage>
+</ValidationRule>
