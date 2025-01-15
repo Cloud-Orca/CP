@@ -25,7 +25,6 @@
         <label>Risk / Compliance Approval</label>
         <name>Risk_Compliance_Approval</name>
     </approvalStep>
-    <emailTemplate>unfiled$public/Risk_Compliance_Approval_Request</emailTemplate>
     <enableMobileDeviceAccess>false</enableMobileDeviceAccess>
     <finalApprovalActions>
         <action>
