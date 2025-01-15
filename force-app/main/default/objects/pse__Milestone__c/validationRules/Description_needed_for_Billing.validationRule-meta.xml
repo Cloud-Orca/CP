@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description_needed_for_Billing</fullName>
+    <active>true</active>
+    <description>Description needed for Billing</description>
+    <errorConditionFormula>AND(pse__Description__c ==&apos;&apos;,NOT(ISNULL( pse__Actual_Date__c )))</errorConditionFormula>
+    <errorDisplayField>ffrrPercentComplete__c</errorDisplayField>
+    <errorMessage>Please enter a Milestone Description</errorMessage>
+</ValidationRule>
