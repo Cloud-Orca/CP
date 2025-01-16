@@ -20,34 +20,34 @@ global class BatchCreateSharepointFolderCase implements Database.Batchable<sObje
                 Boolean isUpdateAccessToken = false;
 
                 //public folder
-                HttpResponse httpRes = SharepointAPIUtility.createNewFolderFromParentDocument(accessToken, caseRec.Subject, true);
-                if(httpRes.getStatusCode() == 401){
-                    accessToken = getNewAccessToken();
-                    httpRes = SharepointAPIUtility.createNewFolderFromParentDocument(accessToken, caseRec.Subject, true);
-                    isUpdateAccessToken = true;
-                }
+                // HttpResponse httpRes = SharepointAPIUtility.createNewFolderFromParentDocument(accessToken, caseRec.Subject, true);
+                // if(httpRes.getStatusCode() == 401){
+                //     accessToken = getNewAccessToken();
+                //     httpRes = SharepointAPIUtility.createNewFolderFromParentDocument(accessToken, caseRec.Subject, true);
+                //     isUpdateAccessToken = true;
+                // }
     
-                if(httpRes.getStatusCode() == 200 || httpRes.getStatusCode() == 201){
-                    Map<String, Object> responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes.getBody());
-                    String folderId = (String) responseMap.get('id');
-                    caseRec.Sharepoint_Public_Folder_ID__c = folderId;
-                    caseRec.Sharepoint_Public_Folder_URL__c = caseRec.Subject;
+                // if(httpRes.getStatusCode() == 200 || httpRes.getStatusCode() == 201){
+                //     Map<String, Object> responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes.getBody());
+                //     String folderId = (String) responseMap.get('id');
+                //     caseRec.Sharepoint_Public_Folder_ID__c = folderId;
+                //     caseRec.Sharepoint_Public_Folder_URL__c = caseRec.Subject;
 
-                    //secure folder
-                    String secureFolderName = 'Secure ' + caseRec.Subject;
-                    HttpResponse httpRes2 = SharepointAPIUtility.createNewFolderFromParentDocument(accessToken, secureFolderName, false);
-                    if(httpRes2.getStatusCode() == 200 || httpRes2.getStatusCode() == 201){
-                        responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes2.getBody());
-                        caseRec.Sharepoint_Secure_Folder_ID__c = (String) responseMap.get('id');
-                        caseRec.Sharepoint_Secure_Folder_URL__c = secureFolderName;
-                    } 
+                //     //secure folder
+                //     String secureFolderName = 'Secure ' + caseRec.Subject;
+                //     HttpResponse httpRes2 = SharepointAPIUtility.createNewFolderFromParentDocument(accessToken, secureFolderName, false);
+                //     if(httpRes2.getStatusCode() == 200 || httpRes2.getStatusCode() == 201){
+                //         responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes2.getBody());
+                //         caseRec.Sharepoint_Secure_Folder_ID__c = (String) responseMap.get('id');
+                //         caseRec.Sharepoint_Secure_Folder_URL__c = secureFolderName;
+                //     } 
                     
-                    if(isUpdateAccessToken){
-                        updateSharepointAccessToken(sharepointAPIlist.get(0).Id, accessToken);
-                    }
+                //     if(isUpdateAccessToken){
+                //         updateSharepointAccessToken(sharepointAPIlist.get(0).Id, accessToken);
+                //     }
 
-                    update caseRec;
-                }
+                //     update caseRec;
+                // }
             }
         } catch (Exception e) {
             System.debug(e.getMessage() + ' ' + e.getLineNumber());

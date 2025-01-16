@@ -76,6 +76,7 @@ public class SmartSearchCompCont {
             }
             return resp;
         } catch (Exception e) {
+            System.debug(e.getMessage() + ' - ' + e.getLineNumber());
            throw new AuraHandledException(e.getMessage());
         }
     }
@@ -112,8 +113,23 @@ public class SmartSearchCompCont {
                                 cv.ContentLocation = 'S';
                                 cv.SharingOption = 'A';
                                 cv.Origin = 'C';
-                                insert cv;
 
+
+                                List<Sharepoint_API__c> sharepointAPIlist = [SELECT Id, access_token__c FROM Sharepoint_API__c LIMIT 1];
+                                String accessTokenSP = sharepointAPIlist.get(0).access_token__c;
+
+                                if(!sharepointAPIlist.isEmpty()){
+                                    String secureFolderPath = [SELECT Id, Account.Sharepoint_Secure_Folder_URL__c FROM Case WHERE Id =: recordId].Account.Sharepoint_Secure_Folder_URL__c;
+                                    if(secureFolderPath != null){
+                                        HttpResponse httpRes2 = SharepointAPIUtility.uploadFileToDriveItemFromPath(accessTokenSP, secureFolderPath, cv.PathOnClient, cv.VersionData, false);
+                                        if(httpRes2.getStatusCode() == 401){
+                                            accessTokenSP = SharepointCompCont.getNewAccessToken();
+                                            httpRes2 = SharepointAPIUtility.uploadFileToDriveItemFromPath(accessTokenSP, secureFolderPath, cv.PathOnClient, cv.VersionData, false);
+                                        }
+                                    }
+                                }
+
+                                insert cv;
                                 Id cdId = [SELECT Id, ContentDocumentId FROM ContentVersion WHERE Id =: cv.Id].ContentDocumentId;
 
                                 ContentDocumentLink cdl = new ContentDocumentLink();
@@ -132,6 +148,7 @@ public class SmartSearchCompCont {
                 }
             }
         } catch (Exception e) {
+            System.debug(e.getMessage() + ' - ' + e.getLineNumber());
             throw new AuraHandledException(e.getMessage());
         }
     }
