@@ -97,7 +97,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Year_End__c</fieldItem>
                 <identifier>RecordYear_End_cField</identifier>
@@ -137,16 +137,6 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Turnover__c</fieldItem>
-                <identifier>RecordTurnover_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Turnover_Audit_Register__c</fieldItem>
@@ -155,12 +145,20 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.CP_Practice__c</fieldItem>
                 <identifier>RecordCP_Practice__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
             <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.External_ID__c</fieldItem>
                 <identifier>RecordExternal_ID__cField</identifier>
             </fieldInstance>
@@ -193,7 +191,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>readonly</value>
+                    <value>none</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Audit_Fee__c</fieldItem>
                 <identifier>RecordAudit_Fee_cField</identifier>
@@ -500,6 +498,99 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.CP_Filing_accounts_on_behalf__c</fieldItem>
+                <identifier>RecordCP_Filing_accounts_on_behalf_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-df113d43-56be-4480-bd46-0f6274f1aac2</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Date_Accounts_Sent_to_Companies_House__c</fieldItem>
+                <identifier>RecordDate_Accounts_Sent_to_Companies_House_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.CP_Filing_accounts_on_behalf__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Yes</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Date_acknowledgement_received__c</fieldItem>
+                <identifier>RecordDate_acknowledgement_received_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.CP_Filing_accounts_on_behalf__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Yes</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Date_submitted_online_via_CaseWare__c</fieldItem>
+                <identifier>RecordDate_submitted_online_via_CaseWare_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.CP_Filing_accounts_on_behalf__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Yes</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-40048c9c-5a4a-4c15-a0ab-7fa8ee638e7b</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-df113d43-56be-4480-bd46-0f6274f1aac2</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column13</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-40048c9c-5a4a-4c15-a0ab-7fa8ee638e7b</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column14</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-281a71fa-5002-4100-872f-f0875ecdded6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Documents__c</fieldItem>
                 <identifier>RecordDocuments_cField</identifier>
             </fieldInstance>
@@ -668,6 +759,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection4</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-281a71fa-5002-4100-872f-f0875ecdded6</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Filing Details</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection7</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
