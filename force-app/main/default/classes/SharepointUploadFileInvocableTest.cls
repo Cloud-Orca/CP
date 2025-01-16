@@ -46,6 +46,7 @@ public class SharepointUploadFileInvocableTest {
         cas.Sharepoint_Secure_Folder_ID__c = 'asdadasdas';
         cas.Sharepoint_Public_Folder_URL__c = 'asdadasdas';
         cas.Sharepoint_Secure_Folder_URL__c = 'asdadasdas';
+        cas.AccountId = newAccount.Id;
         insert cas;
 
         ContentVersion cv = new ContentVersion();

@@ -21,6 +21,8 @@ export default class SharepointComp extends LightningElement {
     showDriveItemBlank = false;
     isUserInSecureGroup;
 
+    @track isDisableUpload = true;
+
     async connectedCallback() {
         this.isSpinner = true;
         const isUserInSecureGroup = await getSecurePublicGroup({});
@@ -83,6 +85,8 @@ export default class SharepointComp extends LightningElement {
         const selectedItem = this.currentItems.find(item => item.id === itemId);
         this.driveItemId = selectedItem.id;
 
+        this.isDisableUpload = false;
+
         console.log('@@@ this.driveItemId: ' + this.driveItemId);
         console.log('@@@ this.isPublic: ' + selectedItem.isPublic);
 
@@ -120,6 +124,8 @@ export default class SharepointComp extends LightningElement {
         if (index == 0) {
             this.currentItems = this.rootItems;
             this.driveItemId = this.originalDriveItemId; 
+
+            this.isDisableUpload = true;
         } else {
             const folderId = this.breadcrumbs[index].id;
             this.driveItemId = folderId;
