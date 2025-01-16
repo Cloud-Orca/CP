@@ -99,6 +99,16 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Year_End__c</fieldItem>
+                <identifier>RecordYear_End_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Date_Audit_Register_Signed__c</fieldItem>
                 <identifier>RecordDate_Audit_Register_Signed_cField</identifier>
             </fieldInstance>
