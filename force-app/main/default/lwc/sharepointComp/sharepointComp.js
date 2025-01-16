@@ -14,6 +14,7 @@ export default class SharepointComp extends LightningElement {
     @track currentItems = [];
 
     @track rootItems = [];
+    @track allItems = [];
     fileDataListFinal = [];
     @track driveItemId;
     originalDriveItemId;
@@ -70,6 +71,8 @@ export default class SharepointComp extends LightningElement {
             
             this.rootItems = finaldriveItemList;
             this.currentItems = finaldriveItemList;
+            this.allItems.push(...this.currentItems);
+
             this.driveItemId = driveItemId;
             this.originalDriveItemId = driveItemId;
             console.log('@@@ this.driveItemId: ' + this.driveItemId);
@@ -106,7 +109,9 @@ export default class SharepointComp extends LightningElement {
                     });
                 }
                 this.isSpinner = false;
+
                 this.currentItems = driveItemList;
+                this.allItems.push(...this.currentItems);
             }catch(error){
                 this.isSpinner = false;
                 console.error(error);
@@ -129,9 +134,15 @@ export default class SharepointComp extends LightningElement {
         } else {
             const folderId = this.breadcrumbs[index].id;
             this.driveItemId = folderId;
+
+            console.log('@@@ folderId: ' + folderId);
+            const selectedItem = this.allItems.find(item => item.id === this.driveItemId);
+            console.log('@@@ selectedItem.isPublic: ' + selectedItem.isPublic);
+
             try{
                 this.isSpinner = true;
-                let driveItemList = await getChildrenFromDriveId({driveItemId: folderId});
+                // let driveItemList = await getChildrenFromDriveId({driveItemId: folderId});
+                let driveItemList = await getChildrenFromDriveId({driveItemId: folderId, recordId: this.recordId, isPublic: selectedItem.isPublic});
 
                 let self = this;
                 if(driveItemList){
@@ -141,8 +152,10 @@ export default class SharepointComp extends LightningElement {
                 }
 
                 console.log(driveItemList);
-                this.currentItems = driveItemList;
 
+                // this.previousItems = this.currentItems;
+                this.currentItems = driveItemList;
+                this.allItems.push(...this.currentItems);
                 this.isSpinner = false;
             }catch(error){
                 this.isSpinner = false;
@@ -258,6 +271,7 @@ export default class SharepointComp extends LightningElement {
                     console.log('@@@ this.driveItemId: ' + this.driveItemId);
                     this.isSpinner = false;
                     this.currentItems = driveItemList;
+                    this.allItems.push(...this.currentItems);
                 }   
                 else{
                     let driveItemList = await getPathDriveItems({recordId: this.recordId});
@@ -273,6 +287,7 @@ export default class SharepointComp extends LightningElement {
                     }
                     this.currentItems = driveItemList;
                     this.driveItemId = driveItemId;
+                    this.allItems.push(...this.currentItems);
                 }
         
                 const event = new ShowToastEvent({
