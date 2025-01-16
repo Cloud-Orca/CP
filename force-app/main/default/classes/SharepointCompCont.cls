@@ -50,9 +50,9 @@ public class SharepointCompCont {
                 secureFolderId = accountRec.Sharepoint_Secure_Folder_URL__c;
             }
             else if(recordId.getsobjecttype() == Schema.Case.getSObjectType()){
-                Case caseRec = [SELECT Id, Sharepoint_Public_Folder_ID__c, Sharepoint_Secure_Folder_ID__c, Sharepoint_Public_Folder_URL__c, Sharepoint_Secure_Folder_URL__c FROM Case WHERE Id =: recordId];
-                publicFolderId = caseRec.Sharepoint_Public_Folder_URL__c;
-                secureFolderId = caseRec.Sharepoint_Secure_Folder_URL__c;
+                Case caseRec = [SELECT Id, Account.Sharepoint_Public_Folder_URL__c, Account.Sharepoint_Secure_Folder_URL__c, Sharepoint_Public_Folder_URL__c, Sharepoint_Secure_Folder_URL__c FROM Case WHERE Id =: recordId];
+                publicFolderId = caseRec.Account.Sharepoint_Public_Folder_URL__c;
+                secureFolderId = caseRec.Account.Sharepoint_Secure_Folder_URL__c;
             }
 
             if(publicFolderId != '' && publicFolderId != null && secureFolderId != '' && secureFolderId != null){
