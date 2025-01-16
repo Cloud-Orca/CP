@@ -2,36 +2,38 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>59.0</apiVersion>
     <assignments>
-        <name>Assign_Case_and_Account_Id</name>
-        <label>Assign Case and Account Id</label>
-        <locationX>182</locationX>
-        <locationY>566</locationY>
+        <name>Assign_Form_to_Client_Acceptance_Form</name>
+        <label>Assign Form to Client Acceptance Form</label>
+        <locationX>50</locationX>
+        <locationY>782</locationY>
         <assignmentItems>
-            <assignToReference>clientAcceptanceForm.Case__c</assignToReference>
+            <assignToReference>clientAcceptanceForm</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>recordId</elementReference>
+                <elementReference>Get_Individual_Risk_Assessment_Form</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Page_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Individual_Risk_Form</name>
+        <label>Assign Individual Risk Form</label>
+        <locationX>314</locationX>
+        <locationY>998</locationY>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Created_Individual_Risk_Form.Id</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>clientAcceptanceForm.Account__c</assignToReference>
+            <assignToReference>clientAcceptanceForm</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get_Case.AccountId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.RecordTypeId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Individual_CAF_Record_Type.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.Type__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>Individual Risk</stringValue>
+                <elementReference>Get_Created_Individual_Risk_Form</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -42,7 +44,7 @@
         <name>Page_1_Assignment</name>
         <label>Page 1 Assignment</label>
         <locationX>182</locationX>
-        <locationY>782</locationY>
+        <locationY>1298</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Client_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -156,7 +158,7 @@
         <name>Page_2_5_Assignment</name>
         <label>Page 2.5 Assignment</label>
         <locationX>182</locationX>
-        <locationY>1214</locationY>
+        <locationY>1838</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.regpick11__c</assignToReference>
             <operator>Assign</operator>
@@ -235,7 +237,7 @@
         <name>Page_2_Assignment</name>
         <label>Page 2 Assignment</label>
         <locationX>182</locationX>
-        <locationY>998</locationY>
+        <locationY>1514</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Summarise_the_key_aspects_of_what_we_are__c</assignToReference>
             <operator>Assign</operator>
@@ -293,14 +295,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_2_REGULATIONS_INTEGRITY</targetReference>
+            <targetReference>Update_Individual_Risk_Form_Page_2</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_3_Assignment</name>
         <label>Page 3 Assignment</label>
         <locationX>182</locationX>
-        <locationY>1430</locationY>
+        <locationY>2054</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.pickfin1__c</assignToReference>
             <operator>Assign</operator>
@@ -421,14 +423,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_4_IDENTITY_VERIFICATION</targetReference>
+            <targetReference>Update_Individual_Risk_Page_3</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_4_Assignment</name>
         <label>Page 4 Assignment</label>
         <locationX>182</locationX>
-        <locationY>1646</locationY>
+        <locationY>2378</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Full_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -549,14 +551,14 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Page_5_CONCLUSION</targetReference>
+            <targetReference>Update_Individual_Risk_Page_4</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_5_Assignment</name>
         <label>Page 5 Assignment</label>
         <locationX>182</locationX>
-        <locationY>1862</locationY>
+        <locationY>2702</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.con1__c</assignToReference>
             <operator>Assign</operator>
@@ -586,7 +588,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Check_Approved</targetReference>
+            <targetReference>Update_Individual_Risk_Page_5</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -621,10 +623,10 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>380</locationX>
+        <locationX>512</locationX>
         <locationY>350</locationY>
         <defaultConnector>
-            <targetReference>Copy_1_of_Page_1_GENERAL_CP_CONTACT</targetReference>
+            <targetReference>Close_Screen</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
         <rules>
@@ -642,12 +644,48 @@
             </connector>
             <label>No Pending Approvals</label>
         </rules>
+        <rules>
+            <name>Lock_Form</name>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.RecordType.Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Onboarding</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Client_Amendment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Partner_Approved_checkbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Risk_Compliance_Approved_formula__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Copy_1_of_Page_1_GENERAL_CP_CONTACT</targetReference>
+            </connector>
+            <label>Lock Form</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Check_Approved</name>
         <label>Check Approved</label>
         <locationX>182</locationX>
-        <locationY>1970</locationY>
+        <locationY>2918</locationY>
         <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
             <name>Not_Approved</name>
@@ -660,9 +698,34 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Create_Client_Acceptance_Form</targetReference>
+                <targetReference>Update_Case</targetReference>
             </connector>
             <label>Not Approved</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_If_Form_is_Existing</name>
+        <label>Check If Form is Existing</label>
+        <locationX>182</locationX>
+        <locationY>674</locationY>
+        <defaultConnector>
+            <targetReference>Create_Individual_Risk_Form</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>None</defaultConnectorLabel>
+        <rules>
+            <name>Found</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Individual_Risk_Assessment_Form</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Form_to_Client_Acceptance_Form</targetReference>
+            </connector>
+            <label>Found</label>
         </rules>
     </decisions>
     <dynamicChoiceSets>
@@ -704,19 +767,44 @@
     </processMetadataValues>
     <processType>Flow</processType>
     <recordCreates>
-        <name>Create_Client_Acceptance_Form</name>
-        <label>Create Client Acceptance Form</label>
-        <locationX>50</locationX>
-        <locationY>2078</locationY>
+        <name>Create_Individual_Risk_Form</name>
+        <label>Create Individual Risk Form</label>
+        <locationX>314</locationX>
+        <locationY>782</locationY>
         <connector>
-            <targetReference>Update_Case</targetReference>
+            <targetReference>Get_Created_Individual_Risk_Form</targetReference>
         </connector>
-        <inputReference>clientAcceptanceForm</inputReference>
+        <inputAssignments>
+            <field>Account__c</field>
+            <value>
+                <elementReference>Get_Case.AccountId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Case__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Individual_CAF_Record_Type.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type__c</field>
+            <value>
+                <stringValue>Individual Risk</stringValue>
+            </value>
+        </inputAssignments>
+        <object>Client_Acceptance_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>380</locationX>
+        <locationX>512</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -744,7 +832,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>380</locationX>
+        <locationX>512</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -763,13 +851,34 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Created_Individual_Risk_Form</name>
+        <label>Get Created Individual Risk Form</label>
+        <locationX>314</locationX>
+        <locationY>890</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Individual_Risk_Form</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Create_Individual_Risk_Form</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Client_Acceptance_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Individual_CAF_Record_Type</name>
         <label>Get Individual CAF Record Type</label>
         <locationX>182</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Assign_Case_and_Account_Id</targetReference>
+            <targetReference>Get_Individual_Risk_Assessment_Form</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -790,11 +899,39 @@
         <object>RecordType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Individual_Risk_Assessment_Form</name>
+        <label>Get Individual Risk Assessment Form</label>
+        <locationX>182</locationX>
+        <locationY>566</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_If_Form_is_Existing</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Individual_CAF_Record_Type.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Client_Acceptance_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>50</locationX>
-        <locationY>2186</locationY>
+        <locationY>3026</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -811,6 +948,62 @@
         </inputAssignments>
         <object>Case</object>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Individual_Risk_Form_Page_2</name>
+        <label>Update Individual Risk Form Page 2</label>
+        <locationX>182</locationX>
+        <locationY>1622</locationY>
+        <connector>
+            <targetReference>Page_2_REGULATIONS_INTEGRITY</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Individual_Risk_Page_3</name>
+        <label>Update Individual Risk Page 3</label>
+        <locationX>182</locationX>
+        <locationY>2162</locationY>
+        <connector>
+            <targetReference>Page_4_IDENTITY_VERIFICATION</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Individual_Risk_Page_4</name>
+        <label>Update Individual Risk Page 4</label>
+        <locationX>182</locationX>
+        <locationY>2486</locationY>
+        <connector>
+            <targetReference>Page_5_CONCLUSION</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Individual_Risk_Page_5</name>
+        <label>Update Individual Risk Page 5</label>
+        <locationX>182</locationX>
+        <locationY>2810</locationY>
+        <connector>
+            <targetReference>Check_Approved</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Close_Screen</name>
+        <label>Close Screen</label>
+        <locationX>842</locationX>
+        <locationY>458</locationY>
+        <allowBack>false</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
     <screens>
         <name>Copy_1_of_Page_1_GENERAL_CP_CONTACT</name>
         <label>(VIEW) of Page 1 - GENERAL, CP CONTACT</label>
@@ -2769,7 +2962,7 @@
         <name>Page_1</name>
         <label>Page 1 - GENERAL, CP CONTACT</label>
         <locationX>182</locationX>
-        <locationY>674</locationY>
+        <locationY>1190</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3207,7 +3400,7 @@
         <name>Page_2_NATURE_OF_ASSIGNMENT_CHANGE_OF_ADVISOR</name>
         <label>Page 2 - NATURE OF ASSIGNMENT, CHANGE OF ADVISOR</label>
         <locationX>182</locationX>
-        <locationY>890</locationY>
+        <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3563,7 +3756,7 @@
         <name>Page_2_REGULATIONS_INTEGRITY</name>
         <label>Page 2.5 - REGULATIONS, INTEGRITY</label>
         <locationX>182</locationX>
-        <locationY>1106</locationY>
+        <locationY>1730</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -4465,7 +4658,7 @@
         <name>Page_3</name>
         <label>Page 3</label>
         <locationX>182</locationX>
-        <locationY>1322</locationY>
+        <locationY>1946</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -5812,7 +6005,7 @@
         <name>Page_4_IDENTITY_VERIFICATION</name>
         <label>Page 4 - IDENTITY VERIFICATION, OTHER RISKS, OBJECTIVITY</label>
         <locationX>182</locationX>
-        <locationY>1538</locationY>
+        <locationY>2270</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -7225,7 +7418,7 @@
         <name>Page_5_CONCLUSION</name>
         <label>Page 5 - CONCLUSION</label>
         <locationX>182</locationX>
-        <locationY>1754</locationY>
+        <locationY>2594</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -10065,7 +10258,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>254</locationX>
+        <locationX>386</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
