@@ -132,6 +132,7 @@ public class SharepointCompCont {
 
                             driveItem.modifiedByName = driveItem.lastModifiedBy?.user?.displayName;
                             driveItem.createdByName = driveItem.createdBy?.user?.displayName;
+                            driveItem.isPublic = isPublic;
                         }
 
                         if(isUpdateAccessToken){
