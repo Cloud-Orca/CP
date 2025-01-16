@@ -1289,8 +1289,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Data_Origination__c</fieldItem>
-                <identifier>RecordData_Origination_cField</identifier>
+                <fieldItem>Record.Data_Origination_Lookup__c</fieldItem>
+                <identifier>RecordData_Origination_Lookup_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
