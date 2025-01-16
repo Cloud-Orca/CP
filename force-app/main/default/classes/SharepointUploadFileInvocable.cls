@@ -15,7 +15,7 @@ public with sharing class SharepointUploadFileInvocable {
         String accessToken = sharepointAPIlist.get(0).access_token__c;
 
         if(!sharepointAPIlist.isEmpty()){
-            String secureFolderPath = [SELECT Id, Sharepoint_Secure_Folder_URL__c FROM Case WHERE Id =: caseId].Sharepoint_Secure_Folder_URL__c;
+            String secureFolderPath = [SELECT Id, Account.Sharepoint_Secure_Folder_URL__c FROM Case WHERE Id =: caseId].Account.Sharepoint_Secure_Folder_URL__c;
             if(secureFolderPath != null){
                 Boolean isUpdateAccessToken = false;
                 for(ContentVersion cv: cvList){
