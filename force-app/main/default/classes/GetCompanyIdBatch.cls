@@ -46,7 +46,7 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
                 if(!getData.results.isEmpty()){
                     offsetVal += 100;
                     for(Result result : getData.results){
-                        if(result.id.isAlphaNumeric() && result.id.length() <= 8){
+                        if(result.id.isAlphaNumeric() && result.id.length() >= 6 && result.id.length() <= 8){
                             retrievedCompanyIds.add(result.id);
                         }
                     }
