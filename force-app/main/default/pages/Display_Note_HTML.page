@@ -1,0 +1,7 @@
+<apex:page standardController="CP_Note__c" extensions="CPNoteHTMLController">
+    <apex:form >
+        <apex:outputPanel layout="block" style="border:1px solid #ccc; padding:10px;">
+            <apex:outputText value="{!htmlContent}" escape="false" />
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>
