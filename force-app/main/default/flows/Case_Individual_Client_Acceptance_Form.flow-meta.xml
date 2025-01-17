@@ -422,6 +422,13 @@
                 <elementReference>mlrapick15</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.mlrapick13__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>mlrapick13</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Individual_Risk_Page_3</targetReference>
         </connector>
@@ -550,6 +557,20 @@
                 <elementReference>objpickyes8</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Full_Name2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Full_Name2</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.ID_verified_by2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>ID_verified_by2</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Individual_Risk_Page_4</targetReference>
         </connector>
@@ -623,10 +644,10 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>512</locationX>
+        <locationX>468</locationX>
         <locationY>350</locationY>
         <defaultConnector>
-            <targetReference>Close_Screen</targetReference>
+            <targetReference>Copy_1_of_Page_1_GENERAL_CP_CONTACT</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
         <rules>
@@ -691,7 +712,7 @@
             <name>Not_Approved</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>Get_Case.Individual_Risk_Form_checkbox__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -804,7 +825,7 @@
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>512</locationX>
+        <locationX>468</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -832,7 +853,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>512</locationX>
+        <locationX>468</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -989,26 +1010,10 @@
         <inputReference>clientAcceptanceForm</inputReference>
     </recordUpdates>
     <screens>
-        <name>Close_Screen</name>
-        <label>Close Screen</label>
-        <locationX>842</locationX>
-        <locationY>458</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Error_Message</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
         <name>Copy_1_of_Page_1_GENERAL_CP_CONTACT</name>
         <label>(VIEW) of Page 1 - GENERAL, CP CONTACT</label>
-        <locationX>578</locationX>
-        <locationY>458</locationY>
+        <locationX>468</locationX>
+        <locationY>3410</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1450,8 +1455,8 @@
     <screens>
         <name>Copy_1_of_Page_5_CONCLUSION</name>
         <label>(VIEW)  Page 5 - CONCLUSION</label>
-        <locationX>578</locationX>
-        <locationY>998</locationY>
+        <locationX>468</locationX>
+        <locationY>3950</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1609,8 +1614,8 @@
     <screens>
         <name>Cy_1_of_Page_3</name>
         <label>(VIEW)  Page 3</label>
-        <locationX>578</locationX>
-        <locationY>782</locationY>
+        <locationX>468</locationX>
+        <locationY>3734</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -2860,26 +2865,41 @@
                 <name>Cy_1_of_Page_3_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlrawarning</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>textfamily</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Are any family members or close associates of the client PEPs?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>Copy_1_of_mlra14</name>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Cy_1_of_Page_3_Section22_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_mlrapick13</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Cy_1_of_Page_3_Section22_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -2910,6 +2930,56 @@
                 <name>Cy_1_of_Page_3_Section23_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>Copy_1_of_mlrawarning</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Copy_1_of_mlra14</name>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>10</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Cy_1_of_Page_3_Section23_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Cy_1_of_Page_3_Section24</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Cy_1_of_Page_3_Section24_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Cy_1_of_Page_3_Section24_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
                     <name>Copy_1_of_mlra15</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Considering the above factors, the risk of money laundering is:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
@@ -2923,7 +2993,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Cy_1_of_Page_3_Section23_Column3</name>
+                <name>Cy_1_of_Page_3_Section24_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_mlrapick15</name>
@@ -2942,7 +3012,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Cy_1_of_Page_3_Section23_Column4</name>
+                <name>Cy_1_of_Page_3_Section24_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4006,7 +4076,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>fortTrusts</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: yellow; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;For trusts only:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;For trusts only:&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4050,7 +4120,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>reg16</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: yellow; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Confirm that we have ascertained the tax residency of all trustees.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Confirm that we have ascertained the tax residency of all trustees.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4115,7 +4185,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>reg17</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; background-color: yellow;&quot;&gt;Do the trust or trustees have any US connection or involvement?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Do the trust or trustees have any US connection or involvement?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4237,7 +4307,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>reg18</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; background-color: yellow;&quot;&gt;Confirm that all information gathered about the trust has been assessed in the context of the FATCA requirements and any necessary action has been taken (or will be taken).&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Confirm that all information gathered about the trust has been assessed in the context of the FATCA requirements and any necessary action has been taken (or will be taken).&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5903,26 +5973,41 @@
                 <name>Page_3_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrawarning</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>FamilyMembers</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Are any family members or close associates of the client PEPs?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>mlra14</name>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_3_Section22_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>mlrapick13</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_3_Section22_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -5953,6 +6038,56 @@
                 <name>Page_3_Section23_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>mlrawarning</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>mlra14</name>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>10</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_3_Section23_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Page_3_Section24</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Page_3_Section24_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_3_Section24_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
                     <name>mlra15</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Considering the above factors, the risk of money laundering is:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
@@ -5966,7 +6101,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_3_Section23_Column3</name>
+                <name>Page_3_Section24_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlrapick15</name>
@@ -5985,7 +6120,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_3_Section23_Column4</name>
+                <name>Page_3_Section24_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -6128,6 +6263,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
+                <fields>
+                    <name>Full_Name2</name>
+                    <dataType>String</dataType>
+                    <fieldText>Full Name</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -6141,6 +6284,14 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>ID_verified_by</name>
+                    <dataType>String</dataType>
+                    <fieldText>ID verified by</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>ID_verified_by2</name>
                     <dataType>String</dataType>
                     <fieldText>ID verified by</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6188,7 +6339,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>idcomments</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Identification comments: For Personal Tax clients please include certified ID and a SmartSearch on High. Please upload documents to SharePoint.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please provide any further info in the space provided below .&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Identification comments: For Personal Tax clients please include certified ID and a SmartSearch on High. Please upload documents to SharePoint.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please provide any further info in the space provided below.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -6674,8 +6825,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section12_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>or3a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Can we demonstrate our competence to perform the proposed work ?&lt;/p&gt;</fieldText>
+                    <name>or4</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Has the client stated any specific requirements e.g., certain CP people, timing?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -6690,9 +6841,10 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section12_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>orpick3a</name>
+                    <name>orpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -6738,8 +6890,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section13_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>or4</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Has the client stated any specific requirements e.g., certain CP people, timing?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>OBJdisp</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OBJECTIVITY/CONFLICTS OF INTEREST ETC&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -6754,14 +6906,9 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section13_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>orpick4</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>ynobj</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -6803,8 +6950,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>OBJdisp</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OBJECTIVITY/CONFLICTS OF INTEREST ETC&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>obj1</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we already act for any parties involved or have we acted in the past?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -6819,9 +6966,14 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section14_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>ynobj</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>objpick1</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -6863,8 +7015,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we already act for any parties involved or have we acted in the past?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj1a</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Has any CP team member a family relationship or other close involvement&lt;/p&gt;&lt;p&gt;with any party ?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -6879,10 +7031,9 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section15_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick1</name>
+                    <name>objpick1a</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -6928,8 +7079,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj1a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Has any CP team member a family relationship or other close involvement&lt;/p&gt;&lt;p&gt;with any party ?&lt;/p&gt;</fieldText>
+                    <name>obj3</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -6944,9 +7095,10 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section16_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick1a</name>
+                    <name>objpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -6992,8 +7144,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj3</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj4</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we involved in any dispute with any party?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -7008,7 +7160,7 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section17_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick3</name>
+                    <name>objpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
@@ -7057,8 +7209,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section18_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj4</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we involved in any dispute with any party?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj5</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Have potential conflicts been identified for any other reason?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -7073,7 +7225,7 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section18_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick4</name>
+                    <name>objpick5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
@@ -7122,8 +7274,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section19_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj5</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Have potential conflicts been identified for any other reason?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj7</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -7138,7 +7290,7 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section19_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick5</name>
+                    <name>objpick7</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
@@ -7187,71 +7339,6 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj7</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>objpick7</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column4</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Page_4_IDENTITY_VERIFICATION_Section21</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>objpickyes7</name>
                     <fieldText>If yes, please summarise below.</fieldText>
                     <fieldType>LargeTextArea</fieldType>
@@ -7267,7 +7354,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column3</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -7291,10 +7378,10 @@
             </visibilityRule>
         </fields>
         <fields>
-            <name>Page_4_IDENTITY_VERIFICATION_Section22</name>
+            <name>Page_4_IDENTITY_VERIFICATION_Section21</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column1</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -7305,7 +7392,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column2</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>obj8</name>
@@ -7321,7 +7408,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column3</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>objpick8</name>
@@ -7342,7 +7429,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column4</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -7356,10 +7443,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>Page_4_IDENTITY_VERIFICATION_Section23</name>
+            <name>Page_4_IDENTITY_VERIFICATION_Section22</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section23_Column1</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -7370,7 +7457,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section23_Column2</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>objpickyes8</name>
@@ -7388,7 +7475,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section23_Column3</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -7574,8 +7661,8 @@
     <screens>
         <name>View_Page2</name>
         <label>(VIEW) Page 2</label>
-        <locationX>578</locationX>
-        <locationY>566</locationY>
+        <locationX>468</locationX>
+        <locationY>3518</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -7935,8 +8022,8 @@
     <screens>
         <name>View_Page_2_5</name>
         <label>(VIEW) Page 2.5</label>
-        <locationX>578</locationX>
-        <locationY>674</locationY>
+        <locationX>468</locationX>
+        <locationY>3626</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -8191,7 +8278,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_fortTrusts</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;background-color: yellow; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;For trusts only:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;For trusts only:&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -8235,7 +8322,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_reg16</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: yellow; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Confirm that we have ascertained the tax residency of all trustees.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Confirm that we have ascertained the tax residency of all trustees.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -8300,7 +8387,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_reg17</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; background-color: yellow;&quot;&gt;Do the trust or trustees have any US connection or involvement?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Do the trust or trustees have any US connection or involvement?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -8422,7 +8509,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_reg18</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; background-color: yellow;&quot;&gt;Confirm that all information gathered about the trust has been assessed in the context of the FATCA requirements and any necessary action has been taken (or will be taken).&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Confirm that all information gathered about the trust has been assessed in the context of the FATCA requirements and any necessary action has been taken (or will be taken).&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -8842,8 +8929,8 @@
     <screens>
         <name>VIew_Page_4</name>
         <label>(VIEW) Page 4</label>
-        <locationX>578</locationX>
-        <locationY>890</locationY>
+        <locationX>468</locationX>
+        <locationY>3842</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -8971,6 +9058,14 @@
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
+                <fields>
+                    <name>Full_Name2_1</name>
+                    <dataType>String</dataType>
+                    <fieldText>Full Name</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -8984,6 +9079,14 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_ID_verified_by</name>
+                    <dataType>String</dataType>
+                    <fieldText>ID verified by</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>ID_verified_by2_1</name>
                     <dataType>String</dataType>
                     <fieldText>ID verified by</fieldText>
                     <fieldType>InputField</fieldType>
@@ -9517,8 +9620,8 @@
                 <name>VIew_Page_4_Section12_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>or3b</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Can we demonstrate our competence to perform the proposed work ?&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_or4</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Has the client stated any specific requirements e.g., certain CP people, timing?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9533,9 +9636,10 @@
                 <name>VIew_Page_4_Section12_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>orpick3b</name>
+                    <name>Copy_1_of_orpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -9581,8 +9685,8 @@
                 <name>VIew_Page_4_Section13_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_or4</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Has the client stated any specific requirements e.g., certain CP people, timing?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_OBJdisp</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OBJECTIVITY/CONFLICTS OF INTEREST ETC&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9597,14 +9701,9 @@
                 <name>VIew_Page_4_Section13_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_orpick4</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>Copy_1_of_ynobj</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -9646,8 +9745,8 @@
                 <name>VIew_Page_4_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_OBJdisp</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OBJECTIVITY/CONFLICTS OF INTEREST ETC&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_obj1</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we already act for any parties involved or have we acted in the past?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9662,9 +9761,14 @@
                 <name>VIew_Page_4_Section14_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_ynobj</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>Copy_1_of_objpick1</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -9706,8 +9810,8 @@
                 <name>VIew_Page_4_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_obj1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we already act for any parties involved or have we acted in the past?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj1b</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Has any CP team member a family relationship or other close involvement&lt;/p&gt;&lt;p&gt;with any party ?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9722,10 +9826,9 @@
                 <name>VIew_Page_4_Section15_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_objpick1</name>
+                    <name>objpick1b</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -9771,8 +9874,8 @@
                 <name>VIew_Page_4_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj1b</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Has any CP team member a family relationship or other close involvement&lt;/p&gt;&lt;p&gt;with any party ?&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_obj3</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9787,9 +9890,10 @@
                 <name>VIew_Page_4_Section16_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick1b</name>
+                    <name>Copy_1_of_objpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -9835,8 +9939,8 @@
                 <name>VIew_Page_4_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_obj3</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_obj4</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we involved in any dispute with any party?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9851,7 +9955,7 @@
                 <name>VIew_Page_4_Section17_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_objpick3</name>
+                    <name>Copy_1_of_objpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
@@ -9900,8 +10004,8 @@
                 <name>VIew_Page_4_Section18_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_obj4</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we involved in any dispute with any party?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_obj5</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Have potential conflicts been identified for any other reason?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9916,7 +10020,7 @@
                 <name>VIew_Page_4_Section18_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_objpick4</name>
+                    <name>Copy_1_of_objpick5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
@@ -9965,8 +10069,8 @@
                 <name>VIew_Page_4_Section19_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_obj5</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Have potential conflicts been identified for any other reason?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_obj7</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9981,7 +10085,7 @@
                 <name>VIew_Page_4_Section19_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_objpick5</name>
+                    <name>Copy_1_of_objpick7</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
@@ -10030,71 +10134,6 @@
                 <name>VIew_Page_4_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_obj7</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>VIew_Page_4_Section20_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_objpick7</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>VIew_Page_4_Section20_Column4</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>VIew_Page_4_Section21</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>VIew_Page_4_Section21_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>VIew_Page_4_Section21_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>Copy_1_of_objpickyes7</name>
                     <fieldText>If yes, please summarise below.</fieldText>
                     <fieldType>LargeTextArea</fieldType>
@@ -10110,7 +10149,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIew_Page_4_Section21_Column3</name>
+                <name>VIew_Page_4_Section20_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10134,10 +10173,10 @@
             </visibilityRule>
         </fields>
         <fields>
-            <name>VIew_Page_4_Section22</name>
+            <name>VIew_Page_4_Section21</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIew_Page_4_Section22_Column1</name>
+                <name>VIew_Page_4_Section21_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10148,7 +10187,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIew_Page_4_Section22_Column2</name>
+                <name>VIew_Page_4_Section21_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_obj8</name>
@@ -10164,7 +10203,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIew_Page_4_Section22_Column3</name>
+                <name>VIew_Page_4_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_objpick8</name>
@@ -10185,7 +10224,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIew_Page_4_Section22_Column4</name>
+                <name>VIew_Page_4_Section21_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10199,10 +10238,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIew_Page_4_Section23</name>
+            <name>VIew_Page_4_Section22</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIew_Page_4_Section23_Column1</name>
+                <name>VIew_Page_4_Section22_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10213,7 +10252,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIew_Page_4_Section23_Column2</name>
+                <name>VIew_Page_4_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_objpickyes8</name>
@@ -10231,7 +10270,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIew_Page_4_Section23_Column3</name>
+                <name>VIew_Page_4_Section22_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10258,7 +10297,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>386</locationX>
+        <locationX>342</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
