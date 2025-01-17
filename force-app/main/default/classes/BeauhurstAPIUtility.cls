@@ -77,7 +77,7 @@ public class BeauhurstAPIUtility {
                 }
             }
             if(basic.get('website') != null){
-                acc.Website = String.valueOf(basic.get('website'));
+                acc.Website = String.valueOf(basic.get('website')).left(255);
             }
             if(basic.get('ultimate_parent_company') != null){
                 Map<String, Object> parent = (Map<String, Object>)basic.get('ultimate_parent_company');
