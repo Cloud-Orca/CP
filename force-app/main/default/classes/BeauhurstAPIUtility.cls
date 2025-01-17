@@ -16,7 +16,7 @@ public class BeauhurstAPIUtility {
             List<Account> accounts = [SELECT Id, Beauhurst_ID__c FROM Account WHERE Id =: accId LIMIT 1];
             if(!accounts.isEmpty()){
                 Account acc = accounts[0];
-                if(acc.Beauhurst_ID__c.isAlphaNumeric() && acc.Beauhurst_ID__c.length() <= 8){
+                if(acc.Beauhurst_ID__c.isAlphaNumeric() && acc.Beauhurst_ID__c.length() >= 6 && acc.Beauhurst_ID__c.length() <= 8){
                     String append = '/companies?company_ids=' + accounts[0].Beauhurst_ID__c + '&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
                 
                     Http http = new Http();
