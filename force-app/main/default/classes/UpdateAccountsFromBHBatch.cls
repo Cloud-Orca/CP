@@ -38,7 +38,7 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
     global void execute(Database.BatchableContext BC, List<Account> scope){
         String companyIds = '';
         for(Account acc : scope){
-            if(acc.Beauhurst_ID__c.isAlphaNumeric() && acc.Beauhurst_ID__c.length() <= 8){
+            if(acc.Beauhurst_ID__c.isAlphaNumeric() && acc.Beauhurst_ID__c.length() >= 6 && acc.Beauhurst_ID__c.length() <= 8){
                 companyIds += 'company_ids=' + acc.Beauhurst_ID__c + '&';
             }
         }
