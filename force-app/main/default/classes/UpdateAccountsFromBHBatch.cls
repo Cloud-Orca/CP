@@ -26,6 +26,9 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
         String query = 'SELECT Id, Name, Beauhurst_ID__c';
         query += ' FROM Account';
         query += ' WHERE Beauhurst_ID__c != null';
+        if(isInitialRun){
+            query += ' AND Registered_Name__c = null';
+        }
         if(!ids.isEmpty()){
             query += ' AND Id IN: ids';
         }
@@ -85,6 +88,8 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
                         }
                     }
                 }
+            }else{
+                System.abortJob(BC.getJobId());
             }
         }
     }
