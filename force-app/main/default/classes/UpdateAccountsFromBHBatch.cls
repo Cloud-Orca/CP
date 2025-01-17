@@ -44,7 +44,7 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
         }
 
         if(!String.isEmpty(companyIds)){
-            String append = '/companies?' + companyIds + 'includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
+            String append = '/companies?' + companyIds + 'includes=companies_house_id&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
 
             Http http = new Http();
             HttpResponse res = http.send(BeauhurstAPIUtility.constructReq(append));
@@ -62,8 +62,11 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
 
                     for(Object result : results){
                         Map<String, Object> resultItem = (Map<String, Object>)result;
-                        if(resultItem.get('id') != null){
-                            retrievedCompanyIds.add(String.valueOf(resultItem.get('id')));
+                        if(resultItem.get('basic') != null){
+                            Map<String, Object> basic = (Map<String, Object>)resultItem.get('basic');
+                            if(basic.get('companies_house_id') != null){
+                                retrievedCompanyIds.add(String.valueOf(basic.get('companies_house_id')));
+                            }
                         }
                     }
 
@@ -74,11 +77,14 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
         
                         for(Object result : results){
                             Map<String, Object> resultItem = (Map<String, Object>)result;
-                            if(resultItem.get('id') != null){
-                                String resultId = String.valueOf(resultItem.get('id'));
-                                if(bhIdToAccountIdMap.containsKey(resultId)){
-                                    Id accId = bhIdToAccountIdMap.get(resultId);
-                                    accountsToUpdate.add(BeauhurstAPIUtility.collectAccount(accId, resultItem));
+                            if(resultItem.get('basic') != null){
+                                Map<String, Object> basic = (Map<String, Object>)resultItem.get('basic');
+                                if(basic.get('companies_house_id') != null){
+                                    String resultId = String.valueOf(basic.get('companies_house_id'));
+                                    if(bhIdToAccountIdMap.containsKey(resultId)){
+                                        Id accId = bhIdToAccountIdMap.get(resultId);
+                                        accountsToUpdate.add(BeauhurstAPIUtility.collectAccount(accId, resultItem));
+                                    }
                                 }
                             }
                         }
@@ -89,7 +95,9 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
                     }
                 }
             }else{
-                System.abortJob(BC.getJobId());
+                if(isInitialRun){
+                    System.abortJob(BC.getJobId());
+                }
             }
         }
     }
