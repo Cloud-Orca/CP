@@ -163,6 +163,18 @@
                 <identifier>RecordExternal_ID__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Admin_Notes_Comments__c</fieldItem>
+                <identifier>RecordAdmin_Notes_Comments__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Length_of_RI_Service__c</fieldItem>
+                <identifier>RecordLength_of_RI_Service__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-9ec011af-17ef-497b-ac30-cdf1c5f47969</name>
         <type>Facet</type>
     </flexiPageRegions>
