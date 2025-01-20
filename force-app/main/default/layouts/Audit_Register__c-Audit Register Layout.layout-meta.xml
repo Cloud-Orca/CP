@@ -28,10 +28,6 @@
                 <field>Client_Code__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Year_End__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Date_Audit_Register_Signed__c</field>
             </layoutItems>
@@ -67,6 +63,10 @@
                 <behavior>Edit</behavior>
                 <field>External_ID__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Length_of_RI_Service__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -76,10 +76,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Investment_Amount__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Audit_Fee__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
