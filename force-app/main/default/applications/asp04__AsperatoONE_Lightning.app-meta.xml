@@ -38,6 +38,7 @@
     </actionOverrides>
     <brand>
         <headerColor>#CA1E4E</headerColor>
+        <logo>CP1</logo>
         <logoVersion>1</logoVersion>
         <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
     </brand>
