@@ -70,7 +70,7 @@
             <label>Renewal</label>
         </rules>
     </decisions>
-    <description>Updating Opp Name - removed Renewal Update</description>
+    <description>Updating Opp Name - removed Renewal Update - update to push through DevOps</description>
     <environments>Default</environments>
     <formulas>
         <name>F_OppName</name>
