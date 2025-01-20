@@ -36,6 +36,12 @@
         <type>Flexipage</type>
         <pageOrSobjectType>asp04__PaymentSchedule__c</pageOrSobjectType>
     </actionOverrides>
+    <brand>
+        <headerColor>#CA1E4E</headerColor>
+        <logo>CP_Logo</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
     <description>Asperato One payment processing</description>
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
