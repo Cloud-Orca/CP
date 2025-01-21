@@ -90,6 +90,9 @@
         <assignmentItems>
             <assignToReference>varForm.Company_Number__c</assignToReference>
             <operator>Assign</operator>
+            <value>
+                <elementReference>Company_number</elementReference>
+            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>varForm.Date__c</assignToReference>
