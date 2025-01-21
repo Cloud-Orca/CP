@@ -2,36 +2,6 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <apiVersion>61.0</apiVersion>
     <assignments>
-        <name>Assign_Attendees</name>
-        <label>Assign Attendees</label>
-        <locationX>270</locationX>
-        <locationY>1814</locationY>
-        <assignmentItems>
-            <assignToReference>varAttendee.External_Attendees_User__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_Attendee.MeetingAttendee.recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varAttendee.BD_Meeting__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Create_Origination_Meeting</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varAttendeeCollection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>varAttendee</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_Attendee</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Assign_Incumbent_Account</name>
         <label>Assign Incumbent - Account</label>
         <locationX>50</locationX>
@@ -219,20 +189,6 @@
     </formulas>
     <interviewLabel>Origination Meeting Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Origination Meeting Screen Flow</label>
-    <loops>
-        <name>Loop_Attendee</name>
-        <label>Loop Attendee</label>
-        <locationX>182</locationX>
-        <locationY>1706</locationY>
-        <collectionReference>AttendeeRepeater.AllItems</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Assign_Attendees</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Create_Attendees</targetReference>
-        </noMoreValuesConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -256,7 +212,7 @@
         <name>Create_Attendees</name>
         <label>Create Attendees</label>
         <locationX>182</locationX>
-        <locationY>2006</locationY>
+        <locationY>1706</locationY>
         <connector>
             <targetReference>Screen2</targetReference>
         </connector>
@@ -368,7 +324,7 @@
         <locationX>182</locationX>
         <locationY>1598</locationY>
         <connector>
-            <targetReference>Loop_Attendee</targetReference>
+            <targetReference>Create_Attendees</targetReference>
         </connector>
         <inputAssignments>
             <field>ContentDocumentId</field>
@@ -605,35 +561,30 @@
             <targetReference>Create_Origination_Meeting</targetReference>
         </connector>
         <fields>
-            <name>AttendeeRepeater</name>
-            <fieldType>Repeater</fieldType>
-            <fields>
-                <name>MeetingAttendee</name>
-                <extensionName>flowruntime:lookup</extensionName>
-                <fieldType>ComponentInstance</fieldType>
-                <inputParameters>
-                    <name>fieldApiName</name>
-                    <value>
-                        <stringValue>Meeting_Attendee__c</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>label</name>
-                    <value>
-                        <stringValue>Meeting Attendee</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>objectApiName</name>
-                    <value>
-                        <stringValue>BD_Meeting__c</stringValue>
-                    </value>
-                </inputParameters>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-                <storeOutputAutomatically>true</storeOutputAutomatically>
-            </fields>
-            <isRequired>false</isRequired>
+            <name>MeetingAttendee</name>
+            <extensionName>flowruntime:lookup</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>fieldApiName</name>
+                <value>
+                    <stringValue>Meeting_Attendee__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Meeting Attendee</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>objectApiName</name>
+                <value>
+                    <stringValue>BD_Meeting__c</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
         </fields>
         <fields>
             <name>Screen1_Section1</name>
@@ -831,7 +782,7 @@
         <name>Screen2</name>
         <label>Screen2</label>
         <locationX>182</locationX>
-        <locationY>2114</locationY>
+        <locationY>1814</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -926,7 +877,7 @@
             <targetReference>sObject</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>bdEmail_body</name>
         <isViewedAsPlainText>true</isViewedAsPlainText>
