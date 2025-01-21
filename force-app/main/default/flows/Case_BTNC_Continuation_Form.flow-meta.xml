@@ -88,18 +88,8 @@
         <locationX>94</locationX>
         <locationY>1298</locationY>
         <assignmentItems>
-            <assignToReference>varForm.Date_of_original_engagement__c</assignToReference>
+            <assignToReference>varForm.Company_Number__c</assignToReference>
             <operator>Assign</operator>
-            <value>
-                <elementReference>Date_of_original_engagement</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varForm.Client_Code__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Client_Code</elementReference>
-            </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>varForm.Date__c</assignToReference>
@@ -305,13 +295,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varForm.Does_the_Engagement_Letter__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Picklist14</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>varForm.Additional_Client_Code__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -372,6 +355,27 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>area4</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varForm.Prepared_by__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Prepared_by</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varForm.Reason_for_update__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Reason_for_update</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varForm.Supporting_Documents__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Supporting_Docs</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -861,12 +865,12 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section3_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Date_of_original_engagement</name>
-                    <dataType>Date</dataType>
+                    <name>Company_number</name>
+                    <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>varForm.Date_of_original_engagement__c</elementReference>
+                        <elementReference>varForm.Company_Number__c</elementReference>
                     </defaultValue>
-                    <fieldText>Date of original engagement:</fieldText>
+                    <fieldText>Company number</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -874,7 +878,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -883,12 +887,12 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section3_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Client_Code</name>
+                    <name>Reason_for_update</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>varForm.Client_Code__c</elementReference>
+                        <elementReference>varForm.Reason_for_update__c</elementReference>
                     </defaultValue>
-                    <fieldText>Client Code:</fieldText>
+                    <fieldText>Reason for update</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -896,7 +900,18 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section3_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -909,6 +924,28 @@
             <fieldType>RegionContainer</fieldType>
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Prepared_by</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>varForm.Prepared_by__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Prepared by</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Date</name>
@@ -924,23 +961,18 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>signature_txt1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 11pt;&quot;&gt;Signature:&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -954,6 +986,11 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section5_Column1</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>pleaseusethisform1</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Please use this form to add a new service, make adhoc changes or for ongoing monitoring checks to a business.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -999,55 +1036,6 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section6_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>header_txt5</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Ebrima; font-size: 12pt;&quot;&gt;Please use this checklist annually for AML purposes and when determining whether to continue with an engagement:&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>8</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section6_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>a</name>
-                    <fieldText>&lt;p&gt;a&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>a_txt</name>
                     <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Have you considered changes that may alter the original assessment of the acceptability of the client and engagement.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Examples of changes that shall cause a careful reconsideration are:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•  Changes in name and/or address;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•  a significant change in the size, structure or nature of the client&apos;s business;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•  new sources of finance;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•  a major change in the ownership, management or Trustees of the client; &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•  new regulatory reporting requirements:&amp;nbsp;and/or&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•&amp;nbsp;&amp;nbsp;additional service added.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
@@ -1061,7 +1049,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section6_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist1</name>
@@ -1096,16 +1084,11 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>b</name>
-                    <fieldText>&lt;p&gt;b&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1115,11 +1098,11 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>b_txt</name>
-                    <fieldText>&lt;p&gt;Have you completed conflict checking? Considering some of the possible changes below, please give info ,&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in the controlling ownership interests over the entity;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in any controlling interests held by the entity;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;new listings in the group; &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;any known change in service providers that may impact independence; or &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in classification of the entity as public interest.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Ebrima; font-size: 10pt;&quot;&gt;Any such changes will require reconsideration of the firm’s conflict checking procedures&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Have you completed conflict checking? Considering some of the possible changes below, please&lt;/p&gt;&lt;p&gt;give info, &lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in the controlling ownership interests over the entity;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in any controlling interests held by the entity;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;new listings in the group; &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;any known change in service providers that may impact independence; or &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in classification of the entity as public interest.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Ebrima; font-size: 10pt;&quot;&gt;Any such changes will require reconsideration of the firm’s conflict checking procedures&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1131,7 +1114,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist2</name>
@@ -1166,10 +1149,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1180,11 +1163,11 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>b_txt2</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;If adding a new service, have we received Professional Clearance, or sent Professional enquiry to the current advisor&lt;/strong&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;If adding a new service, have we received Professional Clearance, or sent Professional enquiry to the current advisor?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1196,7 +1179,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist3</name>
@@ -1231,10 +1214,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c</name>
@@ -1250,7 +1233,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt1</name>
@@ -1266,7 +1249,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist4</name>
@@ -1301,10 +1284,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1315,7 +1298,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt2</name>
@@ -1331,7 +1314,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist5</name>
@@ -1366,10 +1349,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1380,7 +1363,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt3</name>
@@ -1396,7 +1379,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist6</name>
@@ -1431,10 +1414,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1445,7 +1428,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt4</name>
@@ -1461,7 +1444,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist7</name>
@@ -1496,10 +1479,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1510,7 +1493,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt5</name>
@@ -1526,7 +1509,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist8</name>
@@ -1561,10 +1544,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1575,7 +1558,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt5a</name>
@@ -1591,7 +1574,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>picklist8a</name>
@@ -1626,10 +1609,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1640,51 +1623,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>c_txt6</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Ebrima; font-size: 10pt;&quot;&gt;Check that ‘a’ and ‘b’ are a “Yes” answer and all in ‘c’ are ‘No’ – responses that do not match meet this criteria means the client must be treated as HIGH risk&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>8</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt7</name>
@@ -1716,7 +1655,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist9</name>
@@ -1751,10 +1690,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1765,7 +1704,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt8</name>
@@ -1781,7 +1720,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist10</name>
@@ -1816,10 +1755,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -1830,7 +1769,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>c_txt9</name>
@@ -1855,12 +1794,112 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column3</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
                     <value>
                         <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>c_txt10</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Considering the above factors, the Money Laundering Risk is:&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>8</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Picklist11</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>varForm.Money_Laundering_Risk__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>header_5</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 16pt;&quot;&gt;ANTI-MONEY LAUNDERING REVIEW&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>10</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -1886,8 +1925,8 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>c_txt10</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Considering the above factors, the Money Laundering Risk is:&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>d_txt1</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Has the risk level changed from Normal to High since the previously recorded risk level?&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -1902,12 +1941,12 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Picklist11</name>
+                    <name>Picklist12</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>varForm.Money_Laundering_Risk__c</elementReference>
+                        <elementReference>varForm.Risk_level_changed_from_Normal_to_High__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1942,14 +1981,23 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>header_5</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 16pt;&quot;&gt;ANTI-MONEY LAUNDERING REVIEW&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>e_txt1</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;If “Yes” detail the additional verification work carried out:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>detailtheadditionalverificationworkcarriedout</name>
+                    <defaultValue>
+                        <stringValue>{!varForm.Risk_level_changed_from_Normal_to_High_T__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>9</stringValue>
+                        <stringValue>8</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -1960,7 +2008,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>2</stringValue>
+                        <stringValue>3</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -1974,11 +2022,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>d</name>
-                    <fieldText>&lt;p&gt;d&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1991,8 +2034,8 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>d_txt1</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Has the risk level changed from Normal to High since the previously recorded risk level?&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>f_txt1</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Ensure that the “know your client” information held on our files for anti-money laundering purposes is updated for any changes identified above and in any other relevant respects.&amp;nbsp;Ensure any changes to Beneficial Ownership are recorded and any additional ID verification undertaken.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;Please give details of the current beneficial owners and the basis of ownership below:&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong&gt;When adding non-audit services to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2007,12 +2050,12 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Picklist12</name>
+                    <name>Picklist13</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>varForm.Risk_level_changed_from_Normal_to_High__c</elementReference>
+                        <elementReference>varForm.Know_your_client_information_held__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2035,11 +2078,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>e</name>
-                    <fieldText>&lt;p&gt;e&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2052,18 +2090,9 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>e_txt1</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;If “Yes” detail the additional verification work carried out:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt; &lt;/strong&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;NB: Identity verification&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Normal Risk:&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;SmartSearch check (“Normal” risk setting) &lt;/span&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;OR&lt;/strong&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt; one government issued document with photo e.g. passport or driving licence;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;High Risk:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;SmartSearch check (“High” risk setting); &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-4&quot;&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;OR&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;One government issued document with photo e.g. passport or driving licence &lt;/span&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;AND&lt;/strong&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt; document detailing address e.g. utility bill.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>aTxt1</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;1.The type of non-audit service giving as much detail as possible, including the fee level? &lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>detailtheadditionalverificationworkcarriedout</name>
-                    <defaultValue>
-                        <stringValue>{!varForm.Risk_level_changed_from_Normal_to_High_T__c}</stringValue>
-                    </defaultValue>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -2076,6 +2105,15 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column3</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>area1</name>
+                    <defaultValue>
+                        <stringValue>{!varForm.Type_of_non_audit_service__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2093,11 +2131,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>f</name>
-                    <fieldText>&lt;p&gt;f&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2110,8 +2143,8 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>f_txt1</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Ensure that the “know your client” information held on our files for anti-money laundering purposes is updated for any changes identified above and in any other relevant respects.&amp;nbsp;Ensure any changes to Beneficial Ownership are recorded and any additional ID verification undertaken.&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;For Non-Audit services added to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <name>atxt2</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;2.&lt;/span&gt;The services are to be carried out by a separate team with a separate partner not involved in the audit which are?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2126,14 +2159,11 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Picklist13</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <dataType>String</dataType>
+                    <name>area2</name>
                     <defaultValue>
-                        <elementReference>varForm.Know_your_client_information_held__c</elementReference>
+                        <stringValue>{!varForm.Services_are_to_be_carried_out_by_a_sepa__c}</stringValue>
                     </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
+                    <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
@@ -2166,8 +2196,8 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>aTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;1.The type of non-audit service giving as much detail as possible, including the fee level? &lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>atxt3</name>
+                    <fieldText>&lt;p&gt;3. Any other safeguards that are deemed necessary by the Audit partner?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2182,9 +2212,9 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>area1</name>
+                    <name>area3</name>
                     <defaultValue>
-                        <stringValue>{!varForm.Type_of_non_audit_service__c}</stringValue>
+                        <stringValue>{!varForm.Other_safeguards_that_are_deemed_necessa__c}</stringValue>
                     </defaultValue>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2219,8 +2249,8 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>atxt2</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;2.The type of non-audit service giving as much detail as possible, including the fee level? &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <name>atxt4</name>
+                    <fieldText>&lt;p&gt;4.&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Full details of the ethical considerations should be detailed on the Audit file by the Audit partner (this must be confirmed on the CF)?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2235,9 +2265,9 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>area2</name>
+                    <name>area4</name>
                     <defaultValue>
-                        <stringValue>{!varForm.Services_are_to_be_carried_out_by_a_sepa__c}</stringValue>
+                        <stringValue>{!varForm.Full_details_of_the_ethical_consideratio__c}</stringValue>
                     </defaultValue>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -2272,8 +2302,8 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>atxt3</name>
-                    <fieldText>&lt;p&gt;3.&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;The type of non-audit service giving as much detail as possible, including the fee level? &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <name>g_txt1</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Upload SmartSearch/AML info and any relevant documents to this ongoing monitoring project to SharePoint. Please list below.&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2287,15 +2317,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>area3</name>
-                    <defaultValue>
-                        <stringValue>{!varForm.Other_safeguards_that_are_deemed_necessa__c}</stringValue>
-                    </defaultValue>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2325,9 +2346,13 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>atxt4</name>
-                    <fieldText>&lt;p&gt;4.&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Full details of the ethical considerations should be detailed on the Audit file by the Audit partner (this must be confirmed on the CF)?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>NonAuditservicesadded</name>
+                    <defaultValue>
+                        <stringValue>{!varForm.Know_your_client_information_held_T__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -2340,15 +2365,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>area4</name>
-                    <defaultValue>
-                        <stringValue>{!varForm.Full_details_of_the_ethical_consideratio__c}</stringValue>
-                    </defaultValue>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2378,13 +2394,9 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>NonAuditservicesadded</name>
-                    <defaultValue>
-                        <stringValue>{!varForm.Know_your_client_information_held_T__c}</stringValue>
-                    </defaultValue>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>i_txt1</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Considering the answers to the above should we still be acting for the client?&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -2397,6 +2409,27 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29_Column3</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>Picklist15</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>varForm.Still_be_acting_for_the_client__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Still_be_acting_for_the_client_T</name>
+                    <defaultValue>
+                        <stringValue>{!varForm.Still_be_acting_for_the_client_T__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2414,11 +2447,6 @@
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>g</name>
-                    <fieldText>&lt;p&gt;g&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2431,8 +2459,8 @@
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>g_txt1</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Does the Engagement Letter cover all services we currently provide?&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Attach a copy of the Engagement Letter below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>uploadTxt</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Please add additional information below for related companies/subs if required and upload supporting documents.&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -2445,62 +2473,6 @@
             </fields>
             <fields>
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Picklist14</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>varForm.Does_the_Engagement_Letter__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>uploadTxt</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Documents&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Please Upload the following files:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Copy of Engagement Letter&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;New Client Form&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Company/KYC Smart Search&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Other Onboarding Docs&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>8</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>files_upload</name>
@@ -2546,221 +2518,14 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section32</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section32_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>h</name>
-                    <fieldText>&lt;p&gt;h&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section32_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>h_txt1</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Attach copies of the new client form, SmartSearch and onboarding documents here&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>8</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section32_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section33</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section33_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section33_Column2</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section33_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>4</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section34</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section34_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>I</name>
-                    <fieldText>&lt;p&gt;I&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section34_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>i_txt1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Considering the answers to the above should we still be acting for the client?&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>8</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section34_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Picklist15</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>varForm.Still_be_acting_for_the_client__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <fields>
-                    <name>Still_be_acting_for_the_client_T</name>
-                    <defaultValue>
-                        <stringValue>{!varForm.Still_be_acting_for_the_client_T__c}</stringValue>
-                    </defaultValue>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section35</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section35_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>J</name>
-                    <fieldText>&lt;p&gt;J&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section35_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>j_txt1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Additional entities in the Group&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>9</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section35_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>2</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section36</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section36_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>j_txt2</name>
-                    <fieldText>&lt;p style=&quot;text-align: right;&quot;&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima;&quot;&gt;Client Code&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;Client Code&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
@@ -2775,13 +2540,13 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section36_Column2</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>j_txt3</name>
@@ -2800,7 +2565,32 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>supportingdocs</name>
+                    <fieldText>&lt;p&gt;&lt;strong&gt;Supporting documents linking sub to parent including SmartSearch &amp;amp; CAP Table&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Supporting_Docs</name>
+                    <defaultValue>
+                        <stringValue>{!varForm.Supporting_Documents__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2809,10 +2599,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section37</name>
+            <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section32</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section37_Column1</name>
+                <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section32_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -2929,12 +2719,12 @@
                 <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section3_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_Date_of_original_engagement</name>
-                    <dataType>Date</dataType>
+                    <name>Copy_1_of_Client_Code</name>
+                    <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>varForm.Date_of_original_engagement__c</elementReference>
+                        <elementReference>varForm.Company_Number__c</elementReference>
                     </defaultValue>
-                    <fieldText>Date of original engagement:</fieldText>
+                    <fieldText>Company Number:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2942,7 +2732,7 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2951,12 +2741,12 @@
                 <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section3_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_Client_Code</name>
+                    <name>Reason_for_updated</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>varForm.Client_Code__c</elementReference>
+                        <elementReference>varForm.Reason_for_update__c</elementReference>
                     </defaultValue>
-                    <fieldText>Client Code:</fieldText>
+                    <fieldText>Reason for updated</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2964,7 +2754,18 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section3_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -2977,6 +2778,28 @@
             <fieldType>RegionContainer</fieldType>
             <fields>
                 <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_of_Prepared_by</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>varForm.Prepared_by__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Prepared by</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Date</name>
@@ -2992,23 +2815,18 @@
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section4_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_signature_txt1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 11pt;&quot;&gt;Signature:&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>6</stringValue>
+                        <stringValue>4</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -3022,6 +2840,11 @@
             <fields>
                 <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section5_Column1</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>pleaseusethisform</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Please use this form to add a new service, make adhoc changes or for ongoing monitoring checks to a business.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -3055,50 +2878,6 @@
             <fields>
                 <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section6_Column1</name>
                 <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section6_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_header_txt5</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Ebrima; font-size: 12pt;&quot;&gt;Please use this checklist annually for AML purposes and when determining whether to continue with an engagement:&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>8</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section6_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column1</name>
-                <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_a</name>
                     <fieldText>&lt;p&gt;a&lt;/p&gt;</fieldText>
@@ -3113,7 +2892,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section6_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_a_txt</name>
@@ -3129,7 +2908,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section6_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist1</name>
@@ -3164,10 +2943,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_b</name>
@@ -3183,11 +2962,11 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_b_txt</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Have you completed conflict checking to determine whether there were any:&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•&amp;nbsp;changes in the controlling ownership interests over the entity;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•&amp;nbsp;changes in any controlling interests held by the entity;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•&amp;nbsp;new listings in the group; &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•&amp;nbsp;any known change in service providers that may impact independence; or &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;•&amp;nbsp;changes in classification of the entity as public interest.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima; color: red;&quot;&gt;Any such changes will require reconsideration of the firm’s conflict checking procedures&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;Have you completed conflict checking? Considering some of the possible changes below, please&lt;/p&gt;&lt;p&gt;give info&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in the controlling ownership interests over the entity;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in any controlling interests held by the entity;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;new listings in the group; &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;any known change in service providers that may impact independence; or &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;•&amp;nbsp;changes in classification of the entity as public interest.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Ebrima; font-size: 10pt;&quot;&gt;Any such changes will require reconsideration of the firm’s conflict checking procedures&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3199,7 +2978,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section7_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist2</name>
@@ -3234,10 +3013,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3248,7 +3027,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_b_txt2</name>
@@ -3264,7 +3043,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section8_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist3</name>
@@ -3299,10 +3078,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c</name>
@@ -3318,11 +3097,11 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt1</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Is the business structure complex/unusual?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Is the business structure complex/unusual?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(247, 0, 0);&quot;&gt;If “yes” mark as High Risk below&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3334,7 +3113,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section9_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist4</name>
@@ -3369,10 +3148,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3383,11 +3162,11 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt2</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Does the client transact with businesses in overseas countries with weak money laundering regimes?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Does the client transact with businesses in overseas countries with weak money laundering regimes?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(253, 11, 11);&quot;&gt;If “yes” mark as High Risk below&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3399,7 +3178,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section10_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist5</name>
@@ -3434,10 +3213,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3448,11 +3227,11 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt3</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Is control remote?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Is control remote?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(241, 9, 9);&quot;&gt;If “yes” mark as High Risk below&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3464,7 +3243,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section11_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist6</name>
@@ -3499,10 +3278,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3513,11 +3292,11 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt4</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Is it a cash business?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Is it a cash business?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(247, 9, 9);&quot;&gt;If “yes” mark as High Risk below&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3529,7 +3308,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section12_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist7</name>
@@ -3564,10 +3343,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3578,7 +3357,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt5</name>
@@ -3594,7 +3373,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section13_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist8</name>
@@ -3629,10 +3408,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3643,7 +3422,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt6</name>
@@ -3659,7 +3438,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section14_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3673,10 +3452,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3687,7 +3466,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt7</name>
@@ -3719,7 +3498,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section15_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist9</name>
@@ -3754,10 +3533,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3768,7 +3547,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt8</name>
@@ -3784,7 +3563,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section16_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist10</name>
@@ -3819,10 +3598,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3833,7 +3612,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_c_txt9</name>
@@ -3858,8 +3637,64 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section17_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_c_txt10</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Considering the above factors, the Money Laundering Risk is:&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>8</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
                 <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section18_Column3</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_Picklist11</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>varForm.Money_Laundering_Risk__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -3889,62 +3724,6 @@
                 <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_c_txt10</name>
-                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Considering the above factors, the Money Laundering Risk is:&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>8</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_Picklist11</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>varForm.Money_Laundering_Risk__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>Copy_1_of_header_5</name>
                     <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 16pt;&quot;&gt;ANTI-MONEY LAUNDERING REVIEW&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
@@ -3958,7 +3737,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section19_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3972,10 +3751,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_d</name>
@@ -3991,7 +3770,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_d_txt1</name>
@@ -4007,7 +3786,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section20_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist12</name>
@@ -4033,10 +3812,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_e</name>
@@ -4052,7 +3831,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_e_txt1</name>
@@ -4077,7 +3856,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4091,10 +3870,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_f</name>
@@ -4110,7 +3889,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_f_txt1</name>
@@ -4135,7 +3914,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section22_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist13</name>
@@ -4161,10 +3940,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_g</name>
@@ -4180,7 +3959,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_g_txt1</name>
@@ -4228,7 +4007,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist14</name>
@@ -4254,10 +4033,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4268,7 +4047,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column2</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4279,7 +4058,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4293,10 +4072,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_h</name>
@@ -4312,7 +4091,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_h_txt1</name>
@@ -4328,7 +4107,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section25_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4342,10 +4121,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_h_txt3</name>
@@ -4387,7 +4166,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_h_txt4</name>
@@ -4429,7 +4208,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section26_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_h_txt5</name>
@@ -4474,10 +4253,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_I</name>
@@ -4493,7 +4272,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_i_txt1</name>
@@ -4509,7 +4288,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section27_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_Picklist15</name>
@@ -4544,10 +4323,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_J</name>
@@ -4563,7 +4342,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_j_txt1</name>
@@ -4579,7 +4358,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29_Column3</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section28_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4593,10 +4372,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29_Column1</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_j_txt2</name>
@@ -4621,7 +4400,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30_Column2</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section29_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_j_txt3</name>
@@ -4649,10 +4428,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31</name>
+            <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section31_Column1</name>
+                <name>VIEW_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section30_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
