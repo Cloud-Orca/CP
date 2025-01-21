@@ -4,7 +4,7 @@
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
         <locationX>50</locationX>
-        <locationY>1730</locationY>
+        <locationY>1946</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -47,7 +47,7 @@
         <name>assignFileIds</name>
         <label>assignFileIds</label>
         <locationX>182</locationX>
-        <locationY>1514</locationY>
+        <locationY>1730</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
             <operator>Add</operator>
@@ -93,7 +93,7 @@
         <name>assignVariables</name>
         <label>assignVariables</label>
         <locationX>182</locationX>
-        <locationY>1406</locationY>
+        <locationY>1622</locationY>
         <assignmentItems>
             <assignToReference>variableForm.NI_and_or_UTR_number__c</assignToReference>
             <operator>Assign</operator>
@@ -349,7 +349,7 @@
         <name>Check_Approval</name>
         <label>Check Approval</label>
         <locationX>336</locationX>
-        <locationY>1298</locationY>
+        <locationY>1514</locationY>
         <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
             <name>Not_Approved</name>
@@ -403,7 +403,7 @@
         <name>Is_there_a_File_Upload</name>
         <label>Is there a File Upload</label>
         <locationX>182</locationX>
-        <locationY>1622</locationY>
+        <locationY>1838</locationY>
         <defaultConnector>
             <targetReference>Update_Individual_Ongoing_Monitoring</targetReference>
         </defaultConnector>
@@ -568,7 +568,7 @@
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>2030</locationY>
+        <locationY>2246</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -586,12 +586,32 @@
         <object>Case</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Update_continuation</name>
+        <label>Update continuation</label>
+        <locationX>336</locationX>
+        <locationY>1298</locationY>
+        <connector>
+            <targetReference>LAST_PART</targetReference>
+        </connector>
+        <inputReference>variableForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_Individual_Ongoing_Monitoring</name>
         <label>Update Individual Ongoing Monitoring</label>
         <locationX>182</locationX>
-        <locationY>1922</locationY>
+        <locationY>2138</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
+        </connector>
+        <inputReference>variableForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Personal_Tax_sole_trader_or_individual</name>
+        <label>Update Personal Tax, sole trader or individual</label>
+        <locationX>336</locationX>
+        <locationY>1082</locationY>
+        <connector>
+            <targetReference>CONTINUATION</targetReference>
         </connector>
         <inputReference>variableForm</inputReference>
     </recordUpdates>
@@ -616,12 +636,12 @@
         <name>CONTINUATION</name>
         <label>CONTINUATION</label>
         <locationX>336</locationX>
-        <locationY>1082</locationY>
+        <locationY>1190</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>LAST_PART</targetReference>
+            <targetReference>Update_continuation</targetReference>
         </connector>
         <fields>
             <name>CONTINUATION_Section1</name>
@@ -950,7 +970,7 @@
         <name>LAST_PART</name>
         <label>LAST PART</label>
         <locationX>336</locationX>
-        <locationY>1190</locationY>
+        <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1346,7 +1366,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>CONTINUATION</targetReference>
+            <targetReference>Update_Personal_Tax_sole_trader_or_individual</targetReference>
         </connector>
         <fields>
             <name>PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section1</name>
