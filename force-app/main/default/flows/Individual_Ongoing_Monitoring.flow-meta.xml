@@ -4,7 +4,7 @@
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
         <locationX>50</locationX>
-        <locationY>1946</locationY>
+        <locationY>2270</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -31,12 +31,19 @@
         <name>assign_Form</name>
         <label>assign Form</label>
         <locationX>468</locationX>
-        <locationY>782</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>variableForm.Id</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>create_Individual_Ongoing_Monitoring</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Ongoing_Monitoring</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -47,7 +54,7 @@
         <name>assignFileIds</name>
         <label>assignFileIds</label>
         <locationX>182</locationX>
-        <locationY>1730</locationY>
+        <locationY>2054</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
             <operator>Add</operator>
@@ -93,7 +100,116 @@
         <name>assignVariables</name>
         <label>assignVariables</label>
         <locationX>182</locationX>
-        <locationY>1622</locationY>
+        <locationY>1946</locationY>
+        <assignmentItems>
+            <assignToReference>variableForm.iompick13__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>iompick13</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.If_applicable_do_the_additional_service__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>iompick14</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.iompick15__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>iompick15</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.Completed_By__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FullName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.Completed_Date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.Prepared_by__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Prepared_by</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.If_applicable_do_the_additional_details__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>IfApplicableYes</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>assignFileIds</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assignVariablesContinuation</name>
+        <label>assignVariablesContinuation</label>
+        <locationX>336</locationX>
+        <locationY>1514</locationY>
+        <assignmentItems>
+            <assignToReference>variableForm.iompick9__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>iompick9</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.Have_we_met_the_client_face_to_face_T__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Names</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.iompick10__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>iompick10</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.EDD_procedures__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>EDD_procedures</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.iompick12__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>iompick11</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>variableForm.iompick122__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>iompick12</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_continuation</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>assignVariablesTax</name>
+        <label>assignVariablesTax</label>
+        <locationX>336</locationX>
+        <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>variableForm.NI_and_or_UTR_number__c</assignToReference>
             <operator>Assign</operator>
@@ -165,94 +281,10 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>variableForm.iompick9__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>iompick9</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.Have_we_met_the_client_face_to_face_T__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Names</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.iompick10__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>iompick10</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.EDD_procedures__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>EDD_procedures</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.iompick12__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>iompick11</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.iompick122__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>iompick12</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.iompick13__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>iompick13</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.If_applicable_do_the_additional_service__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>iompick14</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.iompick15__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>iompick15</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>variableForm.Client_Name__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Client_or_Trust_name</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.Completed_By__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>FullName</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.Completed_Date__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentDate</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.Prepared_by__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Prepared_by</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -269,15 +301,8 @@
                 <elementReference>clientsWealthDetails</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>variableForm.If_applicable_do_the_additional_details__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>IfApplicableYes</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
-            <targetReference>assignFileIds</targetReference>
+            <targetReference>Update_Personal_Tax_sole_trader_or_individual</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -349,7 +374,7 @@
         <name>Check_Approval</name>
         <label>Check Approval</label>
         <locationX>336</locationX>
-        <locationY>1514</locationY>
+        <locationY>1838</locationY>
         <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
             <name>Not_Approved</name>
@@ -403,7 +428,7 @@
         <name>Is_there_a_File_Upload</name>
         <label>Is there a File Upload</label>
         <locationX>182</locationX>
-        <locationY>1838</locationY>
+        <locationY>2162</locationY>
         <defaultConnector>
             <targetReference>Update_Individual_Ongoing_Monitoring</targetReference>
         </defaultConnector>
@@ -464,7 +489,7 @@
         <locationX>468</locationX>
         <locationY>674</locationY>
         <connector>
-            <targetReference>assign_Form</targetReference>
+            <targetReference>Get_Ongoing_Monitoring</targetReference>
         </connector>
         <inputAssignments>
             <field>Account__c</field>
@@ -564,11 +589,32 @@
         <object>Continuation_Form__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Ongoing_Monitoring</name>
+        <label>Get Ongoing Monitoring</label>
+        <locationX>468</locationX>
+        <locationY>782</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>assign_Form</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>create_Individual_Ongoing_Monitoring</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Continuation_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
         <locationX>182</locationX>
-        <locationY>2246</locationY>
+        <locationY>2570</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -589,7 +635,7 @@
         <name>Update_continuation</name>
         <label>Update continuation</label>
         <locationX>336</locationX>
-        <locationY>1298</locationY>
+        <locationY>1622</locationY>
         <connector>
             <targetReference>LAST_PART</targetReference>
         </connector>
@@ -599,7 +645,7 @@
         <name>Update_Individual_Ongoing_Monitoring</name>
         <label>Update Individual Ongoing Monitoring</label>
         <locationX>182</locationX>
-        <locationY>2138</locationY>
+        <locationY>2462</locationY>
         <connector>
             <targetReference>Update_Case</targetReference>
         </connector>
@@ -609,7 +655,7 @@
         <name>Update_Personal_Tax_sole_trader_or_individual</name>
         <label>Update Personal Tax, sole trader or individual</label>
         <locationX>336</locationX>
-        <locationY>1082</locationY>
+        <locationY>1298</locationY>
         <connector>
             <targetReference>CONTINUATION</targetReference>
         </connector>
@@ -636,12 +682,12 @@
         <name>CONTINUATION</name>
         <label>CONTINUATION</label>
         <locationX>336</locationX>
-        <locationY>1190</locationY>
+        <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Update_continuation</targetReference>
+            <targetReference>assignVariablesContinuation</targetReference>
         </connector>
         <fields>
             <name>CONTINUATION_Section1</name>
@@ -729,6 +775,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Have_we_met_the_client_face_to_face_T__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -736,6 +785,9 @@
                 <fields>
                     <name>Names</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Have_we_met_the_client_face_to_face_T__c</elementReference>
+                    </defaultValue>
                     <fieldText>Names</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -791,6 +843,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick10__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -830,6 +885,9 @@
                 </fields>
                 <fields>
                     <name>EDD_procedures</name>
+                    <defaultValue>
+                        <stringValue>{!variableForm.EDD_procedures__c}</stringValue>
+                    </defaultValue>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -894,6 +952,9 @@
                     <choiceReferences>High</choiceReferences>
                     <choiceReferences>Normal</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick12__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -948,6 +1009,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick122__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -970,7 +1034,7 @@
         <name>LAST_PART</name>
         <label>LAST PART</label>
         <locationX>336</locationX>
-        <locationY>1406</locationY>
+        <locationY>1730</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -1030,11 +1094,6 @@
             <fields>
                 <name>LAST_PART_Section2_Column1</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>f</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;f&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1068,6 +1127,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick13__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1266,6 +1328,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.If_applicable_do_the_additional_service__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1339,6 +1404,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick15__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1361,12 +1429,12 @@
         <name>PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL</name>
         <label>PERSONAL TAX, SOLE TRADER OR INDIVIDUAL</label>
         <locationX>336</locationX>
-        <locationY>974</locationY>
+        <locationY>1082</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Update_Personal_Tax_sole_trader_or_individual</targetReference>
+            <targetReference>assignVariablesTax</targetReference>
         </connector>
         <fields>
             <name>PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section1</name>
@@ -1474,6 +1542,9 @@
                 <fields>
                     <name>NI_and_or_UTR_number</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.NI_and_or_UTR_number__c</elementReference>
+                    </defaultValue>
                     <fieldText>NI and/or UTR number</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1521,6 +1592,9 @@
                 <fields>
                     <name>Prepared_by</name>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Prepared_by__c</elementReference>
+                    </defaultValue>
                     <fieldText>Prepared by</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1551,6 +1625,9 @@
                 <fields>
                     <name>Date</name>
                     <dataType>Date</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Date__c</elementReference>
+                    </defaultValue>
                     <fieldText>Date:</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1644,6 +1721,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick1__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1698,6 +1778,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick2__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1801,6 +1884,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick3__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1860,6 +1946,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick4__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -1919,6 +2008,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick5__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -2105,6 +2197,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick8__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
