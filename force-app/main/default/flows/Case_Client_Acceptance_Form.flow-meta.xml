@@ -758,7 +758,7 @@
             <assignToReference>clientAcceptanceForm.pc1__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Please_embed_any_supporting_documents_here</elementReference>
+                <elementReference>Please_upload_all_documents_to_support_the_onboarding_of_a_Pension_Client</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -3645,7 +3645,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_mlra2</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Does the client transact with businesses in overseas countries with weak money laundering regimes?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1120228/Annex_C_-_FATF_Advisory_Notice_on_Outcomes_-_October_2022.pdf&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Annex_C_-_FATF_Advisory_Notice_on_Outcomes_-_October_2022.pdf (publishing.service.gov.uk)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.lawsociety.org.uk/topics/anti-money-laundering/high-risk-third-countries-for-aml-purposes&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;High-risk third countries for AML purposes | The Law Society&lt;/a&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Does the client transact with businesses in overseas countries with weak money laundering regimes?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.fatf-gafi.org/en/countries/black-and-grey-lists.html&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&quot;Black and grey&quot; lists&lt;/a&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4662,50 +4662,6 @@
             </fields>
             <fields>
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column4</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_mlraWarning3</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;THE LEVEL OF MONEY LAUNDERING RISK ASSESSED WILL BE INPUT INTO DYNAMICS BY THE COMPLIANCE TEAM&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;BENEFICIAL OWNERSHIP AND ID VERIFICATION:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Please ensure that all SmartSearches are processed as ‘HIGH’ risk unless we have physically met the beneficial owners.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Normal Risk:&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;SmartSearch check (“Normal” risk setting) &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OR&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; one government issued document with photo e.g., passport or driving licence;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;High Risk:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;SmartSearch check (“High” risk setting); &lt;/span&gt;&lt;/p&gt;&lt;p&gt;	&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OR&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;One government issued document with photo e.g., passport or driving licence &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;AND&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; document detailing address e.g., utility bill.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Note:&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;For passport identification provided for overseas personnel, a SmartSearch must be actioned to verify the passport identification.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;This enables the Sanctions list to be kept up to date from a Politically Exposed Person (PEP) perspective.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;We need to find out who ALL the owners of the client are (the most recent confirmation statement alone may NOT achieve this, and earlier confirmation statements or annual returns may be needed).&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Then we must determine whether there are any beneficial owners (see Client Acceptance Guidance Notes) and record the basis of their beneficial ownership below:&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>10</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -6348,7 +6304,7 @@
                     <defaultValue>
                         <stringValue>{!clientAcceptanceForm.pc1__c}</stringValue>
                     </defaultValue>
-                    <fieldText>Please embed any supporting documents here:</fieldText>
+                    <fieldText>Please upload all documents to support the onboarding of a Pension Client.</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -9244,7 +9200,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlra2</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Does the client transact with businesses in overseas countries with weak money laundering regimes?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1120228/Annex_C_-_FATF_Advisory_Notice_on_Outcomes_-_October_2022.pdf&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Annex_C_-_FATF_Advisory_Notice_on_Outcomes_-_October_2022.pdf (publishing.service.gov.uk)&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.lawsociety.org.uk/topics/anti-money-laundering/high-risk-third-countries-for-aml-purposes&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;High-risk third countries for AML purposes | The Law Society&lt;/a&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Does the client transact with businesses in overseas countries with weak money laundering regimes?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://www.fatf-gafi.org/en/countries/black-and-grey-lists.html&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot;&gt;&quot;Black and grey&quot; lists&lt;/a&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -10261,50 +10217,6 @@
             </fields>
             <fields>
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column4</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>mlraWarning3</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;THE LEVEL OF MONEY LAUNDERING RISK ASSESSED WILL BE INPUT INTO DYNAMICS BY THE COMPLIANCE TEAM&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;BENEFICIAL OWNERSHIP AND ID VERIFICATION:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Please ensure that all SmartSearches are processed as ‘HIGH’ risk unless we have physically met the beneficial owners.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Normal Risk:&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;SmartSearch check (“Normal” risk setting) &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OR&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; one government issued document with photo e.g., passport or driving licence;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;High Risk:&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;SmartSearch check (“High” risk setting); &lt;/span&gt;&lt;/p&gt;&lt;p&gt;	&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OR&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;One government issued document with photo e.g., passport or driving licence &lt;/span&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;AND&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; document detailing address e.g., utility bill.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Note:&lt;/strong&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;For passport identification provided for overseas personnel, a SmartSearch must be actioned to verify the passport identification.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;This enables the Sanctions list to be kept up to date from a Politically Exposed Person (PEP) perspective.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;We need to find out who ALL the owners of the client are (the most recent confirmation statement alone may NOT achieve this, and earlier confirmation statements or annual returns may be needed).&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Then we must determine whether there are any beneficial owners (see Client Acceptance Guidance Notes) and record the basis of their beneficial ownership below:&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>10</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -11928,11 +11840,11 @@
                 <name>Page_8_CONCLUSION_Section4_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Please_embed_any_supporting_documents_here</name>
+                    <name>Please_upload_all_documents_to_support_the_onboarding_of_a_Pension_Client</name>
                     <defaultValue>
                         <stringValue>{!clientAcceptanceForm.pc1__c}</stringValue>
                     </defaultValue>
-                    <fieldText>Please embed any supporting documents here:</fieldText>
+                    <fieldText>Please upload all documents to support the onboarding of a Pension Client.</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
