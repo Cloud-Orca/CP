@@ -356,28 +356,14 @@
             <assignToReference>clientAcceptanceForm.mlrapick18__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>mlrapick18</elementReference>
+                <elementReference>mlrapick19</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.mlrapick19__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>mlrapick19</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.mlrapick20__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
                 <elementReference>mlrapick20</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.mlrapick5__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>mlrapick5</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -450,13 +436,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Full_Name</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.ID_verified_by__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>ID_verified_by</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -571,13 +550,6 @@
                 <elementReference>Full_Name2</elementReference>
             </value>
         </assignmentItems>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.ID_verified_by2__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>ID_verified_by2</elementReference>
-            </value>
-        </assignmentItems>
         <connector>
             <targetReference>Update_Individual_Risk_Page_4</targetReference>
         </connector>
@@ -592,13 +564,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>con1</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.con2__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>con2</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -620,6 +585,14 @@
         </connector>
     </assignments>
     <choices>
+        <name>High</name>
+        <choiceText>High</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>High</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>NA</name>
         <choiceText>N/A</choiceText>
         <dataType>String</dataType>
@@ -633,6 +606,14 @@
         <dataType>String</dataType>
         <value>
             <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Normal</name>
+        <choiceText>Normal</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Normal</stringValue>
         </value>
     </choices>
     <choices>
@@ -3786,6 +3767,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick19__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -3830,8 +3814,8 @@
                 <name>Page_3_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra5</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we have any concerns over the source of the client’s funds?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>mlra7</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we anticipate holding monies for the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3846,13 +3830,13 @@
                 <name>Page_3_Section14_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrapick5</name>
+                    <name>mlrapick7</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick5__c</elementReference>
+                        <elementReference>clientAcceptanceForm.mlrapick20__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3898,44 +3882,20 @@
                 <name>Page_3_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra7</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we anticipate holding monies for the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>hrdisplay</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;A “Yes” answer to &lt;/span&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;u&gt;ANY &lt;/u&gt;&lt;/strong&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;of the above means the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>7</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_3_Section15_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>mlrapick7</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick20__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_3_Section15_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -3966,20 +3926,44 @@
                 <name>Page_3_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>hrdisplay</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;A “Yes” answer to &lt;/span&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;u&gt;ANY &lt;/u&gt;&lt;/strong&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;of the above means the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>havewemet</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Have we met the client face to face?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_3_Section16_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>have_we_met</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick8__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_3_Section16_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4010,44 +3994,20 @@
                 <name>Page_3_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>havewemet</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: rgb(255, 0, 0);&quot;&gt;Have we met the client face to face?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>IfNo</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(238, 0, 0);&quot;&gt;If “No” the client must be treated as high risk&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>7</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_3_Section17_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>have_we_met</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick8__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_3_Section17_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4078,8 +4038,8 @@
                 <name>Page_3_Section18_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>IfNo</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(238, 0, 0);&quot;&gt;If “No” the client must be treated as high risk&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>cppolicy</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Updated CP policy - &lt;/span&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;u&gt;ALL&lt;/u&gt;&lt;/strong&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; clients have to be met either in person or via a Teams meeting so that photo ID and person can be matched and verified:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4122,9 +4082,14 @@
                 <name>Page_3_Section19_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>cppolicy</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Updated CP policy - &lt;/span&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;u&gt;ALL&lt;/u&gt;&lt;/strong&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; clients have to be met either in person or via a Teams meeting so that photo ID and person can be matched and verified:&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>mlra9</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.Please_state_which_team_member_has_met__c}</stringValue>
+                    </defaultValue>
+                    <fieldText>Please state which  team member has  met the client.</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -4166,11 +4131,11 @@
                 <name>Page_3_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra9</name>
+                    <name>mlra10</name>
                     <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.Please_state_which_team_member_has_met__c}</stringValue>
+                        <stringValue>{!clientAcceptanceForm.Please_give_details_of_individuals_we__c}</stringValue>
                     </defaultValue>
-                    <fieldText>Please state which  team member has  met the client.</fieldText>
+                    <fieldText>Please give details  of individuals we  have met, for  example  a  trustee  or POA if not the  person we are  onboarding.</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4215,11 +4180,11 @@
                 <name>Page_3_Section21_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra10</name>
+                    <name>mlra11</name>
                     <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.Please_give_details_of_individuals_we__c}</stringValue>
+                        <stringValue>{!clientAcceptanceForm.mlra11__c}</stringValue>
                     </defaultValue>
-                    <fieldText>Please give details  of individuals we  have met, for  example  a  trustee  or POA if not the  person we are  onboarding.</fieldText>
+                    <fieldText>Other comments:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4264,25 +4229,44 @@
                 <name>Page_3_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra11</name>
-                    <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra11__c}</stringValue>
-                    </defaultValue>
-                    <fieldText>Other comments:</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>mlra12</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Is the client a Politically Exposed Person (PEP)?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_3_Section22_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>mlrapick12</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick12__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_3_Section22_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4313,8 +4297,8 @@
                 <name>Page_3_Section23_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra12</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Is the client a Politically Exposed Person (PEP)?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>FamilyMembers</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Are any family members or close associates of the client PEPs?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4329,13 +4313,13 @@
                 <name>Page_3_Section23_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrapick12</name>
+                    <name>mlrapick13</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick12__c</elementReference>
+                        <elementReference>clientAcceptanceForm.mlrapick13__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4381,44 +4365,26 @@
                 <name>Page_3_Section24_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>FamilyMembers</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Are any family members or close associates of the client PEPs?&lt;/p&gt;</fieldText>
+                    <name>mlrawarning</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_3_Section24_Column3</name>
-                <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrapick13</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick13__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
+                    <name>mlra14</name>
+                    <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_3_Section24_Column4</name>
+                <name>Page_3_Section24_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4449,56 +4415,6 @@
                 <name>Page_3_Section25_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrawarning</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>mlra14</name>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>10</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_3_Section25_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Page_3_Section26</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Page_3_Section26_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_3_Section26_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>mlra15</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Considering the above factors, the risk of money laundering is:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
@@ -4512,11 +4428,12 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_3_Section26_Column3</name>
+                <name>Page_3_Section25_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlrapick15</name>
-                    <choiceReferences>TBD</choiceReferences>
+                    <choiceReferences>Normal</choiceReferences>
+                    <choiceReferences>High</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
                         <elementReference>clientAcceptanceForm.mlrapick15__c</elementReference>
@@ -4534,7 +4451,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_3_Section26_Column4</name>
+                <name>Page_3_Section25_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4703,23 +4620,23 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section3_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>ID_verified_by</name>
+                    <name>Full_Name3</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.ID_verified_by__c</elementReference>
+                        <elementReference>clientAcceptanceForm.Full_Name3__c</elementReference>
                     </defaultValue>
-                    <fieldText>ID verified by</fieldText>
+                    <fieldText>Full Name</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <fields>
-                    <name>ID_verified_by2</name>
+                    <name>Full_Name4</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.ID_verified_by2__c</elementReference>
+                        <elementReference>clientAcceptanceForm.Full_Name4__c</elementReference>
                     </defaultValue>
-                    <fieldText>ID verified by</fieldText>
+                    <fieldText>Full Name</fieldText>
                     <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4828,14 +4745,14 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section5_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>ssdisplay</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Embed SmartSearch here&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>iv2</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Does photo ID match the individual met?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>5</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -4844,14 +4761,22 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section5_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>oiddisplay</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Other ID documents&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>ivpick2</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.ivpick2__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>5</stringValue>
+                        <stringValue>3</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -4888,8 +4813,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section6_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>iv2</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Does photo ID match the individual met?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>ordisp</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;OTHER RISKS&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4904,17 +4829,9 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section6_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>ivpick2</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.ivpick2__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>yn</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -4956,8 +4873,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section7_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>ordisp</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;OTHER RISKS&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>or1</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Is there public interest in the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4972,9 +4889,17 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section7_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>yn</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>orpick1</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick1__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -5016,44 +4941,25 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section8_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>or1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Is there public interest in the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section8_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>orpick1</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
+                    <name>orpick1yes</name>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.orpick1__c</elementReference>
+                        <stringValue>{!clientAcceptanceForm.orpick1yes__c}</stringValue>
                     </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
+                    <fieldText>If yes, please detail below why you are happy to proceed:</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section8_Column4</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section8_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -5084,25 +4990,44 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section9_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>orpick1yes</name>
-                    <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.orpick1yes__c}</stringValue>
-                    </defaultValue>
-                    <fieldText>If yes, please detail below why you are happy to proceed:</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>or2</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we being invited to act for only part of a relationship/group?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_4_IDENTITY_VERIFICATION_Section9_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>orpick2</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick2__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_4_IDENTITY_VERIFICATION_Section9_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -5133,8 +5058,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section10_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>or2</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we being invited to act for only part of a relationship/group?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>or3</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Can we demonstrate our competence to perform the proposed work?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5149,13 +5074,13 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section10_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>orpick2</name>
+                    <name>orpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.orpick2__c</elementReference>
+                        <elementReference>clientAcceptanceForm.orpick3__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5201,8 +5126,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section11_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>or3</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Can we demonstrate our competence to perform the proposed work?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>or4</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Has the client stated any specific requirements e.g., certain CP people, timing?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5217,13 +5142,13 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section11_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>orpick3</name>
+                    <name>orpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.orpick3__c</elementReference>
+                        <elementReference>clientAcceptanceForm.orpick4__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5269,8 +5194,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section12_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>or4</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Has the client stated any specific requirements e.g., certain CP people, timing?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>OBJdisp</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OBJECTIVITY/CONFLICTS OF INTEREST ETC&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5285,17 +5210,9 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section12_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>orpick4</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.orpick4__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>ynobj</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -5337,8 +5254,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section13_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>OBJdisp</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OBJECTIVITY/CONFLICTS OF INTEREST ETC&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>obj1</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we already act for any parties involved or have we acted in the past?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5353,9 +5270,17 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section13_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>ynobj</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>objpick1</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick1__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -5397,8 +5322,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we already act for any parties involved or have we acted in the past?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj1a</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Has any CP team member a family relationship or other close involvement&lt;/p&gt;&lt;p&gt;with any party ?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5413,13 +5338,12 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section14_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick1</name>
+                    <name>objpick1a</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick1__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick3__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5465,8 +5389,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj1a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Has any CP team member a family relationship or other close involvement&lt;/p&gt;&lt;p&gt;with any party ?&lt;/p&gt;</fieldText>
+                    <name>obj3</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5481,12 +5405,13 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section15_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick1a</name>
+                    <name>objpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick3__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick2__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5532,8 +5457,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj3</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj4</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we involved in any dispute with any party?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5548,13 +5473,13 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section16_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick3</name>
+                    <name>objpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick2__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick4__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5600,8 +5525,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj4</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we involved in any dispute with any party?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj5</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Have potential conflicts been identified for any other reason?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5616,13 +5541,13 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section17_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick4</name>
+                    <name>objpick5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick4__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick5__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5668,8 +5593,8 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section18_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj5</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Have potential conflicts been identified for any other reason?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>obj7</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -5684,14 +5609,11 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section18_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>objpick5</name>
+                    <name>objpick7</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick5__c</elementReference>
-                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5736,71 +5658,6 @@
                 <name>Page_4_IDENTITY_VERIFICATION_Section19_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>obj7</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section19_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>objpick7</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section19_Column4</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Page_4_IDENTITY_VERIFICATION_Section20</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>objpickyes7</name>
                     <defaultValue>
                         <stringValue>{!clientAcceptanceForm.objpickyes8__c}</stringValue>
@@ -5819,7 +5676,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column3</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section19_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -5843,10 +5700,10 @@
             </visibilityRule>
         </fields>
         <fields>
-            <name>Page_4_IDENTITY_VERIFICATION_Section21</name>
+            <name>Page_4_IDENTITY_VERIFICATION_Section20</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column1</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -5857,7 +5714,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column2</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>obj8</name>
@@ -5873,7 +5730,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column3</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>objpick8</name>
@@ -5897,7 +5754,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column4</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section20_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -5911,10 +5768,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>Page_4_IDENTITY_VERIFICATION_Section22</name>
+            <name>Page_4_IDENTITY_VERIFICATION_Section21</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column1</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -5925,7 +5782,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column2</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>objpickyes8</name>
@@ -5946,7 +5803,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column3</name>
+                <name>Page_4_IDENTITY_VERIFICATION_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -6066,60 +5923,6 @@
             </fields>
             <fields>
                 <name>Page_5_CONCLUSION_Section2_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Page_5_CONCLUSION_Section3</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Page_5_CONCLUSION_Section3_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_5_CONCLUSION_Section3_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_objwarn1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Conclusion:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;I am satisfied that we should accept the appointment / assignment and that the relevant risks have been satisfactorily investigated.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;I confirm that satisfactory evidence of the client’s identity has been obtained to comply with the money laundering regulations.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Partner Signature:&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>con2</name>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.con2__c</elementReference>
-                    </defaultValue>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>10</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_5_CONCLUSION_Section3_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -9177,7 +8980,8 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_2_of_mlrapick15</name>
-                    <choiceReferences>TBD</choiceReferences>
+                    <choiceReferences>Normal</choiceReferences>
+                    <choiceReferences>High</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
                         <elementReference>clientAcceptanceForm.mlrapick15__c</elementReference>
@@ -9494,14 +9298,14 @@
                 <name>View_of_Page_4_Section5_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_ssdisplay</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Embed SmartSearch here&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_iv2</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Does photo ID match the individual met?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>5</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -9510,14 +9314,22 @@
                 <name>View_of_Page_4_Section5_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_oiddisplay</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Other ID documents&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>Copy_2_of_ivpick2</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.ivpick2__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>5</stringValue>
+                        <stringValue>3</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -9554,8 +9366,8 @@
                 <name>View_of_Page_4_Section6_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_iv2</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Does photo ID match the individual met?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_ordisp</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;OTHER RISKS&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9570,17 +9382,9 @@
                 <name>View_of_Page_4_Section6_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_ivpick2</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.ivpick2__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>Copy_2_of_yn</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -9622,8 +9426,8 @@
                 <name>View_of_Page_4_Section7_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_ordisp</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;OTHER RISKS&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_or1</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Is there public interest in the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9638,9 +9442,17 @@
                 <name>View_of_Page_4_Section7_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_yn</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>Copy_2_of_orpick1</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick1__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -9682,44 +9494,25 @@
                 <name>View_of_Page_4_Section8_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_or1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Is there public interest in the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>View_of_Page_4_Section8_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_orpick1</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
+                    <name>Copy_2_of_orpick1yes</name>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.orpick1__c</elementReference>
+                        <stringValue>{!clientAcceptanceForm.orpick1yes__c}</stringValue>
                     </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
+                    <fieldText>If yes, please detail below why you are happy to proceed:</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_4_Section8_Column4</name>
+                <name>View_of_Page_4_Section8_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -9750,25 +9543,44 @@
                 <name>View_of_Page_4_Section9_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_orpick1yes</name>
-                    <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.orpick1yes__c}</stringValue>
-                    </defaultValue>
-                    <fieldText>If yes, please detail below why you are happy to proceed:</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>Copy_2_of_or2</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we being invited to act for only part of a relationship/group?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>View_of_Page_4_Section9_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_orpick2</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.orpick2__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>View_of_Page_4_Section9_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -9799,8 +9611,8 @@
                 <name>View_of_Page_4_Section10_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_or2</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we being invited to act for only part of a relationship/group?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_or3</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Can we demonstrate our competence to perform the proposed work?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9815,13 +9627,13 @@
                 <name>View_of_Page_4_Section10_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_orpick2</name>
+                    <name>Copy_2_of_orpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.orpick2__c</elementReference>
+                        <elementReference>clientAcceptanceForm.orpick3__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -9867,8 +9679,8 @@
                 <name>View_of_Page_4_Section11_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_or3</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Can we demonstrate our competence to perform the proposed work?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_or4</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Has the client stated any specific requirements e.g., certain CP people, timing?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9883,13 +9695,13 @@
                 <name>View_of_Page_4_Section11_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_orpick3</name>
+                    <name>Copy_2_of_orpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.orpick3__c</elementReference>
+                        <elementReference>clientAcceptanceForm.orpick4__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -9935,8 +9747,8 @@
                 <name>View_of_Page_4_Section12_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_or4</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Has the client stated any specific requirements e.g., certain CP people, timing?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_OBJdisp</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OBJECTIVITY/CONFLICTS OF INTEREST ETC&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9951,17 +9763,9 @@
                 <name>View_of_Page_4_Section12_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_orpick4</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.orpick4__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>Copy_2_of_ynobj</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -10003,8 +9807,8 @@
                 <name>View_of_Page_4_Section13_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_OBJdisp</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;OBJECTIVITY/CONFLICTS OF INTEREST ETC&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_obj1</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we already act for any parties involved or have we acted in the past?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -10019,9 +9823,17 @@
                 <name>View_of_Page_4_Section13_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_ynobj</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>Copy_2_of_objpick1</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick1__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -10063,8 +9875,8 @@
                 <name>View_of_Page_4_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_obj1</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Do we already act for any parties involved or have we acted in the past?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_obj1a</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Has any CP team member a family relationship or other close involvement&lt;/p&gt;&lt;p&gt;with any party ?&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -10079,13 +9891,12 @@
                 <name>View_of_Page_4_Section14_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_objpick1</name>
+                    <name>Copy_1_of_objpick1a</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick1__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick3__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -10131,8 +9942,8 @@
                 <name>View_of_Page_4_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_obj1a</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Has any CP team member a family relationship or other close involvement&lt;/p&gt;&lt;p&gt;with any party ?&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_obj3</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -10147,12 +9958,13 @@
                 <name>View_of_Page_4_Section15_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_objpick1a</name>
+                    <name>Copy_2_of_objpick3</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick3__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick2__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -10198,8 +10010,8 @@
                 <name>View_of_Page_4_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_obj3</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are there any other relationships or other issues which may threaten our objectivity or could be perceived to do so?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_obj4</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we involved in any dispute with any party?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -10214,13 +10026,13 @@
                 <name>View_of_Page_4_Section16_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_objpick3</name>
+                    <name>Copy_2_of_objpick4</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick2__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick4__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -10266,8 +10078,8 @@
                 <name>View_of_Page_4_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_obj4</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Are we involved in any dispute with any party?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_obj5</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Have potential conflicts been identified for any other reason?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -10282,13 +10094,13 @@
                 <name>View_of_Page_4_Section17_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_objpick4</name>
+                    <name>Copy_2_of_objpick5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick4__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick5__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -10334,8 +10146,8 @@
                 <name>View_of_Page_4_Section18_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_obj5</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Have potential conflicts been identified for any other reason?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_2_of_obj7</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -10350,14 +10162,11 @@
                 <name>View_of_Page_4_Section18_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_objpick5</name>
+                    <name>Copy_2_of_objpick7</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick5__c</elementReference>
-                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -10402,71 +10211,6 @@
                 <name>View_of_Page_4_Section19_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_obj7</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); font-size: 13.3333px; font-family: Arial, sans-serif; color: rgb(68, 68, 68);&quot;&gt;Considering all the above, have we identified significant personal or professional relationships or conflicts of interest which could threaten our objectivity or be seen to do so?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>View_of_Page_4_Section19_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_objpick7</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>View_of_Page_4_Section19_Column4</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>View_of_Page_4_Section20</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>View_of_Page_4_Section20_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>View_of_Page_4_Section20_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
                     <name>Copy_2_of_objpickyes7</name>
                     <defaultValue>
                         <stringValue>{!clientAcceptanceForm.objpickyes8__c}</stringValue>
@@ -10485,7 +10229,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_4_Section20_Column3</name>
+                <name>View_of_Page_4_Section19_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10509,10 +10253,10 @@
             </visibilityRule>
         </fields>
         <fields>
-            <name>View_of_Page_4_Section21</name>
+            <name>View_of_Page_4_Section20</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>View_of_Page_4_Section21_Column1</name>
+                <name>View_of_Page_4_Section20_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10523,7 +10267,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_4_Section21_Column2</name>
+                <name>View_of_Page_4_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_2_of_obj8</name>
@@ -10539,7 +10283,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_4_Section21_Column3</name>
+                <name>View_of_Page_4_Section20_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_2_of_objpick8</name>
@@ -10563,7 +10307,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_4_Section21_Column4</name>
+                <name>View_of_Page_4_Section20_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10577,10 +10321,10 @@
             <regionContainerType>SectionWithoutHeader</regionContainerType>
         </fields>
         <fields>
-            <name>View_of_Page_4_Section22</name>
+            <name>View_of_Page_4_Section21</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>View_of_Page_4_Section22_Column1</name>
+                <name>View_of_Page_4_Section21_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10591,7 +10335,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_4_Section22_Column2</name>
+                <name>View_of_Page_4_Section21_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_2_of_objpickyes8</name>
@@ -10612,7 +10356,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_4_Section22_Column3</name>
+                <name>View_of_Page_4_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10734,60 +10478,6 @@
             </fields>
             <fields>
                 <name>View_of_Page_5_Section2_Column3</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>View_of_Page_5_Section3</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>View_of_Page_5_Section3_Column1</name>
-                <fieldType>Region</fieldType>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>1</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>View_of_Page_5_Section3_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_Copy_1_of_objwarn1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Conclusion:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;I am satisfied that we should accept the appointment / assignment and that the relevant risks have been satisfactorily investigated.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;I confirm that satisfactory evidence of the client’s identity has been obtained to comply with the money laundering regulations.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Partner Signature:&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>Copy_2_of_con2</name>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.con2__c</elementReference>
-                    </defaultValue>
-                    <fieldType>InputField</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>10</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>View_of_Page_5_Section3_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
