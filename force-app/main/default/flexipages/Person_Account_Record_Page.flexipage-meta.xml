@@ -175,16 +175,6 @@
                 <identifier>RecordData_Origination_Lookup__cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.CP_External_ID__c</fieldItem>
-                <identifier>RecordCP_External_ID__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -207,16 +197,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.ParentId</fieldItem>
                 <identifier>RecordParentIdField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.PersonReportsToId</fieldItem>
-                <identifier>RecordPersonReportsToIdField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -287,6 +267,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Linkedin__pc</fieldItem>
                 <identifier>RecordLinkedin_pcField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CP_External_ID__c</fieldItem>
+                <identifier>RecordCP_External_ID__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
