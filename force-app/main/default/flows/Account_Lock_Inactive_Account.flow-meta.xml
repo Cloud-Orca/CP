@@ -4,7 +4,7 @@
     <customErrors>
         <name>Display_Error</name>
         <label>Display Error</label>
-        <locationX>138</locationX>
+        <locationX>308</locationX>
         <locationY>755</locationY>
         <customErrorMessages>
             <errorMessage>Unable to edit &quot;Inactive&quot; account.</errorMessage>
@@ -14,7 +14,7 @@
     <decisions>
         <name>Found_Running_User</name>
         <label>Found Running User?</label>
-        <locationX>50</locationX>
+        <locationX>176</locationX>
         <locationY>647</locationY>
         <defaultConnector>
             <targetReference>Display_Error</targetReference>
@@ -40,28 +40,6 @@
             <label>Yes - Found Running User or System Admin</label>
         </rules>
     </decisions>
-    <decisions>
-        <name>Type_is_changed_to_Inactive</name>
-        <label>Type is changed to Inactive</label>
-        <locationX>226</locationX>
-        <locationY>323</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes_changed_to_inactive</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Inactive</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Risk_Compliance_Group</targetReference>
-            </connector>
-            <label>Yes - changed to inactive</label>
-        </rules>
-    </decisions>
     <environments>Default</environments>
     <interviewLabel>Account: Lock Inactive Account {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account: Lock Inactive Account</label>
@@ -85,13 +63,41 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Risk_Compliance_Group</name>
-        <label>Get Risk/Compliance Group</label>
-        <locationX>50</locationX>
+        <name>Get_BD_Group</name>
+        <label>Get BD Group</label>
+        <locationX>176</locationX>
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Risk_Compliance_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BD</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Regular</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Risk_Compliance_Group</name>
+        <label>Get Risk/Compliance Group</label>
+        <locationX>176</locationX>
+        <locationY>323</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_BD_Group</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -115,13 +121,13 @@
     <recordLookups>
         <name>Get_Risk_Compliance_Member</name>
         <label>Get Risk Compliance Member</label>
-        <locationX>50</locationX>
+        <locationX>176</locationX>
         <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Found_Running_User</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>(1 OR 3) AND 2</filterLogic>
         <filters>
             <field>GroupId</field>
             <operator>EqualTo</operator>
@@ -136,20 +142,33 @@
                 <elementReference>$User.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_BD_Group.Id</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>GroupMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>100</locationX>
+        <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Type_is_changed_to_Inactive</targetReference>
+            <targetReference>Get_Risk_Compliance_Group</targetReference>
         </connector>
-        <filterFormula>{!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false</filterFormula>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterFormula>
+AND(
+    TEXT({!$Record.Type}) = &quot;Inactive&quot;,  
+    {!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false
+)</filterFormula>
         <object>Account</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <triggerOrder>2</triggerOrder>
 </Flow>
