@@ -5,7 +5,7 @@
         <name>Display_Error</name>
         <label>Display Error</label>
         <locationX>308</locationX>
-        <locationY>755</locationY>
+        <locationY>863</locationY>
         <customErrorMessages>
             <errorMessage>Only an LC or Risk Team member is able to make an Account Inactive.</errorMessage>
             <isFieldError>false</isFieldError>
@@ -15,7 +15,7 @@
         <name>Found_Running_User</name>
         <label>Found Running User?</label>
         <locationX>176</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Display_Error</targetReference>
         </defaultConnector>
@@ -40,7 +40,8 @@
             <label>Yes Found User</label>
         </rules>
     </decisions>
-    <description>Only allowing groups - Risk and Compliance or Lifecycle Coordinators to move account from Inactive</description>
+    <description>Only allowing groups - Risk and Compliance or Lifecycle Coordinators to move account from Inactive
+Amendments 2201 to allow BD Group to make Accounts Inactive as well</description>
     <environments>Default</environments>
     <interviewLabel>Account: Inactive Validation {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account: Inactive Validation</label>
@@ -64,15 +65,43 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Group_Member</name>
-        <label>Get Group Member</label>
+        <name>Get_Business_Development_Team_Member</name>
+        <label>Get Business Development Team Member</label>
         <locationX>176</locationX>
         <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
+            <targetReference>Get_Group_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>BD</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Group_Member</name>
+        <label>Get Group Member</label>
+        <locationX>176</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
             <targetReference>Found_Running_User</targetReference>
         </connector>
-        <filterLogic>(1 OR 3) AND 2</filterLogic>
+        <filterLogic>(1 OR 3 OR 4) AND 2</filterLogic>
         <filters>
             <field>GroupId</field>
             <operator>EqualTo</operator>
@@ -94,6 +123,13 @@
                 <elementReference>Get_Lifecycle_Coordinator.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Business_Development_Team_Member.Id</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>GroupMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -105,7 +141,7 @@
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Group_Member</targetReference>
+            <targetReference>Get_Business_Development_Team_Member</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -174,4 +210,5 @@ ISCHANGED({!$Record.Bypass_Validation__c} ) = false
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <triggerOrder>1</triggerOrder>
 </Flow>
