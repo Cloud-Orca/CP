@@ -12,6 +12,7 @@ global class BatchCreateSharepointFolderAccount implements Database.Batchable<sO
     global void execute(Database.BatchableContext BC, List<Account> accountList){
         try {
             Account accRec = accountList.get(0);
+            Account accRecToUpdate = new Account(Id = accountList.get(0).Id);
 
             List<Sharepoint_API__c> sharepointAPIlist = [SELECT Id, access_token__c FROM Sharepoint_API__c LIMIT 1];
             String accessToken = sharepointAPIlist.get(0).access_token__c;
@@ -30,23 +31,23 @@ global class BatchCreateSharepointFolderAccount implements Database.Batchable<sO
                 if(httpRes.getStatusCode() == 200 || httpRes.getStatusCode() == 201){
                     Map<String, Object> responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes.getBody());
                     String folderId = (String) responseMap.get('id');
-                    accRec.Sharepoint_Public_Folder_ID__c = folderId;
-                    accRec.Sharepoint_Public_Folder_URL__c = accRec.Name;
+                    accRecToUpdate.Sharepoint_Public_Folder_ID__c = folderId;
+                    accRecToUpdate.Sharepoint_Public_Folder_URL__c = accRec.Name;
 
                     //secure account
                     String secureFolderName = 'Secure ' + accRec.Name;
                     HttpResponse httpRes2 = SharepointAPIUtility.createNewFolderFromParentDocument(accessToken, secureFolderName, false);
                     if(httpRes2.getStatusCode() == 200 || httpRes2.getStatusCode() == 201){
                         responseMap = (Map<String, Object>) JSON.deserializeUntyped(httpRes2.getBody());
-                        accRec.Sharepoint_Secure_Folder_ID__c = (String) responseMap.get('id');
-                        accRec.Sharepoint_Secure_Folder_URL__c = secureFolderName;
+                        accRecToUpdate.Sharepoint_Secure_Folder_ID__c = (String) responseMap.get('id');
+                        accRecToUpdate.Sharepoint_Secure_Folder_URL__c = secureFolderName;
                     }
                     
                     if(isUpdateAccessToken){
                         updateSharepointAccessToken(sharepointAPIlist.get(0).Id, accessToken);
                     }
 
-                    update accRec;
+                    update accRecToUpdate;
                 }
             }
         } catch (Exception e) {
