@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <actionCalls>
         <name>sendCustomNotification</name>
         <label>sendCustomNotificationForm</label>
@@ -8,7 +8,7 @@
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
-            <targetReference>submitForApproval</targetReference>
+            <targetReference>Update_Case</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -51,7 +51,7 @@
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <connector>
-            <targetReference>submitForApproval</targetReference>
+            <targetReference>Update_Case</targetReference>
         </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
@@ -90,7 +90,7 @@
         <name>submitForApproval</name>
         <label>submitForApproval</label>
         <locationX>578</locationX>
-        <locationY>1406</locationY>
+        <locationY>1514</locationY>
         <actionName>submit</actionName>
         <actionType>submit</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -200,7 +200,7 @@
         <locationX>578</locationX>
         <locationY>998</locationY>
         <defaultConnector>
-            <targetReference>submitForApproval</targetReference>
+            <targetReference>Update_Case</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -284,6 +284,14 @@
             <label>No Approvals</label>
         </rules>
     </decisions>
+    <dynamicChoiceSets>
+        <name>picklist_ClientAmendment</name>
+        <dataType>Picklist</dataType>
+        <displayField xsi:nil="true"/>
+        <object xsi:nil="true"/>
+        <picklistField>Client_Amendment__c</picklistField>
+        <picklistObject>Case</picklistObject>
+    </dynamicChoiceSets>
     <environments>Default</environments>
     <interviewLabel>Case: Submit For CAF Form Approval {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case: Submit For CAF Form Approval</label>
@@ -397,6 +405,30 @@
         <object>CustomNotificationType</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordUpdates>
+        <name>Update_Case</name>
+        <label>Update Case</label>
+        <locationX>578</locationX>
+        <locationY>1406</locationY>
+        <connector>
+            <targetReference>submitForApproval</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>getCaseRecord.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Client_Amendment__c</field>
+            <value>
+                <elementReference>Client_Amendment</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
     <runInMode>SystemModeWithoutSharing</runInMode>
     <screens>
         <name>ApproverSelection</name>
@@ -473,6 +505,18 @@
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Client_Amendment</name>
+                    <choiceReferences>picklist_ClientAmendment</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>getCaseRecord.Client_Amendment__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Client Amendment</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
