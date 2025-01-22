@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>63.0</apiVersion>
+    <apiVersion>62.0</apiVersion>
     <environments>Default</environments>
     <interviewLabel>Account: Populate Stamp - Data Origination {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account: Populate Stamp - Data Origination</label>
@@ -43,12 +43,11 @@
             <targetReference>Update_Account_Record</targetReference>
         </connector>
         <filterFormula>AND({!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
-ISCHANGED({!$Record.Data_Origination_Lookup__c}),
-NOT(ISBLANK({!$Record.Data_Origination_Lookup__c}))
+ISCHANGED({!$Record.Stamp_Data_Origination__c})
 )</filterFormula>
         <object>Account</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>
