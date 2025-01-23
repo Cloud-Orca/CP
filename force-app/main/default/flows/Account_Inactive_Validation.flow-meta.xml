@@ -65,8 +65,8 @@ Amendments 2201 to allow BD Group to make Accounts Inactive as well</description
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_Business_Development_Team_Member</name>
-        <label>Get Business Development Team Member</label>
+        <name>Get_Business_Development_Team</name>
+        <label>Get Business Development Team</label>
         <locationX>176</locationX>
         <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
@@ -83,9 +83,9 @@ Amendments 2201 to allow BD Group to make Accounts Inactive as well</description
         </filters>
         <filters>
             <field>Type</field>
-            <operator>NotEqualTo</operator>
+            <operator>EqualTo</operator>
             <value>
-                <stringValue>Queue</stringValue>
+                <stringValue>Regular</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -127,7 +127,7 @@ Amendments 2201 to allow BD Group to make Accounts Inactive as well</description
             <field>GroupId</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get_Business_Development_Team_Member.Id</elementReference>
+                <elementReference>Get_Business_Development_Team.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -141,7 +141,7 @@ Amendments 2201 to allow BD Group to make Accounts Inactive as well</description
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Business_Development_Team_Member</targetReference>
+            <targetReference>Get_Business_Development_Team</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -199,8 +199,14 @@ Amendments 2201 to allow BD Group to make Accounts Inactive as well</description
         <filterFormula>AND(
 {!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false,
 OR(
+AND(
    TEXT({!$Record.Type}) = &apos;Inactive&apos;,
-   TEXT({!$Record.Account_Status__c}) = &apos;Inactive&apos;
+ISCHANGED(({!$Record.Type}))
+),
+AND(
+   TEXT({!$Record.Account_Status__c}) = &apos;Inactive&apos;,
+ISCHANGED({!$Record.Account_Status__c}) 
+)
   ),
 {!$Record.Bypass_Validation__c} = false,
 ISCHANGED({!$Record.Bypass_Validation__c} ) = false
