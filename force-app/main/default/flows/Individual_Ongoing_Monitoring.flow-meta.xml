@@ -4,7 +4,7 @@
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
         <locationX>50</locationX>
-        <locationY>2270</locationY>
+        <locationY>2162</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -30,7 +30,7 @@
     <assignments>
         <name>assign_Form</name>
         <label>assign Form</label>
-        <locationX>468</locationX>
+        <locationX>314</locationX>
         <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>variableForm.Id</assignToReference>
@@ -54,7 +54,7 @@
         <name>assignFileIds</name>
         <label>assignFileIds</label>
         <locationX>182</locationX>
-        <locationY>2054</locationY>
+        <locationY>1946</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
             <operator>Add</operator>
@@ -83,7 +83,7 @@
     <assignments>
         <name>assignIndividualOngoing</name>
         <label>assignIndividualOngoing</label>
-        <locationX>204</locationX>
+        <locationX>50</locationX>
         <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>variableForm</assignToReference>
@@ -97,10 +97,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>assignIndividualOngoing_View</name>
+        <label>assignIndividualOngoing - View</label>
+        <locationX>226</locationX>
+        <locationY>3062</locationY>
+        <assignmentItems>
+            <assignToReference>variableForm</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>get_Individual_Monitoring</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>assignVariables</name>
         <label>assignVariables</label>
         <locationX>182</locationX>
-        <locationY>1946</locationY>
+        <locationY>1838</locationY>
         <assignmentItems>
             <assignToReference>variableForm.iompick13__c</assignToReference>
             <operator>Assign</operator>
@@ -157,7 +173,7 @@
     <assignments>
         <name>assignVariablesContinuation</name>
         <label>assignVariablesContinuation</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>1514</locationY>
         <assignmentItems>
             <assignToReference>variableForm.iompick9__c</assignToReference>
@@ -208,7 +224,7 @@
     <assignments>
         <name>assignVariablesTax</name>
         <label>assignVariablesTax</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>1190</locationY>
         <assignmentItems>
             <assignToReference>variableForm.NI_and_or_UTR_number__c</assignToReference>
@@ -348,12 +364,48 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>545</locationX>
+        <locationX>226</locationX>
         <locationY>350</locationY>
         <defaultConnector>
-            <targetReference>Close_Screen</targetReference>
+            <targetReference>Get_Individual_Monitoring_View</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
+        <rules>
+            <name>Lock_Form</name>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.RecordType.DeveloperName</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Onboarding</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Client_Amendment__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Partner_Approved_checkbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Case.Risk_Compliance_Approved_formula__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Individual_Monitoring_View</targetReference>
+            </connector>
+            <label>Lock Form</label>
+        </rules>
         <rules>
             <name>No_Pending_Approvals</name>
             <conditionLogic>and</conditionLogic>
@@ -371,38 +423,31 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Check_Approval</name>
-        <label>Check Approval</label>
-        <locationX>336</locationX>
-        <locationY>1838</locationY>
+        <name>Check_Individual_Ongoing_Monitoring</name>
+        <label>Check Individual Ongoing Monitoring</label>
+        <locationX>182</locationX>
+        <locationY>2462</locationY>
         <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
-            <name>Not_Approved</name>
+            <name>Not_Completed</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Approved__c</leftValueReference>
+                <leftValueReference>Get_Case.Individual_Ongoing_Monitoring_checkbox__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>assignVariables</targetReference>
+                <targetReference>Update_Case</targetReference>
             </connector>
-            <label>Not Approved</label>
+            <label>Not Completed</label>
         </rules>
     </decisions>
     <decisions>
         <name>Existing_Form</name>
         <label>Existing Form</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>create_Individual_Ongoing_Monitoring</targetReference>
@@ -428,7 +473,7 @@
         <name>Is_there_a_File_Upload</name>
         <label>Is there a File Upload</label>
         <locationX>182</locationX>
-        <locationY>2162</locationY>
+        <locationY>2054</locationY>
         <defaultConnector>
             <targetReference>Update_Individual_Ongoing_Monitoring</targetReference>
         </defaultConnector>
@@ -486,7 +531,7 @@
     <recordCreates>
         <name>create_Individual_Ongoing_Monitoring</name>
         <label>Create Individual Ongoing Monitoring</label>
-        <locationX>468</locationX>
+        <locationX>314</locationX>
         <locationY>674</locationY>
         <connector>
             <targetReference>Get_Ongoing_Monitoring</targetReference>
@@ -515,7 +560,7 @@
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>545</locationX>
+        <locationX>226</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -543,7 +588,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>545</locationX>
+        <locationX>226</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -564,7 +609,7 @@
     <recordLookups>
         <name>get_Individual_Monitoring</name>
         <label>get Individual Monitoring</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -590,9 +635,37 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Individual_Monitoring_View</name>
+        <label>Get Individual Monitoring - View</label>
+        <locationX>226</locationX>
+        <locationY>2954</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>assignIndividualOngoing_View</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Form_Type__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Individual Ongoing Monitoring</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Continuation_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Ongoing_Monitoring</name>
         <label>Get Ongoing Monitoring</label>
-        <locationX>468</locationX>
+        <locationX>314</locationX>
         <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -613,7 +686,7 @@
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>182</locationX>
+        <locationX>50</locationX>
         <locationY>2570</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -634,7 +707,7 @@
     <recordUpdates>
         <name>Update_continuation</name>
         <label>Update continuation</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>1622</locationY>
         <connector>
             <targetReference>LAST_PART</targetReference>
@@ -645,16 +718,16 @@
         <name>Update_Individual_Ongoing_Monitoring</name>
         <label>Update Individual Ongoing Monitoring</label>
         <locationX>182</locationX>
-        <locationY>2462</locationY>
+        <locationY>2354</locationY>
         <connector>
-            <targetReference>Update_Case</targetReference>
+            <targetReference>Check_Individual_Ongoing_Monitoring</targetReference>
         </connector>
         <inputReference>variableForm</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Personal_Tax_sole_trader_or_individual</name>
         <label>Update Personal Tax, sole trader or individual</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>1298</locationY>
         <connector>
             <targetReference>CONTINUATION</targetReference>
@@ -662,26 +735,9 @@
         <inputReference>variableForm</inputReference>
     </recordUpdates>
     <screens>
-        <name>Close_Screen</name>
-        <label>Close Screen</label>
-        <locationX>754</locationX>
-        <locationY>458</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <fields>
-            <name>Error_Message</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;The record is currently locked, as there is a pending approval.&lt;/span&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <nextOrFinishButtonLabel>Close</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
         <name>CONTINUATION</name>
         <label>CONTINUATION</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>1406</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -776,7 +832,7 @@
                     <choiceReferences>N_A</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>variableForm.Have_we_met_the_client_face_to_face_T__c</elementReference>
+                        <elementReference>variableForm.iompick9__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -1031,15 +1087,1552 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Copy_1_of_CONTINUATION</name>
+        <label>VIEW of CONTINUATION</label>
+        <locationX>226</locationX>
+        <locationY>3278</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Copy_1_of_LAST_PART</targetReference>
+        </connector>
+        <fields>
+            <name>Copy_1_of_CONTINUATION_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_Copy_1_of_CP_logo</name>
+                    <extensionName>flowruntime:image</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>imageName</name>
+                        <value>
+                            <stringValue>CP_logo</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_Copy_1_of_Annual</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;ANNUAL ONGOING MONITORING&lt;/strong&gt;&lt;strong style=&quot;font-size: 18px; font-family: Ebrima;&quot;&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 18px;&quot;&gt;&amp;amp; ADDITIONAL SERVICE CHECKLIST&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>8</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_CONTINUATION_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_client_face</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Have we met the client face to face? &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;If yes who?&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima; color: red;&quot;&gt;If “No” the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section2_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_iompick9</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick9__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Copy_1_of_Names</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Have_we_met_the_client_face_to_face_T__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Names</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_CONTINUATION_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_PEP</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;Has the client, a member of their family or a known close associate become a Politically Exposed Person (PEP) Special Interest person (SIP) or been Sanctioned?&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section3_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_iompick10</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick10__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_CONTINUATION_Section4</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section4_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section4_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_EDD</name>
+                    <fieldText>&lt;p&gt;If the client is assessed as high risk and Enhanced Due Diligence (EDD) procedures apply, please document below. If you need help, please consult with the AML Risk team.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Copy_1_of_EDD_procedures</name>
+                    <defaultValue>
+                        <stringValue>{!variableForm.EDD_procedures__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section4_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_CONTINUATION_Section5</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section5_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section5_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_Risk</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Considering the above factors, the Money Laundering Risk is:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section5_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_iompick11</name>
+                    <choiceReferences>High</choiceReferences>
+                    <choiceReferences>Normal</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick12__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_CONTINUATION_Section6</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section6_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section6_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_risk_level</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Has the risk level changed from Normal to High since the previously recorded risk level?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_CONTINUATION_Section6_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_iompick12</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick122__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Copy_1_of_LAST_PART</name>
+        <label>VIEW of LAST PART</label>
+        <locationX>226</locationX>
+        <locationY>3386</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Copy_1_of_LAST_PART_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_Copy_1_of_Copy_1_of_CP_logo</name>
+                    <extensionName>flowruntime:image</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>imageName</name>
+                        <value>
+                            <stringValue>CP_logo</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_Copy_1_of_Copy_1_of_Annual</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;ANNUAL ONGOING MONITORING&lt;/strong&gt;&lt;strong style=&quot;font-size: 18px; font-family: Ebrima;&quot;&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 18px;&quot;&gt;&amp;amp; ADDITIONAL SERVICE CHECKLIST&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>8</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_LAST_PART_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section2_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_Copy_1_of_Copy_1_of_considered_changes</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Ensure that the “know your client” information held on our files for anti-money laundering purposes is updated for any changes identified above and in any other relevant respects.&amp;nbsp;Embed copies of the forms listed below. If not held indicate ‘Not found/held’&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section2_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_iompick13</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick13__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_LAST_PART_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_New_Client_Form</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;New Client Form or&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;Client Acceptance &amp;nbsp;Form&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Copy_1_of_NewClientForm_upload</name>
+                    <extensionName>forceContent:fileUpload</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Upload File</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>variableForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>multiple</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section3_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_SmartSearch1</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;SmartSearch&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Copy_1_of_SmartSearch_upload</name>
+                    <extensionName>forceContent:fileUpload</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Upload File</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>contentDocIds</name>
+                        <value>
+                            <elementReference>variableSmartSearchId</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>variableForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>multiple</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section3_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_EngagementLetter</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 9pt;&quot;&gt;Engagement Letter&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Copy_1_of_EngagementLetter_upload</name>
+                    <extensionName>forceContent:fileUpload</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>label</name>
+                        <value>
+                            <stringValue>Upload File</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>contentDocIds</name>
+                        <value>
+                            <elementReference>variableEngagementId</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>recordId</name>
+                        <value>
+                            <elementReference>variableForm.Id</elementReference>
+                        </value>
+                    </inputParameters>
+                    <inputParameters>
+                        <name>multiple</name>
+                        <value>
+                            <booleanValue>true</booleanValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_LAST_PART_Section4</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section4_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section4_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_Engagement_Letter_cover</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;If applicable, do the additional services require us to send professional enquiry to the current advisor? Please give details if yes .&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section4_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_iompick14</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.If_applicable_do_the_additional_service__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <fields>
+                    <name>Copy_1_of_IfApplicableYes</name>
+                    <defaultValue>
+                        <stringValue>{!variableForm.If_applicable_do_the_additional_details__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>iompick14</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Yes</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_LAST_PART_Section5</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section5_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section5_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_Copy_1_of_Copy_1_of_client_hold_assets</name>
+                    <fieldText>&lt;p style=&quot;text-align: justify;&quot;&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Considering the answers to the above should we still be acting for the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_LAST_PART_Section5_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_iompick15</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick15__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL</name>
+        <label>VIEW of PERSONAL TAX, SOLE TRADER OR INDIVIDUAL</label>
+        <locationX>226</locationX>
+        <locationY>3170</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Copy_1_of_CONTINUATION</targetReference>
+        </connector>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_3_of_CP_logo</name>
+                    <extensionName>flowruntime:image</extensionName>
+                    <fieldType>ComponentInstance</fieldType>
+                    <inputParameters>
+                        <name>imageName</name>
+                        <value>
+                            <stringValue>CP_logo</stringValue>
+                        </value>
+                    </inputParameters>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>true</isRequired>
+                    <storeOutputAutomatically>true</storeOutputAutomatically>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_3_of_Annual</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 18px;&quot;&gt;ANNUAL ONGOING MONITORING&lt;/strong&gt;&lt;strong style=&quot;font-size: 18px; font-family: Ebrima;&quot;&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-family: Ebrima; font-size: 18px;&quot;&gt;&amp;amp; ADDITIONAL SERVICE CHECKLIST&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>8</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section2</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section2_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_Personal</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14pt;&quot;&gt;PERSONAL TAX, SOLE TRADER OR INDIVIDUAL&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section3</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section3_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_Client_or_Trust_name</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>Get_Case.Account.Name</elementReference>
+                    </defaultValue>
+                    <fieldText>Client or Trust name</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>12</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section4</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section4_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_NI_and_or_UTR_number</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.NI_and_or_UTR_number__c</elementReference>
+                    </defaultValue>
+                    <fieldText>NI and/or UTR number</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section4_Column2</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section4_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section5</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section5_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_Prepared_by</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Prepared_by__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Prepared by</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section5_Column2</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section5_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_Date</name>
+                    <dataType>Date</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Date__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Date:</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section6</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section6_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_General</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(247, 10, 10);&quot;&gt;Please use this checklist to add new services, make adhoc changes and&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 16px; color: rgb(247, 10, 10);&quot;&gt;annual ongoing monitoring checks.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>8</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section6_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_Comments</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 9pt; font-family: Ebrima;&quot;&gt;Comments (Yes or No and additional explanations)&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section7</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section7_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section7_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_considered_changes</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Have you considered changes that may alter the original assessment of the acceptability of the client and engagement.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Examples of changes that shall cause a careful reconsideration are:&lt;/span&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;changes in name and/or address;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;new sources of finance;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;change of Trustees&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;new regulatory reporting requirements:&amp;nbsp;and/or&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;additional service added.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section7_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_iompick1</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick1__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section8</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section8_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section8_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_conducted</name>
+                    <fieldText>&lt;p&gt;Have you conducted conflict checking to determine whether there are any changes as noted below.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;do we now act for any other family members, close relationships&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;are their any new connections to CP employees&lt;/span&gt;&lt;/li&gt;&lt;li&gt;has the client introduced any companies/trust’s linked to them&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Ebrima; font-size: 10pt;&quot;&gt;Any such changes will require reconsideration of the firm’s conflict checking procedures&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section8_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_iompick2</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick2__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section9</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section9_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section9_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_amlRisk</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;AML Risk Assessment Questions below, if you answer yes to questions 1-3, please mark as High risk and complete enhanced CDD.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>10</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section9_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section10</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section10_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_c</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;1)&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section10_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_client_hold_assets</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Ebrima;&quot;&gt;Does the client hold assets or undertake activities overseas?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section10_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_iompick3</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick3__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section11</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section11_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_display2</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;2)&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section11_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_links</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Does the client have links with individuals or businesses in overseas countries with weak money laundering regimes?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section11_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_iompick4</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick4__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section12</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section12_Column1</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_diplay3</name>
+                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;3)&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section12_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_anonymity</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Does the client use products, services or entities which provide anonymity?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section12_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_iompick5</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick5__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section13</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section13_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section13_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_concerns</name>
+                    <fieldText>&lt;p&gt;Have we established the source of the client’s wealth? Please give details below.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Copy_2_of_clientsWealthDetails</name>
+                    <defaultValue>
+                        <stringValue>{!variableForm.Have_we_established_clients_wealth_detai__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section13_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_iompick6</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Have_we_established_the_client_s_source__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section14</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section14_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section14_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_funds</name>
+                    <fieldText>&lt;p&gt;Have we established the source of the client’s funds? Please give details below.&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Copy_2_of_clientsWealthFunds</name>
+                    <defaultValue>
+                        <stringValue>{!variableForm.Have_we_established_clients_funds_detail__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section14_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_iompick7</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.Have_we_established_the_client_s_source__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section15</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section15_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section15_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_anticipate</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-family: Ebrima; font-size: 10pt;&quot;&gt;Do we anticipate holding monies for the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>7</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_2_of_PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL_Section15_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_2_of_iompick8</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>N_A</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>variableForm.iompick8__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>4</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>LAST_PART</name>
         <label>LAST PART</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>1730</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Check_Approval</targetReference>
+            <targetReference>assignVariables</targetReference>
         </connector>
         <fields>
             <name>LAST_PART_Section1</name>
@@ -1428,7 +3021,7 @@
     <screens>
         <name>PERSONAL_TAX_SOLE_TRADER_OR_INDIVIDUAL</name>
         <label>PERSONAL TAX, SOLE TRADER OR INDIVIDUAL</label>
-        <locationX>336</locationX>
+        <locationX>182</locationX>
         <locationY>1082</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2219,7 +3812,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>419</locationX>
+        <locationX>100</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
