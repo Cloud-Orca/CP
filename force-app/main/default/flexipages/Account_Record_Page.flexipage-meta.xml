@@ -2142,13 +2142,19 @@
                             <value>NAME</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Lifecycle_Coordinator__c</value>
+                            <value>Type__c</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Approval_Date__c</value>
+                            <value>Type_Area__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Assignment_Type__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>Service_Line_Onboarded__c</value>
+                        </valueListItems>
+                        <valueListItems>
+                            <value>Approval_Date__c</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
