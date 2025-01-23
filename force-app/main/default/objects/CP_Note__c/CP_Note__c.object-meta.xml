@@ -156,7 +156,7 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>Private</externalSharingModel>
-    <label>CP Note</label>
+    <label>Past Engagement</label>
     <nameField>
         <displayFormat>CPNOTE-{00000}</displayFormat>
         <label>CP Note Name</label>
