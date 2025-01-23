@@ -149,7 +149,7 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
+                    <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Type</fieldItem>
                 <identifier>RecordTypeField</identifier>
@@ -327,6 +327,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Primary_Contact__c</fieldItem>
                 <identifier>RecordPrimary_Contact_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Year_End_Date__c</fieldItem>
+                <identifier>RecordYear_End_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4799f020-43fb-43e7-a000-40e328b493bc</name>
@@ -3372,7 +3382,7 @@
                     <name>relatedListFieldAliases</name>
                     <valueList>
                         <valueListItems>
-                            <value>NAME</value>
+                            <value>Tag_Lookup__c</value>
                         </valueListItems>
                         <valueListItems>
                             <value>CREATED_DATE</value>
