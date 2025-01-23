@@ -5,7 +5,7 @@
         <name>Display_Error</name>
         <label>Display Error</label>
         <locationX>308</locationX>
-        <locationY>755</locationY>
+        <locationY>647</locationY>
         <customErrorMessages>
             <errorMessage>Unable to edit &quot;Inactive&quot; account.</errorMessage>
             <isFieldError>false</isFieldError>
@@ -15,7 +15,7 @@
         <name>Found_Running_User</name>
         <label>Found Running User?</label>
         <locationX>176</locationX>
-        <locationY>647</locationY>
+        <locationY>539</locationY>
         <defaultConnector>
             <targetReference>Display_Error</targetReference>
         </defaultConnector>
@@ -63,41 +63,13 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get_BD_Group</name>
-        <label>Get BD Group</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Get_Risk_Compliance_Member</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>BD</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Regular</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Group</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Risk_Compliance_Group</name>
         <label>Get Risk/Compliance Group</label>
         <locationX>176</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_BD_Group</targetReference>
+            <targetReference>Get_Risk_Compliance_Member</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -122,12 +94,12 @@
         <name>Get_Risk_Compliance_Member</name>
         <label>Get Risk Compliance Member</label>
         <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Found_Running_User</targetReference>
         </connector>
-        <filterLogic>(1 OR 3) AND 2</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>GroupId</field>
             <operator>EqualTo</operator>
@@ -142,13 +114,6 @@
                 <elementReference>$User.Id</elementReference>
             </value>
         </filters>
-        <filters>
-            <field>GroupId</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>Get_BD_Group.Id</elementReference>
-            </value>
-        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>GroupMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
@@ -159,10 +124,9 @@
         <connector>
             <targetReference>Get_Risk_Compliance_Group</targetReference>
         </connector>
-        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
-        <filterFormula>
-AND(
+        <filterFormula>AND(
     TEXT({!$Record.Type}) = &quot;Inactive&quot;,  
+ TEXT({!$Record__Prior.Type}) = &quot;Inactive&quot;,
     {!$Setup.Org_Wide_Settings__c.Disable_Flows__c} = false
 )</filterFormula>
         <object>Account</object>
