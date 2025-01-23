@@ -175,6 +175,24 @@
                 <identifier>RecordLength_of_RI_Service__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.CW_lockdown_Date__c</fieldItem>
+                <identifier>RecordCW_lockdown_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Audit_Register_Completed__c</fieldItem>
+                <identifier>RecordAudit_Register_Completed__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.CP_Client_Code__c</fieldItem>
+                <identifier>RecordCP_Client_Code__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-9ec011af-17ef-497b-ac30-cdf1c5f47969</name>
         <type>Facet</type>
     </flexiPageRegions>
