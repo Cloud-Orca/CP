@@ -7,4 +7,5 @@ public class CPNoteHTMLController {
         note = [SELECT Id, Description__c FROM CP_Note__c WHERE Id = :noteId];
         htmlContent = note.Description__c;
     }
+}
 

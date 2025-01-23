@@ -5,7 +5,7 @@
         <name>Display_Error</name>
         <label>Display Error</label>
         <locationX>308</locationX>
-        <locationY>647</locationY>
+        <locationY>755</locationY>
         <customErrorMessages>
             <errorMessage>Only a member the Risk team can change an Account to a Client.</errorMessage>
             <isFieldError>false</isFieldError>
@@ -15,7 +15,7 @@
         <name>Found_Running_User</name>
         <label>Found Running User?</label>
         <locationX>176</locationX>
-        <locationY>539</locationY>
+        <locationY>647</locationY>
         <defaultConnector>
             <targetReference>Display_Error</targetReference>
         </defaultConnector>
@@ -28,13 +28,6 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Profile.Name</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>System Administrator</stringValue>
                 </rightValue>
             </conditions>
             <label>Yes Found User</label>
@@ -66,12 +59,12 @@
         <name>Get_Group_Member</name>
         <label>Get Group Member</label>
         <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Found_Running_User</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>(1 OR 3) AND 2</filterLogic>
         <filters>
             <field>GroupId</field>
             <operator>EqualTo</operator>
@@ -86,8 +79,43 @@
                 <elementReference>$User.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>GroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Lifecycle_Coordinator.Id</elementReference>
+            </value>
+        </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>GroupMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Lifecycle_Coordinator</name>
+        <label>Get Lifecycle Coordinator</label>
+        <locationX>176</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Group_Member</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Lifecycle Coordinator</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Regular</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
@@ -97,7 +125,7 @@
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Group_Member</targetReference>
+            <targetReference>Get_Lifecycle_Coordinator</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
