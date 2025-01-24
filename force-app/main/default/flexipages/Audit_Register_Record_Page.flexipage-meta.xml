@@ -165,32 +165,12 @@
         </itemInstances>
         <itemInstances>
             <fieldInstance>
-                <fieldItem>Record.Admin_Notes_Comments__c</fieldItem>
-                <identifier>RecordAdmin_Notes_Comments__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Length_of_RI_Service__c</fieldItem>
                 <identifier>RecordLength_of_RI_Service__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.CW_lockdown_Date__c</fieldItem>
-                <identifier>RecordCW_lockdown_Date__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.Audit_Register_Completed__c</fieldItem>
-                <identifier>RecordAudit_Register_Completed__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldItem>Record.CP_Client_Code__c</fieldItem>
-                <identifier>RecordCP_Client_Code__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-9ec011af-17ef-497b-ac30-cdf1c5f47969</name>
@@ -295,6 +275,26 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Project_Manager__c</fieldItem>
                 <identifier>RecordProject_Manager__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CP_Client_Code__c</fieldItem>
+                <identifier>RecordCP_Client_Code__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Admin_Notes_Comments__c</fieldItem>
+                <identifier>RecordAdmin_Notes_Comments__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-abaea362-e1ee-4263-a0d9-3270729603b0</name>
@@ -671,6 +671,58 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CW_lockdown_Date__c</fieldItem>
+                <identifier>RecordCW_lockdown_Date__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-f0168cc4-49ba-4ee4-a15f-2ae8f011f9cb</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Audit_Register_Completed__c</fieldItem>
+                <identifier>RecordAudit_Register_Completed__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-8018c400-858e-4fc0-b686-0034e9d2daae</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-f0168cc4-49ba-4ee4-a15f-2ae8f011f9cb</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column15</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-8018c400-858e-4fc0-b686-0034e9d2daae</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column16</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-cb1ae225-27e1-4a2f-a7c5-127a4d8829c3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.CreatedById</fieldItem>
@@ -825,6 +877,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection5</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-cb1ae225-27e1-4a2f-a7c5-127a4d8829c3</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Section</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection8</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
