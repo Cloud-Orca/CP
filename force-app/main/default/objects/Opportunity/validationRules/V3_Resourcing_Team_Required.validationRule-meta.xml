@@ -4,6 +4,7 @@
     <active>true</active>
     <errorConditionFormula>AND(
 NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+RecordType.DeveloperName = &quot;CP_Opportunity&quot;,
 ISCHANGED(StageName),
 TEXT(StageName) = &apos;Date&apos;,
 ISBLANK(TEXT(Resourcing_Team_Required__c))
