@@ -11,9 +11,9 @@
         <label>Audit</label>
     </customValue>
     <customValue>
-        <fullName>Business Services and Outsourcing</fullName>
+        <fullName>BSO</fullName>
         <default>false</default>
-        <label>Business Services and Outsourcing</label>
+        <label>BSO</label>
     </customValue>
     <customValue>
         <fullName>Deals</fullName>
@@ -34,6 +34,16 @@
         <fullName>Legacy - DNU</fullName>
         <default>false</default>
         <label>Legacy - DNU</label>
+    </customValue>
+    <customValue>
+        <fullName>ESG</fullName>
+        <default>false</default>
+        <label>ESG</label>
+    </customValue>
+    <customValue>
+        <fullName>Law</fullName>
+        <default>false</default>
+        <label>Law</label>
     </customValue>
     <description>Cooper Parry Service Lines</description>
     <masterLabel>Service Lines</masterLabel>
