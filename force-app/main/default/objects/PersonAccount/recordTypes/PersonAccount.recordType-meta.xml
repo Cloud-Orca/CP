@@ -645,7 +645,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>%23NLR - Pensions Info Request - SSAS</fullName>
+            <fullName>#NLR - Pensions Info Request - SSAS</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1100,7 +1100,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>%23NLR - Pensions Info Request - SSAS</fullName>
+            <fullName>#NLR - Pensions Info Request - SSAS</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1582,7 +1582,7 @@
     <picklistValues>
         <picklist>DocuSign_Documents__c</picklist>
         <values>
-            <fullName>%23NLR - Pensions Info Request - SSAS</fullName>
+            <fullName>#NLR - Pensions Info Request - SSAS</fullName>
             <default>false</default>
         </values>
         <values>
