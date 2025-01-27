@@ -473,7 +473,7 @@
     <customValue>
         <fullName>#NLR - Pensions Info Request - SSAS</fullName>
         <default>false</default>
-        <label>#NLR - Pensions Info Request - SSAS</label>
+        <label>#NLR - Pensions Info Request - (SSAS)</label>
     </customValue>
     <customValue>
         <fullName>Earmarked Audit of Pension Scheme</fullName>
