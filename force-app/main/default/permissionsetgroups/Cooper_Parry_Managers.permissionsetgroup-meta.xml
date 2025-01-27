@@ -9,6 +9,7 @@
     <permissionSets>Cooper_Parry_PSA_Permission_Set</permissionSets>
     <permissionSets>Cooper_Parry_PSA_Permission_Set_for_Project_Managers</permissionSets>
     <permissionSets>Cooper_Parry_User_Fields</permissionSets>
+    <permissionSets>FFX_FF_PSA_Full_User</permissionSets>
     <permissionSets>c2g__AccountingBankAccountReadAccess</permissionSets>
     <permissionSets>c2g__AccountingCashEntryReadAccess</permissionSets>
     <permissionSets>c2g__AccountingReportingBalanceReadAccess</permissionSets>
