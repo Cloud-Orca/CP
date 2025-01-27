@@ -3459,11 +3459,7 @@
         <field>pse__Assignment__c.Work_Activity__c</field>
         <readable>false</readable>
     </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>pse__Billing_Event_Item__c.Accounting_Line_DescriptionOLD__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
+    
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Expense_Limit_Rate__c.pse__Type__c</field>
