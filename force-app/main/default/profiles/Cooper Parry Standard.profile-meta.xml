@@ -1835,11 +1835,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Audit_Register__c.Audit_FeeOLD__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Audit_Register__c.Audit_Fee__c</field>
         <readable>true</readable>
