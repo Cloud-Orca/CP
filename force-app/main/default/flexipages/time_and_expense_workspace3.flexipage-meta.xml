@@ -142,19 +142,24 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>alertDescription</name>
-                    <value>Rejected Timecards that require action</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>alertTitle</name>
-                    <value>Rejected Timecards</value>
+                    <value>My Actual Chargeable Time YTD</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>psaws__My_Rejected_Timecards</value>
+                    <value>My_Chargeable_Time</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiCalculation</name>
                     <value>count</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiDescription</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>majorKpiFieldName</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>minorKpi1Calculation</name>
@@ -162,11 +167,16 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>minorKpi1Description</name>
-                    <value>Total Hours of Rejected Timecards</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>minorKpi1FieldName</name>
                     <value>pse__Total_Hours__c</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi2Description</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>minorKpi2FieldName</name>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
