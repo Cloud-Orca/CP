@@ -37,11 +37,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Opportunity.OriginalProject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>ffscpq__Estimate_Line_Set__c.CT_MS_Bill_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -128,6 +123,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Assignment__c.pse__Suggested_Bill_Rate__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Billing_Event_Item__c.Accounting_Line_DescriptionOLD__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -531,6 +531,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>pse__Proj__c.pse__Location__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>pse__Resource_Request__c.CT_Estimated_Revenue__c</field>
         <readable>true</readable>
@@ -603,9 +608,9 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry User Fields PSA</label>
     <objectPermissions>
-        <allowCreate>true</allowCreate>
+        <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
+        <allowEdit>false</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>CT_Expense_VAT_Types__c</object>
