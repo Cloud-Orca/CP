@@ -185,16 +185,6 @@
                 <identifier>RecordYear_End_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.DocuSign_Documents__c</fieldItem>
-                <identifier>RecordDocuSign_Documents_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -324,6 +314,78 @@
             </componentInstance>
         </itemInstances>
         <name>Facet-474a2cb5-f75d-4a22-8c8f-99a26288a258</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.DocuSign_Documents__c</fieldItem>
+                <identifier>RecordDocuSign_Documents_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.DocuSign_Documents_Cont__c</fieldItem>
+                <identifier>RecordDocuSign_Documents_Cont__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-4e81758e-881d-4ee4-a3f3-75af0bc4f711</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.DocuSign_Document_Sub_List__c</fieldItem>
+                <identifier>RecordDocuSign_Document_Sub_List_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.DocuSign_Document_Sub_List_Cont__c</fieldItem>
+                <identifier>RecordDocuSign_Document_Sub_List_Cont__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-e6557683-3c0a-4fec-8527-ee18de6b8f97</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-4e81758e-881d-4ee4-a3f3-75af0bc4f711</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column16</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-e6557683-3c0a-4fec-8527-ee18de6b8f97</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column17</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-334c0ec6-bf77-4792-aa39-581b920278fb</name>
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
@@ -732,6 +794,24 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-334c0ec6-bf77-4792-aa39-581b920278fb</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>DocuSign Documents</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection9</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
