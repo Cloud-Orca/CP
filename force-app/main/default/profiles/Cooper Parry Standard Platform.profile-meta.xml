@@ -3176,11 +3176,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ffscpq__Estimate__c.Original_Project__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ffscpq__Estimate__c.Total_Cost_Amount__c</field>
         <readable>false</readable>
     </fieldPermissions>
