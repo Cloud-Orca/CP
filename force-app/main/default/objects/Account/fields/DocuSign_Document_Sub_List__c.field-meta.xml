@@ -8,7 +8,184 @@
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>DocuSign_Documents__c</controllingField>
         <restricted>true</restricted>
         <valueSetName>DocuSign_Document_Sub_List</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Advisory - Detailed Request to Existing Auditor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Advisory - DocuSign engagement cover letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Advisory - Professional Clearance reply to New Aud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Arrangement Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Audit - Access to Information Request to Existing Auditor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Audit - Access to Information Response to New Auditor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Audit - DocuSign engagement cover letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Audit - Professional Clearance Detailed Request to Existing Aud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Audit - Professional Clearance Request to Existing Auditor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>CT101 Professional Clearance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Generic</controllingFieldValue>
+            <valueName>Professional Clearance Request by New Aud to Contact Existing Aud</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Amendment to CP Terms of Engagement - Change of Statutory Auditor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Audit - General Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Audit Engagement Letter Audit Exemption - Ltd Company (1)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Audit Engagement Letter Audit Exemption - Ltd Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Audit Engagement Letter Limited Liability Partnership - Audit Exemption</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Audit Engagement Letter Limited Liability Partnership</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Audit Engagement Letter Ltd - GROUP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Audit Engagement Letter Management Accounts - Ltd Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Bank Request for Audit Purposes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Enclosed Signed Accounts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Physical review of audit working papers - letter to predecessor advisors</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Proforma Authorisation Letter (proposed sale of Company)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Proforma Hold Harmless (to prospective Purchaser &amp; Investigating Accountants)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Audit</controllingFieldValue>
+            <valueName>Tech &amp; High Growth Advisory Services Ltd</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Capital Allowance</controllingFieldValue>
+            <valueName>Template ENG - Capital Allowances</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>ADV_ENG01 BSO DocuSign Cover Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>ADV_ENG02 BSO Accounts Prep Co Sec Engagement Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>ADV_ENG03 BSO Full Engagement Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>ADV_ENG04 BSO AFR for CP or Ext Engagement Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>ADV_ENG10 Residential Engagement Letter Service Charge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>ADV_ENG11 Commercial Engagement Letter Service Charge</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>ADV_ENG12 Service Charge DocuSign Cover Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>NLR_AD - ENG01 - DocuSign Master Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Futures</controllingFieldValue>
+            <valueName>NLR_AD - ENG02 Engagement Letter Standard</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>Independent Examination Unincorporated Charity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>NFP Engagement Letter Academies Professional Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>NFP Engagement Letter Charitable Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>NFP Engagement Letter College Professional Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>NFP Engagement Letter Housing Association</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>NFP Engagement Letter Internal Assurance Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>NFP Engagement Letter Unincorporated Charity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>NFP Independent Examination Charitable Company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>NFP</controllingFieldValue>
+            <valueName>NFP Independent Examination Unincorporated Charity</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>

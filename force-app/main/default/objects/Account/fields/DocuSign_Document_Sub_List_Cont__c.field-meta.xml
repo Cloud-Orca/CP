@@ -8,7 +8,276 @@
     <trackHistory>false</trackHistory>
     <type>Picklist</type>
     <valueSet>
+        <controllingField>DocuSign_Documents_Cont__c</controllingField>
         <restricted>true</restricted>
         <valueSetName>DocuSign_Document_Sub_List</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Tax Advisory Services Engagement Letter (new VAT client)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Tax Compliance Services Engagement Letter - SCOPE 1 - PRECEDENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Tax Compliance Services Engagement Letter - SCOPE 1-5 - PRECEDENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Tax Compliance Services Engagement Letter - SCOPE 2 - PRECEDENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Tax Compliance Services Engagement Letter - SCOPE 2-5 - PRECEDENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VAT</controllingFieldValue>
+            <valueName>VAT Tax Compliance Services Engagement Letter - SCOPE 3 - PRECEDENT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>#NLR - Pensions Info Request - SSAS</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Earmarked Audit of Pension Scheme</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>FCF Letter of Engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Fraud Project – LOE Agreed upon Procedures</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions - Professional Clearance Response</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Acknowledgement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Arrangement Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Bank Authority Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Draft Notice of appointment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Engagement Covering Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Investment Authority Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Investment Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions ISA Management Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Management Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Professional Clearance Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Resignation Letter to Trustees</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Pensions Signed Accounts</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Statutory Audit of Pension Scheme - single trustee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>Statutory Audit of Pension Scheme</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Projects</controllingFieldValue>
+            <valueName>Advisory - Innovate UK Grant Engagement Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Projects</controllingFieldValue>
+            <valueName>Advisory - Non Innovate UK Grant Engagement Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>NLR - Creative Tax Relief Engagement Letter - Full</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>NLR - Creative Tax Relief Engagement Letter - Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>Patent Box Engagement Letter - Full - Contingent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>Patent Box Engagement Letter - Full - Fixed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>Patent Box Engagement Letter - Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>R&amp;D Engagement Letter - Enquiry</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>R&amp;D Engagement Letter - Full fixed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>R&amp;D Engagement Letter - RDEC Full Contingent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>R&amp;D Engagement Letter - Review</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>RnD</controllingFieldValue>
+            <valueName>R&amp;D Engagement Letter - SME Full Contingent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Advisory - EMI Advance Assurance Template</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Advisory - EMI Technical Note Template</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Advisory - General Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Advisory - Professional Clearance Courtesy Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Cover Letter CT Return to client (MULTIPLE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Cover Letter CT Return to client (SINGLE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>CT111 TAX INFORMATION REQUEST LIST</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG041 PT - DocuSign Engagement Covering Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG041 - PT Group - Compliance Engagement - Full Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG042 Partnership Tax Compliance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG051 Corporation Tax Compliance Engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG051(Outsourcing) Corporation Tax Compliance Engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG051A Corporation Tax Compliance - Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG051A(Outsourcing) Corporation Tax Compliance - Group</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG056 CT - Advisory Services Engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>ENG056A CT Advisory Services - Group Compliance engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>NLR Cover Letter CT Return to client (MULTIPLE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>NLR Cover Letter CT Return to client (SINGLE)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>NLR_ENGOUT001 Master Interlock</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>NLR_ENGOUT002 Financial Statements Company Secretariat Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>NLR_ENGOUT003 Management Accounts and VAT returns</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>NLR_ENGOUT005 Corporation tax</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>NLR_THG - Tax Advisory Services Engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>Personal Tax - Client Acceptance Form - (Personal Tax ONLY)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>THG Business Tax Compliance Engagement Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>THG Tax Advisory Services Engagement</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>THG Tax Due Diligence Advisory Services Engagement Template</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tax</controllingFieldValue>
+            <valueName>THG International Tax Advisory Engagement From July</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transaction Services</controllingFieldValue>
+            <valueName>TS01 New engagement letter template (FDD TDD)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transaction Services</controllingFieldValue>
+            <valueName>TS01 New engagement letter template (FDD only)</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>
