@@ -37,6 +37,10 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Pensions</controllingFieldValue>
+            <valueName>#NLR - OLD - Removed 2-5-23 - Pensions Resignation Covering Letter</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Pensions</controllingFieldValue>
             <valueName>#NLR - Pensions Info Request - SSAS</valueName>
         </valueSettings>
         <valueSettings>
