@@ -1571,26 +1571,6 @@
     <picklistValues>
         <picklist>DocuSign_Documents_Cont__c</picklist>
         <values>
-            <fullName>Audit</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Capital Allowance</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Futures</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Generic</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>NFP</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Pensions</fullName>
             <default>false</default>
         </values>
@@ -1639,34 +1619,6 @@
         </values>
         <values>
             <fullName>NFP</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Projects</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>RnD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Tax</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Transaction Services</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Transaction Tax</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>VAT</fullName>
             <default>false</default>
         </values>
     </picklistValues>
