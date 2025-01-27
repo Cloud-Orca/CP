@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>VAT Tax Advisory Services Engagement Letter (new VAT client)</fullName>
+        <default>false</default>
+        <label>VAT Tax Advisory Services Engagement Letter (new VAT client)</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT Tax Compliance Services Engagement Letter - SCOPE 1 - PRECEDENT</fullName>
+        <default>false</default>
+        <label>VAT Tax Compliance Services Engagement Letter - SCOPE 1 - PRECEDENT</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT Tax Compliance Services Engagement Letter - SCOPE 1-5 - PRECEDENT</fullName>
+        <default>false</default>
+        <label>VAT Tax Compliance Services Engagement Letter - SCOPE 1-5 - PRECEDENT</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT Tax Compliance Services Engagement Letter - SCOPE 2 - PRECEDENT</fullName>
+        <default>false</default>
+        <label>VAT Tax Compliance Services Engagement Letter - SCOPE 2 - PRECEDENT</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT Tax Compliance Services Engagement Letter - SCOPE 2-5 - PRECEDENT</fullName>
+        <default>false</default>
+        <label>VAT Tax Compliance Services Engagement Letter - SCOPE 2-5 - PRECEDENT</label>
+    </customValue>
+    <customValue>
+        <fullName>VAT Tax Compliance Services Engagement Letter - SCOPE 3 - PRECEDENT</fullName>
+        <default>false</default>
+        <label>VAT Tax Compliance Services Engagement Letter - SCOPE 3 - PRECEDENT</label>
+    </customValue>
+    <customValue>
+        <fullName>TS01 New engagement letter template (FDD TDD)</fullName>
+        <default>false</default>
+        <label>TS01 New engagement letter template (FDD TDD)</label>
+    </customValue>
+    <customValue>
+        <fullName>TS01 New engagement letter template (FDD only)</fullName>
+        <default>false</default>
+        <label>TS01 New engagement letter template (FDD only)</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - EMI Advance Assurance Template</fullName>
+        <default>false</default>
+        <label>Advisory - EMI Advance Assurance Template</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - EMI Technical Note Template</fullName>
+        <default>false</default>
+        <label>Advisory - EMI Technical Note Template</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - General Letter</fullName>
+        <default>false</default>
+        <label>Advisory - General Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - Professional Clearance Courtesy Letter</fullName>
+        <default>false</default>
+        <label>Advisory - Professional Clearance Courtesy Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Cover Letter CT Return to client (MULTIPLE)</fullName>
+        <default>false</default>
+        <label>Cover Letter CT Return to client (MULTIPLE)</label>
+    </customValue>
+    <customValue>
+        <fullName>Cover Letter CT Return to client (SINGLE)</fullName>
+        <default>false</default>
+        <label>Cover Letter CT Return to client (SINGLE)</label>
+    </customValue>
+    <customValue>
+        <fullName>CT111 TAX INFORMATION REQUEST LIST</fullName>
+        <default>false</default>
+        <label>CT111 TAX INFORMATION REQUEST LIST</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG041 PT - DocuSign Engagement Covering Letter</fullName>
+        <default>false</default>
+        <label>ENG041 PT - DocuSign Engagement Covering Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG041 - PT Group - Compliance Engagement - Full Service</fullName>
+        <default>false</default>
+        <label>ENG041 - PT Group - Compliance Engagement - Full Service</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG042 Partnership Tax Compliance</fullName>
+        <default>false</default>
+        <label>ENG042 Partnership Tax Compliance</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG051 Corporation Tax Compliance Engagement</fullName>
+        <default>false</default>
+        <label>ENG051 Corporation Tax Compliance Engagement</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG051(Outsourcing) Corporation Tax Compliance Engagement</fullName>
+        <default>false</default>
+        <label>ENG051(Outsourcing) Corporation Tax Compliance Engagement</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG051A Corporation Tax Compliance - Group</fullName>
+        <default>false</default>
+        <label>ENG051A Corporation Tax Compliance - Group</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG051A(Outsourcing) Corporation Tax Compliance - Group</fullName>
+        <default>false</default>
+        <label>ENG051A(Outsourcing) Corporation Tax Compliance - Group</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG056 CT - Advisory Services Engagement</fullName>
+        <default>false</default>
+        <label>ENG056 CT - Advisory Services Engagement</label>
+    </customValue>
+    <customValue>
+        <fullName>ENG056A CT Advisory Services - Group Compliance engagement</fullName>
+        <default>false</default>
+        <label>ENG056A CT Advisory Services - Group Compliance engagement</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR Cover Letter CT Return to client (MULTIPLE)</fullName>
+        <default>false</default>
+        <label>NLR Cover Letter CT Return to client (MULTIPLE)</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR Cover Letter CT Return to client (SINGLE)</fullName>
+        <default>false</default>
+        <label>NLR Cover Letter CT Return to client (SINGLE)</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR_ENGOUT001 Master Interlock</fullName>
+        <default>false</default>
+        <label>NLR_ENGOUT001 Master Interlock</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR_ENGOUT002 Financial Statements Company Secretariat Support</fullName>
+        <default>false</default>
+        <label>NLR_ENGOUT002 Financial Statements Company Secretariat Support</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR_ENGOUT003 Management Accounts and VAT returns</fullName>
+        <default>false</default>
+        <label>NLR_ENGOUT003 Management Accounts and VAT returns</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR_ENGOUT005 Corporation tax</fullName>
+        <default>false</default>
+        <label>NLR_ENGOUT005 Corporation tax</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR_THG - Tax Advisory Services Engagement</fullName>
+        <default>false</default>
+        <label>NLR_THG - Tax Advisory Services Engagement</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Tax - Client Acceptance Form - (Personal Tax ONLY)</fullName>
+        <default>false</default>
+        <label>Personal Tax - Client Acceptance Form - (Personal Tax ONLY)</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Business Tax Compliance Engagement Letter</fullName>
+        <default>false</default>
+        <label>THG Business Tax Compliance Engagement Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Tax Advisory Services Engagement</fullName>
+        <default>false</default>
+        <label>THG Tax Advisory Services Engagement</label>
+    </customValue>
+    <customValue>
+        <fullName>THG Tax Due Diligence Advisory Services Engagement Template</fullName>
+        <default>false</default>
+        <label>THG Tax Due Diligence Advisory Services Engagement Template</label>
+    </customValue>
+    <customValue>
+        <fullName>THG International Tax Advisory Engagement From July</fullName>
+        <default>false</default>
+        <label>THG International Tax Advisory Engagement From July</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR - Creative Tax Relief Engagement Letter - Full</fullName>
+        <default>false</default>
+        <label>NLR - Creative Tax Relief Engagement Letter - Full</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR - Creative Tax Relief Engagement Letter - Review</fullName>
+        <default>false</default>
+        <label>NLR - Creative Tax Relief Engagement Letter - Review</label>
+    </customValue>
+    <customValue>
+        <fullName>Old - R&amp;D Engagement Letter - Full fixed</fullName>
+        <default>false</default>
+        <label>Old - R&amp;D Engagement Letter - Full fixed</label>
+    </customValue>
+    <customValue>
+        <fullName>Patent Box Engagement Letter - Full - Contingent</fullName>
+        <default>false</default>
+        <label>Patent Box Engagement Letter - Full - Contingent</label>
+    </customValue>
+    <customValue>
+        <fullName>Patent Box Engagement Letter - Full - Fixed</fullName>
+        <default>false</default>
+        <label>Patent Box Engagement Letter - Full - Fixed</label>
+    </customValue>
+    <customValue>
+        <fullName>Patent Box Engagement Letter - Review</fullName>
+        <default>false</default>
+        <label>Patent Box Engagement Letter - Review</label>
+    </customValue>
+    <customValue>
+        <fullName>R&amp;D Engagement Letter - Enquiry</fullName>
+        <default>false</default>
+        <label>R&amp;D Engagement Letter - Enquiry</label>
+    </customValue>
+    <customValue>
+        <fullName>R&amp;D Engagement Letter - Full fixed</fullName>
+        <default>false</default>
+        <label>R&amp;D Engagement Letter - Full fixed</label>
+    </customValue>
+    <customValue>
+        <fullName>R&amp;D Engagement Letter - RDEC Full Contingent</fullName>
+        <default>false</default>
+        <label>R&amp;D Engagement Letter - RDEC Full Contingent</label>
+    </customValue>
+    <customValue>
+        <fullName>R&amp;D Engagement Letter - Review</fullName>
+        <default>false</default>
+        <label>R&amp;D Engagement Letter - Review</label>
+    </customValue>
+    <customValue>
+        <fullName>R&amp;D Engagement Letter - SME Full Contingent</fullName>
+        <default>false</default>
+        <label>R&amp;D Engagement Letter - SME Full Contingent</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - Innovate UK Grant Engagement Letter</fullName>
+        <default>false</default>
+        <label>Advisory - Innovate UK Grant Engagement Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - Non Innovate UK Grant Engagement Letter</fullName>
+        <default>false</default>
+        <label>Advisory - Non Innovate UK Grant Engagement Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Independent Examination Unincorporated Charity</fullName>
+        <default>false</default>
+        <label>Independent Examination Unincorporated Charity</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP Engagement Letter Academies Professional Services</fullName>
+        <default>false</default>
+        <label>NFP Engagement Letter Academies Professional Services</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP Engagement Letter Charitable Company</fullName>
+        <default>false</default>
+        <label>NFP Engagement Letter Charitable Company</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP Engagement Letter College Professional Services</fullName>
+        <default>false</default>
+        <label>NFP Engagement Letter College Professional Services</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP Engagement Letter Housing Association</fullName>
+        <default>false</default>
+        <label>NFP Engagement Letter Housing Association</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP Engagement Letter Internal Assurance Services</fullName>
+        <default>false</default>
+        <label>NFP Engagement Letter Internal Assurance Services</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP Engagement Letter Unincorporated Charity</fullName>
+        <default>false</default>
+        <label>NFP Engagement Letter Unincorporated Charity</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP Independent Examination Charitable Company</fullName>
+        <default>false</default>
+        <label>NFP Independent Examination Charitable Company</label>
+    </customValue>
+    <customValue>
+        <fullName>NFP Independent Examination Unincorporated Charity</fullName>
+        <default>false</default>
+        <label>NFP Independent Examination Unincorporated Charity</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - Detailed Request to Existing Auditor</fullName>
+        <default>false</default>
+        <label>Advisory - Detailed Request to Existing Auditor</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - DocuSign engagement cover letter</fullName>
+        <default>false</default>
+        <label>Advisory - DocuSign engagement cover letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Advisory - Professional Clearance reply to New Aud</fullName>
+        <default>false</default>
+        <label>Advisory - Professional Clearance reply to New Aud</label>
+    </customValue>
+    <customValue>
+        <fullName>Arrangement Letter</fullName>
+        <default>false</default>
+        <label>Arrangement Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit - Access to Information Request to Existing Auditor</fullName>
+        <default>false</default>
+        <label>Audit - Access to Information Request to Existing Auditor</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit - Access to Information Response to New Auditor</fullName>
+        <default>false</default>
+        <label>Audit - Access to Information Response to New Auditor</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit - DocuSign engagement cover letter</fullName>
+        <default>false</default>
+        <label>Audit - DocuSign engagement cover letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit - Professional Clearance Detailed Request to Existing Aud</fullName>
+        <default>false</default>
+        <label>Audit - Professional Clearance Detailed Request to Existing Aud</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit - Professional Clearance Request to Existing Auditor</fullName>
+        <default>false</default>
+        <label>Audit - Professional Clearance Request to Existing Auditor</label>
+    </customValue>
+    <customValue>
+        <fullName>CT101 Professional Clearance</fullName>
+        <default>false</default>
+        <label>CT101 Professional Clearance</label>
+    </customValue>
+    <customValue>
+        <fullName>Professional Clearance Request by New Aud to Contact Existing Aud</fullName>
+        <default>false</default>
+        <label>Professional Clearance Request by New Aud to Contact Existing Aud</label>
+    </customValue>
+    <customValue>
+        <fullName>ADV_ENG01 BSO DocuSign Cover Letter</fullName>
+        <default>false</default>
+        <label>ADV_ENG01 BSO DocuSign Cover Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>ADV_ENG02 BSO Accounts Prep Co Sec Engagement Letter</fullName>
+        <default>false</default>
+        <label>ADV_ENG02 BSO Accounts Prep Co Sec Engagement Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>ADV_ENG03 BSO Full Engagement Letter</fullName>
+        <default>false</default>
+        <label>ADV_ENG03 BSO Full Engagement Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>ADV_ENG04 BSO AFR for CP or Ext Engagement Letter</fullName>
+        <default>false</default>
+        <label>ADV_ENG04 BSO AFR for CP or Ext Engagement Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>ADV_ENG10 Residential Engagement Letter Service Charge</fullName>
+        <default>false</default>
+        <label>ADV_ENG10 Residential Engagement Letter Service Charge</label>
+    </customValue>
+    <customValue>
+        <fullName>ADV_ENG11 Commercial Engagement Letter Service Charge</fullName>
+        <default>false</default>
+        <label>ADV_ENG11 Commercial Engagement Letter Service Charge</label>
+    </customValue>
+    <customValue>
+        <fullName>ADV_ENG12 Service Charge DocuSign Cover Letter</fullName>
+        <default>false</default>
+        <label>ADV_ENG12 Service Charge DocuSign Cover Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR_AD - ENG01 - DocuSign Master Letter</fullName>
+        <default>false</default>
+        <label>NLR_AD - ENG01 - DocuSign Master Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>NLR_AD - ENG02 Engagement Letter Standard</fullName>
+        <default>false</default>
+        <label>NLR_AD - ENG02 Engagement Letter Standard</label>
+    </customValue>
+    <customValue>
+        <fullName>Template ENG - Capital Allowances</fullName>
+        <default>false</default>
+        <label>Template ENG - Capital Allowances</label>
+    </customValue>
+    <customValue>
+        <fullName>Amendment to CP Terms of Engagement - Change of Statutory Auditor</fullName>
+        <default>false</default>
+        <label>Amendment to CP Terms of Engagement - Change of Statutory Auditor</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit - General Letter</fullName>
+        <default>false</default>
+        <label>Audit - General Letter</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit Engagement Letter Audit Exemption - Ltd Company (1)</fullName>
+        <default>false</default>
+        <label>Audit Engagement Letter Audit Exemption - Ltd Company (1)</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit Engagement Letter Audit Exemption - Ltd Company</fullName>
+        <default>false</default>
+        <label>Audit Engagement Letter Audit Exemption - Ltd Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit Engagement Letter Limited Liability Partnership - Audit Exemption</fullName>
+        <default>false</default>
+        <label>Audit Engagement Letter Limited Liability Partnership - Audit Exemption</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit Engagement Letter Limited Liability Partnership</fullName>
+        <default>false</default>
+        <label>Audit Engagement Letter Limited Liability Partnership</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit Engagement Letter Ltd - GROUP</fullName>
+        <default>false</default>
+        <label>Audit Engagement Letter Ltd - GROUP</label>
+    </customValue>
+    <customValue>
+        <fullName>Audit Engagement Letter Management Accounts - Ltd Company</fullName>
+        <default>false</default>
+        <label>Audit Engagement Letter Management Accounts - Ltd Company</label>
+    </customValue>
+    <customValue>
+        <fullName>Bank Request for Audit Purposes</fullName>
+        <default>false</default>
+        <label>Bank Request for Audit Purposes</label>
+    </customValue>
+    <customValue>
+        <fullName>Enclosed Signed Accounts</fullName>
+        <default>false</default>
+        <label>Enclosed Signed Accounts</label>
+    </customValue>
+    <customValue>
+        <fullName>Physical review of audit working papers - letter to predecessor advisors</fullName>
+        <default>false</default>
+        <label>Physical review of audit working papers - letter to predecessor advisors</label>
+    </customValue>
+    <customValue>
+        <fullName>Proforma Authorisation Letter (proposed sale of Company)</fullName>
+        <default>false</default>
+        <label>Proforma Authorisation Letter (proposed sale of Company)</label>
+    </customValue>
+    <customValue>
+        <fullName>Proforma Hold Harmless (to prospective Purchaser &amp; Investigating Accountants)</fullName>
+        <default>false</default>
+        <label>Proforma Hold Harmless (to prospective Purchaser &amp; Investigating Accountants)</label>
+    </customValue>
+    <customValue>
+        <fullName>Tech &amp; High Growth Advisory Services Ltd</fullName>
+        <default>false</default>
+        <label>Tech &amp; High Growth Advisory Services Ltd</label>
+    </customValue>
+    <masterLabel>DocuSign Document Sub List</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
