@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tell_us_why_you_ve_chosen_this_rating__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What have we done well? How can we improve?</inlineHelpText>
+    <label>Tell us why you&apos;ve chosen this rating</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>
