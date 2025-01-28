@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Safeguards_Applied__c</fullName>
+    <externalId>false</externalId>
+    <label>Safeguards Applied</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Audit and Tax</fullName>
+                <default>false</default>
+                <label>Audit and Tax</label>
+            </value>
+            <value>
+                <fullName>Accounts and Audit Work</fullName>
+                <default>false</default>
+                <label>Accounts and Audit Work</label>
+            </value>
+            <value>
+                <fullName>NFP</fullName>
+                <default>false</default>
+                <label>NFP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
