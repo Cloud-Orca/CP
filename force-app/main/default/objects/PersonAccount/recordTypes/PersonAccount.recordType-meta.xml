@@ -1582,21 +1582,6 @@
     <picklistValues>
         <picklist>DocuSign_Documents__c</picklist>
         <values>
-            <fullName>ADV_ENG01 BSO DocuSign Cover Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>ADV_ENG02 BSO Accounts Prep Co Sec Engagement Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>ADV_ENG03 BSO Full Engagement Letter</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>DocuSign_Documents__c</picklist>
-        <values>
             <fullName>Audit</fullName>
             <default>false</default>
         </values>
