@@ -1582,10 +1582,6 @@
     <picklistValues>
         <picklist>DocuSign_Documents__c</picklist>
         <values>
-            <fullName>#NLR - Pensions Info Request - SSAS</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>ADV_ENG01 BSO DocuSign Cover Letter</fullName>
             <default>false</default>
         </values>
