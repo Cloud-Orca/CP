@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
-        <locationX>204</locationX>
-        <locationY>3992</locationY>
+        <locationX>314</locationX>
+        <locationY>3884</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
         <connector>
@@ -30,7 +30,7 @@
     <assignments>
         <name>Assign_Business_Risk_Assesment_Form</name>
         <label>Assign Business Risk Assesment Form</label>
-        <locationX>490</locationX>
+        <locationX>600</locationX>
         <locationY>1664</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Id</assignToReference>
@@ -53,8 +53,8 @@
     <assignments>
         <name>assign_File_Id</name>
         <label>assign File Id</label>
-        <locationX>336</locationX>
-        <locationY>3776</locationY>
+        <locationX>446</locationX>
+        <locationY>3668</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
             <operator>Add</operator>
@@ -69,7 +69,7 @@
     <assignments>
         <name>Assign_Form_to_ClientAcceptanceForm</name>
         <label>Assign Form to ClientAcceptanceForm</label>
-        <locationX>182</locationX>
+        <locationX>292</locationX>
         <locationY>1448</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm</assignToReference>
@@ -85,7 +85,7 @@
     <assignments>
         <name>assignLifeCycleCoordinator</name>
         <label>assignLifeCycleCoordinator</label>
-        <locationX>204</locationX>
+        <locationX>314</locationX>
         <locationY>1040</locationY>
         <assignmentItems>
             <assignToReference>variableLifecycle</assignToReference>
@@ -108,8 +108,8 @@
     <assignments>
         <name>Page_1_Assignments</name>
         <label>Page 1 Assignments</label>
-        <locationX>336</locationX>
-        <locationY>3020</locationY>
+        <locationX>446</locationX>
+        <locationY>2912</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Client_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -201,8 +201,8 @@
     <assignments>
         <name>Page_2_5_Assignments</name>
         <label>Page 2.5 Assignments</label>
-        <locationX>336</locationX>
-        <locationY>3668</locationY>
+        <locationX>446</locationX>
+        <locationY>3560</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.regpick2__c</assignToReference>
             <operator>Assign</operator>
@@ -273,6 +273,13 @@
                 <elementReference>regpick15</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.regpickyes1__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Regulations</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>assign_File_Id</targetReference>
         </connector>
@@ -280,8 +287,8 @@
     <assignments>
         <name>Page_2_Assignments</name>
         <label>Page 2 Assignments</label>
-        <locationX>336</locationX>
-        <locationY>3344</locationY>
+        <locationX>446</locationX>
+        <locationY>3236</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Owner__c</assignToReference>
             <operator>Assign</operator>
@@ -304,7 +311,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>clientAcceptanceForm.Other_CPContact__c</assignToReference>
+            <assignToReference>clientAcceptanceForm.Other_please_specify__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Other_Please_specify</elementReference>
@@ -380,8 +387,8 @@
     <assignments>
         <name>Page_3_Assignments</name>
         <label>Page 3 Assignments</label>
-        <locationX>336</locationX>
-        <locationY>4400</locationY>
+        <locationX>446</locationX>
+        <locationY>4292</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.pickint1__c</assignToReference>
             <operator>Assign</operator>
@@ -465,9 +472,9 @@
     </assignments>
     <assignments>
         <name>Page_4_5_Assignments</name>
-        <label>Page 4-5 Assignments</label>
-        <locationX>336</locationX>
-        <locationY>4724</locationY>
+        <label>Page 4-5 Assignmentsmlrapick16</label>
+        <locationX>446</locationX>
+        <locationY>4616</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.mlrapick1__c</assignToReference>
             <operator>Assign</operator>
@@ -580,6 +587,13 @@
                 <elementReference>Please_give_an_explanation</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Have_you_made_enquiry_s_as_to_the_source__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>mlrapick16</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Client_Acceptance_Form_Page_4_5</targetReference>
         </connector>
@@ -587,8 +601,8 @@
     <assignments>
         <name>Page_6_Assignments</name>
         <label>Page 6 Assignments</label>
-        <locationX>336</locationX>
-        <locationY>5048</locationY>
+        <locationX>446</locationX>
+        <locationY>4940</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.ben1__c</assignToReference>
             <operator>Assign</operator>
@@ -645,8 +659,8 @@
     <assignments>
         <name>Page_7_Assignments</name>
         <label>Page 7 Assignments</label>
-        <locationX>336</locationX>
-        <locationY>5372</locationY>
+        <locationX>446</locationX>
+        <locationY>5264</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.objpick1__c</assignToReference>
             <operator>Assign</operator>
@@ -731,8 +745,8 @@
     <assignments>
         <name>Page_8_9_Assignment</name>
         <label>Page 8-9 Assignment</label>
-        <locationX>336</locationX>
-        <locationY>5804</locationY>
+        <locationX>446</locationX>
+        <locationY>5588</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.con1__c</assignToReference>
             <operator>Assign</operator>
@@ -766,6 +780,22 @@
         </connector>
     </assignments>
     <choices>
+        <name>AccountsAndAudits</name>
+        <choiceText>Accounts and Audits</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Accounts and Audits</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>AuditAndtax</name>
+        <choiceText>Audit and Tax</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Audit and Tax</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>High</name>
         <choiceText>High</choiceText>
         <dataType>String</dataType>
@@ -782,11 +812,27 @@
         </value>
     </choices>
     <choices>
+        <name>NFP</name>
+        <choiceText>NFP</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>NFP</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>No</name>
         <choiceText>No</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>NoForAuditYesFortax</name>
+        <choiceText>No for Audit, Yes for Tax</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No for Audit, Yes for Tax</stringValue>
         </value>
     </choices>
     <choices>
@@ -813,7 +859,7 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>350</locationY>
         <defaultConnector>
             <targetReference>Get_Business_CAF_Record_Type</targetReference>
@@ -873,9 +919,103 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Business_Risk_Assessment_Form</name>
+        <label>Check Business Risk Assessment Form</label>
+        <locationX>446</locationX>
+        <locationY>6128</locationY>
+        <defaultConnectorLabel>Completed</defaultConnectorLabel>
+        <rules>
+            <name>Incomplete_Fields</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>validation2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>validation1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>validation3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>validation4_5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>validation7</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>validation8</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Validation6</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error_Screen</targetReference>
+            </connector>
+            <label>Incomplete Fields</label>
+        </rules>
+        <rules>
+            <name>No_Beneficiary</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Beneficiaries</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error_Screen_No_Beneficiary</targetReference>
+            </connector>
+            <label>No Beneficiary</label>
+        </rules>
+        <rules>
+            <name>Not_Completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Business_Risk_Assessment_Form_checkbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case</targetReference>
+            </connector>
+            <label>Not Completed</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_for_Re_routing_to_Lock_Form</name>
         <label>Check for Re-routing to Lock Form</label>
-        <locationX>182</locationX>
+        <locationX>292</locationX>
         <locationY>1556</locationY>
         <defaultConnector>
             <targetReference>Page_1</targetReference>
@@ -921,7 +1061,7 @@
     <decisions>
         <name>Check_if_Form_is_Existing</name>
         <label>Check if Form is Existing</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>1340</locationY>
         <defaultConnector>
             <targetReference>Create_Business_Risk_Assessment_Form</targetReference>
@@ -946,7 +1086,7 @@
     <decisions>
         <name>Is_Lifecycle_coordinator</name>
         <label>Is Lifecycle coordinator</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>824</locationY>
         <defaultConnector>
             <targetReference>getBusinessRiskAssessmentForm</targetReference>
@@ -971,8 +1111,8 @@
     <decisions>
         <name>Is_there_a_File_Upload</name>
         <label>Is there a File Upload</label>
-        <locationX>336</locationX>
-        <locationY>3884</locationY>
+        <locationX>446</locationX>
+        <locationY>3776</locationY>
         <defaultConnector>
             <targetReference>Update_Client_Acceptance_Form_Page_2_5</targetReference>
         </defaultConnector>
@@ -1010,6 +1150,132 @@
         <picklistObject>Opportunity</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>formulaMailingAddress</name>
+        <dataType>String</dataType>
+        <expression>{!Get_Case.Account.Primary_Contact__r.MailingStreet}&amp;&apos; &apos;&amp;{!Get_Case.Account.Primary_Contact__r.MailingCity}&amp;&apos; &apos;&amp;{!Get_Case.Account.Primary_Contact__r.MailingState}&amp;&apos; &apos; &amp;{!Get_Case.Account.Primary_Contact__r.MailingPostalCode}&amp;&apos; &apos;&amp;{!Get_Case.Account.Primary_Contact__r.MailingCountry}</expression>
+    </formulas>
+    <formulas>
+        <name>FormulaName</name>
+        <dataType>String</dataType>
+        <expression>{!Get_Case.Account.Primary_Contact__r.FirstName} &amp; &apos; &apos;&amp; {!Get_Case.Account.Primary_Contact__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>validation1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!Client_Name} &lt;&gt; &quot;&quot;,
+{!Co_Reg_No} &lt;&gt; &quot;&quot;,
+{!Primary_Contact} &lt;&gt; &quot;&quot;,
+{!Email} &lt;&gt; &quot;&quot;,
+{!Contact_Address} &lt;&gt; &quot;&quot;,
+{!Telephone} &lt;&gt; &quot;&quot;,
+{!Registered_Office_if_different_to_above} &lt;&gt; &quot;&quot;,
+{!Office} &lt;&gt; &quot;&quot;,
+{!List_related_businesses_and_individuals_and_the_relationship} &lt;&gt; &quot;&quot;,
+{!Subsidiaries_included_on_this_form} &lt;&gt; &quot;&quot;,
+{!Who_at_the_client_has_authority_to_instruct_us_name_and_position} &lt;&gt; &quot;&quot;,
+{!List_client_contacts_name_and_position} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>validation2</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+    {!RelationshipOwner} &lt;&gt; &quot;&quot;,
+    {!Audit_RI} &lt;&gt; &quot;&quot;,
+    {!Lead_Manager} &lt;&gt; &quot;&quot;,
+    {!Lifecycle_Coordinator} &lt;&gt; &quot;&quot;,
+    {!Other_Please_specify} &lt;&gt; &quot;&quot;,
+    {!Main_activity_of_client_please_give_detail} &lt;&gt; &quot;&quot;,
+    {!List_all_services_included_in_this_onboarding} &lt;&gt; &quot;&quot;,
+    {!Name_of_current_adviser} &lt;&gt; &quot;&quot;,
+    {!What_is_the_reason_for_the_change_of_advisor_And_the_source_of_introduction_to_C} &lt;&gt; &quot;&quot;,
+    {!coapick1} &lt;&gt; &quot;&quot;,
+    {!coapick2} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>validation2_5</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!regpick12} &lt;&gt; &quot;&quot;,
+{!regpick2} &lt;&gt; &quot;&quot;,
+{!regpick3} &lt;&gt; &quot;&quot;,
+{!regpick4} &lt;&gt; &quot;&quot;,
+{!regpick13} &lt;&gt; &quot;&quot;,
+{!regpick15} &lt;&gt; &quot;&quot;,
+{!regpick5} &lt;&gt; &quot;&quot;,
+{!regpick11} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>validation3</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!pickint1} &lt;&gt; &quot;&quot;,
+{!pickint2} &lt;&gt; &quot;&quot;,
+{!pickfin1} &lt;&gt; &quot;&quot;,
+{!pickfin3} &lt;&gt; &quot;&quot;,
+{!pickfin4} &lt;&gt; &quot;&quot;,
+{!pickfin5} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>validation4_5</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!mlrapick1} &lt;&gt; &quot;&quot;,
+{!mlrapick2} &lt;&gt; &quot;&quot;,
+{!mlrapick3} &lt;&gt; &quot;&quot;,
+{!mlrapick4} &lt;&gt; &quot;&quot;,
+{!mlrapick5} &lt;&gt; &quot;&quot;,
+{!mlrapick16} &lt;&gt; &quot;&quot;,
+{!mlrapick6} &lt;&gt; &quot;&quot;,
+{!mlrapick7} &lt;&gt; &quot;&quot;,
+{!mlrapick8} &lt;&gt; &quot;&quot;,
+{!mlra9} &lt;&gt; &quot;&quot;,
+{!mlra10} &lt;&gt; &quot;&quot;,
+{!mlra11} &lt;&gt; &quot;&quot;,
+{!mlrapick12} &lt;&gt; &quot;&quot;,
+{!mlrapick13} &lt;&gt; &quot;&quot;,
+{!mlra14} &lt;&gt; &quot;&quot;,
+{!mlrapick15} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Validation6</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!ben1} &lt;&gt; &quot;&quot;,
+{!orpick1} &lt;&gt; &quot;&quot;,
+{!orpick2} &lt;&gt; &quot;&quot;,
+{!orpick3} &lt;&gt; &quot;&quot;,
+{!orpick4} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>validation7</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!objpick1} &lt;&gt; &quot;&quot;,
+{!objpick3} &lt;&gt; &quot;&quot;,
+{!objpick4} &lt;&gt; &quot;&quot;,
+{!objpick5} &lt;&gt; &quot;&quot;,
+{!objpick6} &lt;&gt; &quot;&quot;,
+{!objpick7} &lt;&gt; &quot;&quot;,
+{!objpick8} &lt;&gt; &quot;&quot;,
+{!Safeguard_Applied} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>validation8</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!con1} &lt;&gt; &quot;&quot;,
+{!Please_upload_all_documents_to_support_the_onboarding_of_a_Pension_Client} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
     <interviewLabel>Case - Client Acceptance Form {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case - Client Acceptance Form</label>
     <processMetadataValues>
@@ -1034,17 +1300,17 @@
     <recordCreates>
         <name>Create_Beneficiaries</name>
         <label>Create Beneficiaries</label>
-        <locationX>336</locationX>
-        <locationY>6020</locationY>
+        <locationX>446</locationX>
+        <locationY>5804</locationY>
         <connector>
-            <targetReference>Create_Subsidiaries</targetReference>
+            <targetReference>Get_Beneficiaries</targetReference>
         </connector>
         <inputReference>beneficiaries</inputReference>
     </recordCreates>
     <recordCreates>
         <name>Create_Business_Risk_Assessment_Form</name>
         <label>Create Business Risk Assessment Form</label>
-        <locationX>490</locationX>
+        <locationX>600</locationX>
         <locationY>1448</locationY>
         <connector>
             <targetReference>Get_Created_Business_Risk_Assessment</targetReference>
@@ -1076,20 +1342,10 @@
         <object>Client_Acceptance_Form__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
-    <recordCreates>
-        <name>Create_Subsidiaries</name>
-        <label>Create Subsidiaries</label>
-        <locationX>336</locationX>
-        <locationY>6128</locationY>
-        <connector>
-            <targetReference>Update_Case</targetReference>
-        </connector>
-        <inputReference>subsidiaries</inputReference>
-    </recordCreates>
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1115,9 +1371,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Beneficiaries</name>
+        <label>Get Beneficiaries</label>
+        <locationX>446</locationX>
+        <locationY>5912</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Subsidiary</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Client_Acceptance_Form__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>clientAcceptanceForm.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Beneficiary__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Business_CAF_Record_Type</name>
         <label>Get Business CAF Record Type</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>608</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1145,7 +1422,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1166,7 +1443,7 @@
     <recordLookups>
         <name>Get_Created_Business_Risk_Assessment</name>
         <label>Get Created Business Risk Assessment</label>
-        <locationX>490</locationX>
+        <locationX>600</locationX>
         <locationY>1556</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1185,9 +1462,30 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Subsidiary</name>
+        <label>Get Subsidiary</label>
+        <locationX>446</locationX>
+        <locationY>6020</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Business_Risk_Assessment_Form</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Client_Acceptance_Form__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>clientAcceptanceForm.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Subsidiary__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>get_User</name>
         <label>get User</label>
-        <locationX>204</locationX>
+        <locationX>314</locationX>
         <locationY>932</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1208,7 +1506,7 @@
     <recordLookups>
         <name>getAccountTeamMembers</name>
         <label>getAccountTeamMembers</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>716</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1236,7 +1534,7 @@
     <recordLookups>
         <name>getBusinessRiskAssessmentForm</name>
         <label>getBusinessRiskAssessmentForm</label>
-        <locationX>336</locationX>
+        <locationX>446</locationX>
         <locationY>1232</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1264,8 +1562,8 @@
     <recordUpdates>
         <name>Update_CAF</name>
         <label>Update CAF</label>
-        <locationX>336</locationX>
-        <locationY>5912</locationY>
+        <locationX>446</locationX>
+        <locationY>5696</locationY>
         <connector>
             <targetReference>Create_Beneficiaries</targetReference>
         </connector>
@@ -1274,7 +1572,7 @@
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>336</locationX>
+        <locationX>578</locationX>
         <locationY>6236</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1295,8 +1593,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_1</name>
         <label>Update Client Acceptance Form Page 1</label>
-        <locationX>336</locationX>
-        <locationY>3128</locationY>
+        <locationX>446</locationX>
+        <locationY>3020</locationY>
         <connector>
             <targetReference>Page_2</targetReference>
         </connector>
@@ -1305,8 +1603,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_2</name>
         <label>Update Client Acceptance Form Page 2</label>
-        <locationX>336</locationX>
-        <locationY>3452</locationY>
+        <locationX>446</locationX>
+        <locationY>3344</locationY>
         <connector>
             <targetReference>Page_2_5</targetReference>
         </connector>
@@ -1315,8 +1613,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_2_5</name>
         <label>Update Client Acceptance Form Page 2.5</label>
-        <locationX>336</locationX>
-        <locationY>4184</locationY>
+        <locationX>446</locationX>
+        <locationY>4076</locationY>
         <connector>
             <targetReference>Page_3</targetReference>
         </connector>
@@ -1325,8 +1623,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_3</name>
         <label>Update Client Acceptance Form Page 3</label>
-        <locationX>336</locationX>
-        <locationY>4508</locationY>
+        <locationX>446</locationX>
+        <locationY>4400</locationY>
         <connector>
             <targetReference>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</targetReference>
         </connector>
@@ -1335,8 +1633,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_4_5</name>
         <label>Update Client Acceptance Form Page 4-5</label>
-        <locationX>336</locationX>
-        <locationY>4832</locationY>
+        <locationX>446</locationX>
+        <locationY>4724</locationY>
         <connector>
             <targetReference>Page_6_BENEFICIARIES</targetReference>
         </connector>
@@ -1345,8 +1643,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_6</name>
         <label>Update Client Acceptance Form Page 6</label>
-        <locationX>336</locationX>
-        <locationY>5156</locationY>
+        <locationX>446</locationX>
+        <locationY>5048</locationY>
         <connector>
             <targetReference>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</targetReference>
         </connector>
@@ -1355,8 +1653,8 @@
     <recordUpdates>
         <name>Update_Client_Acceptance_Form_Page_7</name>
         <label>Update Client Acceptance Form Page 7</label>
-        <locationX>336</locationX>
-        <locationY>5480</locationY>
+        <locationX>446</locationX>
+        <locationY>5372</locationY>
         <connector>
             <targetReference>Page_8_CONCLUSION</targetReference>
         </connector>
@@ -1365,7 +1663,7 @@
     <screens>
         <name>Copy_1_of_Page_1_GENERAL</name>
         <label>(VIEW) of Page 1 - GENERAL</label>
-        <locationX>50</locationX>
+        <locationX>160</locationX>
         <locationY>1664</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1485,7 +1783,7 @@
                     <name>Copy_1_of_Client_Name</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Name</elementReference>
+                        <elementReference>clientAcceptanceForm.Client_Name__c</elementReference>
                     </defaultValue>
                     <fieldText>Client Name</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1507,7 +1805,7 @@
                     <name>Copy_1_of_Co_Reg_No</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Company_registration_number__c</elementReference>
+                        <elementReference>clientAcceptanceForm.Co_Reg_No__c</elementReference>
                     </defaultValue>
                     <fieldText>Co. Reg. No.</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1557,7 +1855,7 @@
                     <name>Copy_1_of_Primary_Contact</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.Name</elementReference>
+                        <elementReference>clientAcceptanceForm.Primary_Contact__c</elementReference>
                     </defaultValue>
                     <fieldText>Primary Contact</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1579,7 +1877,7 @@
                     <name>Copy_1_of_Email</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.Email</elementReference>
+                        <elementReference>clientAcceptanceForm.Email__c</elementReference>
                     </defaultValue>
                     <fieldText>Email</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1629,7 +1927,7 @@
                     <name>Copy_1_of_Contact_Address</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.MailingAddress</elementReference>
+                        <elementReference>clientAcceptanceForm.Contact_Address__c</elementReference>
                     </defaultValue>
                     <fieldText>Contact Address</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1640,7 +1938,7 @@
                     <name>Copy_1_of_Telephone</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Phone</elementReference>
+                        <elementReference>clientAcceptanceForm.Telephone__c</elementReference>
                     </defaultValue>
                     <fieldText>Telephone</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1740,7 +2038,7 @@
     <screens>
         <name>Copy_1_of_Page_2_5_REGULATIONS</name>
         <label>(VIEW) of Page 2.5 - REGULATIONS</label>
-        <locationX>50</locationX>
+        <locationX>160</locationX>
         <locationY>1880</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -1828,11 +2126,6 @@
             <fields>
                 <name>Copy_1_of_Page_2_5_REGULATIONS_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -1914,7 +2207,7 @@
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>regpick12</leftValueReference>
+                            <leftValueReference>Copy_1_of_regpick12</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <elementReference>Yes</elementReference>
@@ -2493,7 +2786,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>regpick11</leftValueReference>
+                    <leftValueReference>Copy_1_of_regpick11</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -2533,7 +2826,7 @@
     <screens>
         <name>Copy_1_of_Page_3_INTEGRITY_FINANCIAL_RISK</name>
         <label>(VIEW) of Page 3 - INTEGRITY, FINANCIAL RISK</label>
-        <locationX>50</locationX>
+        <locationX>160</locationX>
         <locationY>1988</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -2621,11 +2914,6 @@
             <fields>
                 <name>Copy_1_of_Page_3_INTEGRITY_FINANCIAL_RISK_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_Copy_1_of_yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2896,7 +3184,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>pickint2</leftValueReference>
+                    <leftValueReference>Copy_1_of_pickint2</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -3001,6 +3289,7 @@
                     <name>Copy_1_of_pickfin1</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NoForAuditYesFortax</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
@@ -3023,7 +3312,7 @@
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>pickfin1</leftValueReference>
+                            <leftValueReference>Copy_1_of_pickfin1</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <elementReference>Yes</elementReference>
@@ -3301,7 +3590,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>pickfin4</leftValueReference>
+                    <leftValueReference>Copy_1_of_pickfin4</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -3429,7 +3718,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>pickfin5</leftValueReference>
+                    <leftValueReference>Copy_1_of_pickfin5</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -3443,7 +3732,7 @@
     <screens>
         <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</name>
         <label>(VIEW) of Page 4-5 - MONEY LAUNDERING RISK ASSESSMENT</label>
-        <locationX>50</locationX>
+        <locationX>160</locationX>
         <locationY>2096</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -3531,11 +3820,6 @@
             <fields>
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_Copy_1_of_Copy_1_of_yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -3849,7 +4133,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_mlra5</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Do we have any concerns over the source of the client’s funds?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Have you made enquiry&apos;s as to the source of funds? please give details&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -3928,7 +4212,7 @@
                     <visibilityRule>
                         <conditionLogic>and</conditionLogic>
                         <conditions>
-                            <leftValueReference>mlrapick5</leftValueReference>
+                            <leftValueReference>Copy_1_of_mlrapick5</leftValueReference>
                             <operator>EqualTo</operator>
                             <rightValue>
                                 <elementReference>Yes</elementReference>
@@ -3976,41 +4260,36 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section9_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra16</name>
-                    <fieldText>&lt;p&gt;Have you made enquiry’s as to the source of Wealth, please give details.&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
+                    <name>AdditionalInfo</name>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Do_we_have_any_concerns_Exp2__c</elementReference>
+                    </defaultValue>
+                    <fieldText>AdditionalInfo</fieldText>
+                    <fieldType>InputField</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                    <visibilityRule>
+                        <conditionLogic>and</conditionLogic>
+                        <conditions>
+                            <leftValueReference>Copy_1_of_mlrapick5</leftValueReference>
+                            <operator>EqualTo</operator>
+                            <rightValue>
+                                <elementReference>Yes</elementReference>
+                            </rightValue>
+                        </conditions>
+                    </visibilityRule>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>7</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section9_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_mlrapick16</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section9_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4041,8 +4320,8 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section10_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra6</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;Does the client hold monies for its clients/customers?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_mlra16</name>
+                    <fieldText>&lt;p&gt;Have you made enquiry’s as to the source of Wealth, please give details.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4057,13 +4336,13 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section10_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlrapick6</name>
+                    <name>Copy_1_of_mlrapick16</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick6__c</elementReference>
+                        <elementReference>clientAcceptanceForm.Have_you_made_enquiry_s_as_to_the_source__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4109,8 +4388,8 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section11_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra7</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Do we anticipate holding monies for the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_mlra6</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;Does the client hold monies for its clients/customers?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4125,13 +4404,13 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section11_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlrapick7</name>
+                    <name>Copy_1_of_mlrapick6</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick7__c</elementReference>
+                        <elementReference>clientAcceptanceForm.mlrapick6__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4177,20 +4456,44 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section12_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlraWarning</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;A “Yes” answer to &lt;/span&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;u&gt;ANY&lt;/u&gt;&lt;/strong&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; of the above means the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_mlra7</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Do we anticipate holding monies for the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section12_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_mlrapick7</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick7__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section12_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4221,44 +4524,20 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section13_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra8</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Have we met the client face to face?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt; color: red;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;If “No” the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_mlraWarning</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;A “Yes” answer to &lt;/span&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;u&gt;ANY&lt;/u&gt;&lt;/strong&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; of the above means the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>7</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section13_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_mlrapick8</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick8__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section13_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4289,25 +4568,44 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra9</name>
-                    <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra9__c}</stringValue>
-                    </defaultValue>
-                    <fieldText>If the client has been met please state which team member met them:</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>Copy_1_of_mlra8</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Have we met the client face to face?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt; color: red;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;If “No” the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section14_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_mlrapick8</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick8__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section14_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4338,11 +4636,11 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra10</name>
+                    <name>Copy_1_of_mlra9</name>
                     <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra10__c}</stringValue>
+                        <stringValue>{!clientAcceptanceForm.mlra9__c}</stringValue>
                     </defaultValue>
-                    <fieldText>Please name the individuals whom we met:</fieldText>
+                    <fieldText>If the client has been met please state which team member met them:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4387,11 +4685,11 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra11</name>
+                    <name>Copy_1_of_mlra10</name>
                     <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra11__c}</stringValue>
+                        <stringValue>{!clientAcceptanceForm.mlra10__c}</stringValue>
                     </defaultValue>
-                    <fieldText>Other comments:</fieldText>
+                    <fieldText>Please name the individuals whom we met:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4436,44 +4734,25 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra12</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Is the client a Politically Exposed Person (PEP)?&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section17_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_mlrapick12</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
+                    <name>Copy_1_of_mlra11</name>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick12__c</elementReference>
+                        <stringValue>{!clientAcceptanceForm.mlra11__c}</stringValue>
                     </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
+                    <fieldText>Other comments:</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section17_Column4</name>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section17_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4504,8 +4783,8 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section18_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlra13</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Are any family members or close associates of the client PEPs?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_mlra12</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Is the client a Politically Exposed Person (PEP)?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4520,13 +4799,13 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section18_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlrapick13</name>
+                    <name>Copy_1_of_mlrapick12</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick13__c</elementReference>
+                        <elementReference>clientAcceptanceForm.mlrapick12__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4572,29 +4851,44 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section19_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_mlraWarning2</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Copy_1_of_mlra13</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Are any family members or close associates of the client PEPs?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>Copy_1_of_mlra14</name>
-                    <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra14__c}</stringValue>
-                    </defaultValue>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section19_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Copy_1_of_mlrapick13</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick13__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section19_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4625,6 +4919,59 @@
                 <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>Copy_1_of_mlraWarning2</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Copy_1_of_mlra14</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.mlra14__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>10</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
                     <name>Copy_1_of_mlra15</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Considering the above factors, the risk of money laundering is:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
@@ -4638,7 +4985,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column3</name>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_mlrapick15</name>
@@ -4661,7 +5008,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column4</name>
+                <name>Copy_1_of_Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -4680,7 +5027,7 @@
     <screens>
         <name>Copy_1_of_Page_6_BENEFICIARIES</name>
         <label>(VIEW) of Page 6 - BENEFICIARIES</label>
-        <locationX>50</locationX>
+        <locationX>160</locationX>
         <locationY>2204</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -4827,11 +5174,6 @@
             <fields>
                 <name>Copy_1_of_Page_6_BENEFICIARIES_Section3_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_YESNO3</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -4973,7 +5315,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>orpick1</leftValueReference>
+                    <leftValueReference>Copy_1_of_orpick1</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -5251,7 +5593,7 @@
     <screens>
         <name>Copy_1_of_Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</name>
         <label>(VIEW) of Page 7 - OBJECTIVITY / CONFLICTS OF INTEREST</label>
-        <locationX>50</locationX>
+        <locationX>160</locationX>
         <locationY>2312</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -5339,11 +5681,6 @@
             <fields>
                 <name>Copy_1_of_Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_Copy_1_of_YESNO3</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -5945,7 +6282,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>objpick7</leftValueReference>
+                    <leftValueReference>Copy_1_of_objpick7</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -6072,7 +6409,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>objpick8</leftValueReference>
+                    <leftValueReference>Copy_1_of_objpick8</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -6099,8 +6436,22 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_1_of_objwarn1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;SEE EXAMPLE WORDING - PLEASE DELETE WHERE APPLICABLE:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;AUDIT AND TAX&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Wingdings;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;color: red; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif;&quot;&gt;Tax work will be carried out by a team independent of the audit team and under the supervision of a separate Partner&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;ACCOUNTS AND AUDIT WORK&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Wingdings;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;color: red; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif;&quot;&gt;Producing statutory accounts in our accounting software which only involve services of a routine or mechanical nature.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Wingdings;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;color: red; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif;&quot;&gt;We will not initiate transactions or carry out any accounting services that would involve us undertaking any part in the role of management.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Wingdings;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;color: red; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif;&quot;&gt;We should include safeguards to ensure that we do not carry out any more in the preparation of statutory accounting services other than the above. Either a separate team inputting into CaseWare or 2nd Partner review.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;NFP&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 12pt;&quot;&gt;AAR / TPS EOYC - other non-audit services expected to be completed by auditor as part of role and are separate from the audit process.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;AUDIT AND TAX&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Wingdings; color: red;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; color: red; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: red;&quot;&gt;Tax work will be carried out by a team independent of the audit team and under the supervision of a separate Partner&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;ACCOUNTS AND AUDIT WORK&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Wingdings; color: red;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; color: red; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: red;&quot;&gt;Producing statutory accounts in our accounting software which only involve services of a routine or mechanical nature.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Wingdings; color: red;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; color: red; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: red;&quot;&gt;We will not initiate transactions or carry out any accounting services that would involve us undertaking any part in the role of management.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Wingdings; color: red;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; color: red; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: red;&quot;&gt;We should include safeguards to ensure that we do not carry out any more in the preparation of statutory accounting services other than the above. Either a separate team inputting into CaseWare or 2nd Partner review.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;NFP&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12pt; font-family: Arial, sans-serif; color: red;&quot;&gt;AAR / TPS EOYC - other non-audit services expected to be completed by auditor as part of role and are separate from the audit process.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Safeguard_Applied_Copy</name>
+                    <choiceReferences>AuditAndtax</choiceReferences>
+                    <choiceReferences>AccountsAndAudits</choiceReferences>
+                    <choiceReferences>NFP</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Safeguards_Applied__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Safeguard Applied</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -6130,14 +6481,11 @@
     <screens>
         <name>Copy_1_of_Page_8_CONCLUSION</name>
         <label>(VIEW) of Page 8 - CONCLUSION</label>
-        <locationX>50</locationX>
+        <locationX>160</locationX>
         <locationY>2420</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Copy_1_of_Page_9_APPENDIX</targetReference>
-        </connector>
         <fields>
             <name>wTxt8</name>
             <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
@@ -6335,97 +6683,178 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Copy_1_of_Page_9_APPENDIX</name>
-        <label>(VIEW) of Page 9 - APPENDIX</label>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
         <locationX>50</locationX>
-        <locationY>2528</locationY>
+        <locationY>6236</locationY>
         <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
+        <allowFinish>false</allowFinish>
         <allowPause>false</allowPause>
         <fields>
-            <name>wTxt9</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <name>ErrorMsg</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;Please complete all of the fields in the Form&lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>Copy_1_of_Page_9_APPENDIX_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Copy_1_of_Page_9_APPENDIX_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_cafimage1</name>
-                    <extensionName>flowruntime:image</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>imageName</name>
-                        <value>
-                            <stringValue>CAF_Banner</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>horizontalAlignment</name>
-                        <value>
-                            <stringValue>center</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <fields>
-                    <name>Copy_1_of_clientacceptanceformheader</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <name>errorPg1</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;PAGE 1&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>validation1</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
-            <name>Copy_1_of_Page_9_APPENDIX_Section2</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Copy_1_of_Page_9_APPENDIX_Section2_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_Copy_1_of_Copy_1_of_objwarn1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 14px;&quot;&gt;APPENDIX&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 14px;&quot;&gt;(PLEASE INSERT ANY DOCUMENTS FROM COMPANIES HOUSE RELATING TO SUBSIDIARY ACCOUNTS - USE &lt;u&gt;ONE&lt;/u&gt; TABLE FOR EACH SUBSIDIARY)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <name>errorPg2</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;PAGE 2&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>validation2</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
-        <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
+        <fields>
+            <name>errorPg2_5</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;PAGE 2.5&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>validation2_5</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPg3</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;PAGE 3&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>validation3</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPg4_5</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;PAGE 4-5&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>validation4_5</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPg6</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields and beneficiaries on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;PAGE 6&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Validation6</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPg7</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;PAGE 7&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>validation7</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPg8</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;PAGE 8&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>validation7</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
+        <name>Error_Screen_No_Beneficiary</name>
+        <label>Error Screen (No Beneficiary)</label>
+        <locationX>314</locationX>
+        <locationY>6236</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>Copy_2_of_ErrorMsg</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);&quot;&gt;Please complete all of the fields in the Form&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Copy_2_of_errorPg6</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields and beneficiaries on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;PAGE 6&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Page_1</name>
         <label>Page 1 - GENERAL</label>
-        <locationX>336</locationX>
-        <locationY>2912</locationY>
+        <locationX>446</locationX>
+        <locationY>2804</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_1_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>pg1</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_1_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -6533,7 +6962,7 @@
                     <name>Client_Name</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Name</elementReference>
+                        <elementReference>clientAcceptanceForm.Client_Name__c</elementReference>
                     </defaultValue>
                     <fieldText>Client Name</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6555,7 +6984,7 @@
                     <name>Co_Reg_No</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Company_registration_number__c</elementReference>
+                        <elementReference>clientAcceptanceForm.Co_Reg_No__c</elementReference>
                     </defaultValue>
                     <fieldText>Co. Reg. No.</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6605,7 +7034,7 @@
                     <name>Primary_Contact</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.Name</elementReference>
+                        <elementReference>clientAcceptanceForm.Primary_Contact__c</elementReference>
                     </defaultValue>
                     <fieldText>Primary Contact</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6627,7 +7056,7 @@
                     <name>Email</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.Email</elementReference>
+                        <elementReference>clientAcceptanceForm.Email__c</elementReference>
                     </defaultValue>
                     <fieldText>Email</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6677,7 +7106,7 @@
                     <name>Contact_Address</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.MailingAddress</elementReference>
+                        <elementReference>clientAcceptanceForm.Contact_Address__c</elementReference>
                     </defaultValue>
                     <fieldText>Contact Address</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6688,7 +7117,7 @@
                     <name>Telephone</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Phone</elementReference>
+                        <elementReference>clientAcceptanceForm.Telephone__c</elementReference>
                     </defaultValue>
                     <fieldText>Telephone</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6788,14 +7217,19 @@
     <screens>
         <name>Page_2</name>
         <label>Page 2 - CP CONTACTS, NATURE OF ASSIGNMENT, CHANGE OF ADVISOR</label>
-        <locationX>336</locationX>
-        <locationY>3236</locationY>
+        <locationX>446</locationX>
+        <locationY>3128</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_2_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>pg2</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_2_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -6864,7 +7298,7 @@
                     <name>RelationshipOwner</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Owner.Name</elementReference>
+                        <elementReference>RelationshipOwner_default</elementReference>
                     </defaultValue>
                     <fieldText>Relationship Owner</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6898,7 +7332,7 @@
                     <name>Lifecycle_Coordinator</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>variableLifecycle</elementReference>
+                        <elementReference>clientAcceptanceForm.Lifecycle_Coordinator__c</elementReference>
                     </defaultValue>
                     <fieldText>Lifecycle Coordinator</fieldText>
                     <fieldType>InputField</fieldType>
@@ -7310,14 +7744,19 @@
     <screens>
         <name>Page_2_5</name>
         <label>Page 2.5 - REGULATIONS</label>
-        <locationX>336</locationX>
-        <locationY>3560</locationY>
+        <locationX>446</locationX>
+        <locationY>3452</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_2_5_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>pg2_5</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;2.5&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_2_5_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -7393,11 +7832,6 @@
             <fields>
                 <name>Page_2_5_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -8098,14 +8532,19 @@
     <screens>
         <name>Page_3</name>
         <label>Page 3 - INTEGRITY, FINANCIAL RISK</label>
-        <locationX>336</locationX>
-        <locationY>4292</locationY>
+        <locationX>446</locationX>
+        <locationY>4184</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_3_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>pg3</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_3_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -8181,11 +8620,6 @@
             <fields>
                 <name>Page_3_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -8497,11 +8931,6 @@
             <fields>
                 <name>Page_3_Section7_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>yesno2</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -8561,6 +8990,7 @@
                     <name>pickfin1</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NoForAuditYesFortax</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
@@ -9003,14 +9433,19 @@
     <screens>
         <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT</name>
         <label>Page 4-5 - MONEY LAUNDERING RISK ASSESSMENT</label>
-        <locationX>336</locationX>
-        <locationY>4616</locationY>
+        <locationX>446</locationX>
+        <locationY>4508</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_4_5_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>pg4_5</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;4-5&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -9086,11 +9521,6 @@
             <fields>
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_Copy_1_of_yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -9404,7 +9834,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlra5</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Do we have any concerns over the source of the client’s funds?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Have you made enquiry&apos;s as to the source of funds, please give details&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9422,6 +9852,7 @@
                     <name>mlrapick5</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NoForAuditYesFortax</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
@@ -9531,41 +9962,26 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section9_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra16</name>
-                    <fieldText>&lt;p&gt;Have you made enquiry’s as to the source of Wealth, please give details.&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section9_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>mlrapick16</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
+                    <name>Additional_Info</name>
                     <dataType>String</dataType>
-                    <fieldType>DropdownBox</fieldType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Do_we_have_any_concerns_Exp2__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Additional Info</fieldText>
+                    <fieldType>InputField</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section9_Column4</name>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section9_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -9577,6 +9993,16 @@
             </fields>
             <isRequired>false</isRequired>
             <regionContainerType>SectionWithoutHeader</regionContainerType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>mlrapick5</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <elementReference>Yes</elementReference>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
         </fields>
         <fields>
             <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section10</name>
@@ -9596,8 +10022,8 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section10_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra6</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;Does the client hold monies for its clients/customers?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>mlra16</name>
+                    <fieldText>&lt;p&gt;Have you made enquiry’s as to the source of Wealth, please give details.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9612,13 +10038,13 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section10_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrapick6</name>
+                    <name>mlrapick16</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick6__c</elementReference>
+                        <elementReference>clientAcceptanceForm.Have_you_made_enquiry_s_as_to_the_source__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -9664,8 +10090,8 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section11_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra7</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Do we anticipate holding monies for the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>mlra6</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;Does the client hold monies for its clients/customers?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9680,13 +10106,13 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section11_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrapick7</name>
+                    <name>mlrapick6</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick7__c</elementReference>
+                        <elementReference>clientAcceptanceForm.mlrapick6__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -9732,20 +10158,44 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section12_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlraWarning</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;A “Yes” answer to &lt;/span&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;u&gt;ANY&lt;/u&gt;&lt;/strong&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; of the above means the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>mlra7</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Do we anticipate holding monies for the client?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section12_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>mlrapick7</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick7__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section12_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -9776,44 +10226,20 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section13_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra8</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Have we met the client face to face?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt; color: red;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;If “No” the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>mlraWarning</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;A “Yes” answer to &lt;/span&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&lt;u&gt;ANY&lt;/u&gt;&lt;/strong&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt; of the above means the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>7</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section13_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>mlrapick8</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
-                    <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick8__c</elementReference>
-                    </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>3</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section13_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -9844,25 +10270,44 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section14_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra9</name>
-                    <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra9__c}</stringValue>
-                    </defaultValue>
-                    <fieldText>If the client has been met please state which team member met them:</fieldText>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
+                    <name>mlra8</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;Have we met the client face to face?&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Arial, sans-serif; font-size: 10pt; color: red;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;If “No” the client must be treated as high risk&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section14_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>mlrapick8</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick8__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section14_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -9893,11 +10338,11 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section15_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra10</name>
+                    <name>mlra9</name>
                     <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra10__c}</stringValue>
+                        <stringValue>{!clientAcceptanceForm.mlra9__c}</stringValue>
                     </defaultValue>
-                    <fieldText>Please name the individuals whom we met:</fieldText>
+                    <fieldText>If the client has been met please state which team member met them:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -9942,11 +10387,11 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section16_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra11</name>
+                    <name>mlra10</name>
                     <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra11__c}</stringValue>
+                        <stringValue>{!clientAcceptanceForm.mlra10__c}</stringValue>
                     </defaultValue>
-                    <fieldText>Other comments:</fieldText>
+                    <fieldText>Please name the individuals whom we met:</fieldText>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -9991,44 +10436,25 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section17_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra12</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Is the client a Politically Exposed Person (PEP)?&lt;/span&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>7</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section17_Column3</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>mlrapick12</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
-                    <choiceReferences>NA</choiceReferences>
-                    <dataType>String</dataType>
+                    <name>mlra11</name>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick12__c</elementReference>
+                        <stringValue>{!clientAcceptanceForm.mlra11__c}</stringValue>
                     </defaultValue>
-                    <fieldType>DropdownBox</fieldType>
+                    <fieldText>Other comments:</fieldText>
+                    <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>3</stringValue>
+                        <stringValue>10</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section17_Column4</name>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section17_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10059,8 +10485,8 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section18_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlra13</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Are any family members or close associates of the client PEPs?&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>mlra12</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Is the client a Politically Exposed Person (PEP)?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -10075,13 +10501,13 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section18_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlrapick13</name>
+                    <name>mlrapick12</name>
                     <choiceReferences>Yes</choiceReferences>
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick13__c</elementReference>
+                        <elementReference>clientAcceptanceForm.mlrapick12__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -10127,29 +10553,44 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section19_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>mlraWarning2</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>mlra13</name>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Are any family members or close associates of the client PEPs?&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>mlra14</name>
-                    <defaultValue>
-                        <stringValue>{!clientAcceptanceForm.mlra14__c}</stringValue>
-                    </defaultValue>
-                    <fieldType>LargeTextArea</fieldType>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>10</stringValue>
+                        <stringValue>7</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
             </fields>
             <fields>
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section19_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>mlrapick13</name>
+                    <choiceReferences>Yes</choiceReferences>
+                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>NA</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.mlrapick13__c</elementReference>
+                    </defaultValue>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section19_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10180,6 +10621,59 @@
                 <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
+                    <name>mlraWarning2</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;A “Yes” answer to either of the above means the client must be treated as high risk and Enhanced Due Diligence (EDD) procedures as set out in the firm’s Client Acceptance Guidance Notes (available on the intranet) applied.&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;Record EDD procedures undertaken below:&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>mlra14</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.mlra14__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>10</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
                     <name>mlra15</name>
                     <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;Considering the above factors, the risk of money laundering is:&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
@@ -10193,7 +10687,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column3</name>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>mlrapick15</name>
@@ -10216,7 +10710,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section20_Column4</name>
+                <name>Page_4_5_MONEY_LAUNDERING_RISK_ASSESSMENT_Section21_Column4</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10235,14 +10729,19 @@
     <screens>
         <name>Page_6_BENEFICIARIES</name>
         <label>Page 6 - BENEFICIARIES</label>
-        <locationX>336</locationX>
-        <locationY>4940</locationY>
+        <locationX>446</locationX>
+        <locationY>4832</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_6_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>pg6</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;6&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_6_BENEFICIARIES_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -10294,6 +10793,35 @@
             <name>displayEnsure</name>
             <fieldText>&lt;p&gt;Ensure that the “know your client” information held on our files for anti-money laundering purposes is updated for any changes identified above and in any other relevant respects.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Record the Current Beneficial Owners and the basis of beneficial ownership below:&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>beneficiaryRepeater</name>
+            <fieldType>Repeater</fieldType>
+            <fields>
+                <name>Person_full_name</name>
+                <dataType>String</dataType>
+                <fieldText>Person full name:</fieldText>
+                <fieldType>InputField</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>ID_verified_by</name>
+                <dataType>String</dataType>
+                <fieldText>ID verified by:</fieldText>
+                <fieldType>InputField</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Basis_of_beneficial_ownership</name>
+                <dataType>String</dataType>
+                <fieldText>Basis of beneficial ownership</fieldText>
+                <fieldType>InputField</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <fields>
             <name>Page_6_BENEFICIARIES_Section2</name>
@@ -10377,11 +10905,6 @@
             <fields>
                 <name>Page_6_BENEFICIARIES_Section3_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>YESNO3</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -10801,14 +11324,19 @@
     <screens>
         <name>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST</name>
         <label>Page 7 - OBJECTIVITY / CONFLICTS OF INTEREST</label>
-        <locationX>336</locationX>
-        <locationY>5264</locationY>
+        <locationX>446</locationX>
+        <locationY>5156</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_7_Assignments</targetReference>
         </connector>
+        <fields>
+            <name>pg7</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;7&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -10884,11 +11412,6 @@
             <fields>
                 <name>Page_7_OBJECTIVITY_CONFLICTS_OF_INTEREST_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_YESNO3</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A (for Law)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -11644,8 +12167,22 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>objwarn1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;SEE EXAMPLE WORDING - PLEASE DELETE WHERE APPLICABLE:&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;AUDIT AND TAX&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Wingdings;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;color: red; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif;&quot;&gt;Tax work will be carried out by a team independent of the audit team and under the supervision of a separate Partner&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;ACCOUNTS AND AUDIT WORK&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Wingdings;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;color: red; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif;&quot;&gt;Producing statutory accounts in our accounting software which only involve services of a routine or mechanical nature.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Wingdings;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;color: red; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif;&quot;&gt;We will not initiate transactions or carry out any accounting services that would involve us undertaking any part in the role of management.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Wingdings;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;color: red; font-family: &amp;quot;Times New Roman&amp;quot;; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif;&quot;&gt;We should include safeguards to ensure that we do not carry out any more in the preparation of statutory accounting services other than the above. Either a separate team inputting into CaseWare or 2nd Partner review.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 10pt;&quot;&gt;NFP&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: red; font-family: Arial, sans-serif; font-size: 12pt;&quot;&gt;AAR / TPS EOYC - other non-audit services expected to be completed by auditor as part of role and are separate from the audit process.&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt; AUDIT AND TAX&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Wingdings; color: red;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; color: red; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: red;&quot;&gt;Tax work will be carried out by a team independent of the audit team and under the supervision of a separate Partner&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;ACCOUNTS AND AUDIT WORK&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Wingdings; color: red;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; color: red; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: red;&quot;&gt;Producing statutory accounts in our accounting software which only involve services of a routine or mechanical nature.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Wingdings; color: red;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; color: red; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: red;&quot;&gt;We will not initiate transactions or carry out any accounting services that would involve us undertaking any part in the role of management.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-family: Wingdings; color: red;&quot;&gt;Ø&lt;/span&gt;&lt;span style=&quot;font-family: &amp;quot;Times New Roman&amp;quot;; color: red; font-size: 7pt;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-family: Arial, sans-serif; color: red;&quot;&gt;We should include safeguards to ensure that we do not carry out any more in the preparation of statutory accounting services other than the above. Either a separate team inputting into CaseWare or 2nd Partner review.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 10pt; font-family: Arial, sans-serif; color: red;&quot;&gt;NFP&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 12pt; font-family: Arial, sans-serif; color: red;&quot;&gt;AAR / TPS EOYC - other non-audit services expected to be completed by auditor as part of role and are separate from the audit process.&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>Safeguard_Applied</name>
+                    <choiceReferences>AuditAndtax</choiceReferences>
+                    <choiceReferences>AccountsAndAudits</choiceReferences>
+                    <choiceReferences>NFP</choiceReferences>
+                    <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.Safeguards_Applied__c</elementReference>
+                    </defaultValue>
+                    <fieldText>Safeguard Applied</fieldText>
+                    <fieldType>DropdownBox</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
                 </fields>
                 <inputParameters>
                     <name>width</name>
@@ -11675,14 +12212,19 @@
     <screens>
         <name>Page_8_CONCLUSION</name>
         <label>Page 8 - CONCLUSION</label>
-        <locationX>336</locationX>
-        <locationY>5588</locationY>
+        <locationX>446</locationX>
+        <locationY>5480</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Page_9_APPENDIX</targetReference>
+            <targetReference>Page_8_9_Assignment</targetReference>
         </connector>
+        <fields>
+            <name>pg8</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;8&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_8_CONCLUSION_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -11875,88 +12417,9 @@
         <showHeader>false</showHeader>
     </screens>
     <screens>
-        <name>Page_9_APPENDIX</name>
-        <label>Page 9 - APPENDIX</label>
-        <locationX>336</locationX>
-        <locationY>5696</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Page_8_9_Assignment</targetReference>
-        </connector>
-        <fields>
-            <name>Page_9_APPENDIX_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Page_9_APPENDIX_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>cafimage1</name>
-                    <extensionName>flowruntime:image</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>imageName</name>
-                        <value>
-                            <stringValue>CAF_Banner</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>horizontalAlignment</name>
-                        <value>
-                            <stringValue>center</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <fields>
-                    <name>clientacceptanceformheader</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;﻿&lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Business Risk Assessment&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>Page_9_APPENDIX_Section2</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Page_9_APPENDIX_Section2_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_1_of_Copy_1_of_objwarn1</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 14px;&quot;&gt;APPENDIX&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;color: red; font-family: Arial, sans-serif; font-size: 14px;&quot;&gt;(PLEASE INSERT ANY DOCUMENTS FROM COMPANIES HOUSE RELATING TO SUBSIDIARY ACCOUNTS - USE &lt;u&gt;ONE&lt;/u&gt; TABLE FOR EACH SUBSIDIARY)&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <nextOrFinishButtonLabel>Finish</nextOrFinishButtonLabel>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
         <name>VIEW_of_Page_2_CP_CONTACTS</name>
         <label>(VIEW) of Page 2 - CP CONTACTS, NATURE OF ASSIGNMENT, CHANGE OF ADVISOR</label>
-        <locationX>50</locationX>
+        <locationX>160</locationX>
         <locationY>1772</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -12037,7 +12500,7 @@
                     <name>Copy_1_of_RelationshipOwner</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Owner.Name</elementReference>
+                        <elementReference>RelationshipOwner_default</elementReference>
                     </defaultValue>
                     <fieldText>Relationship Owner</fieldText>
                     <fieldType>InputField</fieldType>
@@ -12071,7 +12534,7 @@
                     <name>Copy_1_of_Lifecycle_Coordinator</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>variableLifecycle</elementReference>
+                        <elementReference>clientAcceptanceForm.Lifecycle_Coordinator__c</elementReference>
                     </defaultValue>
                     <fieldText>Lifecycle Coordinator</fieldText>
                     <fieldType>InputField</fieldType>
@@ -12401,7 +12864,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>coapick1</leftValueReference>
+                    <leftValueReference>Copy_1_of_coapick1</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>No</elementReference>
@@ -12481,13 +12944,18 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>210</locationX>
+        <locationX>320</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
         </connector>
     </start>
     <status>Draft</status>
+    <textTemplates>
+        <name>RelationshipOwner_default</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>{!Get_Case.Account.Owner.FirstName} {!Get_Case.Account.Owner.LastName}</text>
+    </textTemplates>
     <variables>
         <name>beneficiaries</name>
         <dataType>SObject</dataType>

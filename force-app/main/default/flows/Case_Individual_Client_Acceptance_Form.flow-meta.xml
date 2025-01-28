@@ -4,7 +4,7 @@
     <assignments>
         <name>Assign_Form_to_Client_Acceptance_Form</name>
         <label>Assign Form to Client Acceptance Form</label>
-        <locationX>50</locationX>
+        <locationX>182</locationX>
         <locationY>782</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm</assignToReference>
@@ -18,9 +18,25 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Assign_Form_to_Client_Acceptance_Form_View</name>
+        <label>Assign Form to Client Acceptance Form - View</label>
+        <locationX>358</locationX>
+        <locationY>3842</locationY>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Individual_Risk_Assessment_Form_View</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>View_of_Page_1</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Assign_Individual_Risk_Form</name>
         <label>Assign Individual Risk Form</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>998</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Id</assignToReference>
@@ -43,7 +59,7 @@
     <assignments>
         <name>Page_1_Assignment</name>
         <label>Page 1 Assignment</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>1298</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Client_Name__c</assignToReference>
@@ -144,21 +160,28 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>clientAcceptanceForm.Other_CPContact__c</assignToReference>
+            <assignToReference>clientAcceptanceForm.Other_please_specify__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Other_please_specify</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Partner_Responsibility__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Partner_responsibility_relationship_partner</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
-            <targetReference>Page_2_NATURE_OF_ASSIGNMENT_CHANGE_OF_ADVISOR</targetReference>
+            <targetReference>Update_Page_1</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_2_5_Assignment</name>
         <label>Page 2.5 Assignment</label>
-        <locationX>182</locationX>
-        <locationY>1838</locationY>
+        <locationX>314</locationX>
+        <locationY>1946</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.regpick11__c</assignToReference>
             <operator>Assign</operator>
@@ -236,15 +259,22 @@
                 <elementReference>regpick19a</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.regpick18__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>regpick18</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
-            <targetReference>Page_3</targetReference>
+            <targetReference>Update_Page_2_5</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Page_2_Assignment</name>
         <label>Page 2 Assignment</label>
-        <locationX>182</locationX>
-        <locationY>1514</locationY>
+        <locationX>314</locationX>
+        <locationY>1622</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Summarise_the_key_aspects_of_what_we_are__c</assignToReference>
             <operator>Assign</operator>
@@ -308,8 +338,8 @@
     <assignments>
         <name>Page_3_Assignment</name>
         <label>Page 3 Assignment</label>
-        <locationX>182</locationX>
-        <locationY>2054</locationY>
+        <locationX>314</locationX>
+        <locationY>2270</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.pickfin1__c</assignToReference>
             <operator>Assign</operator>
@@ -356,14 +386,7 @@
             <assignToReference>clientAcceptanceForm.mlrapick18__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>mlrapick19</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>clientAcceptanceForm.mlrapick19__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>mlrapick20</elementReference>
+                <elementReference>mlrapick18</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -412,7 +435,7 @@
             <assignToReference>clientAcceptanceForm.mlrapick8__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>mlra9</elementReference>
+                <elementReference>have_we_met</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -422,6 +445,27 @@
                 <elementReference>mlra10</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Please_state_which_team_member_has_met__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>mlra9</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.mlrapick20__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>mlrapick20</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.mlrapick19__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>mlrapick19</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Individual_Risk_Page_3</targetReference>
         </connector>
@@ -429,8 +473,8 @@
     <assignments>
         <name>Page_4_Assignment</name>
         <label>Page 4 Assignment</label>
-        <locationX>182</locationX>
-        <locationY>2378</locationY>
+        <locationX>314</locationX>
+        <locationY>2594</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.Full_Name__c</assignToReference>
             <operator>Assign</operator>
@@ -550,6 +594,27 @@
                 <elementReference>Full_Name2</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Full_Name3__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Full_Name3</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.Full_Name4__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Full_Name4</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>clientAcceptanceForm.objpick2__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>objpick1a</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Update_Individual_Risk_Page_4</targetReference>
         </connector>
@@ -557,13 +622,13 @@
     <assignments>
         <name>Page_5_Assignment</name>
         <label>Page 5 Assignment</label>
-        <locationX>182</locationX>
-        <locationY>2702</locationY>
+        <locationX>314</locationX>
+        <locationY>2918</locationY>
         <assignmentItems>
             <assignToReference>clientAcceptanceForm.con1__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>con1</elementReference>
+                <elementReference>addComments</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -632,27 +697,12 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>468</locationX>
+        <locationX>358</locationX>
         <locationY>350</locationY>
         <defaultConnector>
-            <targetReference>View_of_Page_1</targetReference>
+            <targetReference>Get_Individual_CAF_Record_Type_View</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
-        <rules>
-            <name>No_Pending_Approvals</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Get_Individual_CAF_Record_Type</targetReference>
-            </connector>
-            <label>No Pending Approvals</label>
-        </rules>
         <rules>
             <name>Lock_Form</name>
             <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
@@ -678,44 +728,37 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Case.Risk_Compliance_Approved_formula__c</leftValueReference>
+                <leftValueReference>Get_Case.Risk_Compliance_Approved_checkbox__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>View_of_Page_1</targetReference>
+                <targetReference>Get_Individual_CAF_Record_Type_View</targetReference>
             </connector>
             <label>Lock Form</label>
         </rules>
-    </decisions>
-    <decisions>
-        <name>Check_Approved</name>
-        <label>Check Approved</label>
-        <locationX>182</locationX>
-        <locationY>2918</locationY>
-        <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
-            <name>Not_Approved</name>
+            <name>No_Pending_Approvals</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Case.Individual_Risk_Form_checkbox__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Case</targetReference>
+                <targetReference>Get_Individual_CAF_Record_Type</targetReference>
             </connector>
-            <label>Not Approved</label>
+            <label>No Pending Approvals</label>
         </rules>
     </decisions>
     <decisions>
         <name>Check_If_Form_is_Existing</name>
         <label>Check If Form is Existing</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>674</locationY>
         <defaultConnector>
             <targetReference>Create_Individual_Risk_Form</targetReference>
@@ -737,6 +780,71 @@
             <label>Found</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Check_Individual_Risk_Form</name>
+        <label>Check Individual Risk Form</label>
+        <locationX>314</locationX>
+        <locationY>3134</locationY>
+        <defaultConnectorLabel>Approved</defaultConnectorLabel>
+        <rules>
+            <name>Incomplete_Fields</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>Validation1</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Validation2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Validation3</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Validation4</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Validation5</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error_Screen</targetReference>
+            </connector>
+            <label>Incomplete Fields</label>
+        </rules>
+        <rules>
+            <name>Not_Completed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Case.Individual_Risk_Form_checkbox__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Case</targetReference>
+            </connector>
+            <label>Not Completed</label>
+        </rules>
+    </decisions>
     <dynamicChoiceSets>
         <name>oppArea_values</name>
         <dataType>Picklist</dataType>
@@ -754,6 +862,103 @@
         <picklistObject>Opportunity</picklistObject>
     </dynamicChoiceSets>
     <environments>Default</environments>
+    <formulas>
+        <name>formulaName</name>
+        <dataType>String</dataType>
+        <expression>{!Get_Case.Account.Primary_Contact__r.FirstName} &amp; &apos; &apos;&amp; {!Get_Case.Account.Primary_Contact__r.LastName}</expression>
+    </formulas>
+    <formulas>
+        <name>Validation1</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+TEXT({!Date_of_Birth}) &lt;&gt; &quot;&quot;,
+{!Address} &lt;&gt; &quot;&quot;,
+{!Assignment_Manager_i_e_who_has_the_relationship_with_the_client} &lt;&gt; &quot;&quot;,
+{!Client_Name} &lt;&gt; &quot;&quot;,
+{!Email} &lt;&gt; &quot;&quot;,
+{!Lifecycle_Coordinator} &lt;&gt; &quot;&quot;,
+{!List_related_businesses_and_individuals_and_the_relationship_if_service_by_CP} &lt;&gt; &quot;&quot;,
+{!NI_Number} &lt;&gt; &quot;&quot;,
+{!Other_please_specify} &lt;&gt; &quot;&quot;,
+{!Partner_responsibility_relationship_partner} &lt;&gt; &quot;&quot;,
+{!Personal_Tax_partner} &lt;&gt; &quot;&quot;,
+{!Post_Code} &lt;&gt; &quot;&quot;,
+{!Primary_Contact} &lt;&gt; &quot;&quot;,
+{!Sign_off_Manager} &lt;&gt; &quot;&quot;,
+{!Telephone} &lt;&gt; &quot;&quot;,
+{!UTR} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Validation2</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!coapick1} &lt;&gt; &quot;&quot;,
+{!Fees_to_be_charged} &lt;&gt; &quot;&quot;,
+{!feesAgreedPick} &lt;&gt; &quot;&quot;,
+{!If_reduced_fee_please_state_the_reason_why} &lt;&gt; &quot;&quot;,
+{!Name_of_current_advisor} &lt;&gt; &quot;&quot;,
+{!Summarise_the_key_aspects_of_what_we_are_being_asked_to_do} &lt;&gt; &quot;&quot;,
+{!What_is_the_reason_for_the_change_Why_us} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Validation3</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!pickint2} &lt;&gt; &quot;&quot;,
+{!regpick11} &lt;&gt; &quot;&quot;,
+{!regpick16} &lt;&gt; &quot;&quot;,
+{!regpick17} &lt;&gt; &quot;&quot;,
+{!regpick18} &lt;&gt; &quot;&quot;,
+{!regpick19} &lt;&gt; &quot;&quot;,
+{!regpick19a} &lt;&gt; &quot;&quot;,
+{!regpick6} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Validation4</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!have_we_met} &lt;&gt; &quot;&quot;,
+{!mlra14} &lt;&gt; &quot;&quot;,
+{!mlrapick12} &lt;&gt; &quot;&quot;,
+{!mlrapick13} &lt;&gt; &quot;&quot;,
+{!mlrapick15} &lt;&gt; &quot;&quot;,
+{!mlrapick16} &lt;&gt; &quot;&quot;,
+{!mlrapick17} &lt;&gt; &quot;&quot;,
+{!mlrapick18} &lt;&gt; &quot;&quot;,
+{!mlrapick19} &lt;&gt; &quot;&quot;,
+{!mlrapick20} &lt;&gt; &quot;&quot;,
+{!mlrapick7} &lt;&gt; &quot;&quot;,
+{!pickfin1} &lt;&gt; &quot;&quot;,
+{!pickfin3} &lt;&gt; &quot;&quot;,
+{!pickfin4} &lt;&gt; &quot;&quot;,
+{!mlra10} &lt;&gt; &quot;&quot;,
+{!mlra9} &lt;&gt; &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Validation5</name>
+        <dataType>Boolean</dataType>
+        <expression>AND(
+{!orpick1yes} &lt;&gt; &quot;&quot;,
+{!iv1} &lt;&gt; &quot;&quot;,
+{!ivpick2} &lt;&gt; &quot;&quot;,
+{!objpick1} &lt;&gt; &quot;&quot;,
+{!objpick1a} &lt;&gt; &quot;&quot;,
+{!objpick3} &lt;&gt; &quot;&quot;,
+{!objpick4} &lt;&gt; &quot;&quot;,
+{!objpick5} &lt;&gt; &quot;&quot;,
+{!objpick7} &lt;&gt; &quot;&quot;,
+{!objpick8} &lt;&gt; &quot;&quot;,
+{!orpick1} &lt;&gt; &quot;&quot;,
+{!orpick2} &lt;&gt; &quot;&quot;,
+{!orpick3} &lt;&gt; &quot;&quot;,
+{!orpick4} &lt;&gt; &quot;&quot;,
+{!addComments} &lt;&gt;&quot;&quot;
+)</expression>
+    </formulas>
     <interviewLabel>Case - Individual {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case - Individual Client Acceptance Form</label>
     <processMetadataValues>
@@ -778,7 +983,7 @@
     <recordCreates>
         <name>Create_Individual_Risk_Form</name>
         <label>Create Individual Risk Form</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>782</locationY>
         <connector>
             <targetReference>Get_Created_Individual_Risk_Form</targetReference>
@@ -813,7 +1018,7 @@
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>468</locationX>
+        <locationX>358</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -841,7 +1046,7 @@
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>468</locationX>
+        <locationX>358</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -862,7 +1067,7 @@
     <recordLookups>
         <name>Get_Created_Individual_Risk_Form</name>
         <label>Get Created Individual Risk Form</label>
-        <locationX>314</locationX>
+        <locationX>446</locationX>
         <locationY>890</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -883,7 +1088,7 @@
     <recordLookups>
         <name>Get_Individual_CAF_Record_Type</name>
         <label>Get Individual CAF Record Type</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>458</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -909,9 +1114,37 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Individual_CAF_Record_Type_View</name>
+        <label>Get Individual CAF Record Type - View</label>
+        <locationX>358</locationX>
+        <locationY>3626</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Individual_Risk_Assessment_Form_View</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Client_Acceptance_Form__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Individual</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Individual_Risk_Assessment_Form</name>
         <label>Get Individual Risk Assessment Form</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>566</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -936,11 +1169,39 @@
         <object>Client_Acceptance_Form__c</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Individual_Risk_Assessment_Form_View</name>
+        <label>Get Individual Risk Assessment Form - View</label>
+        <locationX>358</locationX>
+        <locationY>3734</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Form_to_Client_Acceptance_Form_View</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Individual_CAF_Record_Type_View.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Client_Acceptance_Form__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>50</locationX>
-        <locationY>3026</locationY>
+        <locationX>314</locationX>
+        <locationY>3242</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -960,8 +1221,8 @@
     <recordUpdates>
         <name>Update_Individual_Risk_Form_Page_2</name>
         <label>Update Individual Risk Form Page 2</label>
-        <locationX>182</locationX>
-        <locationY>1622</locationY>
+        <locationX>314</locationX>
+        <locationY>1730</locationY>
         <connector>
             <targetReference>Page_2_REGULATIONS_INTEGRITY</targetReference>
         </connector>
@@ -970,8 +1231,8 @@
     <recordUpdates>
         <name>Update_Individual_Risk_Page_3</name>
         <label>Update Individual Risk Page 3</label>
-        <locationX>182</locationX>
-        <locationY>2162</locationY>
+        <locationX>314</locationX>
+        <locationY>2378</locationY>
         <connector>
             <targetReference>Page_4_IDENTITY_VERIFICATION</targetReference>
         </connector>
@@ -980,8 +1241,8 @@
     <recordUpdates>
         <name>Update_Individual_Risk_Page_4</name>
         <label>Update Individual Risk Page 4</label>
-        <locationX>182</locationX>
-        <locationY>2486</locationY>
+        <locationX>314</locationX>
+        <locationY>2702</locationY>
         <connector>
             <targetReference>Page_5_CONCLUSION</targetReference>
         </connector>
@@ -990,17 +1251,128 @@
     <recordUpdates>
         <name>Update_Individual_Risk_Page_5</name>
         <label>Update Individual Risk Page 5</label>
-        <locationX>182</locationX>
-        <locationY>2810</locationY>
+        <locationX>314</locationX>
+        <locationY>3026</locationY>
         <connector>
-            <targetReference>Check_Approved</targetReference>
+            <targetReference>Check_Individual_Risk_Form</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Page_1</name>
+        <label>Update Page 1</label>
+        <locationX>314</locationX>
+        <locationY>1406</locationY>
+        <connector>
+            <targetReference>Page_2_NATURE_OF_ASSIGNMENT_CHANGE_OF_ADVISOR</targetReference>
+        </connector>
+        <inputReference>clientAcceptanceForm</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Page_2_5</name>
+        <label>Update Page 2.5</label>
+        <locationX>314</locationX>
+        <locationY>2054</locationY>
+        <connector>
+            <targetReference>Page_3</targetReference>
         </connector>
         <inputReference>clientAcceptanceForm</inputReference>
     </recordUpdates>
     <screens>
+        <name>Error_Screen</name>
+        <label>Error Screen</label>
+        <locationX>50</locationX>
+        <locationY>3242</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>false</allowFinish>
+        <allowPause>false</allowPause>
+        <fields>
+            <name>error_Message</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;Please complete all of the fields in the Form&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>errorPG1</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 12px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;font-size: 12px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;PAGE 1&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Validation1</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPG2</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;PAGE 2&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Validation2</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPG3</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;PAGE 3&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Validation3</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPG4</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;PAGE 4&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Validation4</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <fields>
+            <name>errorPG5</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;color: rgb(68, 68, 68); font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;Please review the fields on &lt;/span&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); font-size: 12px; background-color: rgb(255, 255, 255);&quot;&gt;PAGE 5&lt;/strong&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+            <visibilityRule>
+                <conditionLogic>and</conditionLogic>
+                <conditions>
+                    <leftValueReference>Validation5</leftValueReference>
+                    <operator>EqualTo</operator>
+                    <rightValue>
+                        <booleanValue>false</booleanValue>
+                    </rightValue>
+                </conditions>
+            </visibilityRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>false</showHeader>
+    </screens>
+    <screens>
         <name>Page_1</name>
         <label>Page 1 - GENERAL, CP CONTACT</label>
-        <locationX>182</locationX>
+        <locationX>314</locationX>
         <locationY>1190</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1008,6 +1380,11 @@
         <connector>
             <targetReference>Page_1_Assignment</targetReference>
         </connector>
+        <fields>
+            <name>PG1</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_1_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -1115,7 +1492,7 @@
                     <name>Client_Name</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Name</elementReference>
+                        <elementReference>clientAcceptanceForm.Client_Name__c</elementReference>
                     </defaultValue>
                     <fieldText>Client Name</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1165,7 +1542,7 @@
                     <name>Primary_Contact</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.Name</elementReference>
+                        <elementReference>clientAcceptanceForm.Primary_Contact__c</elementReference>
                     </defaultValue>
                     <fieldText>Primary Contact</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1187,7 +1564,7 @@
                     <name>Email</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.Email</elementReference>
+                        <elementReference>clientAcceptanceForm.Email__c</elementReference>
                     </defaultValue>
                     <fieldText>Email</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1237,7 +1614,7 @@
                     <name>Address</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.BillingAddress</elementReference>
+                        <elementReference>clientAcceptanceForm.Contact_Address__c</elementReference>
                     </defaultValue>
                     <fieldText>Address</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1248,7 +1625,7 @@
                     <name>Post_Code</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.BillingPostalCode</elementReference>
+                        <elementReference>clientAcceptanceForm.Post_Code__c</elementReference>
                     </defaultValue>
                     <fieldText>Post Code</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1259,7 +1636,7 @@
                     <name>Telephone</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Phone</elementReference>
+                        <elementReference>clientAcceptanceForm.Telephone__c</elementReference>
                     </defaultValue>
                     <fieldText>Telephone</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1270,7 +1647,7 @@
                     <name>Date_of_Birth</name>
                     <dataType>Date</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.PersonBirthdate</elementReference>
+                        <elementReference>clientAcceptanceForm.Date_of_Birth__c</elementReference>
                     </defaultValue>
                     <fieldText>Date of Birth</fieldText>
                     <fieldType>InputField</fieldType>
@@ -1486,14 +1863,19 @@
     <screens>
         <name>Page_2_NATURE_OF_ASSIGNMENT_CHANGE_OF_ADVISOR</name>
         <label>Page 2 - NATURE OF ASSIGNMENT, CHANGE OF ADVISOR</label>
-        <locationX>182</locationX>
-        <locationY>1406</locationY>
+        <locationX>314</locationX>
+        <locationY>1514</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_2_Assignment</targetReference>
         </connector>
+        <fields>
+            <name>PG2</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_2_NATURE_OF_ASSIGNMENT_CHANGE_OF_ADVISOR_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -1959,8 +2341,8 @@
     <screens>
         <name>Page_2_REGULATIONS_INTEGRITY</name>
         <label>Page 2.5 - REGULATIONS, INTEGRITY</label>
-        <locationX>182</locationX>
-        <locationY>1730</locationY>
+        <locationX>314</locationX>
+        <locationY>1838</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -1973,6 +2355,11 @@
             <fields>
                 <name>Page_2_REGULATIONS_INTEGRITY_Section1_Column1</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>PG3</name>
+                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;3&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
                 <fields>
                     <name>Copy_1_of_Copy_1_of_header1</name>
                     <extensionName>flowruntime:image</extensionName>
@@ -2042,11 +2429,6 @@
             <fields>
                 <name>Page_2_REGULATIONS_INTEGRITY_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2606,11 +2988,6 @@
             <fields>
                 <name>Page_2_REGULATIONS_INTEGRITY_Section11_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>yesnodisplay</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -2820,7 +3197,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>regpickyes19</leftValueReference>
+                    <leftValueReference>regpick19</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>No</elementReference>
@@ -2962,14 +3339,19 @@
     <screens>
         <name>Page_3</name>
         <label>Page 3</label>
-        <locationX>182</locationX>
-        <locationY>1946</locationY>
+        <locationX>314</locationX>
+        <locationY>2162</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_3_Assignment</targetReference>
         </connector>
+        <fields>
+            <name>PG4</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;4&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_3_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -3045,11 +3427,6 @@
             <fields>
                 <name>Page_3_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>yesno2</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;YES / NO / N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -3429,11 +3806,6 @@
             <fields>
                 <name>Page_3_Section8_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>yesnomlra</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -3768,7 +4140,7 @@
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick19__c</elementReference>
+                        <elementReference>clientAcceptanceForm.mlrapick20__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -3836,7 +4208,7 @@
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.mlrapick20__c</elementReference>
+                        <elementReference>clientAcceptanceForm.mlrapick7__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -4371,6 +4743,9 @@
                 </fields>
                 <fields>
                     <name>mlra14</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.mlra14__c}</stringValue>
+                    </defaultValue>
                     <fieldType>LargeTextArea</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -4470,14 +4845,19 @@
     <screens>
         <name>Page_4_IDENTITY_VERIFICATION</name>
         <label>Page 4 - IDENTITY VERIFICATION, OTHER RISKS, OBJECTIVITY</label>
-        <locationX>182</locationX>
-        <locationY>2270</locationY>
+        <locationX>314</locationX>
+        <locationY>2486</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_4_Assignment</targetReference>
         </connector>
+        <fields>
+            <name>PG5</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_4_IDENTITY_VERIFICATION_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -4682,7 +5062,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>idcomments</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Identification comments: For Personal Tax clients please include certified ID and a SmartSearch on High. Please upload documents to SharePoint.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please provide any further info in the space provided below.&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Identification comments: For Personal Tax clients please include certified ID and a SmartSearch on High. Please upload documents to SharePoint.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please provide any further info in the space provided.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4828,11 +5208,6 @@
             <fields>
                 <name>Page_4_IDENTITY_VERIFICATION_Section6_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>yn</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -5209,11 +5584,6 @@
             <fields>
                 <name>Page_4_IDENTITY_VERIFICATION_Section12_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>ynobj</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -5343,7 +5713,7 @@
                     <choiceReferences>No</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick3__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick2__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5411,7 +5781,7 @@
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>clientAcceptanceForm.objpick2__c</elementReference>
+                        <elementReference>clientAcceptanceForm.objpick3__c</elementReference>
                     </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
@@ -5614,6 +5984,9 @@
                     <choiceReferences>No</choiceReferences>
                     <choiceReferences>NA</choiceReferences>
                     <dataType>String</dataType>
+                    <defaultValue>
+                        <elementReference>clientAcceptanceForm.objpick7__c</elementReference>
+                    </defaultValue>
                     <fieldType>DropdownBox</fieldType>
                     <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
                     <isRequired>false</isRequired>
@@ -5826,20 +6199,78 @@
                 </conditions>
             </visibilityRule>
         </fields>
+        <fields>
+            <name>Page_4_IDENTITY_VERIFICATION_Section22</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>addComm</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(251, 10, 10);&quot;&gt;ADDITIONAL COMMENTS:&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <fields>
+                    <name>addComments</name>
+                    <defaultValue>
+                        <stringValue>{!clientAcceptanceForm.con1__c}</stringValue>
+                    </defaultValue>
+                    <fieldType>LargeTextArea</fieldType>
+                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                    <isRequired>false</isRequired>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>10</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Page_4_IDENTITY_VERIFICATION_Section22_Column3</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>1</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
     <screens>
         <name>Page_5_CONCLUSION</name>
         <label>Page 5 - CONCLUSION</label>
-        <locationX>182</locationX>
-        <locationY>2594</locationY>
+        <locationX>314</locationX>
+        <locationY>2810</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
             <targetReference>Page_5_Assignment</targetReference>
         </connector>
+        <fields>
+            <name>PG6</name>
+            <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 18px;&quot;&gt;6&lt;/span&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
         <fields>
             <name>Page_5_CONCLUSION_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -5941,8 +6372,8 @@
     <screens>
         <name>View_of_Page_1</name>
         <label>View of Page 1</label>
-        <locationX>468</locationX>
-        <locationY>3410</locationY>
+        <locationX>358</locationX>
+        <locationY>3950</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -6061,7 +6492,7 @@
                     <name>Copy_2_of_Client_Name</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Name</elementReference>
+                        <elementReference>clientAcceptanceForm.Client_Name__c</elementReference>
                     </defaultValue>
                     <fieldText>Client Name</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6111,7 +6542,7 @@
                     <name>Copy_2_of_Primary_Contact</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.Name</elementReference>
+                        <elementReference>clientAcceptanceForm.Primary_Contact__c</elementReference>
                     </defaultValue>
                     <fieldText>Primary Contact</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6133,7 +6564,7 @@
                     <name>Copy_2_of_Email</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Primary_Contact__r.Email</elementReference>
+                        <elementReference>clientAcceptanceForm.Email__c</elementReference>
                     </defaultValue>
                     <fieldText>Email</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6183,7 +6614,7 @@
                     <name>Copy_2_of_Address</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.BillingAddress</elementReference>
+                        <elementReference>clientAcceptanceForm.Contact_Address__c</elementReference>
                     </defaultValue>
                     <fieldText>Address</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6194,7 +6625,7 @@
                     <name>Copy_2_of_Post_Code</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.BillingPostalCode</elementReference>
+                        <elementReference>clientAcceptanceForm.Post_Code__c</elementReference>
                     </defaultValue>
                     <fieldText>Post Code</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6205,7 +6636,7 @@
                     <name>Copy_2_of_Telephone</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.Phone</elementReference>
+                        <elementReference>clientAcceptanceForm.Telephone__c</elementReference>
                     </defaultValue>
                     <fieldText>Telephone</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6216,7 +6647,7 @@
                     <name>Copy_2_of_Date_of_Birth</name>
                     <dataType>Date</dataType>
                     <defaultValue>
-                        <elementReference>Get_Case.Account.PersonBirthdate</elementReference>
+                        <elementReference>clientAcceptanceForm.Date_of_Birth__c</elementReference>
                     </defaultValue>
                     <fieldText>Date of Birth</fieldText>
                     <fieldType>InputField</fieldType>
@@ -6432,8 +6863,8 @@
     <screens>
         <name>View_of_Page_2_5</name>
         <label>View of Page 2.5</label>
-        <locationX>468</locationX>
-        <locationY>3626</locationY>
+        <locationX>358</locationX>
+        <locationY>4166</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -6520,11 +6951,6 @@
             <fields>
                 <name>View_of_Page_2_5_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_yesno</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES / NO / N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -6735,7 +7161,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>regpick11</leftValueReference>
+                    <leftValueReference>Copy_2_of_regpick11</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -6975,7 +7401,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>regpick17</leftValueReference>
+                    <leftValueReference>Copy_2_of_regpick17</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -7084,11 +7510,6 @@
             <fields>
                 <name>View_of_Page_2_5_Section11_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_yesnodisplay</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -7298,7 +7719,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>regpickyes19</leftValueReference>
+                    <leftValueReference>Copy_2_of_regpick19</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>No</elementReference>
@@ -7426,7 +7847,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>pickint2</leftValueReference>
+                    <leftValueReference>Copy_2_of_pickint2</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -7440,8 +7861,8 @@
     <screens>
         <name>View_of_Page_3</name>
         <label>View of Page 3</label>
-        <locationX>468</locationX>
-        <locationY>3734</locationY>
+        <locationX>358</locationX>
+        <locationY>4274</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -7528,11 +7949,6 @@
             <fields>
                 <name>View_of_Page_3_Section2_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_yesno2</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;YES / NO / N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -7871,7 +8287,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>pickfin4</leftValueReference>
+                    <leftValueReference>Copy_2_of_pickfin4</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -7912,11 +8328,6 @@
             <fields>
                 <name>View_of_Page_3_Section8_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_yesnomlra</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -9018,14 +9429,11 @@
     <screens>
         <name>View_of_Page_4</name>
         <label>View of Page 4</label>
-        <locationX>468</locationX>
-        <locationY>3842</locationY>
+        <locationX>358</locationX>
+        <locationY>4382</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
-        <connector>
-            <targetReference>View_of_Page_5</targetReference>
-        </connector>
         <fields>
             <name>View_of_Page_4_Section1</name>
             <fieldType>RegionContainer</fieldType>
@@ -9235,7 +9643,7 @@
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_2_of_idcomments</name>
-                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Identification comments: For Personal Tax clients please include certified ID and a SmartSearch on High. Please upload documents to SharePoint.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please provide any further info in the space provided below.&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Identification comments: For Personal Tax clients please include certified ID and a SmartSearch on High. Please upload documents to SharePoint.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Please provide any further info in the space provided.&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -9381,11 +9789,6 @@
             <fields>
                 <name>View_of_Page_4_Section6_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_yn</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -9762,11 +10165,6 @@
             <fields>
                 <name>View_of_Page_4_Section12_Column3</name>
                 <fieldType>Region</fieldType>
-                <fields>
-                    <name>Copy_2_of_ynobj</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;YES/NO/N/A&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -10244,7 +10642,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>objpick7</leftValueReference>
+                    <leftValueReference>Copy_2_of_objpick7</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -10371,7 +10769,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>objpick8</leftValueReference>
+                    <leftValueReference>Copy_2_of_objpick8</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>Yes</elementReference>
@@ -10379,69 +10777,11 @@
                 </conditions>
             </visibilityRule>
         </fields>
-        <showFooter>true</showFooter>
-        <showHeader>false</showHeader>
-    </screens>
-    <screens>
-        <name>View_of_Page_5</name>
-        <label>View of Page 5</label>
-        <locationX>468</locationX>
-        <locationY>3950</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
         <fields>
-            <name>View_of_Page_5_Section1</name>
+            <name>View_of_Page_4_Section22</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
-                <name>View_of_Page_5_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>screen5</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0); background-color: rgb(255, 255, 255);&quot;&gt;&lt;em&gt;This record is in approval so no changes will be saved.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of</name>
-                    <extensionName>flowruntime:image</extensionName>
-                    <fieldType>ComponentInstance</fieldType>
-                    <inputParameters>
-                        <name>imageName</name>
-                        <value>
-                            <stringValue>CAF_Banner</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputParameters>
-                        <name>horizontalAlignment</name>
-                        <value>
-                            <stringValue>left</stringValue>
-                        </value>
-                    </inputParameters>
-                    <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                    <isRequired>true</isRequired>
-                    <storeOutputAutomatically>true</storeOutputAutomatically>
-                </fields>
-                <fields>
-                    <name>Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1_of_Copy_1</name>
-                    <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Arial, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Cooper Parry Advisory Limited &lt;/strong&gt;&lt;strong style=&quot;font-size: 12pt; font-family: Aptos, sans-serif; background-color: rgb(255, 255, 255); color: rgb(68, 68, 68);&quot;&gt;Individual Risk Assessment&amp;nbsp;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>12</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <fields>
-            <name>View_of_Page_5_Section2</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>View_of_Page_5_Section2_Column1</name>
+                <name>View_of_Page_4_Section22_Column1</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10452,15 +10792,15 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_5_Section2_Column2</name>
+                <name>View_of_Page_4_Section22_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_2_of_Copy_1_of_Copy_1_of_beneficiariesHeader</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; font-family: Arial, sans-serif; color: red;&quot;&gt;ADDITIONAL COMMENTS:&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <name>adComments</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(250, 5, 5);&quot;&gt;ADDITIONAL COMMENTS:&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <fields>
-                    <name>Copy_2_of_con1</name>
+                    <name>addComments_Copy</name>
                     <defaultValue>
                         <stringValue>{!clientAcceptanceForm.con1__c}</stringValue>
                     </defaultValue>
@@ -10477,7 +10817,7 @@
                 <isRequired>false</isRequired>
             </fields>
             <fields>
-                <name>View_of_Page_5_Section2_Column3</name>
+                <name>View_of_Page_4_Section22_Column3</name>
                 <fieldType>Region</fieldType>
                 <inputParameters>
                     <name>width</name>
@@ -10496,8 +10836,8 @@
     <screens>
         <name>VIEW_Page_2</name>
         <label>(VIEW) Page 2</label>
-        <locationX>468</locationX>
-        <locationY>3518</locationY>
+        <locationX>358</locationX>
+        <locationY>4058</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -10960,7 +11300,7 @@
             <visibilityRule>
                 <conditionLogic>and</conditionLogic>
                 <conditions>
-                    <leftValueReference>coapick1</leftValueReference>
+                    <leftValueReference>Copy_2_of_coapick1</leftValueReference>
                     <operator>EqualTo</operator>
                     <rightValue>
                         <elementReference>No</elementReference>
@@ -10972,7 +11312,7 @@
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>342</locationX>
+        <locationX>232</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
