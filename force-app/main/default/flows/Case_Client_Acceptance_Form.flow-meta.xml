@@ -10795,35 +10795,6 @@
             <fieldType>DisplayText</fieldType>
         </fields>
         <fields>
-            <name>beneficiaryRepeater</name>
-            <fieldType>Repeater</fieldType>
-            <fields>
-                <name>Person_full_name</name>
-                <dataType>String</dataType>
-                <fieldText>Person full name:</fieldText>
-                <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>ID_verified_by</name>
-                <dataType>String</dataType>
-                <fieldText>ID verified by:</fieldText>
-                <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Basis_of_beneficial_ownership</name>
-                <dataType>String</dataType>
-                <fieldText>Basis of beneficial ownership</fieldText>
-                <fieldType>InputField</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-        </fields>
-        <fields>
             <name>Page_6_BENEFICIARIES_Section2</name>
             <fieldType>RegionContainer</fieldType>
             <fields>
