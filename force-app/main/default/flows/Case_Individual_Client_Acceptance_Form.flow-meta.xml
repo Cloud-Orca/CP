@@ -2062,7 +2062,7 @@ TEXT({!Date_of_Birth}) &lt;&gt; &quot;&quot;,
                     <name>Fees_to_be_charged</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <stringValue>£</stringValue>
+                        <elementReference>clientAcceptanceForm.Fees_to_be_charged__c</elementReference>
                     </defaultValue>
                     <fieldText>Fees to be charged</fieldText>
                     <fieldType>InputField</fieldType>
@@ -10921,7 +10921,7 @@ TEXT({!Date_of_Birth}) &lt;&gt; &quot;&quot;,
                     <name>Copy_2_of_Fees_to_be_charged</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <stringValue>£</stringValue>
+                        <elementReference>clientAcceptanceForm.Fees_to_be_charged__c</elementReference>
                     </defaultValue>
                     <fieldText>Fees to be charged</fieldText>
                     <fieldType>InputField</fieldType>
