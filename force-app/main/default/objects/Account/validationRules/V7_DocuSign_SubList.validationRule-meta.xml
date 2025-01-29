@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V7_DocuSign_SubList</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ NOT(ISBLANK(TEXT(DocuSign_Document_Sub_List_Cont__c))),
+ NOT(ISBLANK(TEXT(DocuSign_Document_Sub_List__c)))
+)</errorConditionFormula>
+    <errorMessage>You can only select either Sub List, or Sub List Cont.</errorMessage>
+</ValidationRule>
