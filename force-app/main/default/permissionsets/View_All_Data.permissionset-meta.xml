@@ -9586,7 +9586,7 @@
         <visible>true</visible>
     </recordTypeVisibilities>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>ViewAllData</name>
     </userPermissions>
     <userPermissions>
