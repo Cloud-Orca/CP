@@ -641,11 +641,6 @@
     <picklistValues>
         <picklist>DocuSign_Document_Sub_List_Cont__c</picklist>
         <values>
-            <fullName>#NLR - OLD - Removed 2-5-23 - Pensions Resignation Covering Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>#NLR - Pensions Info Request - SSAS</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1096,11 +1091,6 @@
     <picklistValues>
         <picklist>DocuSign_Document_Sub_List__c</picklist>
         <values>
-            <fullName>#NLR - OLD - Removed 2-5-23 - Pensions Resignation Covering Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>#NLR - Pensions Info Request - SSAS</fullName>
             <default>false</default>
         </values>
         <values>

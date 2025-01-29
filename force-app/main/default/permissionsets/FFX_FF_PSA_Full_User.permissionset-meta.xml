@@ -10866,11 +10866,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>pse__Expense__c.CT_Expense_VAT_Rate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>pse__Expense__c.CT_Lost_Receipt_Comment__c</field>
         <readable>true</readable>
     </fieldPermissions>
