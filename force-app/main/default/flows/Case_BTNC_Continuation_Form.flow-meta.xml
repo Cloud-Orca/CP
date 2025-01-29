@@ -402,11 +402,27 @@
         </connector>
     </assignments>
     <choices>
+        <name>High</name>
+        <choiceText>High</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>High</stringValue>
+        </value>
+    </choices>
+    <choices>
         <name>No</name>
         <choiceText>No</choiceText>
         <dataType>String</dataType>
         <value>
             <stringValue>No</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Normal</name>
+        <choiceText>Normal</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Normal</stringValue>
         </value>
     </choices>
     <choices>
@@ -1973,8 +1989,8 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Picklist11</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>Normal</choiceReferences>
+                    <choiceReferences>High</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
                         <elementReference>varForm.Money_Laundering_Risk__c</elementReference>
@@ -4338,8 +4354,8 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>Copy_2_of_Picklist15</name>
-                    <choiceReferences>Yes</choiceReferences>
-                    <choiceReferences>No</choiceReferences>
+                    <choiceReferences>Normal</choiceReferences>
+                    <choiceReferences>High</choiceReferences>
                     <dataType>String</dataType>
                     <defaultValue>
                         <elementReference>varForm.Still_be_acting_for_the_client__c</elementReference>
