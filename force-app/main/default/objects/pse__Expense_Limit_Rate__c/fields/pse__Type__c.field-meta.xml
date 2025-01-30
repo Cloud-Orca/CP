@@ -12,9 +12,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Mileage</fullName>
+                <fullName>Mileage (Non Tusker)</fullName>
                 <default>false</default>
-                <label>Mileage</label>
+                <label>Mileage (Non Tusker)</label>
             </value>
             <value>
                 <fullName>Hotel</fullName>
@@ -85,6 +85,11 @@
                 <fullName>Other (please detail)</fullName>
                 <default>false</default>
                 <label>Other (please detail)</label>
+            </value>
+            <value>
+                <fullName>Mileage (Tusker)</fullName>
+                <default>false</default>
+                <label>Mileage (Tusker)</label>
             </value>
         </valueSetDefinition>
     </valueSet>
