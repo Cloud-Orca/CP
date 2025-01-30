@@ -13,9 +13,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Mileage</fullName>
+                <fullName>Mileage (Non Tusker)</fullName>
                 <default>false</default>
-                <label>Mileage</label>
+                <label>Mileage (Non Tusker)</label>
             </value>
             <value>
                 <fullName>Hotel</fullName>
@@ -88,16 +88,15 @@
                 <label>Other (please detail)</label>
             </value>
             <value>
+                <fullName>Mileage (Tusker)</fullName>
+                <default>false</default>
+                <label>Mileage (Tusker)</label>
+            </value>
+            <value>
                 <fullName>Airfare</fullName>
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Airfare</label>
-            </value>
-            <value>
-                <fullName>Auto Mileage</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Auto Mileage</label>
             </value>
             <value>
                 <fullName>Business Meals</fullName>
@@ -170,6 +169,12 @@
                 <default>false</default>
                 <isActive>false</isActive>
                 <label>Mileage - Petrol 1400cc - 2000cc</label>
+            </value>
+            <value>
+                <fullName>Mileage - Petrol 1400cc or less</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Mileage - Petrol 1400cc or less</label>
             </value>
             <value>
                 <fullName>Mileage - Petrol &gt; 2001cc</fullName>
