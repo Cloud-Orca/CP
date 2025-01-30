@@ -42,9 +42,14 @@
                 <label>Train</label>
             </value>
             <value>
-                <fullName>Mileage</fullName>
+                <fullName>Mileage (Non Tusker)</fullName>
                 <default>false</default>
-                <label>Mileage</label>
+                <label>Mileage (Non Tusker)</label>
+            </value>
+            <value>
+                <fullName>Mileage (Tusker)</fullName>
+                <default>false</default>
+                <label>Mileage (Tusker)</label>
             </value>
             <value>
                 <fullName>Lunch Allowance</fullName>
