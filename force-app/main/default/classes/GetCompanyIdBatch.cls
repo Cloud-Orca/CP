@@ -1,6 +1,6 @@
 global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulable, Database.Stateful, Database.AllowsCallouts {
     global Set<Id> collectionIds;
-    global Set<String> validCompanyIds;
+    global Map<String, Set<String>> collectionIdToRelatedCompanyIdsMap;
 
     global void execute(SchedulableContext SC) {
         Database.executebatch(new GetCompanyIdBatch(), 1); 
@@ -9,12 +9,12 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
     //Database.executeBatch(new GetCompanyIdBatch(), 1);
     global GetCompanyIdBatch(){
         this.collectionIds = new Set<Id>();
-        this.validCompanyIds = new Set<String>();
+        this.collectionIdToRelatedCompanyIdsMap = new Map<String, Set<String>>();
     }
 
     global GetCompanyIdBatch(Set<Id> collectionIds){
         this.collectionIds = collectionIds;
-        this.validCompanyIds = new Set<String>();
+        this.collectionIdToRelatedCompanyIdsMap = new Map<String, Set<String>>();
     }
     
     global Database.QueryLocator start(Database.BatchableContext BC) {
@@ -29,8 +29,6 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
     }
 
     global void execute(Database.BatchableContext BC, List<Company_Collection__c> scope){
-        System.debug('@@@collectionIds: ' + collectionIds);
-
         Set<String> retrievedCompanyIds = new Set<String>();
         Integer offsetVal = 0;
         Integer limitVal = 100;
@@ -55,58 +53,15 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
                 }
             }else{
                 isLoop = false;
+                System.abortJob(BC.getJobId());
             }
         }
-
-        System.debug('@@@retrievedCompanyIds: ' + retrievedCompanyIds);
-
-        if(!retrievedCompanyIds.isEmpty()){
-            List<Company_ID__c> companyIdsToUpsert = new List<Company_ID__c>();
-            Map<String, Account> bhIdToAccountMap = new Map<String, Account>();
-
-            for(Account acc : [SELECT Id, Beauhurst_ID__c FROM Account WHERE Beauhurst_ID__c IN: retrievedCompanyIds]){
-                bhIdToAccountMap.put(acc.Beauhurst_ID__c, acc);
-            }
-
-            for(String compId : retrievedCompanyIds){
-                if(!bhIdToAccountMap.containsKey(compId)){
-                    Company_ID__c comId = new Company_ID__c();
-                    comId.beauhurst_id__c = compId;
-                    companyIdsToUpsert.add(comId);
-                }
-            }
-
-            System.debug('@@@companyIdsToUpsert: ' + companyIdsToUpsert.size());
-
-            if(!companyIdsToUpsert.isEmpty()){
-                Schema.SObjectField extId = Company_ID__c.Fields.beauhurst_id__c;
-                Database.UpsertResult[] results = Database.upsert(companyIdsToUpsert, extId, false);
-    
-                List<Collection_Item__c> collectionItemsToUpsert = new List<Collection_Item__c>();
-                for(Integer index = 0, size = results.size(); index < size; index++) {
-                    if(results[index].isSuccess()){
-                        System.debug('@@@index: ' + index);
-
-                        validCompanyIds.add(companyIdsToUpsert.get(index).beauhurst_id__c);
-                        Collection_Item__c itm = new Collection_Item__c();
-                        itm.Company_Collection__c = scope[0].Id;
-                        itm.Company_ID__c = results[index].getId();
-                        itm.Item_Key__c = scope[0].beauhurst_id__c + '-' + companyIdsToUpsert.get(index).beauhurst_id__c;
-                        collectionItemsToUpsert.add(itm);
-                    }
-                }
-    
-                if(!collectionItemsToUpsert.isEmpty()){
-                    Schema.SObjectField itmExtId = Collection_Item__c.Fields.Item_Key__c;
-                    Database.UpsertResult[] itmResults = Database.upsert(collectionItemsToUpsert, itmExtId, false);
-                }
-            }
-        }
+        collectionIdToRelatedCompanyIdsMap.put(scope[0].beauhurst_id__c, retrievedCompanyIds);
     }
 
     global void finish(Database.BatchableContext BC){
-        if(!Test.isRunningTest() && !validCompanyIds.isEmpty()){
-            Database.executeBatch(new CreateAccountsFromBHBatch(validCompanyIds), 10);
+        if(!Test.isRunningTest() && !collectionIdToRelatedCompanyIdsMap.isEmpty()){
+            Database.executeBatch(new CreateAccountsFromBHBatch(collectionIdToRelatedCompanyIdsMap), 1);
         }
     }
 
