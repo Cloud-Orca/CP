@@ -2,9 +2,12 @@
 private class CreateAccountsFromBHBatchTest {
     @IsTest
     static void createAccountFromBHBatch(){
-        Company_ID__c comId = new Company_ID__c();
-        comId.beauhurst_id__c = '123456';
-        insert comId;
+        Company_Collection__c col = new Company_Collection__c();
+        col.beauhurst_id__c = 'kafjwd';
+        col.collection_name__c = 'Sample Collection';
+        col.count__c = 34;
+        col.sync__c = true;
+        insert col;
 
         QueueHttpMock mock = new QueueHttpMock();
 
@@ -22,9 +25,12 @@ private class CreateAccountsFromBHBatchTest {
 
     @IsTest
     static void createAccountFromBHBatchIDParam(){
-        Company_ID__c comId = new Company_ID__c();
-        comId.beauhurst_id__c = '123456';
-        insert comId;
+        Company_Collection__c col = new Company_Collection__c();
+        col.beauhurst_id__c = 'kafjwd';
+        col.collection_name__c = 'Sample Collection';
+        col.count__c = 34;
+        col.sync__c = true;
+        insert col;
 
         QueueHttpMock mock = new QueueHttpMock();
 
@@ -36,8 +42,9 @@ private class CreateAccountsFromBHBatchTest {
         Test.setMock(HttpCalloutMock.class, mock);
 
         Test.startTest();
-            Set<String> comIds = new Set<String>{'123456'};
-            Database.executeBatch(new CreateAccountsFromBHBatch(comIds), 1);
+            Map<String, Set<String>> collectionIdToRelatedCompanyIdsMap = new Map<String, Set<String>>();
+            collectionIdToRelatedCompanyIdsMap.put('kafjwd', new Set<String>{'12322'});
+            Database.executeBatch(new CreateAccountsFromBHBatch(collectionIdToRelatedCompanyIdsMap), 1);
         Test.stopTest();
     }
 }
