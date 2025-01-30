@@ -17,7 +17,7 @@ public class BeauhurstAPIUtility {
             if(!accounts.isEmpty()){
                 Account acc = accounts[0];
                 if(acc.Beauhurst_ID__c.isAlphaNumeric() && acc.Beauhurst_ID__c.length() >= 6 && acc.Beauhurst_ID__c.length() <= 8){
-                    String append = '/companies?company_ids=' + accounts[0].Beauhurst_ID__c + '&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
+                    String append = '/companies?company_ids=' + accounts[0].Beauhurst_ID__c + '&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors&limit=100';
                 
                     Http http = new Http();
                     HttpResponse res = http.send(constructReq(append));
@@ -61,7 +61,7 @@ public class BeauhurstAPIUtility {
         if(accId != null){
             acc.Id = accId;
         }
-        
+
         acc.Beauhurst_Updated_Date__c = System.now();
         if(resultItem.get('basic') != null){
             Map<String, Object> basic = (Map<String, Object>)resultItem.get('basic');
