@@ -1,84 +1,111 @@
 global class CreateAccountsFromBHBatch implements Database.Batchable<sObject>, Database.Stateful, Database.AllowsCallouts {
-    global Set<String> ids;
+    global Map<String, Set<String>> collectionIdToRelatedCompanyIdsMap;
     
     global CreateAccountsFromBHBatch(){
-        this.ids = new Set<String>();
+        this.collectionIdToRelatedCompanyIdsMap = new Map<String, Set<String>>();
     }
 
-    global CreateAccountsFromBHBatch(Set<String> ids){
-        this.ids = ids;
+    global CreateAccountsFromBHBatch(Map<String, Set<String>> collectionIdToRelatedCompanyIdsMap){
+        this.collectionIdToRelatedCompanyIdsMap = collectionIdToRelatedCompanyIdsMap;
     }
     
     global Database.QueryLocator start(Database.BatchableContext BC) {
-        String query = 'SELECT Id, Name, beauhurst_id__c';
-        query += ' FROM Company_ID__c';
-        query += ' WHERE beauhurst_id__c != null';
-        if(!ids.isEmpty()){
-            query += ' AND beauhurst_id__c IN: ids';
+        Set<String> bhCollectionIds = collectionIdToRelatedCompanyIdsMap.keySet();
+        String query = 'SELECT Id, Name, beauhurst_id__c, collection_name__c';
+        query += ' FROM Company_Collection__c';
+        if(!collectionIdToRelatedCompanyIdsMap.isEmpty()){
+            query += ' WHERE beauhurst_id__c IN: bhCollectionIds';
         }
+        System.debug('@@@query: ' + query);
         return Database.getQueryLocator(query);
     }
 
-    global void execute(Database.BatchableContext BC, List<Company_ID__c> scope){
-        Set<Id> companyRecordIds = new Set<Id>();
-        String companyIds = '';
-        Map<String, String> beauhurstIdToCollectionNameMap = new Map<String, String>();
-        for(Company_ID__c ci : scope){
-            companyRecordIds.add(ci.Id);
-            companyIds += 'company_ids=' + ci.beauhurst_id__c + '&';
-        }
+    global void execute(Database.BatchableContext BC, List<Company_Collection__c> scope){
+        Company_Collection__c col = scope[0];
 
-        System.debug('@@@companyIds: ' + companyIds);
+        if(collectionIdToRelatedCompanyIdsMap.containsKey(col.beauhurst_id__c)){
+            Map<String, Map<String, Object>> companiesHouseIdToResultItemMap = new Map<String, Map<String, Object>>();
 
-        if(!companyRecordIds.isEmpty()){
-            for(Collection_Item__c cItem : [SELECT Id, Company_ID__r.beauhurst_id__c, Company_Collection__r.collection_name__c FROM Collection_Item__c WHERE Company_ID__c IN: companyRecordIds]){
-                beauhurstIdToCollectionNameMap.put(cItem.Company_ID__r.beauhurst_id__c, cItem.Company_Collection__r.collection_name__c);
-            }
-        }
+            Set<String> relatedCompanyIds = collectionIdToRelatedCompanyIdsMap.get(col.beauhurst_id__c);
+            Integer setSize = relatedCompanyIds.size();
 
-        System.debug('@@@beauhurstIdToCollectionNameMap: ' + beauhurstIdToCollectionNameMap);
+            String companyIds = '';
+            Integer counter = 0;
+            Boolean isCall = false;
 
-        String append = '/companies?' + companyIds + 'includes=companies_house_id&includes=name&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors';
+            for(String companyId : relatedCompanyIds){
+                companyIds += 'company_ids=' + companyId + '&';
 
-        Http http = new Http();
-        HttpResponse res = http.send(BeauhurstAPIUtility.constructReq(append));
+                counter++;
+                if(counter == 100){
+                    counter = 0;
+                    setSize = setSize - 100;
+                    isCall = true;
+                }
 
-        System.debug('@@@res code: ' + res.getStatusCode());
-        System.debug('@@@res body: ' + res.getBody());
+                if(counter == setSize){
+                    isCall = true;
+                }
 
-        if(res.getStatusCode() == 200){
-            Map<String, Object> resp = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
-            List<Object> results = (List<Object>)resp.get('results');
+                if(isCall){
+                    isCall = false;
 
-            if(results != null && results.size() > 0){
-                List<User> users = [SELECT Id FROM User WHERE Name = 'Sal Mingoia' AND isActive = true LIMIT 1];
-                System.debug('@@@users: ' + users);
-                if(!users.isEmpty()){
-                    List<Account> accountsToInsert = new List<Account>();
+                    String append = '/companies?' + companyIds + 'includes=companies_house_id&includes=name&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors&limit=100';
+                    
+                    Http http = new Http();
+                    HttpResponse res = http.send(BeauhurstAPIUtility.constructReq(append));
 
-                    for(Object result : results){
-                        Map<String, Object> resultItem = (Map<String, Object>)result;
-                        if(resultItem.get('basic') != null){
-                            Map<String, Object> basic = (Map<String, Object>)resultItem.get('basic');
-                            if(basic.get('companies_house_id') != null){
-                                String resultId = String.valueOf(basic.get('companies_house_id'));
+                    System.debug('@@@res code: ' + res.getStatusCode());
+                    System.debug('@@@res body: ' + res.getBody());
 
-                                Account acc = BeauhurstAPIUtility.collectAccount(null, resultItem);
-                                acc.Type = 'Target';
-                                if(beauhurstIdToCollectionNameMap.containsKey(resultId)){
-                                    acc.BH_Collection_Name__c = beauhurstIdToCollectionNameMap.get(resultId);
+                    if(res.getStatusCode() == 200){
+                        Map<String, Object> resp = (Map<String, Object>)JSON.deserializeUntyped(res.getBody());
+                        List<Object> results = (List<Object>)resp.get('results');
+            
+                        if(results != null && results.size() > 0){
+                            for(Object result : results){
+                                Map<String, Object> resultItem = (Map<String, Object>)result;
+                                if(resultItem.get('basic') != null){
+                                    Map<String, Object> basic = (Map<String, Object>)resultItem.get('basic');
+                                    if(basic.get('companies_house_id') != null){
+                                        companiesHouseIdToResultItemMap.put(String.valueOf(basic.get('companies_house_id')), resultItem);
+                                    }
                                 }
-                                acc.RecordTypeId = BeauhurstAPIUtility.getRecordTypeIdbyName('Account', 'Business Account');
-                                acc.OwnerId = users[0].Id;
-                                accountsToInsert.add(acc);
                             }
                         }
+                    }else{
+                        System.abortJob(BC.getJobId());
                     }
 
-                    System.debug('@@@accountsToInsert: ' + accountsToInsert);
-                    if(!accountsToInsert.isEmpty()){
-                        Database.SaveResult[] saveResults = Database.insert(accountsToInsert, false);
+                    companyIds = '';
+                }
+            }
+
+            if(!companiesHouseIdToResultItemMap.isEmpty()){
+                List<Account> accountsToInsert = new List<Account>();
+                Map<String, Id> registeredNumberToAccountIdMap = new Map<String, Id>();
+                
+                for(Account acc : [SELECT Id, Beauhurst_ID__c FROM Account WHERE Beauhurst_ID__c IN: companiesHouseIdToResultItemMap.keySet()]){
+                    registeredNumberToAccountIdMap.put(acc.Beauhurst_ID__c, acc.Id);
+                }
+
+                for(String cHouseId : companiesHouseIdToResultItemMap.keySet()){
+                    if(!registeredNumberToAccountIdMap.containsKey(cHouseId)){ //not existing in SF
+                        List<User> users = [SELECT Id FROM User WHERE Name = 'Sal Mingoia' AND isActive = true LIMIT 1];
+                        if(!users.isEmpty()){
+                            Account acc = BeauhurstAPIUtility.collectAccount(null, companiesHouseIdToResultItemMap.get(cHouseId));
+                            acc.Type = 'Target';
+                            acc.BH_Collection_Name__c = col.collection_name__c;
+                            acc.RecordTypeId = BeauhurstAPIUtility.getRecordTypeIdbyName('Account', 'Business Account');
+                            acc.OwnerId = users[0].Id;
+                            accountsToInsert.add(acc);
+                        }
                     }
+                }
+
+                System.debug('@@@accountsToInsert: ' + accountsToInsert);
+                if(!accountsToInsert.isEmpty()){
+                    insert accountsToInsert;
                 }
             }
         }
