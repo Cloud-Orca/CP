@@ -3,7 +3,7 @@ global class GetCompanyIdBatch implements Database.Batchable<sObject>, Schedulab
     global Map<String, Set<String>> collectionIdToRelatedCompanyIdsMap;
 
     global void execute(SchedulableContext SC) {
-        Database.executebatch(new GetCompanyIdBatch(), 1); 
+        Database.executebatch(new GetCompanyIdBatch(), 1);
     }
 
     //Database.executeBatch(new GetCompanyIdBatch(), 1);
