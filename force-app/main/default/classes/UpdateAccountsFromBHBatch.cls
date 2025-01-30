@@ -3,7 +3,7 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
     global Set<Id> ids;
 
     global void execute(SchedulableContext SC) {
-        Database.executebatch(new UpdateAccountsFromBHBatch(), 10); 
+        Database.executebatch(new UpdateAccountsFromBHBatch(), 100);
     }
     
     global UpdateAccountsFromBHBatch(){
