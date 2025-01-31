@@ -375,64 +375,6 @@
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Please Add Team Member&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
-        <fields>
-            <name>repeaterTeamMember</name>
-            <fieldType>Repeater</fieldType>
-            <fields>
-                <name>userLookup</name>
-                <extensionName>flowruntime:lookup</extensionName>
-                <fieldType>ComponentInstance</fieldType>
-                <inputParameters>
-                    <name>objectApiName</name>
-                    <value>
-                        <stringValue>User</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>fieldApiName</name>
-                    <value>
-                        <stringValue>CreatedById</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>label</name>
-                    <value>
-                        <stringValue>User</stringValue>
-                    </value>
-                </inputParameters>
-                <inputParameters>
-                    <name>required</name>
-                    <value>
-                        <booleanValue>true</booleanValue>
-                    </value>
-                </inputParameters>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>true</isRequired>
-                <storeOutputAutomatically>true</storeOutputAutomatically>
-            </fields>
-            <fields>
-                <name>Team_Role</name>
-                <choiceReferences>choiceTeamRole</choiceReferences>
-                <dataType>String</dataType>
-                <fieldText>Team Role</fieldText>
-                <fieldType>DropdownBox</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Opportunity_Access</name>
-                <choiceReferences>Read</choiceReferences>
-                <choiceReferences>ReadWrite</choiceReferences>
-                <choiceReferences>Private</choiceReferences>
-                <dataType>String</dataType>
-                <defaultSelectedChoiceReference>Private</defaultSelectedChoiceReference>
-                <fieldText>Opportunity Access</fieldText>
-                <fieldType>DropdownBox</fieldType>
-                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-        </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
     </screens>
