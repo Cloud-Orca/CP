@@ -4,8 +4,6 @@ private class UpdateAccountsFromBHBatchTest {
     static void updateAccountFromBHBatch(){
         Account acc = new Account();
         acc.Name = 'Company';
-        acc.Source__c = 'Internal';
-        acc.Source_Type__c = 'Website';
         insert acc;
 
         acc.Beauhurst_ID__c = '123456';
@@ -29,8 +27,6 @@ private class UpdateAccountsFromBHBatchTest {
     static void updateAccountFromBHBatchIDParam(){
         Account acc = new Account();
         acc.Name = 'Company';
-        acc.Source__c = 'Internal';
-        acc.Source_Type__c = 'Website';
         insert acc;
 
         acc.Beauhurst_ID__c = '123456';
@@ -55,8 +51,6 @@ private class UpdateAccountsFromBHBatchTest {
     static void updateAccountFromBHBatchBoolParam(){
         Account acc = new Account();
         acc.Name = 'Company';
-        acc.Source__c = 'Internal';
-        acc.Source_Type__c = 'Website';
         insert acc;
 
         acc.Beauhurst_ID__c = '123456';
@@ -80,8 +74,6 @@ private class UpdateAccountsFromBHBatchTest {
     static void updateAccountFromRecordBtn(){
         Account acc = new Account();
         acc.Name = 'Company';
-        acc.Source__c = 'Internal';
-        acc.Source_Type__c = 'Website';
         insert acc;
 
         acc.Beauhurst_ID__c = '123456';
