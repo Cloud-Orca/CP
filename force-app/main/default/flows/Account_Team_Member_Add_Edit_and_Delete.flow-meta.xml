@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>63.0</apiVersion>
+    <apiVersion>60.0</apiVersion>
     <assignments>
         <name>Assign_Updated_Values</name>
         <label>Assign Updated Values</label>
@@ -50,64 +50,6 @@
         </assignmentItems>
         <connector>
             <targetReference>Loop_on_Each_Member_to_Update</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Assign_Values</name>
-        <label>Assign Values</label>
-        <locationX>138</locationX>
-        <locationY>782</locationY>
-        <assignmentItems>
-            <assignToReference>varAccountTeamMember.UserId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_on_Each_member.userLookup.recordId</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varAccountTeamMember.AccountId</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_Account.Id</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varAccountTeamMember.AccountAccessLevel</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_on_Each_member.Account_Access</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varAccountTeamMember.CaseAccessLevel</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_on_Each_member.Case_Access</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varAccountTeamMember.OpportunityAccessLevel</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_on_Each_member.Opportunity_Access</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varAccountTeamMember.TeamMemberRole</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Loop_on_Each_member.Team_Role</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>varCollectionTeamMember</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>varAccountTeamMember</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_on_Each_member</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -249,20 +191,6 @@
     <interviewLabel>Account Team Member (Add, Edit and Delete) {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Account Team Member (Add, Edit and Delete)</label>
     <loops>
-        <name>Loop_on_Each_member</name>
-        <label>Loop on Each member</label>
-        <locationX>50</locationX>
-        <locationY>674</locationY>
-        <collectionReference>repeaterTeamMember.AllItems</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Assign_Values</targetReference>
-        </nextValueConnector>
-        <noMoreValuesConnector>
-            <targetReference>Create_Account_Team_Members</targetReference>
-        </noMoreValuesConnector>
-    </loops>
-    <loops>
         <name>Loop_on_Each_Member_to_Update</name>
         <label>Loop on Each Member to Update</label>
         <locationX>402</locationX>
@@ -299,7 +227,7 @@
         <name>Create_Account_Team_Members</name>
         <label>Create Account Team Members</label>
         <locationX>50</locationX>
-        <locationY>974</locationY>
+        <locationY>674</locationY>
         <connector>
             <targetReference>Confirmation_Screen_Created</targetReference>
         </connector>
@@ -390,7 +318,7 @@
         <name>Confirmation_Screen_Created</name>
         <label>Confirmation Screen - Created</label>
         <locationX>50</locationX>
-        <locationY>1082</locationY>
+        <locationY>782</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -454,7 +382,7 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Loop_on_Each_member</targetReference>
+            <targetReference>Create_Account_Team_Members</targetReference>
         </connector>
         <fields>
             <name>PleaseAddTeamMember</name>
@@ -730,7 +658,7 @@
             <targetReference>Get_Account</targetReference>
         </connector>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
