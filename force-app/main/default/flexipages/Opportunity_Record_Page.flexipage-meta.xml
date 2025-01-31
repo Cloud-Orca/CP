@@ -75,6 +75,9 @@
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.Manage_Opportunity_Team</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -173,6 +176,16 @@
                 <identifier>RecordWin_Probability_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Onboarding_Completed__c</fieldItem>
+                <identifier>RecordOnboarding_Completed_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -213,8 +226,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.CP_Confidential_Area__c</fieldItem>
-                <identifier>RecordCP_Confidential_Area_cField</identifier>
+                <fieldItem>Record.Estimated_Fees__c</fieldItem>
+                <identifier>RecordEstimated_Fees_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -223,8 +236,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Onboarding_Completed__c</fieldItem>
-                <identifier>RecordOnboarding_Completed_cField</identifier>
+                <fieldItem>Record.CP_Confidential_Area__c</fieldItem>
+                <identifier>RecordCP_Confidential_Area_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f31cfb4a-cff9-4183-ab78-8e77ec6894f0</name>
@@ -329,15 +342,8 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Meeting_Subtype__c</fieldItem>
-                <identifier>RecordMeeting_Subtype_cField</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Corporate_Opportunity</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <fieldItem>Record.Resourcing_Team_Required__c</fieldItem>
+                <identifier>RecordResourcing_Team_Required_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-dac64c49-7ca4-4dd8-9dde-aca45489bcc5</name>
@@ -379,6 +385,23 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Days_since_the_proposal_was_sent__c</fieldItem>
                 <identifier>RecordDays_since_the_proposal_was_sent__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Meeting_Subtype__c</fieldItem>
+                <identifier>RecordMeeting_Subtype_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.RecordType.DeveloperName}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Corporate_Opportunity</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-47986c8a-b34b-4c9b-be5e-d1fd2883fa4b</name>
