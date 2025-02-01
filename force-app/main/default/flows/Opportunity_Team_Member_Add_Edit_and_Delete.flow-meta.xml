@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <apiVersion>60.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <assignments>
         <name>Assign_Updated_Values</name>
         <label>Assign Updated Values</label>
@@ -36,6 +36,50 @@
         </assignmentItems>
         <connector>
             <targetReference>Loop_on_Each_Member_to_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Values</name>
+        <label>Assign Values</label>
+        <locationX>138</locationX>
+        <locationY>782</locationY>
+        <assignmentItems>
+            <assignToReference>varOpportunityTeamMember.UserId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_on_Each_member.userLookup.recordId</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varOpportunityTeamMember.OpportunityAccessLevel</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_on_Each_member.Opportunity_Access</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varOpportunityTeamMember.TeamMemberRole</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_on_Each_member.Team_Role</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varOpportunityTeamMember.OpportunityId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Opportunity.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varCollectionTeamMember</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>varOpportunityTeamMember</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_on_Each_member</targetReference>
         </connector>
     </assignments>
     <choices>
@@ -177,6 +221,20 @@
     <interviewLabel>Account Team Member (Add, Edit and Delete) {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity Team Member (Add, Edit and Delete)</label>
     <loops>
+        <name>Loop_on_Each_member</name>
+        <label>Loop on Each member</label>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
+        <collectionReference>repeaterTeamMember.AllItems</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_Values</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Create_Account_Team_Members</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
         <name>Loop_on_Each_Member_to_Update</name>
         <label>Loop on Each Member to Update</label>
         <locationX>402</locationX>
@@ -213,7 +271,7 @@
         <name>Create_Account_Team_Members</name>
         <label>Create Account Team Members</label>
         <locationX>50</locationX>
-        <locationY>674</locationY>
+        <locationY>974</locationY>
         <connector>
             <targetReference>Confirmation_Screen_Created</targetReference>
         </connector>
@@ -304,7 +362,7 @@
         <name>Confirmation_Screen_Created</name>
         <label>Confirmation Screen - Created</label>
         <locationX>50</locationX>
-        <locationY>782</locationY>
+        <locationY>1082</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -368,12 +426,70 @@
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
         <connector>
-            <targetReference>Create_Account_Team_Members</targetReference>
+            <targetReference>Loop_on_Each_member</targetReference>
         </connector>
         <fields>
             <name>PleaseAddTeamMember</name>
             <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;Please Add Team Member&lt;/strong&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>repeaterTeamMember</name>
+            <fieldType>Repeater</fieldType>
+            <fields>
+                <name>userLookup</name>
+                <extensionName>flowruntime:lookup</extensionName>
+                <fieldType>ComponentInstance</fieldType>
+                <inputParameters>
+                    <name>objectApiName</name>
+                    <value>
+                        <stringValue>User</stringValue>
+                    </value>
+                </inputParameters>
+                <inputParameters>
+                    <name>fieldApiName</name>
+                    <value>
+                        <stringValue>CreatedById</stringValue>
+                    </value>
+                </inputParameters>
+                <inputParameters>
+                    <name>label</name>
+                    <value>
+                        <stringValue>User</stringValue>
+                    </value>
+                </inputParameters>
+                <inputParameters>
+                    <name>required</name>
+                    <value>
+                        <booleanValue>true</booleanValue>
+                    </value>
+                </inputParameters>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>true</isRequired>
+                <storeOutputAutomatically>true</storeOutputAutomatically>
+            </fields>
+            <fields>
+                <name>Team_Role</name>
+                <choiceReferences>choiceTeamRole</choiceReferences>
+                <dataType>String</dataType>
+                <fieldText>Team Role</fieldText>
+                <fieldType>DropdownBox</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Opportunity_Access</name>
+                <choiceReferences>Read</choiceReferences>
+                <choiceReferences>ReadWrite</choiceReferences>
+                <choiceReferences>Private</choiceReferences>
+                <dataType>String</dataType>
+                <defaultSelectedChoiceReference>Private</defaultSelectedChoiceReference>
+                <fieldText>Opportunity Access</fieldText>
+                <fieldType>DropdownBox</fieldType>
+                <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
         </fields>
         <showFooter>true</showFooter>
         <showHeader>false</showHeader>
@@ -424,7 +540,7 @@
             <inputParameters>
                 <name>columns</name>
                 <value>
-                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-2fb7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Opportunity Team Member Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TeamMemberRole&quot;,&quot;guid&quot;:&quot;column-e358&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Team Role&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;&quot;,&quot;guid&quot;:&quot;column-e7b2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1}]</stringValue>
+                    <stringValue>[{&quot;apiName&quot;:&quot;Name&quot;,&quot;guid&quot;:&quot;column-2fb7&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Opportunity Team Member Name&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;TeamMemberRole&quot;,&quot;guid&quot;:&quot;column-e358&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Team Role&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;OpportunityAccessLevel&quot;,&quot;guid&quot;:&quot;column-e7b2&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Opportunity Access&quot;,&quot;type&quot;:&quot;text&quot;}]</stringValue>
                 </value>
             </inputParameters>
             <inputParameters>
