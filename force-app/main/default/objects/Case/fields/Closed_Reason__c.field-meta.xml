@@ -90,5 +90,9 @@
             <controllingFieldValue>Closed</controllingFieldValue>
             <valueName>Service Line Complete</valueName>
         </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Lost Client</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>
