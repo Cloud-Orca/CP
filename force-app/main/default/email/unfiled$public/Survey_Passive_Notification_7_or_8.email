@@ -1,0 +1,16 @@
+Hello {!Contact.OwnerFirstName},
+
+A new advocacy survey response has been received.
+
+Please follow-up and update CRM within the next 72 hours to thank the client for responding and address any comments.
+
+Respondent: {!Contact.Name}
+
+Company: {!Account.Name}
+
+Question and Responses
+How likely is it you would recommend CP?: {!Contact.How_likely_is_it_you_would_recommend_CP__c} out of 10
+
+How are we doing?: {!Contact.Current_How_are_we_doing__c} out of 5
+
+Why have you chosen this score?: {!Contact.Tell_us_why_you_ve_chosen_this_rating__c}
