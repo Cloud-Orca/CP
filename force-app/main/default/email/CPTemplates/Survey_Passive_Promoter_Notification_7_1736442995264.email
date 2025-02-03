@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Hello,<br />
+<br />
+A new advocacy survey response has been received.<br />
+<br />
+Please follow-up and update CRM within the next 72 hours as this is a Passive/Promoter score.
+<p>Respondent:&nbsp;{{{Recipient.Name}}}<br />
+<br />
+Company:&nbsp;{{{Recipient.Account__c}}}</p>
+
+<p><br />
+<strong>Question and Responses</strong><br />
+How likely is it you would recommend CP?: {{{Recipient.NPS_Score__c}}}<br />
+How are we doing?:&nbsp;{{{Recipient.Current_How_are_we_doing__c}}}<br />
+Please tell us why you've chosen this rating. What have we done well? How can we improve?:&nbsp;{{{Recipient.Tell_us_why_you_ve_chosen_this_rating__c}}}</p>
+</body>
+</html>

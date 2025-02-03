@@ -1,0 +1,7 @@
+Hi,
+
+{!Contact.FirstName} {!Contact.LastName}'s NPS score was:{!Contact.NPS_Score__c}
+
+Please review and follow-up.
+
+Thank you.
