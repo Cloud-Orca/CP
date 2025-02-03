@@ -16,7 +16,7 @@
         </inputParameters>
         <nameSegment>Case.Case_Case_Closed_Email_Alert</nameSegment>
     </actionCalls>
-    <apiVersion>63.0</apiVersion>
+    <apiVersion>62.0</apiVersion>
     <decisions>
         <name>Check_Case_Status</name>
         <label>Check Case Status</label>
