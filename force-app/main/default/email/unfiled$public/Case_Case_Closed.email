@@ -1,0 +1,8 @@
+Hi Team,
+
+This is to inform you that your Case {!Case.CaseNumber}: {!Case.Account} -  {!Case.RecordType} has been Closed: {!Case.Closed_Reason__c}
+
+To view the case, click here: {!Case.Link}
+
+Kind regards,
+Salesforce
