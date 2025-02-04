@@ -94,6 +94,9 @@
                         <valueListItems>
                             <value>Opportunity.Source</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>Opportunity.Manage_Opportunity_Team</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -200,6 +203,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Win_Probability__c</fieldItem>
                 <identifier>RecordWin_Probability_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Resourcing_Team_Required__c</fieldItem>
+                <identifier>RecordResourcing_Team_Required__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-bda0868e-f60d-43d1-bc15-da4b2cf8d682</name>
@@ -870,6 +883,29 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>showCreateProject</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>ffscpq:opportunityActionsLauncherPanel</componentName>
+                <identifier>ffscpq_opportunityActionsLauncherPanel</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.IsWon}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Onboarding_Completed__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

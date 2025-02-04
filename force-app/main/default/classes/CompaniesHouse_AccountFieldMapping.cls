@@ -90,7 +90,7 @@ public with sharing class CompaniesHouse_AccountFieldMapping {
         List<Account> accountList = [
             SELECT Id, Name, Company_Legal_Name__c, Company_registration_number__c, CH_Company_Type__c, Legal_Type__c, 
                     BillingAddress, BillingCity, BillingCountry, BillingPostalCode, BillingState, BillingStreet,
-                    Incorporation_Date__c, Source_Type__c, Date_of_Creation__c, Companies_House_Run__c, Companies_House_Run_Date__c
+                    Incorporation_Date__c, Source__c, Source_Type__c, Date_of_Creation__c, Companies_House_Run__c, Companies_House_Run_Date__c, CH_Address__Street__s
             FROM Account
             WHERE Id =: recordId /* AND (Company_registration_number__c =: companyKey) */
             WITH SECURITY_ENFORCED
@@ -100,7 +100,7 @@ public with sharing class CompaniesHouse_AccountFieldMapping {
         Account currentRecord = accountList[0];
         System.debug('currentRecord:: ' + currentRecord);
         // try{
-            String sicCodesAsString = String.join(reqData.sic_codes, ', ');
+            String sicCodesAsString = (reqData.sic_codes != null) ? String.join(reqData.sic_codes, ', ') : '';
             if(reqData != null){
                 // currentRecord.Name = reqData.company_name;
                 currentRecord.CH_Name__c = reqData.company_name;
@@ -181,8 +181,25 @@ public with sharing class CompaniesHouse_AccountFieldMapping {
                 // currentRecord.Last_Accounts_Period_Start_On__c = reqData.accounts.last_accounts.period_start_on;
                 // currentRecord.Last_Accounts_Made_Up_To__c = reqData.accounts.last_accounts.made_up_to;
                 // currentRecord.Last_Accounts_Period_End_On__c = reqData.accounts.last_accounts.period_end_on;
-                 currentRecord.CH_Year_End_Date__c = reqData.accounts.last_accounts.period_end_on != null ? Date.valueOf(reqData.accounts.last_accounts.period_end_on) : null;
-                 currentRecord.CH_Accounts_Next_Due__c = reqData?.accounts?.next_accounts?.due_on != null ? Date.valueOf(reqData.accounts.next_accounts.due_on) : null; 
+
+                if(reqData.accounts != null){
+                    if(reqData.accounts.last_accounts != null){
+                        if(reqData.accounts.last_accounts.period_end_on != null){
+                            currentRecord.CH_Year_End_Date__c = reqData.accounts.last_accounts.period_end_on;
+                        }
+                    }
+                }
+
+                if(reqData.accounts != null){
+                    if(reqData.accounts.next_accounts != null){
+                        if(reqData.accounts.next_accounts.due_on != null){
+                            currentRecord.CH_Accounts_Next_Due__c = reqData.accounts.next_accounts.due_on;
+                        }
+                    }
+                }
+
+                //  currentRecord.CH_Year_End_Date__c = reqData.accounts.last_accounts.period_end_on != null ? Date.valueOf(reqData.accounts.last_accounts.period_end_on) : null;
+                //  currentRecord.CH_Accounts_Next_Due__c = reqData?.accounts?.next_accounts?.due_on != null ? Date.valueOf(reqData.accounts.next_accounts.due_on) : null; 
                 // currentRecord.Company_Has_Charges__c = reqData.has_charges;
                 // currentRecord.Etag__c = reqData.etag;
                 // currentRecord.Active_Company_Directors__c = officersData.active_count;
