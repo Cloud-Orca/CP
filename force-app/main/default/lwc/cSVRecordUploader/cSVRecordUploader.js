@@ -19,7 +19,7 @@ export default class CSVRecordUploader extends LightningElement {
     @track multiplesuccessFileTxt = {};
     @track multipleerrorFileTxt = {};
     fileContents;
-    numberOfRows = 0;
+    numberOfRows = 0; 
     pageName;
     label;
 
