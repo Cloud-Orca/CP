@@ -11,7 +11,7 @@ public with sharing class CSVRecordUploaderController {
         csvData = csvData.replace('\r\n', '\n').replace('\r', '\n');
         List<String> rows = csvData.split('\n');
         return rows.size();
-    } 
+    }
     
 
     @AuraEnabled
@@ -31,7 +31,7 @@ public with sharing class CSVRecordUploaderController {
                     String columnHeader = headers[j];
                     if(columnHeader == 'Registered Number'){
                         String regNum = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');
-                        regNumbers.add( rowValues[j] );
+                        regNumbers.add( regNum );
                     }
                 }
             }
@@ -44,7 +44,36 @@ public with sharing class CSVRecordUploaderController {
                 }
             }
         }
-        Map<String, Object> accDynamic = fieldColumnMapping(uploadAccountMapping, rows, headers, obj, regNumAcc);
+
+        Map<String, Id> dataOriginationMap = new Map<String, Id>();
+        if(obj == 'Account'){
+            List<String> dataOriginationNames = new List<String>();
+            for (Integer i = 1; i < rows.size(); i++) {
+                String csvLine = removeCommaValueCSV(rows[i]);
+                List<String> rowValues = csvLine.split(',');
+                for (Integer j = 0; j < rowValues.size(); j++) {
+                    String columnHeader = headers[j];
+                    if(columnHeader == 'Data Origination ID'){
+                        String regNum = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');
+                        dataOriginationNames.add( regNum );
+                    }
+                }
+            }
+
+            if(!dataOriginationNames.isEmpty()){
+                List<Data_Origination__c> dataOr = [SELECT Id, Name FROM Data_Origination__c WHERE Name IN :dataOriginationNames];
+                if (dataOr.size() > 0) {
+                    for (Data_Origination__c dtOr : dataOr) {
+                        if(!dataOriginationMap.containsKey(dtOr.Name)){
+                            dataOriginationMap.put(dtOr.Name, dtOr.Id);
+                        }
+                    }
+                }
+            }
+        }
+
+        System.debug('dataOriginationMap: ' + dataOriginationMap);
+        Map<String, Object> accDynamic = fieldColumnMapping(uploadAccountMapping, rows, headers, obj, regNumAcc, dataOriginationMap);
         String errorFile = (String)accDynamic.get('errorFile');
         String successFile = (String)accDynamic.get('successFile');
         List<String> validatedRcrds = (List<String>) accDynamic.get('validatedRcrds');
@@ -82,7 +111,7 @@ public with sharing class CSVRecordUploaderController {
         return mapRet;
     }
     
-    public static Map<String, Object> fieldColumnMapping(List<Uploader_Mapping__mdt> uploadMapping, List<String> csvRows, List<String> headers, String objType, Map<String, Id> regNumAcc) {
+    public static Map<String, Object> fieldColumnMapping(List<Uploader_Mapping__mdt> uploadMapping, List<String> csvRows, List<String> headers, String objType, Map<String, Id> regNumAcc, Map<String, Id> dataOrigination) {
         Map<String, String> uploadMap = new Map<String, String>();
         String errorFile = 'Error';
         String successFile = 'RecordId';
@@ -99,7 +128,7 @@ public with sharing class CSVRecordUploaderController {
             successFile += ',' + header;
             
         }
-
+        errorFile += '\n';
         for (Integer i = 1; i < csvRows.size(); i++) {
             String csvLine = removeCommaValueCSV(csvRows[i]);
             List<String> rowValues = csvLine.split(',');
@@ -110,35 +139,58 @@ public with sharing class CSVRecordUploaderController {
             List<String> fieldsMappingError = new List<String>();
             for (Integer j = 0; j < rowValues.size(); j++) {
                 String columnHeader = headers[j];
-                if(objType == 'Contact' && columnHeader == 'Registered Number'){
-                    if(regNumAcc.containsKey(rowValues[j])){
-                        obj.put('AccountId', regNumAcc.get(rowValues[j]));
-                    }
-                }
+
                 if(uploadMap.containsKey(columnHeader)){
                     String field = uploadMap.get(columnHeader);
                     if (field != null) {
                         try {
+          
                             String val = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');
                             obj.put(field, val);
+                            
                         }catch (Exception e) {
                             hasError = true;
                             errorMessage += e.getMessage() + ';';
                         }
                     }
                 }
+
+                if(objType == 'Contact' && columnHeader == 'Registered Number'){
+                    if(regNumAcc.containsKey(rowValues[j])){
+                        obj.put(uploadMap.get('Registered Number'), regNumAcc.get(rowValues[j]));
+                    }else{
+                        
+                        if(rowValues[j] != null && rowValues[j] != ''){
+                            errorMessage += 'Registered Number Does not Exist';
+                            hasError = true;
+                        }
+                    }
+                }
+
+                if(objType == 'Account' && columnHeader == 'Data Origination ID'){
+                    if(dataOrigination.containsKey(rowValues[j])){
+                        obj.put(uploadMap.get('Data Origination ID'), dataOrigination.get(rowValues[j]));
+                    }else{
+                        
+                        if(rowValues[j] != null && rowValues[j].trim() != ''){
+                            System.debug('rowValues[j]: ' + rowValues[j]);
+                            errorMessage += 'Data Origination Name Does not Exist';
+                            hasError = true;
+                        }
+                    }
+                }
+
                 potentialRecs.add(rowValues[j]);
             }
             if(!hasError){
                 validatedRcrds.add(String.join(potentialRecs, ',')); // mark current Item as Validated.
                 retSObj.add(obj);
             }else{
-                errorFile += csvRows[i] + ',' + errorMessage + '\n';
+                errorFile += errorMessage + ',' + csvRows[i] + ',' + '\n';
             }
         }
         
         successFile += '\n';
-        errorFile += '\n';
         mapRet.put('successFile', successFile);
         mapRet.put('errorFile', errorFile);
         mapRet.put('validatedRcrds', validatedRcrds);
