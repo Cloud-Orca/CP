@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sharepoint_Public_URL__c</fullName>
+    <externalId>false</externalId>
+    <formula>HYPERLINK(&quot;https://cooperparry1.sharepoint.com/:f:/r/account/&quot;&amp; Sharepoint_Public_Folder_URL__c ,&quot;Click Here&quot;)</formula>
+    <label>Sharepoint Public URL</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
