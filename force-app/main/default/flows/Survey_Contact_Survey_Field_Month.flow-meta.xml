@@ -68,9 +68,17 @@
         <connector>
             <targetReference>Survey_flow_test</targetReference>
         </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Field_Advocacy_Survey_Send_Month__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Contact</object>
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>
