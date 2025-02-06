@@ -35,6 +35,9 @@
                             <value>Share</value>
                         </valueListItems>
                         <valueListItems>
+                            <value>Account.Manage_Account_Team</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Account.Sync_from_BH_API</value>
                         </valueListItems>
                         <valueListItems>
@@ -223,6 +226,12 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Company_Activity__c</fieldItem>
                 <identifier>RecordCompany_Activity_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.BH_Audit_Fee__c</fieldItem>
+                <identifier>RecordBH_Audit_Fee__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
@@ -3122,6 +3131,76 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sharepoint_Public_URL__c</fieldItem>
+                <identifier>RecordSharepoint_Public_URL_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-992facf7-9029-45bd-9122-137ff0357e29</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sharepoint_Secured_URL__c</fieldItem>
+                <identifier>RecordSharepoint_Secured_URL_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-c2af8b35-f883-408c-85ee-7f1dc2f7298d</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-992facf7-9029-45bd-9122-137ff0357e29</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column38</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-c2af8b35-f883-408c-85ee-7f1dc2f7298d</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column39</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-593c29da-ef7c-498f-9308-92b2b20fdeca</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-593c29da-ef7c-498f-9308-92b2b20fdeca</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>Sharepoint Access Links</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection21</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>sharepointComp</componentName>
