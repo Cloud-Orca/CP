@@ -178,6 +178,12 @@
                 <identifier>RecordYear_End_Date_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.BH_Audit_Fee__c</fieldItem>
+                <identifier>RecordBH_Audit_Fee__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
