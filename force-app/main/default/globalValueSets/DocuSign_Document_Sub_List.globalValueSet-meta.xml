@@ -565,6 +565,16 @@
         <default>false</default>
         <label>Statutory Audit of Pension Scheme</label>
     </customValue>
+    <customValue>
+        <fullName>Letter of Resignation (no circumstances) - Confirmation Letter to ICAEW</fullName>
+        <default>false</default>
+        <label>Letter of Resignation (no circumstances) - Confirmation Letter to ICAEW</label>
+    </customValue>
+    <customValue>
+        <fullName>Letter of Resignation (no circumstances) - Covering Letter to Client 1</fullName>
+        <default>false</default>
+        <label>Letter of Resignation (no circumstances) - Covering Letter to Client 1</label>
+    </customValue>
     <masterLabel>DocuSign Document Sub List</masterLabel>
     <sorted>false</sorted>
 </GlobalValueSet>
