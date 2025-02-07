@@ -45,7 +45,7 @@
     <processMetadataValues>
         <name>BrandingSet</name>
         <value>
-            <stringValue>sb_firm_wide_survey_2_6ba353e5_1fcc_4a60_a293_ff5f6bf8d90e</stringValue>
+            <stringValue>sb_firm_wide_survey_3_ab32f30c_c11b_4292_a1a0_c89ff519eca0</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -88,6 +88,18 @@
         <name>surveyType</name>
         <value>
             <stringValue>Survey</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>svAddlInfo_EmailSender</name>
+        <value>
+            <stringValue>creditcontrol@cooperparry.com &lt;creditcontrol@cooperparry.com&gt;</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>svAddlInfo_InvitationSharingRole</name>
+        <value>
+            <stringValue>SurveyOwner</stringValue>
         </value>
     </processMetadataValues>
     <processType>Survey</processType>
