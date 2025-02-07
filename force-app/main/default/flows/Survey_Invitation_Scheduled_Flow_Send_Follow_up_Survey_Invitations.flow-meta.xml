@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Send_3rd_Firm_Wide_Survey</name>
-        <label>Send 3rd Firm Wide Survey</label>
+        <name>Copy_1_of_Survey_Reminder_2</name>
+        <label>Copy 1 of Survey Reminder 2</label>
         <locationX>314</locationX>
         <locationY>468</locationY>
         <actionName>sendSurveyInvitation</actionName>
         <actionType>sendSurveyInvitation</actionType>
-        <connector>
-            <targetReference>Update_Survey_Invitation_3rd_Invitation</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>surveyName</name>
@@ -26,7 +23,19 @@
         <inputParameters>
             <name>recipient</name>
             <value>
-                <elementReference>$Record.ContactId</elementReference>
+                <elementReference>$Record.Contact.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>personalInvitation</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>anonymousResponse</name>
+            <value>
+                <booleanValue>false</booleanValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -45,15 +54,12 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <actionCalls>
-        <name>Send_Firm_Wide_Survey_7_Days</name>
-        <label>Send Firm Wide Survey - 7 Days</label>
+        <name>Survey_Reminder_2</name>
+        <label>Survey Reminder 2</label>
         <locationX>50</locationX>
         <locationY>468</locationY>
         <actionName>sendSurveyInvitation</actionName>
         <actionType>sendSurveyInvitation</actionType>
-        <connector>
-            <targetReference>Update_Survey_Invitation_2nd_Invitation</targetReference>
-        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>surveyName</name>
@@ -70,7 +76,19 @@
         <inputParameters>
             <name>recipient</name>
             <value>
-                <elementReference>$Record.ContactId</elementReference>
+                <elementReference>$Record.Contact.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>personalInvitation</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>anonymousResponse</name>
+            <value>
+                <booleanValue>false</booleanValue>
             </value>
         </inputParameters>
         <inputParameters>
@@ -88,14 +106,14 @@
         <nameSegment>sendSurveyInvitation</nameSegment>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
-    <apiVersion>61.0</apiVersion>
+    <apiVersion>60.0</apiVersion>
     <decisions>
         <name>Check_2nd_Survey_Invitation</name>
         <label>Check 2nd Survey Invitation</label>
         <locationX>182</locationX>
         <locationY>360</locationY>
         <defaultConnector>
-            <targetReference>Send_3rd_Firm_Wide_Survey</targetReference>
+            <targetReference>Copy_1_of_Survey_Reminder_2</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Send_3rd_Invitation</defaultConnectorLabel>
         <rules>
@@ -109,7 +127,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Send_Firm_Wide_Survey_7_Days</targetReference>
+                <targetReference>Survey_Reminder_2</targetReference>
             </connector>
             <label>Send 2nd Invitation</label>
         </rules>
@@ -146,7 +164,7 @@
     <formulas>
         <name>formula_7Days</name>
         <dataType>Date</dataType>
-        <expression>{!$Record.CreatedDate} + 8</expression>
+        <expression>{!$Record.Created_Date_Custom__c} + 7</expression>
     </formulas>
     <interviewLabel>Survey Invitation - Scheduled Flow: Send Follow up Survey Invitations {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Survey - Invitation reminder 7 and 14 days</label>
@@ -169,32 +187,6 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordUpdates>
-        <name>Update_Survey_Invitation_2nd_Invitation</name>
-        <label>Update Survey Invitation - 2nd Invitation</label>
-        <locationX>50</locationX>
-        <locationY>576</locationY>
-        <inputAssignments>
-            <field>X2nd_Survey_Invitation__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
-        <name>Update_Survey_Invitation_3rd_Invitation</name>
-        <label>Update Survey Invitation - 3rd Invitation</label>
-        <locationX>314</locationX>
-        <locationY>576</locationY>
-        <inputAssignments>
-            <field>X3rd_Survey_Invitation__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
     <start>
         <locationX>254</locationX>
         <locationY>0</locationY>
@@ -225,9 +217,9 @@
         </filters>
         <object>SurveyInvitation</object>
         <schedule>
-            <frequency>Daily</frequency>
-            <startDate>2025-01-16</startDate>
-            <startTime>06:00:00.000Z</startTime>
+            <frequency>Once</frequency>
+            <startDate>2025-02-06</startDate>
+            <startTime>17:26:00.000Z</startTime>
         </schedule>
         <triggerType>Scheduled</triggerType>
     </start>
