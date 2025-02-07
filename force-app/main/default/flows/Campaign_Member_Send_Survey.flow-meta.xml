@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Send_Survey_Invitation_Action_1</name>
-        <label>Send Survey Invitation Action 1</label>
+        <name>Send_Survey</name>
+        <label>Send Survey</label>
         <locationX>50</locationX>
         <locationY>539</locationY>
-        <actionName>sendSurveyInvitation</actionName>
-        <actionType>sendSurveyInvitation</actionType>
+        <actionName>firm_wide_survey</actionName>
+        <actionType>dynamicSendSurveyInvitation</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>surveyName</name>
+            <name>recipientType</name>
             <value>
-                <stringValue>firm_wide_survey</stringValue>
-            </value>
-        </inputParameters>
-        <inputParameters>
-            <name>emailTemplateName</name>
-            <value>
-                <stringValue>Embed_a_Survey_Link</stringValue>
+                <stringValue>Contact</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>recipient</name>
             <value>
-                <elementReference>$Record.ContactId</elementReference>
+                <stringValue>{!$Record.ContactId}</stringValue>
             </value>
         </inputParameters>
         <inputParameters>
             <name>personalInvitation</name>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
         </inputParameters>
         <inputParameters>
             <name>isUnauthenticatedResponse</name>
@@ -41,10 +38,9 @@
                 <numberValue>7.0</numberValue>
             </value>
         </inputParameters>
-        <nameSegment>sendSurveyInvitation</nameSegment>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <nameSegment>firm_wide_survey</nameSegment>
     </actionCalls>
-    <apiVersion>61.0</apiVersion>
+    <apiVersion>60.0</apiVersion>
     <decisions>
         <name>Check_if_Contact_or_Lead</name>
         <label>Check if Contact or Lead</label>
@@ -62,7 +58,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Send_Survey_Invitation_Action_1</targetReference>
+                <targetReference>Send_Survey</targetReference>
             </connector>
             <label>Contact</label>
         </rules>
