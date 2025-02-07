@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_Date_Custom__c</fullName>
+    <description>This is use for TESTING only</description>
+    <externalId>false</externalId>
+    <label>Created Date Custom</label>
+    <required>false</required>
+    <type>DateTime</type>
+</CustomField>
