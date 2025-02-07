@@ -7,7 +7,7 @@
         <locationX>176</locationX>
         <locationY>323</locationY>
         <customErrorMessages>
-            <errorMessage>Please ensure that Source and Source Type are populated using the Source button</errorMessage>
+            <errorMessage>Please ensure that Source is populated using the Source button</errorMessage>
             <isFieldError>false</isFieldError>
         </customErrorMessages>
     </customErrors>
@@ -41,12 +41,7 @@
         </connector>
         <filterFormula>AND(
 NOT({!$Setup.Org_Wide_Settings__c.Disable_Flows__c}),
-OR(
-
-AND(TEXT({!$Record.Source__c}) = &quot;Internal&quot;, ISBLANK(TEXT({!$Record.Source_Type__c} ))),
-
-AND(ISBLANK(TEXT( {!$Record.Source__c})), ISBLANK(TEXT({!$Record.Source_Type__c})))
-),
+ISBLANK(TEXT( {!$Record.Source__c})),
 ISCHANGED({!$Record.IsWon}),
 {!$Record.IsWon} = true
 )</filterFormula>

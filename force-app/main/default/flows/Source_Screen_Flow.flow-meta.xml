@@ -923,7 +923,7 @@ IF(NOT(ISBLANK({!Referral_Type_Account})), {!Referral_Type_Account},
     <formulas>
         <name>Source_Type_Formula</name>
         <dataType>String</dataType>
-        <expression>IF({!Source} = &quot;Inbound&quot;, {!Source_Type_Inbound}, {!Source_Type_Outbound})</expression>
+        <expression>IF({!Source} = {!Inbound}, {!Source_Type_Inbound}, {!Source_Type_Outbound})</expression>
     </formulas>
     <interviewLabel>Source Screen Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Source Screen Flow</label>

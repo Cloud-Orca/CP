@@ -75,6 +75,7 @@
             <label>Yes</label>
         </rules>
     </decisions>
+    <description>Audit Estimate and Approval Validation</description>
     <environments>Default</environments>
     <interviewLabel>Opportunity:  Audit Estimate Validation {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity: THG Audit &amp; Audit Estimate Validation Rule</label>
@@ -142,5 +143,5 @@ TEXT({!$Record.Opportunity_Type_Area__c}) = &quot;THG Audit&quot;
         <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Draft</status>
 </Flow>

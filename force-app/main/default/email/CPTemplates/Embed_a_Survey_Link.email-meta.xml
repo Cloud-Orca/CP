@@ -6,7 +6,7 @@
     <name>Embed_a_Survey_Link</name>
     <relatedEntityType>SurveyQuestion</relatedEntityType>
     <style>none</style>
-    <subject>We&apos;d love to hear your feedback - {{{Recipient.Mail_Account_Name__c}}}</subject>
+    <subject>We&apos;d love to hear your feedback</subject>
     <type>custom</type>
     <uiType>SFX</uiType>
 </EmailTemplate>
