@@ -1,6 +1,7 @@
 public class SurveyInvitationTriggerHandler {    
     public static void onBeforeInsert(List<SurveyInvitation> invitations){
         populateOwner(invitations);
+        markInvitationCheckbox(invitations);
     }
 
     public static void onAfterUpdate(List<SurveyInvitation> invitations, Map<Id, SurveyInvitation> oldInvitations){
@@ -92,6 +93,48 @@ public class SurveyInvitationTriggerHandler {
                 }
             }
         }
+    }
+
+    /**
+     * 
+     * @Created by: Clifford U.
+     * @desc: Use to check how often a contact receives a survey invitation
+     * 
+     */
+    public static void markInvitationCheckbox(List<SurveyInvitation> invitations){
+        List<Id> contactIds = new List<Id>();
+        Map<Id, SurveyInvitation> recentInvitationPerContact = new Map<Id, SurveyInvitation>();
+        for (SurveyInvitation invitation : invitations) {
+            if(invitation.ParticipantId != null && invitation.ParticipantId.getSObjectType() == Contact.sObjectType){
+                contactIds.add(invitation.ParticipantId);
+            }
+        }
+        
+        if(!contactIds.isEmpty()){
+            for (SurveyInvitation childInvitation : [SELECT Id, Name, ParticipantId, CreatedDate, X2nd_Survey_Invitation__c FROM SurveyInvitation WHERE ParticipantId IN :contactIds AND Created_Date_Custom__c = LAST_N_DAYS:7 ORDER BY CreatedDate DESC]) {
+                if(recentInvitationPerContact.containsKey(childInvitation.ParticipantId)){
+                    if(recentInvitationPerContact.get(childInvitation.ParticipantId).CreatedDate < childInvitation.CreatedDate){
+                        recentInvitationPerContact.put(childInvitation.ParticipantId, childInvitation);
+                    }
+                }else{
+                    recentInvitationPerContact.put(childInvitation.ParticipantId, childInvitation);
+                }   
+            }
+
+
+            for (SurveyInvitation invitation : invitations) {
+                // invitation.ParticipantId
+                if(recentInvitationPerContact.containsKey(invitation.ParticipantId)){
+                    if(recentInvitationPerContact.get(invitation.ParticipantId).X2nd_Survey_Invitation__c){
+                        invitation.X3rd_Survey_Invitation__c = true;
+                    }else{
+                        invitation.X2nd_Survey_Invitation__c = true;
+                    }
+                }
+            }
+        }
+
+
     }
 
     public static void codeCoverageTemp(){
