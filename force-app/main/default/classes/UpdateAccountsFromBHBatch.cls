@@ -46,7 +46,13 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
         }
 
         if(!String.isEmpty(companyIds)){
-            String append = '/companies?' + companyIds + 'includes=companies_house_id&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors&limit=100';
+            String append = '/companies?' + companyIds + 'includes=companies_house_id&includes=registered_name&includes=other_trading_names&includes=website';
+                    append += '&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution';
+                    append += '&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees';
+                    append += '&includes=emails&includes=directors&includes=total_amount_fundraisings&includes=n_fundraisings&includes=total_amount_grants&includes=latest_valuation';
+                    append += '&includes=n_grants&includes=stage_of_evolution_transitions';
+                    append += '&limit=100';
+            
 
             Http http = new Http();
             HttpResponse res = http.send(BeauhurstAPIUtility.constructReq(append));
