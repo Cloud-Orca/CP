@@ -25,6 +25,7 @@ global class CreateAccountsFromBHBatch implements Database.Batchable<sObject>, D
 
         if(collectionIdToRelatedCompanyIdsMap.containsKey(col.beauhurst_id__c)){
             Map<String, Map<String, Object>> companiesHouseIdToResultItemMap = new Map<String, Map<String, Object>>();
+            Map<String, Map<String, Object>> companiesHouseIdToTransactionItemMap = new Map<String, Map<String, Object>>();
 
             Set<String> relatedCompanyIds = collectionIdToRelatedCompanyIdsMap.get(col.beauhurst_id__c);
             Integer setSize = relatedCompanyIds.size();
@@ -82,6 +83,25 @@ global class CreateAccountsFromBHBatch implements Database.Batchable<sObject>, D
                         System.abortJob(BC.getJobId());
                     }
 
+                    String transactionAppend = '/transactions/company?' + companyIds + 'includes=fundraisings&limit=100';
+                    HttpResponse transactionRes = http.send(BeauhurstAPIUtility.constructReq(transactionAppend));
+
+                    System.debug('@@@transaction status code: ' + transactionRes.getStatusCode());
+                    System.debug('@@@transaction body: ' + transactionRes.getBody());
+
+                    if(transactionRes.getStatusCode() == 200){
+                        Map<String, Object> tranResp = (Map<String, Object>)JSON.deserializeUntyped(transactionRes.getBody());
+                        List<Object> tranResults = (List<Object>)tranResp.get('results');
+                        if(tranResults != null && tranResults.size() > 0){
+                            for(Object tranResult : tranResults){
+                                Map<String, Object> tranResultItem = (Map<String, Object>)tranResult;
+                                if(tranResultItem.get('companies_house_id') != null && tranResultItem.get('fundraisings') != null){
+                                    companiesHouseIdToTransactionItemMap.put(String.valueOf(tranResultItem.get('companies_house_id')), tranResultItem);
+                                }
+                            }
+                        }
+                    }
+
                     companyIds = '';
                 }
             }
@@ -103,6 +123,17 @@ global class CreateAccountsFromBHBatch implements Database.Batchable<sObject>, D
                             acc.BH_Collection_Name__c = col.collection_name__c;
                             acc.RecordTypeId = BeauhurstAPIUtility.getRecordTypeIdbyName('Account', 'Business Account');
                             acc.OwnerId = users[0].Id;
+
+                            if(companiesHouseIdToTransactionItemMap.containsKey(cHouseId)){
+                                List<Object> fundraisings_lst = (List<Object>)companiesHouseIdToTransactionItemMap.get(cHouseId).get('fundraisings');
+                                Map<String, Object> fundraisings_obj = (Map<String, Object>)fundraisings_lst[0];
+                                if(fundraisings_obj.get('date_raised') != null){
+                                    acc.Date_Of_Last_Funding_Round__c = BeauhurstAPIUtility.stringToDate(String.valueOf(fundraisings_obj.get('date_raised')));
+                                }
+                                if(fundraisings_obj.get('amount_raised_gbp') != null){
+                                    acc.Amount_in_Latest_Fundraise__c = Double.valueOf(fundraisings_obj.get('amount_raised_gbp'));
+                                }
+                            }
                             accountsToInsert.add(acc);
                         }
                     }

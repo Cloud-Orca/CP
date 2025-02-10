@@ -39,6 +39,32 @@ public class BeauhurstAPIUtility {
                             Map<String, Object> resultItem = (Map<String, Object>)results[0];
                             
                             Account rec = collectAccount(accounts[0].Id, resultItem);
+
+                            String transactionAppend = '/transactions/company?company_ids=' + accounts[0].Beauhurst_ID__c + '&includes=fundraisings&limit=100';
+                            HttpResponse transactionRes = http.send(BeauhurstAPIUtility.constructReq(transactionAppend));
+
+                            System.debug('@@@transaction status code: ' + transactionRes.getStatusCode());
+                            System.debug('@@@transaction body: ' + transactionRes.getBody());
+
+                            if(transactionRes.getStatusCode() == 200){
+                                Map<String, Object> tranResp = (Map<String, Object>)JSON.deserializeUntyped(transactionRes.getBody());
+                                List<Object> tranResults = (List<Object>)tranResp.get('results');
+                                if(tranResults != null && tranResults.size() > 0){
+                                    Map<String, Object> tranResultItem = (Map<String, Object>)tranResults[0];
+                                    if(tranResultItem.get('companies_house_id') != null && tranResultItem.get('fundraisings') != null){
+                                        List<Object> fundraisings_lst = (List<Object>)tranResultItem.get('fundraisings');
+                                        Map<String, Object> fundraisings_obj = (Map<String, Object>)fundraisings_lst[0];
+
+                                        if(fundraisings_obj.get('date_raised') != null){
+                                            rec.Date_Of_Last_Funding_Round__c = stringToDate(String.valueOf(fundraisings_obj.get('date_raised')));
+                                        }
+                                        if(fundraisings_obj.get('amount_raised_gbp') != null){
+                                            rec.Amount_in_Latest_Fundraise__c = Double.valueOf(fundraisings_obj.get('amount_raised_gbp'));
+                                        }
+                                    }
+                                }
+                            }
+
                             update rec;
                         }
                     }else{
@@ -150,6 +176,7 @@ public class BeauhurstAPIUtility {
             }
             if(transactions.get('total_amount_fundraisings') != null){
                 acc.Total_Amount_of_Fundraisings__c = Double.valueOf(transactions.get('total_amount_fundraisings'));
+                acc.Total_Amount_Raised__c = Double.valueOf(transactions.get('total_amount_fundraisings'));
             }
             if(transactions.get('n_grants') != null){
                 acc.Number_of_Grants__c = Integer.valueOf(transactions.get('n_grants'));
