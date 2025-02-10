@@ -17,8 +17,13 @@ public class BeauhurstAPIUtility {
             if(!accounts.isEmpty()){
                 Account acc = accounts[0];
                 if(acc.Beauhurst_ID__c.isAlphaNumeric() && acc.Beauhurst_ID__c.length() >= 6 && acc.Beauhurst_ID__c.length() <= 8){
-                    String append = '/companies?company_ids=' + accounts[0].Beauhurst_ID__c + '&includes=registered_name&includes=other_trading_names&includes=website&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees&includes=emails&includes=directors&limit=100';
-                
+                    String append = '/companies?company_ids=' + accounts[0].Beauhurst_ID__c + '&includes=registered_name&includes=other_trading_names&includes=website';
+                    append += '&includes=ultimate_parent_company&includes=top_level_industry_groups&includes=top_level_sector_groups&includes=buzzwords&includes=latest_stage_of_evolution';
+                    append += '&includes=legal_form&includes=year_end_date&includes=turnover&includes=ebitda&includes=total_assets&includes=number_of_employees&includes=auditor&includes=audit_fees';
+                    append += '&includes=emails&includes=directors&includes=total_amount_fundraisings&includes=n_fundraisings&includes=total_amount_grants&includes=latest_valuation';
+                    append += '&includes=n_grants&includes=stage_of_evolution_transitions';
+                    append += '&limit=100';
+                                    
                     Http http = new Http();
                     HttpResponse res = http.send(constructReq(append));
     
@@ -36,12 +41,6 @@ public class BeauhurstAPIUtility {
                             Account rec = collectAccount(accounts[0].Id, resultItem);
                             update rec;
                         }
-                        
-                        /*Response getData = (Response) JSON.deserialize(res.getBody(), Response.class);
-                        if(!getData.results.isEmpty()){
-                            Account acc = collectAccount(accounts[0].Id, getData.results[0]);
-                            update acc;
-                        }*/
                     }else{
                         wrap.errorMsg = 'API Error';
                     }
@@ -123,8 +122,43 @@ public class BeauhurstAPIUtility {
             if(classification.get('latest_stage_of_evolution') != null){
                 acc.Latest_Stage_Of_Evolution__c = String.valueOf(classification.get('latest_stage_of_evolution'));
             }
+            if(classification.get('stage_of_evolution_transitions') != null){
+                List<Object> stage_of_evolution_lst = (List<Object>)classification.get('stage_of_evolution_transitions');
+                acc.Stage_of_Evolution_Transitions__c = JSON.serialize(stage_of_evolution_lst);
+
+                Map<String, Object> stage_of_evolution_obj = (Map<String, Object>)stage_of_evolution_lst[0];
+                if(stage_of_evolution_obj.get('primary_date') != null){
+                    acc.Primary_Date__c = stringToDate(String.valueOf(stage_of_evolution_obj.get('primary_date')));
+                }
+                if(stage_of_evolution_obj.get('stage_before') != null){
+                    acc.Stage_Before__c = String.valueOf(stage_of_evolution_obj.get('stage_before'));
+                }
+                if(stage_of_evolution_obj.get('stage_after') != null){
+                    acc.Stage_After__c = String.valueOf(stage_of_evolution_obj.get('stage_after'));
+                }
+            }
             if(classification.get('legal_form') != null){
                 acc.Legal_Form__c = String.valueOf(classification.get('legal_form'));
+            }
+        }
+
+        if(resultItem.get('transactions') != null){
+            Map<String, Object> transactions = (Map<String, Object>)resultItem.get('transactions');
+
+            if(transactions.get('n_fundraisings') != null){
+                acc.Number_of_Fundraisings__c = Integer.valueOf(transactions.get('n_fundraisings'));
+            }
+            if(transactions.get('total_amount_fundraisings') != null){
+                acc.Total_Amount_of_Fundraisings__c = Double.valueOf(transactions.get('total_amount_fundraisings'));
+            }
+            if(transactions.get('n_grants') != null){
+                acc.Number_of_Grants__c = Integer.valueOf(transactions.get('n_grants'));
+            }
+            if(transactions.get('total_amount_grants') != null){
+                acc.Total_Amount_of_Grants__c = Double.valueOf(transactions.get('total_amount_grants'));
+            }
+            if(transactions.get('latest_valuation') != null){
+                acc.Latest_Valuation__c = Double.valueOf(transactions.get('latest_valuation'));
             }
         }
         
@@ -156,85 +190,6 @@ public class BeauhurstAPIUtility {
         }
         return acc;
     }
-
-    /*public static Account collectAccount(Id accId, Result res){
-        Account acc = new Account();
-        if(accId != null){
-            acc.Id = accId;
-        }else{
-            acc.Beauhurst_ID__c = res.id;
-        }
-        acc.Beauhurst_Updated_Date__c = System.now();
-        if(res.basic != null){
-            Basic basic = res.basic;
-            if(basic.name != null){
-                acc.Name = basic.name;
-            }
-            if(basic.registered_name != null){
-                acc.Registered_Name__c = basic.registered_name;
-            }
-            if(!basic.other_trading_names.isEmpty()){
-                acc.Other_Trading_Names__c = listToString(basic.other_trading_names);
-            }
-            if(basic.website != null){
-                acc.Website = basic.website;
-            }
-            if(basic.ultimate_parent_company != null){
-                ParentCompany parent = basic.ultimate_parent_company;
-                if(parent.companies_house_id != null){
-                    acc.Parent_Company_Companies_House_Id__c = parent.companies_house_id;
-                }
-                if(parent.name != null){
-                    acc.Ultimate_Parent_Company_Name__c = parent.name;
-                }
-            }
-        }
-        if(res.classification != null){
-            Classification classInfo = res.classification;
-            if(!classInfo.top_level_industry_groups.isEmpty()){
-                acc.Top_Level_Industry_Groups__c = listToString(classInfo.top_level_industry_groups);
-            }
-            if(classInfo.top_level_sector_groups != null){
-                if(!classInfo.top_level_sector_groups.isEmpty()){
-                    acc.Top_Level_Sector_Groups__c = listToString(classInfo.top_level_sector_groups);
-                }
-             }
-            if(!classInfo.buzzwords.isEmpty()){
-                acc.Buzzwords__c = listToString(classInfo.buzzwords);
-            }
-            if(classInfo.latest_stage_of_evolution != null){
-                acc.Latest_Stage_Of_Evolution__c = classInfo.latest_stage_of_evolution;
-            }
-            if(classInfo.legal_form != null){
-                acc.Legal_Form__c = classInfo.legal_form;
-            }
-        }
-        if(res.latest_accounts != null){
-            Accounts latest = res.latest_accounts;
-            if(latest.year_end_date != null){
-                acc.Year_End_Date__c = Date.valueOf(latest.year_end_date);
-            }
-            if(latest.turnover != null){
-                acc.Turnover__c = Decimal.valueOf(latest.turnover);
-            }
-            if(latest.ebitda != null){
-                acc.EBITDA__c = Decimal.valueOf(latest.ebitda);
-            }
-            if(latest.total_assets != null){
-                acc.Total_Assets__c = Decimal.valueOf(latest.total_assets);
-            }
-            if(latest.number_of_employees != null){
-                acc.NumberOfEmployees = latest.number_of_employees;
-            }
-            if(latest.auditor != null){
-                acc.Auditor__c = latest.auditor;
-            }
-            if(latest.audit_fees != null){
-                acc.Audit_Fees__c = String.valueOf(latest.audit_fees);
-            }
-        }
-        return acc;
-    }*/
 
     public static String listToString(List<String> strList){
         String strVal = String.join(strList, ',');
