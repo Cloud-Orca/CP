@@ -4,7 +4,7 @@
     <encodingKey>UTF-8</encodingKey>
     <name>Survey Passive Notification 7 or 8</name>
     <style>none</style>
-    <subject>Passive/Promote NPS Score Notification</subject>
+    <subject>Passive/Promoter NPS Score Notification</subject>
     <type>text</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
