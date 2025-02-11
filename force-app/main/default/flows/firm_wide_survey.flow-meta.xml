@@ -45,7 +45,7 @@
     <processMetadataValues>
         <name>BrandingSet</name>
         <value>
-            <stringValue>sb_firm_wide_survey_3_ab32f30c_c11b_4292_a1a0_c89ff519eca0</stringValue>
+            <stringValue>sb_firm_wide_survey_4_6dcee7ae_bb3d_4577_987e_c998782489e7</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -221,7 +221,7 @@
         <showHeader>true</showHeader>
     </screens>
     <startElementReference>welcome_page</startElementReference>
-    <status>Active</status>
+    <status>Draft</status>
     <textTemplates>
         <name>thankYouDescriptionTextTemplate</name>
         <isViewedAsPlainText>false</isViewedAsPlainText>
