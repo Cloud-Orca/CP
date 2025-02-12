@@ -17,6 +17,11 @@
                 <label>Student - Placement</label>
             </value>
             <value>
+                <fullName>Student - Placement - Half Rate</fullName>
+                <default>false</default>
+                <label>Student - Placement - Half Rate</label>
+            </value>
+            <value>
                 <fullName>Student - Interns</fullName>
                 <default>false</default>
                 <label>Student - Interns</label>
@@ -25,6 +30,11 @@
                 <fullName>Y1 Trainee - SL</fullName>
                 <default>false</default>
                 <label>Y1 Trainee - SL</label>
+            </value>
+            <value>
+                <fullName>Y2 Trainee - SL</fullName>
+                <default>false</default>
+                <label>Y2 Trainee - SL</label>
             </value>
             <value>
                 <fullName>Y3 Trainee - SL</fullName>
@@ -80,6 +90,11 @@
                 <fullName>Assistant Director</fullName>
                 <default>false</default>
                 <label>Assistant Director</label>
+            </value>
+            <value>
+                <fullName>Associate Director</fullName>
+                <default>false</default>
+                <label>Associate Director</label>
             </value>
             <value>
                 <fullName>Director</fullName>
@@ -147,9 +162,9 @@
                 <label>Accounts Pod</label>
             </value>
             <value>
-                <fullName>Y2 Trainne - SL</fullName>
+                <fullName>Non-Chargeable</fullName>
                 <default>false</default>
-                <label>Y2 Trainne - SL</label>
+                <label>Non-Chargeable</label>
             </value>
         </valueSetDefinition>
     </valueSet>
