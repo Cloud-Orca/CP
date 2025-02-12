@@ -641,14 +641,6 @@
     <picklistValues>
         <picklist>DocuSign_Document_Sub_List_Cont__c</picklist>
         <values>
-            <fullName>%23NLR - OLD - Removed 2-5-23 - Pensions Resignation Covering Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>%23NLR - Pensions Info Request - SSAS</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>ADV_ENG01 BSO DocuSign Cover Letter</fullName>
             <default>false</default>
         </values>
@@ -825,31 +817,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Earmarked Audit of Pension Scheme</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Enclosed Signed Accounts</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>FCF Letter of Engagement</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Fraud Project %E2%80%93 LOE Agreed upon Procedures</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Independent Examination Unincorporated Charity</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Letter of Resignation %28no circumstances%29 - Confirmation Letter to ICAEW</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Letter of Resignation %28no circumstances%29 - Covering Letter to Client 1</fullName>
             <default>false</default>
         </values>
         <values>
@@ -945,58 +917,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Pensions - Professional Clearance Response</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Acknowledgement</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Arrangement Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Bank Authority Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Draft Notice of appointment</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Engagement Covering Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions ISA Management Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Investment Authority Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Investment Request</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Management Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Professional Clearance Request</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Resignation Letter to Trustees</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Signed Accounts</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Personal Tax - Client Acceptance Form - %28Personal Tax ONLY%29</fullName>
             <default>false</default>
         </values>
@@ -1034,14 +954,6 @@
         </values>
         <values>
             <fullName>R%26D Engagement Letter - SME Full Contingent</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Statutory Audit of Pension Scheme</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Statutory Audit of Pension Scheme - single trustee</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1104,14 +1016,6 @@
     <picklistValues>
         <picklist>DocuSign_Document_Sub_List__c</picklist>
         <values>
-            <fullName>%23NLR - OLD - Removed 2-5-23 - Pensions Resignation Covering Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>%23NLR - Pensions Info Request - SSAS</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>ADV_ENG01 BSO DocuSign Cover Letter</fullName>
             <default>false</default>
         </values>
@@ -1288,31 +1192,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Earmarked Audit of Pension Scheme</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Enclosed Signed Accounts</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>FCF Letter of Engagement</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Fraud Project %E2%80%93 LOE Agreed upon Procedures</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Independent Examination Unincorporated Charity</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Letter of Resignation %28no circumstances%29 - Confirmation Letter to ICAEW</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Letter of Resignation %28no circumstances%29 - Covering Letter to Client 1</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1408,58 +1292,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Pensions - Professional Clearance Response</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Acknowledgement</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Arrangement Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Bank Authority Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Draft Notice of appointment</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Engagement Covering Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions ISA Management Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Investment Authority Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Investment Request</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Management Letter</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Professional Clearance Request</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Resignation Letter to Trustees</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Pensions Signed Accounts</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Personal Tax - Client Acceptance Form - %28Personal Tax ONLY%29</fullName>
             <default>false</default>
         </values>
@@ -1497,14 +1329,6 @@
         </values>
         <values>
             <fullName>R%26D Engagement Letter - SME Full Contingent</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Statutory Audit of Pension Scheme</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Statutory Audit of Pension Scheme - single trustee</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1567,6 +1391,26 @@
     <picklistValues>
         <picklist>DocuSign_Documents_Cont__c</picklist>
         <values>
+            <fullName>Audit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Capital Allowance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Futures</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NFP</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Pensions</fullName>
             <default>false</default>
         </values>
@@ -1617,6 +1461,34 @@
             <fullName>NFP</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Pensions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Projects</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>RnD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transaction Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transaction Tax</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAT</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>Fee_Insurance_Taken__c</picklist>
@@ -1645,10 +1517,6 @@
         </values>
         <values>
             <fullName>February</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Invalid Month</fullName>
             <default>false</default>
         </values>
         <values>
@@ -2158,14 +2026,6 @@
     </picklistValues>
     <picklistValues>
         <picklist>Source__c</picklist>
-        <values>
-            <fullName>Event</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Internal</fullName>
-            <default>false</default>
-        </values>
         <values>
             <fullName>Referral</fullName>
             <default>false</default>
@@ -3184,7 +3044,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Y2 Trainne - SL</fullName>
+            <fullName>Y2 Trainee - SL</fullName>
             <default>false</default>
         </values>
         <values>
