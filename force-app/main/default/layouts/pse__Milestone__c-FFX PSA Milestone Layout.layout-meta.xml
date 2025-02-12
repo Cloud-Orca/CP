@@ -75,7 +75,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>pse__Description__c</field>
+                <field>Milestone_Description__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -117,6 +117,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>CT_Recognisable_Value__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>pse__Billable_Expenses_Submitted__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -170,7 +174,7 @@
                 <field>pse__Closed_for_Expense_Entry__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>pse__Approved__c</field>
             </layoutItems>
             <layoutItems>
@@ -289,10 +293,6 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>pse__Billable_Amount_Submitted__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>pse__Billable_Expenses_Submitted__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
