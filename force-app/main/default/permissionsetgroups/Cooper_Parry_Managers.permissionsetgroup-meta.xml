@@ -3,7 +3,10 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry Managers</label>
     <mutingPermissionSets>Cooper_Parry_Managers_Muted</mutingPermissionSets>
+    <permissionSets>CP_Project_Management_Workspace</permissionSets>
+    <permissionSets>CP_Resource_Management_Workspace</permissionSets>
     <permissionSets>CP_Rev_Rec_Fields</permissionSets>
+    <permissionSets>CP_Services_Delivery_Workspace</permissionSets>
     <permissionSets>Cooper_Parry_Accounting_Permission_Set</permissionSets>
     <permissionSets>Cooper_Parry_PSA_Custom_Fields_Permission_Set</permissionSets>
     <permissionSets>Cooper_Parry_PSA_Permission_Set</permissionSets>
@@ -36,11 +39,6 @@
     <permissionSets>ffscpq__CreateProjectsFromEstimates</permissionSets>
     <permissionSets>ffscpq__DeleteEstimateProducts</permissionSets>
     <permissionSets>ffscpq__EditEstimateProducts</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Project_Manager</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Resource_Manager</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Services_Billing</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Services_Revenue_Forecasting</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
     <permissionSets>pse__ApexLibBatchProcess</permissionSets>
     <permissionSets>pse__ApexLibBatchProcessReadAccess</permissionSets>
     <permissionSets>pse__ApexLibSchedulerConfiguration</permissionSets>

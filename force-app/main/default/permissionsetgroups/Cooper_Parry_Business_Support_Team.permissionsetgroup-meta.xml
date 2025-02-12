@@ -30,11 +30,6 @@
     <permissionSets>ffscpq__PushToOpportunity</permissionSets>
     <permissionSets>ffscpq__SCPQEinsteinDiscovery</permissionSets>
     <permissionSets>ffscpq__SubmitEstimates</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Project_Manager</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Resource_Manager</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Services_Billing</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Services_Revenue_Forecasting</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
     <permissionSets>pse__ApexLibBatchProcess</permissionSets>
     <permissionSets>pse__ApexLibBatchProcessReadAccess</permissionSets>
     <permissionSets>pse__ApexLibSchedulerConfiguration</permissionSets>
