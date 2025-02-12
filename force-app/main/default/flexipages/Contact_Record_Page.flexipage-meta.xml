@@ -457,16 +457,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.Field_Advocacy_Survey_Send_Month_Calc__c</fieldItem>
-                <identifier>RecordField_Advocacy_Survey_Send_Month_Calc__cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Advocacy_Survey_Send_Month__c</fieldItem>
                 <identifier>RecordAdvocacy_Survey_Send_Month__cField</identifier>
             </fieldInstance>
