@@ -4,6 +4,7 @@
     <label>Cooper Parry Finance</label>
     <mutingPermissionSets>Cooper_Parry_Finance_Muted</mutingPermissionSets>
     <permissionSets>APXTConga4__Composer_User</permissionSets>
+    <permissionSets>CP_Services_Delivery_Workspace</permissionSets>
     <permissionSets>Cooper_Parry_Accounting_Permission_Set</permissionSets>
     <permissionSets>FFAIntegrationsERPExchangeRates</permissionSets>
     <permissionSets>FFX_FF_PSA_Full_User_Modify_All</permissionSets>
@@ -68,8 +69,6 @@
     <permissionSets>c2g__FFAIntegrationsERPBillingDocumentRetryPost</permissionSets>
     <permissionSets>c2g__FFAIntegrationsERPCompanyReadAccess</permissionSets>
     <permissionSets>c2g__FFAIntegrationsERPTaxCodeReadAccess</permissionSets>
-    <permissionSets>ffaws__CashManagement_Workspace</permissionSets>
-    <permissionSets>ffaws__Collections_Workspace</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsBillingDocumentsEdit</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsCompanyRead</permissionSets>
     <permissionSets>fferpcore__ERPCommonConceptsExchangeRateCurrencies</permissionSets>
@@ -84,11 +83,6 @@
     <permissionSets>ffpsai__SyncProjectsToDimensions</permissionSets>
     <permissionSets>ffpsai__SyncRegionsToDimensions</permissionSets>
     <permissionSets>ffr__ActionViewsReportingRun</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Project_Manager</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Resource_Manager</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Services_Billing</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Services_Revenue_Forecasting</permissionSets>
-    <permissionSets>psaws__PSA_Workspaces_Time_And_Expense</permissionSets>
     <permissionSets>pse__PSALightningComponentApexClassAccess</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>
