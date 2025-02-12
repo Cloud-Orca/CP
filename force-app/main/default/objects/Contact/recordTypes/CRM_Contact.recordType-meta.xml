@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>PSA_Resource</fullName>
+    <fullName>CRM_Contact</fullName>
     <active>true</active>
-    <label>PSA Resource</label>
+    <label>CRM Contact</label>
     <picklistValues>
         <picklist>Field_Advocacy_Survey_Send_Month__c</picklist>
         <values>
@@ -307,27 +307,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>AM1 - Half Rate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>AM2</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>AM2 - Half Rate</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Accounts Pod</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Assistant Director</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Associate Director</fullName>
             <default>false</default>
         </values>
         <values>
@@ -347,10 +331,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Non-Chargeable</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Partner</fullName>
             <default>false</default>
         </values>
@@ -367,15 +347,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Student - Placement - Half Rate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Y1 Trainee - Grad</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Y1 Trainee - Grad - Half Rate</fullName>
             <default>false</default>
         </values>
         <values>
@@ -383,15 +355,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Y1 Trainee - SL - Half Rate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Y2 Trainee - Grad</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Y2 Trainee - Grad - Half Rate</fullName>
             <default>false</default>
         </values>
         <values>
@@ -399,15 +363,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Y2 Trainee - SL - Half Rate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Y3 Trainee - Grad</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Y3 Trainee - Grad - Half Rate</fullName>
             <default>false</default>
         </values>
         <values>
@@ -415,15 +371,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Y3 Trainee - SL - Half Rate</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Y4 Trainee - SL</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Y4 Trainee - SL - Half Rate</fullName>
             <default>false</default>
         </values>
     </picklistValues>
