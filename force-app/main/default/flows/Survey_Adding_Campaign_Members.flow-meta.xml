@@ -2,10 +2,39 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
     <decisions>
+        <name>Account_is_a_Client</name>
+        <label>Account is a Client</label>
+        <locationX>2558</locationX>
+        <locationY>252</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Client</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Account.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Client</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Account.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>012J5000000XdlcIAC</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Month</targetReference>
+            </connector>
+            <label>Client</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Month</name>
         <label>Check Month</label>
         <locationX>1634</locationX>
-        <locationY>252</locationY>
+        <locationY>360</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>January</name>
@@ -224,7 +253,7 @@
         <name>Create_Campaign_Member_Apr</name>
         <label>Create Campaign Member Apr</label>
         <locationX>842</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -253,7 +282,7 @@
         <name>Create_Campaign_Member_Aug</name>
         <label>Create Campaign Member Aug</label>
         <locationX>1898</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -282,7 +311,7 @@
         <name>Create_Campaign_Member_Dec</name>
         <label>Create Campaign Member Dec</label>
         <locationX>2954</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -311,7 +340,7 @@
         <name>Create_Campaign_Member_Feb</name>
         <label>Create Campaign Member Feb</label>
         <locationX>314</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -340,7 +369,7 @@
         <name>Create_Campaign_Member_Jan</name>
         <label>Create Campaign Member Jan</label>
         <locationX>50</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -369,7 +398,7 @@
         <name>Create_Campaign_Member_Jul</name>
         <label>Create Campaign Member Jul</label>
         <locationX>1634</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -398,7 +427,7 @@
         <name>Create_Campaign_Member_Jun</name>
         <label>Create Campaign Member Jun</label>
         <locationX>1370</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -427,7 +456,7 @@
         <name>Create_Campaign_Member_Mar</name>
         <label>Create Campaign Member Mar</label>
         <locationX>578</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -456,7 +485,7 @@
         <name>Create_Campaign_Member_May</name>
         <label>Create Campaign Member May</label>
         <locationX>1106</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -485,7 +514,7 @@
         <name>Create_Campaign_Member_Nov</name>
         <label>Create Campaign Member Nov</label>
         <locationX>2690</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -514,7 +543,7 @@
         <name>Create_Campaign_Member_Oct</name>
         <label>Create Campaign Member Oct</label>
         <locationX>2426</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -543,7 +572,7 @@
         <name>Create_Campaign_Member_Sep</name>
         <label>Create Campaign Member Sep</label>
         <locationX>2162</locationX>
-        <locationY>468</locationY>
+        <locationY>576</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
@@ -572,7 +601,7 @@
         <name>Get_Campaign_April</name>
         <label>Get Campaign - April</label>
         <locationX>842</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Apr</targetReference>
@@ -593,7 +622,7 @@
         <name>Get_Campaign_August</name>
         <label>Get Campaign - August</label>
         <locationX>1898</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Aug</targetReference>
@@ -614,7 +643,7 @@
         <name>Get_Campaign_December</name>
         <label>Get Campaign - December</label>
         <locationX>2954</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Dec</targetReference>
@@ -635,7 +664,7 @@
         <name>Get_Campaign_Feb</name>
         <label>Get Campaign - Feb</label>
         <locationX>314</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Feb</targetReference>
@@ -656,7 +685,7 @@
         <name>Get_Campaign_Jan</name>
         <label>Get Campaign - Jan</label>
         <locationX>50</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Jan</targetReference>
@@ -677,7 +706,7 @@
         <name>Get_Campaign_July</name>
         <label>Get Campaign - July</label>
         <locationX>1634</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Jul</targetReference>
@@ -698,7 +727,7 @@
         <name>Get_Campaign_June</name>
         <label>Get Campaign - June</label>
         <locationX>1370</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Jun</targetReference>
@@ -719,7 +748,7 @@
         <name>Get_Campaign_March</name>
         <label>Get Campaign - March</label>
         <locationX>578</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Mar</targetReference>
@@ -740,7 +769,7 @@
         <name>Get_Campaign_May</name>
         <label>Get Campaign - May</label>
         <locationX>1106</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_May</targetReference>
@@ -761,7 +790,7 @@
         <name>Get_Campaign_Nov</name>
         <label>Get Campaign - Nov</label>
         <locationX>2690</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Nov</targetReference>
@@ -782,7 +811,7 @@
         <name>Get_Campaign_Oct</name>
         <label>Get Campaign - Oct</label>
         <locationX>2426</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Oct</targetReference>
@@ -803,7 +832,7 @@
         <name>Get_Campaign_Sept</name>
         <label>Get Campaign - Sept</label>
         <locationX>2162</locationX>
-        <locationY>360</locationY>
+        <locationY>468</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Create_Campaign_Member_Sep</targetReference>
@@ -824,7 +853,7 @@
         <name>Update_Contact</name>
         <label>Update Contact</label>
         <locationX>1634</locationX>
-        <locationY>660</locationY>
+        <locationY>768</locationY>
         <inputAssignments>
             <field>Contact_added_to_Campaign__c</field>
             <value>
@@ -834,10 +863,10 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>1508</locationX>
+        <locationX>2432</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Check_Month</targetReference>
+            <targetReference>Account_is_a_Client</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -849,6 +878,13 @@
         </filters>
         <filters>
             <field>Contact_added_to_Campaign__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Inactive__c</field>
             <operator>EqualTo</operator>
             <value>
                 <booleanValue>false</booleanValue>
