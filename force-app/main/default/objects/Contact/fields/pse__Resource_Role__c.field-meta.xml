@@ -37,6 +37,11 @@
                 <label>Y2 Trainee - SL</label>
             </value>
             <value>
+                <fullName>Y2 Trainee - SL - Half Rate</fullName>
+                <default>false</default>
+                <label>Y2 Trainee - SL - Half Rate</label>
+            </value>
+            <value>
                 <fullName>Y3 Trainee - SL</fullName>
                 <default>false</default>
                 <label>Y3 Trainee - SL</label>
@@ -115,11 +120,6 @@
                 <fullName>Y1 Trainee - SL - Half Rate</fullName>
                 <default>false</default>
                 <label>Y1 Trainee - SL - Half Rate</label>
-            </value>
-            <value>
-                <fullName>Y2 Trainne - SL - Half Rate</fullName>
-                <default>false</default>
-                <label>Y2 Trainne - SL - Half Rate</label>
             </value>
             <value>
                 <fullName>Y3 Trainee - SL - Half Rate</fullName>
