@@ -3,7 +3,7 @@
     <actionCalls>
         <name>Upload_File_to_Sharepoint</name>
         <label>Upload File to Sharepoint</label>
-        <locationX>270</locationX>
+        <locationX>534</locationX>
         <locationY>1622</locationY>
         <actionName>SharepointUploadFileInvocable</actionName>
         <actionType>apex</actionType>
@@ -30,7 +30,7 @@
     <assignments>
         <name>Assign_Business_CAF_to_varForm</name>
         <label>Assign Business CAF to varForm</label>
-        <locationX>446</locationX>
+        <locationX>710</locationX>
         <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
@@ -46,7 +46,7 @@
     <assignments>
         <name>Assign_File_Ids</name>
         <label>Assign File Ids</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>1406</locationY>
         <assignmentItems>
             <assignToReference>fileIds</assignToReference>
@@ -62,7 +62,7 @@
     <assignments>
         <name>Assign_Form_ID</name>
         <label>Assign Form ID</label>
-        <locationX>710</locationX>
+        <locationX>974</locationX>
         <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
@@ -85,7 +85,7 @@
     <assignments>
         <name>Assign_Variables_to_varForm</name>
         <label>Assign Variables to varForm</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>1298</locationY>
         <assignmentItems>
             <assignToReference>varForm.Company_Number__c</assignToReference>
@@ -312,7 +312,7 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>varForm.Client_Name__c</assignToReference>
+            <assignToReference>varForm.Client_Names__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Name1</elementReference>
@@ -381,6 +381,13 @@
                 <elementReference>Supporting_Docs</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>varForm.Client_Name__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Client</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Assign_File_Ids</targetReference>
         </connector>
@@ -388,8 +395,8 @@
     <assignments>
         <name>Copy_1_of_Assign_Business_CAF_to_varForm</name>
         <label>Assign Business CAF to varForm</label>
-        <locationX>490</locationX>
-        <locationY>2798</locationY>
+        <locationX>50</locationX>
+        <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>varForm</assignToReference>
             <operator>Assign</operator>
@@ -436,12 +443,12 @@
     <decisions>
         <name>Check_any_Pending_Approval_Status</name>
         <label>Check any Pending Approval Status</label>
-        <locationX>490</locationX>
+        <locationX>446</locationX>
         <locationY>458</locationY>
         <defaultConnector>
-            <targetReference>Copy_1_of_Assign_Business_CAF_to_varForm</targetReference>
+            <targetReference>Check_Form</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Existing Pending Approvals</defaultConnectorLabel>
+        <defaultConnectorLabel>Proceed</defaultConnectorLabel>
         <rules>
             <name>Lock_Form</name>
             <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
@@ -478,26 +485,11 @@
             </connector>
             <label>Lock Form</label>
         </rules>
-        <rules>
-            <name>No_Pending_Approvals</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get_Approval_Process</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Check_Form</targetReference>
-            </connector>
-            <label>No Pending Approvals</label>
-        </rules>
     </decisions>
     <decisions>
         <name>Check_Approval</name>
         <label>Check Approval</label>
-        <locationX>578</locationX>
+        <locationX>842</locationX>
         <locationY>1190</locationY>
         <defaultConnectorLabel>Approved</defaultConnectorLabel>
         <rules>
@@ -519,7 +511,7 @@
     <decisions>
         <name>Check_Completion_Form</name>
         <label>Check Completion Form</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>1922</locationY>
         <defaultConnector>
             <targetReference>Update_Completion_Fields_in_Form</targetReference>
@@ -544,7 +536,7 @@
     <decisions>
         <name>Check_Form</name>
         <label>Check Form</label>
-        <locationX>578</locationX>
+        <locationX>842</locationX>
         <locationY>566</locationY>
         <defaultConnector>
             <targetReference>Create_Business_CAF</targetReference>
@@ -569,7 +561,7 @@
     <decisions>
         <name>Decision_6</name>
         <label>Check Contination Form Complete</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>2222</locationY>
         <defaultConnectorLabel>Completed</defaultConnectorLabel>
         <rules>
@@ -597,6 +589,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Approval_Process</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Update_Case</targetReference>
             </connector>
@@ -606,7 +605,7 @@
     <decisions>
         <name>Is_there_a_File_Upload</name>
         <label>Is there a File Upload</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>1514</locationY>
         <defaultConnector>
             <targetReference>Update_Business_CAF</targetReference>
@@ -723,7 +722,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <recordCreates>
         <name>Create_Business_CAF</name>
         <label>Create Business CAF</label>
-        <locationX>710</locationX>
+        <locationX>974</locationX>
         <locationY>674</locationY>
         <connector>
             <targetReference>Get_Business_CAF_Created</targetReference>
@@ -752,7 +751,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <recordLookups>
         <name>Get_Approval_Process</name>
         <label>Get Approval Process</label>
-        <locationX>490</locationX>
+        <locationX>446</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -780,7 +779,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <recordLookups>
         <name>Get_Business_CAF</name>
         <label>Get Business CAF</label>
-        <locationX>490</locationX>
+        <locationX>446</locationX>
         <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -808,7 +807,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <recordLookups>
         <name>Get_Business_CAF_Created</name>
         <label>Get Business CAF - Created</label>
-        <locationX>710</locationX>
+        <locationX>974</locationX>
         <locationY>782</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -829,7 +828,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <recordLookups>
         <name>Get_Case</name>
         <label>Get Case</label>
-        <locationX>490</locationX>
+        <locationX>446</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -850,7 +849,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <recordUpdates>
         <name>Update_Business_CAF</name>
         <label>Update Business CAF</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>1814</locationY>
         <connector>
             <targetReference>Check_Completion_Form</targetReference>
@@ -860,7 +859,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>314</locationX>
+        <locationX>578</locationX>
         <locationY>2330</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -881,7 +880,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <recordUpdates>
         <name>Update_Completion_Fields_in_Form</name>
         <label>Update Completion Fields in Form</label>
-        <locationX>402</locationX>
+        <locationX>666</locationX>
         <locationY>2030</locationY>
         <connector>
             <targetReference>Decision_6</targetReference>
@@ -911,7 +910,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <screens>
         <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS</name>
         <label>BUSINESS, TRUSTS AND NON-PERSONAL CLIENTS</label>
-        <locationX>578</locationX>
+        <locationX>842</locationX>
         <locationY>1082</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
@@ -1781,7 +1780,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
                     <name>Name1</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>varForm.Client_Name__c</elementReference>
+                        <elementReference>varForm.Client_Names__c</elementReference>
                     </defaultValue>
                     <fieldText>Name</fieldText>
                     <fieldType>InputField</fieldType>
@@ -2730,7 +2729,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>50</locationX>
+        <locationX>314</locationX>
         <locationY>2330</locationY>
         <allowBack>true</allowBack>
         <allowFinish>false</allowFinish>
@@ -2761,8 +2760,8 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
     <screens>
         <name>View_of_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS</name>
         <label>View_of BUSINESS, TRUSTS AND NON-PERSONAL CLIENTS</label>
-        <locationX>490</locationX>
-        <locationY>2906</locationY>
+        <locationX>50</locationX>
+        <locationY>674</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>false</allowPause>
@@ -3616,7 +3615,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
                     <name>Copy_2_of_Name1</name>
                     <dataType>String</dataType>
                     <defaultValue>
-                        <elementReference>varForm.Client_Name__c</elementReference>
+                        <elementReference>varForm.Client_Names__c</elementReference>
                     </defaultValue>
                     <fieldText>Name</fieldText>
                     <fieldType>InputField</fieldType>
@@ -4563,7 +4562,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>364</locationX>
+        <locationX>320</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Case</targetReference>
