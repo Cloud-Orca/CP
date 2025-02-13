@@ -5,7 +5,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>configApiName</name>
-                    <value>psaws__expNavPane_GlobalNavigation</value>
+                    <value>expNavPane_Resource_Management_Workspace</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_navigationPane</componentName>
                 <identifier>fferpcore_exp_navigationPane</identifier>
@@ -98,6 +98,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>editableFieldSetApiName</name>
+                    <value>ExpenseHeaderRowEditableColumns</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>editableNotesFieldSetApiName</name>
@@ -109,14 +110,15 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>isMilestoneAllowed</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>readOnlyFieldSetApiName</name>
-                    <value>pse__ExpenseHeaderRowReadOnlyColumns</value>
+                    <value>ExpenseHeaderRowReadOnlyColumns</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>readOnlyNotesFieldSetApiName</name>
+                    <value>ExpenseNotesFieldsReadOnlyColumns</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>showBillableInformation</name>
