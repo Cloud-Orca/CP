@@ -5,7 +5,7 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>configApiName</name>
-                    <value>expNavPane_Project_Management_Workspace</value>
+                    <value>expNavPane_Resource_Management_Workspace</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_navigationPane</componentName>
                 <identifier>fferpcore_exp_navigationPane</identifier>
@@ -21,17 +21,55 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>projectCreationTitle</name>
+                    <name>hideEinstein</name>
+                    <value>false</value>
                 </componentInstanceProperties>
-                <componentName>pse:projectCreationActions</componentName>
-                <identifier>pse_projectCreationActions</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!$Client.formFactor}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Large</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <componentInstanceProperties>
+                    <name>hideWhenEmpty</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>launchOption</name>
+                    <value>launchModal</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>maxDisplayPropositions</name>
+                    <value>1</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>recommendationSource</name>
+                    <value>strategyBuilder</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>shouldLaunchActionOnReject</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showDescription</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showImage</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showRejectAction</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showTitle</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>strategyName</name>
+                    <value>Update_Skills_Strategy</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>widgetTitle</name>
+                    <value>Next Best Action</value>
+                </componentInstanceProperties>
+                <componentName>runtime_communities_nba:builderNbaWidget</componentName>
+                <identifier>runtime_communities_nba_builderNbaWidget</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -100,53 +138,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>alertDescription</name>
-                    <value>Projects where actual hours are at least 80% of their planned hours.</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alertTitle</name>
-                    <value>Actual vs Planned Hours</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>listViewApiName</name>
-                    <value>psaws__High_Actual_Hours</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiCalculation</name>
-                    <value>count</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiFieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1Calculation</name>
-                    <value>sum</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1Description</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1FieldName</name>
-                    <value>psaws__Actual_Hours__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2Calculation</name>
-                    <value>sum</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2Description</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2FieldName</name>
-                    <value>pse__Planned_Hours__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>objectApiName</name>
-                    <value>pse__Proj__c</value>
-                </componentInstanceProperties>
-                <componentName>fferpcore:exp_customAlertCard</componentName>
-                <identifier>fferpcore_exp_customAlertCard</identifier>
+                <componentName>psaws:alertLowUtilization</componentName>
+                <identifier>alertLowUtilization</identifier>
             </componentInstance>
         </itemInstances>
         <name>region2</name>
@@ -157,29 +150,26 @@
             <componentInstance>
                 <componentInstanceProperties>
                     <name>alertDescription</name>
-                    <value>Out of Scope Timecards</value>
+                    <value>Projects starting in the next 30 days without assigned hours.</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>alertTitle</name>
-                    <value>Out of Scope Timecards</value>
+                    <value>Projects Without Assigned Hours</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>Out_Of_Scope_Timecards</value>
+                    <value>psaws__Projects_Without_Assigned_Hours</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>majorKpiCalculation</name>
                     <value>count</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>majorKpiFieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>objectApiName</name>
-                    <value>pse__Timecard_Header__c</value>
+                    <value>pse__Proj__c</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_customAlertCard</componentName>
-                <identifier>fferpcore_exp_customAlertCard2</identifier>
+                <identifier>fferpcore_exp_customAlertCard</identifier>
             </componentInstance>
         </itemInstances>
         <name>region3</name>
@@ -188,65 +178,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>alertDescription</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>alertTitle</name>
-                    <value>My Late Milestones</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>listViewApiName</name>
-                    <value>CP_My_Projects_with_Late_Milestones</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiCalculation</name>
-                    <value>count</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiDefaultThresholdColor</name>
-                    <value>gray</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiDescription</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiFieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiLowerThresholdColor</name>
-                    <value>gray</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiUpperThresholdColor</name>
-                    <value>gray</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1Calculation</name>
-                    <value>count</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1Description</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1FieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2Calculation</name>
-                    <value>count</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2Description</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2FieldName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>objectApiName</name>
-                    <value>pse__Milestone__c</value>
-                </componentInstanceProperties>
-                <componentName>fferpcore:exp_customAlertCard</componentName>
-                <identifier>fferpcore_exp_customAlertCard3</identifier>
+                <componentName>psaws:alertOpenResourceRequests</componentName>
+                <identifier>alertOpenResourceRequests</identifier>
             </componentInstance>
         </itemInstances>
         <name>region4</name>
@@ -256,12 +189,16 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>displayLabel</name>
+                    <value>Assignments Ending Soon</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>psaws__Due_Resource_Requests</value>
+                    <value>psaws__Assignments_Ending_in_the_Next_30_Days</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
-                    <value>pse__Resource_Request__c</value>
+                    <value>pse__Assignment__c</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_customCountCard</componentName>
                 <identifier>fferpcore_exp_customCountCard</identifier>
@@ -274,16 +211,12 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>displayLabel</name>
-                    <value>Projects &lt; 65% recovery</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>My_project_65_recovery</value>
+                    <value>psaws__Held_Resource_Requests</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
-                    <value>pse__Proj__c</value>
+                    <value>pse__Resource_Request__c</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_customCountCard</componentName>
                 <identifier>fferpcore_exp_customCountCard2</identifier>
@@ -296,12 +229,16 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>displayLabel</name>
+                    <value>Resources Started Recently</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>listViewApiName</name>
-                    <value>psaws__Est_Vs_Actuals_With_High_Variance</value>
+                    <value>psaws__Resources_Started_in_the_Last_30_Days</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>objectApiName</name>
-                    <value>pse__Est_Vs_Actuals__c</value>
+                    <value>Contact</value>
                 </componentInstanceProperties>
                 <componentName>fferpcore:exp_customCountCard</componentName>
                 <identifier>fferpcore_exp_customCountCard3</identifier>
@@ -314,7 +251,23 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>assignmentCustomFiltersFieldSet</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>assignmentDetailsFieldSetName</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>assignmentDetailsTasksFieldSetName</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>assignmentFieldSetName</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>cloneResourceRequestFieldSetName</name>
                     <value>NONE</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -332,6 +285,10 @@
                 <componentInstanceProperties>
                     <name>contactCardShowResourceRequests</name>
                     <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>createResourceRequestFieldSetName</name>
+                    <value>NONE</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>disableScheduleDateAmendments</name>
@@ -366,22 +323,35 @@
                     <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>projectCustomFiltersFieldSet</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>projectDetailsFieldSetName</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>projectFieldSetName</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>resourceCustomFiltersFieldSet</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>resourceRequestCustomFiltersFieldSet</name>
+                    <value>NONE</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>resourceRequestDetailsFieldSetName</name>
                     <value>NONE</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>resourceRequestFieldSetName</name>
                     <value>NONE</value>
                 </componentInstanceProperties>
-                <componentName>pse:rmwp_projectManagerWorkPlanner</componentName>
-                <identifier>pse_rmwp_projectManagerWorkPlanner</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!$Client.formFactor}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Large</rightValue>
-                    </criteria>
-                </visibilityRule>
+                <componentName>pse:rmwp_fullWorkPlanner</componentName>
+                <identifier>pse_rmwp_fullWorkPlanner</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -393,20 +363,44 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>label</name>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>reportName</name>
+                    <value>psaws__Resource_Demand_by_Role</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showRefreshButton</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:reportChart</componentName>
+                <identifier>flexipage_reportChart</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$Client.formFactor}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Large</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>enableInlineEdit</name>
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>entityName</name>
-                    <value>pse__Proj__c</value>
+                    <value>pse__Resource_Request__c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>filterName</name>
-                    <value>psaws__My_Projects</value>
+                    <value>psaws__Held_and_Unheld_Resource_Requests</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideActionBar</name>
-                    <value>false</value>
+                    <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>hideSearchBar</name>
@@ -420,10 +414,16 @@
                 <identifier>flexipage_filterListCard</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>pse:rm_manageUpcomingWork</componentName>
+                <identifier>pse_rm_manageUpcomingWork</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>region8</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Project Management Workspace</masterLabel>
+    <masterLabel>CP Resource Management Workspace</masterLabel>
     <template>
         <name>psaws:wksp_pageTemplate</name>
     </template>
