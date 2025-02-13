@@ -3,6 +3,9 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>Cooper Parry Business Support Team Part 2</label>
     <mutingPermissionSets>Cooper_Parry_Business_Support_Team_Part_2_Muted</mutingPermissionSets>
+    <permissionSets>CP_Project_Management_Workspace</permissionSets>
+    <permissionSets>CP_Resource_Management_Workspace</permissionSets>
+    <permissionSets>CP_Services_Delivery_Workspace</permissionSets>
     <permissionSets>Cooper_Parry_Edit_All_Timecards_and_Expenses</permissionSets>
     <permissionSets>Cooper_Parry_PSA_Custom_Fields_Permission_Set</permissionSets>
     <permissionSets>Cooper_Parry_PSA_Permission_Set</permissionSets>
