@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_AccountIds</name>
         <label>Add to AccountIds</label>
-        <locationX>1436</locationX>
-        <locationY>2654</locationY>
+        <locationX>996</locationX>
+        <locationY>2546</locationY>
         <assignmentItems>
             <assignToReference>AccountIds</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Add_to_Milestone_Ids</name>
         <label>Add to Milestone Ids</label>
-        <locationX>1260</locationX>
-        <locationY>674</locationY>
+        <locationX>820</locationX>
+        <locationY>566</locationY>
         <assignmentItems>
             <assignToReference>MileStoneIds</assignToReference>
             <operator>Add</operator>
@@ -36,13 +36,13 @@
     <assignments>
         <name>Assign_Project_Partner_from_Project</name>
         <label>Assign Project Partner from Project</label>
-        <locationX>1018</locationX>
-        <locationY>1490</locationY>
+        <locationX>578</locationX>
+        <locationY>1382</locationY>
         <assignmentItems>
             <assignToReference>ProjectPartnerUserId</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>Get.pse__Project__r.CT_Project_Partner__c</elementReference>
+                <elementReference>Get_Billing_Event_Details.pse__Project__r.CT_Project_Partner__c</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -52,8 +52,8 @@
     <assignments>
         <name>Assign_Project_Partner_from_Screen</name>
         <label>Assign Project Partner from Screen</label>
-        <locationX>490</locationX>
-        <locationY>1598</locationY>
+        <locationX>50</locationX>
+        <locationY>1490</locationY>
         <assignmentItems>
             <assignToReference>ProjectPartnerUserId</assignToReference>
             <operator>Assign</operator>
@@ -68,8 +68,8 @@
     <assignments>
         <name>Multiple_Accounts_Detected</name>
         <label>Multiple Accounts Detected</label>
-        <locationX>1700</locationX>
-        <locationY>2654</locationY>
+        <locationX>1260</locationX>
+        <locationY>2546</locationY>
         <assignmentItems>
             <assignToReference>MultipleAccountsDetected</assignToReference>
             <operator>Assign</operator>
@@ -85,10 +85,10 @@
     <assignments>
         <name>Release_Billing_Event</name>
         <label>Release Billing Event</label>
-        <locationX>1172</locationX>
-        <locationY>3662</locationY>
+        <locationX>732</locationX>
+        <locationY>3554</locationY>
         <assignmentItems>
-            <assignToReference>Get.pse__Is_Released__c</assignToReference>
+            <assignToReference>Get_Billing_Event_Details.pse__Is_Released__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <booleanValue>true</booleanValue>
@@ -101,26 +101,40 @@
     <assignments>
         <name>Save_Account_on_billing_event</name>
         <label>Save Account on billing event</label>
-        <locationX>908</locationX>
-        <locationY>3362</locationY>
+        <locationX>468</locationX>
+        <locationY>3254</locationY>
         <assignmentItems>
-            <assignToReference>Get.ffpsai__Account__c</assignToReference>
+            <assignToReference>Get_Billing_Event_Details.ffpsai__Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>SelectAccount.firstSelectedRow.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewAccountID</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>SelectAccount.firstSelectedRow.Id</elementReference>
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Billing_Event_Release_Confirmation</targetReference>
+            <targetReference>Select_Billing_Account</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Save_Default_Account_on_billing_event</name>
         <label>Save Default Account on billing event</label>
-        <locationX>1436</locationX>
-        <locationY>2762</locationY>
+        <locationX>996</locationX>
+        <locationY>2654</locationY>
         <assignmentItems>
-            <assignToReference>Get.ffpsai__Account__c</assignToReference>
+            <assignToReference>Get_Billing_Event_Details.ffpsai__Account__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Loop_trough_Milestones.CT_Billing_Account__r.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>NewAccountID</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Loop_trough_Milestones.CT_Billing_Account__r.Id</elementReference>
@@ -133,8 +147,8 @@
     <decisions>
         <name>Are_all_billable_milestones_billed</name>
         <label>Are all billable milestones billed?</label>
-        <locationX>534</locationX>
-        <locationY>1166</locationY>
+        <locationX>94</locationX>
+        <locationY>1058</locationY>
         <defaultConnector>
             <targetReference>Approval_required_Message_Screen</targetReference>
         </defaultConnector>
@@ -158,8 +172,8 @@
     <decisions>
         <name>Are_multiple_accounts_selected</name>
         <label>Are multiple accounts selected?</label>
-        <locationX>1172</locationX>
-        <locationY>3038</locationY>
+        <locationX>732</locationX>
+        <locationY>2930</locationY>
         <defaultConnector>
             <targetReference>Select_Billing_Account</targetReference>
         </defaultConnector>
@@ -181,42 +195,10 @@
         </rules>
     </decisions>
     <decisions>
-        <name>Check_approval</name>
-        <label>Check approval</label>
-        <locationX>611</locationX>
-        <locationY>242</locationY>
-        <defaultConnector>
-            <targetReference>Get_Billing_Event_Items</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>approved or not needed.</defaultConnectorLabel>
-        <rules>
-            <name>Approval_required</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Get.pse__Project__r.Manager_approval_required_for_billing__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Get.pse__Is_Approved__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Approval_required_message</targetReference>
-            </connector>
-            <label>Approval required</label>
-        </rules>
-    </decisions>
-    <decisions>
         <name>Check_Project_Partner</name>
         <label>Check Project Partner</label>
-        <locationX>754</locationX>
-        <locationY>1382</locationY>
+        <locationX>314</locationX>
+        <locationY>1274</locationY>
         <defaultConnector>
             <targetReference>Assign_Project_Partner_from_Project</targetReference>
         </defaultConnector>
@@ -225,7 +207,7 @@
             <name>Project_Partner_not_entered</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get.pse__Project__r.CT_Project_Partner__c</leftValueReference>
+                <leftValueReference>Get_Billing_Event_Details.pse__Project__r.CT_Project_Partner__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -240,8 +222,8 @@
     <decisions>
         <name>Different_Account</name>
         <label>Different Account?</label>
-        <locationX>1480</locationX>
-        <locationY>2546</locationY>
+        <locationX>1040</locationX>
+        <locationY>2438</locationY>
         <defaultConnector>
             <targetReference>Multiple_Accounts_Detected</targetReference>
         </defaultConnector>
@@ -285,10 +267,12 @@
         </rules>
     </decisions>
     <decisions>
+        <description>THIS IS DISABLED. 
+NO APPROVAL REQUIRED.</description>
         <name>Is_Project_recovery_rate_below_70_and_not_approved_yest</name>
         <label>Is Project recovery rate below 70% and not approved yes</label>
-        <locationX>1172</locationX>
-        <locationY>950</locationY>
+        <locationX>732</locationX>
+        <locationY>842</locationY>
         <defaultConnector>
             <targetReference>Get_Milestone_Details</targetReference>
         </defaultConnector>
@@ -297,17 +281,24 @@
             <name>Yes_less_than_70</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get.pse__Project__r.CT_Actual_Recovery_Rate__c</leftValueReference>
+                <leftValueReference>Get_Billing_Event_Details.pse__Project__r.CT_Actual_Recovery_Rate__c</leftValueReference>
                 <operator>LessThan</operator>
                 <rightValue>
                     <numberValue>70.0</numberValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get.CP_Approved_by_Project_Partner__c</leftValueReference>
+                <leftValueReference>Get_Billing_Event_Details.CP_Approved_by_Project_Partner__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ENABLED</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -321,8 +312,8 @@
 This is needed because the flow does not throw an error if the user does not have sufficient access to the required fields on the Billing Event.</description>
         <name>Record_saved_correctly</name>
         <label>Record saved correctly?</label>
-        <locationX>1172</locationX>
-        <locationY>3986</locationY>
+        <locationX>732</locationX>
+        <locationY>3878</locationY>
         <defaultConnector>
             <targetReference>Error_Screen_Access_problem</targetReference>
         </defaultConnector>
@@ -337,14 +328,21 @@ This is needed because the flow does not throw an error if the user does not hav
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Billing_Event_saved_Details.ffpsai__Account__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>NewAccountID</elementReference>
+                </rightValue>
+            </conditions>
             <label>yes,saved correctly</label>
         </rules>
     </decisions>
     <decisions>
         <name>Related_To_Milestone</name>
         <label>Related To Milestone?</label>
-        <locationX>1392</locationX>
-        <locationY>566</locationY>
+        <locationX>952</locationX>
+        <locationY>458</locationY>
         <defaultConnector>
             <targetReference>For_All_Items</targetReference>
         </defaultConnector>
@@ -365,15 +363,14 @@ This is needed because the flow does not throw an error if the user does not hav
             <label>Yes</label>
         </rules>
     </decisions>
-    <description>Added a confirmation step (UAT0140)</description>
     <environments>Default</environments>
     <interviewLabel>CT Release Billing Event {!$Flow.CurrentDateTime}</interviewLabel>
     <label>CT Release Billing Event</label>
     <loops>
         <name>For_All_Items</name>
         <label>For All Items</label>
-        <locationX>1172</locationX>
-        <locationY>458</locationY>
+        <locationX>732</locationX>
+        <locationY>350</locationY>
         <collectionReference>Get_Billing_Event_Items</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -386,8 +383,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <loops>
         <name>Loop_trough_Milestones</name>
         <label>Loop trough Milestones</label>
-        <locationX>1172</locationX>
-        <locationY>2438</locationY>
+        <locationX>732</locationX>
+        <locationY>2330</locationY>
         <collectionReference>Get_Milestone_Details</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -417,35 +414,10 @@ This is needed because the flow does not throw an error if the user does not hav
     </processMetadataValues>
     <processType>Flow</processType>
     <recordLookups>
-        <name>Get</name>
-        <label>Get Billing Event Details</label>
-        <locationX>611</locationX>
-        <locationY>134</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Check_approval</targetReference>
-        </connector>
-        <faultConnector>
-            <isGoTo>true</isGoTo>
-            <targetReference>Error_Screen</targetReference>
-        </faultConnector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Id</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>recordId</elementReference>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>pse__Billing_Event__c</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
         <name>Get_Accounts</name>
         <label>Get Accounts</label>
-        <locationX>908</locationX>
-        <locationY>3146</locationY>
+        <locationX>468</locationX>
+        <locationY>3038</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Copy_1_of_Select_Billing_Account</targetReference>
@@ -467,10 +439,35 @@ This is needed because the flow does not throw an error if the user does not hav
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Billing_Event_Details</name>
+        <label>Get Billing Event Details</label>
+        <locationX>732</locationX>
+        <locationY>134</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Billing_Event_Items</targetReference>
+        </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Error_Screen</targetReference>
+        </faultConnector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>pse__Billing_Event__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Billing_Event_Items</name>
         <label>Get Billing Event Items</label>
-        <locationX>1172</locationX>
-        <locationY>350</locationY>
+        <locationX>732</locationX>
+        <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>For_All_Items</targetReference>
@@ -494,8 +491,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordLookups>
         <name>Get_Billing_Event_saved_Details</name>
         <label>Get Billing Event saved Details</label>
-        <locationX>1172</locationX>
-        <locationY>3878</locationY>
+        <locationX>732</locationX>
+        <locationY>3770</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Record_saved_correctly</targetReference>
@@ -515,8 +512,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordLookups>
         <name>Get_Milestone_Details</name>
         <label>Get Milestone Details</label>
-        <locationX>1172</locationX>
-        <locationY>2330</locationY>
+        <locationX>732</locationX>
+        <locationY>2222</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_trough_Milestones</targetReference>
@@ -541,8 +538,8 @@ This is needed because the flow does not throw an error if the user does not hav
         <description>Retrieves the remaining unbilled billable milestones</description>
         <name>Get_unbilled_Milestones</name>
         <label>Get unbilled Milestones</label>
-        <locationX>534</locationX>
-        <locationY>1058</locationY>
+        <locationX>94</locationX>
+        <locationY>950</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Are_all_billable_milestones_billed</targetReference>
@@ -563,7 +560,7 @@ This is needed because the flow does not throw an error if the user does not hav
             <field>pse__Project__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get.pse__Project__c</elementReference>
+                <elementReference>Get_Billing_Event_Details.pse__Project__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -580,8 +577,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordUpdates>
         <name>Project_Partner_approval_required_set_to_TRUE</name>
         <label>Project Partner approval required set to TRUE</label>
-        <locationX>754</locationX>
-        <locationY>1946</locationY>
+        <locationX>314</locationX>
+        <locationY>1838</locationY>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
@@ -591,7 +588,7 @@ This is needed because the flow does not throw an error if the user does not hav
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get.Id</elementReference>
+                <elementReference>Get_Billing_Event_Details.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -611,21 +608,21 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordUpdates>
         <name>Update_Billing_Event</name>
         <label>Update Billing Event</label>
-        <locationX>1172</locationX>
-        <locationY>3770</locationY>
+        <locationX>732</locationX>
+        <locationY>3662</locationY>
         <connector>
             <targetReference>Get_Billing_Event_saved_Details</targetReference>
         </connector>
         <faultConnector>
             <targetReference>Error_Screen</targetReference>
         </faultConnector>
-        <inputReference>Get</inputReference>
+        <inputReference>Get_Billing_Event_Details</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_Project_Partner_on_Project</name>
         <label>Update Project Partner on Project</label>
-        <locationX>490</locationX>
-        <locationY>1706</locationY>
+        <locationX>50</locationX>
+        <locationY>1598</locationY>
         <connector>
             <targetReference>Project_Partner_approval_required_set_to_TRUE</targetReference>
         </connector>
@@ -638,7 +635,7 @@ This is needed because the flow does not throw an error if the user does not hav
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>Get.pse__Project__c</elementReference>
+                <elementReference>Get_Billing_Event_Details.pse__Project__c</elementReference>
             </value>
         </filters>
         <inputAssignments>
@@ -650,26 +647,10 @@ This is needed because the flow does not throw an error if the user does not hav
         <object>pse__Proj__c</object>
     </recordUpdates>
     <screens>
-        <name>Approval_required_message</name>
-        <label>Approval required message</label>
-        <locationX>50</locationX>
-        <locationY>350</locationY>
-        <allowBack>true</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>true</allowPause>
-        <fields>
-            <name>Approval_required_message_text</name>
-            <fieldText>&lt;p&gt;&lt;strong&gt;ERROR&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;This Billing Event has to be approved by the manager before it can be released.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
         <name>Approval_required_Message_Screen</name>
         <label>Approval required Message Screen</label>
-        <locationX>754</locationX>
-        <locationY>1274</locationY>
+        <locationX>314</locationX>
+        <locationY>1166</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -678,85 +659,17 @@ This is needed because the flow does not throw an error if the user does not hav
         </connector>
         <fields>
             <name>Approvasl_Required_msg</name>
-            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Approval required&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The current actual recovery rate for this project is {!Get.pse__Project__r.CT_Recovery_Rate__c}. It the recovery rate is below 70%, an additional approval is required from the responsible partner.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Please close this window and submit the billing event for approval.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Once the billing event is approved by the partner, the billing event can be released.  &lt;/p&gt;</fieldText>
+            <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 16px;&quot;&gt;Approval required&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The current actual recovery rate for this project is {!Get_Billing_Event_Details.pse__Project__r.CT_Recovery_Rate__c}. It the recovery rate is below 70%, an additional approval is required from the responsible partner.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Please close this window and submit the billing event for approval.&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Once the billing event is approved by the partner, the billing event can be released.  &lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
-        <showFooter>true</showFooter>
-        <showHeader>true</showHeader>
-    </screens>
-    <screens>
-        <name>Billing_Event_Release_Confirmation</name>
-        <label>Billing Event Release Confirmation</label>
-        <locationX>1172</locationX>
-        <locationY>3554</locationY>
-        <allowBack>false</allowBack>
-        <allowFinish>true</allowFinish>
-        <allowPause>false</allowPause>
-        <connector>
-            <targetReference>Release_Billing_Event</targetReference>
-        </connector>
-        <fields>
-            <name>Confirmation_Title</name>
-            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong&gt;Billing Event Release Confirmation&lt;/strong&gt;&lt;/p&gt;</fieldText>
-            <fieldType>DisplayText</fieldType>
-        </fields>
-        <fields>
-            <name>Billing_Event_Release_Confirmation_Section1</name>
-            <fieldType>RegionContainer</fieldType>
-            <fields>
-                <name>Billing_Event_Release_Confirmation_Section1_Column1</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Account_Name_Screen</name>
-                    <fieldText>&lt;p&gt;Account Name:  {!Get.ffpsai__Account__r.Name} &lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>Summary_Amount_Screen</name>
-                    <fieldText>&lt;p&gt;Summary Amount: {!Get.pse__Summary_Amount__c}&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <fields>
-                <name>Billing_Event_Release_Confirmation_Section1_Column2</name>
-                <fieldType>Region</fieldType>
-                <fields>
-                    <name>Project_Name_Screen</name>
-                    <fieldText>&lt;p&gt;Project Name: {!Get.pse__Project__r.Name}&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <fields>
-                    <name>Budget_Remaining_screen</name>
-                    <fieldText>&lt;p&gt;Budget Remaining: {!Get.pse__Budget_Remaining__c}&lt;/p&gt;</fieldText>
-                    <fieldType>DisplayText</fieldType>
-                </fields>
-                <inputParameters>
-                    <name>width</name>
-                    <value>
-                        <stringValue>6</stringValue>
-                    </value>
-                </inputParameters>
-                <isRequired>false</isRequired>
-            </fields>
-            <isRequired>false</isRequired>
-            <regionContainerType>SectionWithoutHeader</regionContainerType>
-        </fields>
-        <nextOrFinishButtonLabel>Confirm</nextOrFinishButtonLabel>
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
     <screens>
         <name>Copy_1_of_Select_Billing_Account</name>
         <label>Select Billing Account</label>
-        <locationX>908</locationX>
-        <locationY>3254</locationY>
+        <locationX>468</locationX>
+        <locationY>3146</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -823,8 +736,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1986</locationX>
-        <locationY>3878</locationY>
+        <locationX>1546</locationX>
+        <locationY>3770</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -839,8 +752,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Error_Screen_Access_problem</name>
         <label>Error Screen Access Problem</label>
-        <locationX>1304</locationX>
-        <locationY>4094</locationY>
+        <locationX>864</locationX>
+        <locationY>3986</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -855,17 +768,131 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Select_Billing_Account</name>
         <label>Confirm Release</label>
-        <locationX>1436</locationX>
-        <locationY>3146</locationY>
+        <locationX>732</locationX>
+        <locationY>3446</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Billing_Event_Release_Confirmation</targetReference>
+            <targetReference>Release_Billing_Event</targetReference>
         </connector>
         <fields>
-            <name>SingleAccountMessage</name>
-            <fieldText>&lt;p&gt;Press &quot;OK&quot; to release the billing event for billing&lt;/p&gt;</fieldText>
+            <name>Select_Billing_Account_Section1</name>
+            <fieldType>RegionContainer</fieldType>
+            <fields>
+                <name>Select_Billing_Account_Section1_Column1</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Select_Billing_Account_Section1_Column2</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Account_Name_Screen</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;﻿Account :&lt;/strong&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;  &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.Name} &lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Select_Billing_Account_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Invoice_Email</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif;&quot;&gt;Invoice Email&lt;/strong&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.c2g__CODAInvoiceEmail__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Select_Billing_Account_Section1_Column4</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <isRequired>false</isRequired>
+            <regionContainerType>SectionWithoutHeader</regionContainerType>
+        </fields>
+        <fields>
+            <name>BillingEventItems</name>
+            <dataTypeMappings>
+                <typeName>T</typeName>
+                <typeValue>pse__Billing_Event_Item__c</typeValue>
+            </dataTypeMappings>
+            <extensionName>flowruntime:datatable</extensionName>
+            <fieldType>ComponentInstance</fieldType>
+            <inputParameters>
+                <name>selectionMode</name>
+                <value>
+                    <stringValue>NO_SELECTION</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>minRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>tableData</name>
+                <value>
+                    <elementReference>Get_Billing_Event_Items</elementReference>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>maxRowSelection</name>
+                <value>
+                    <numberValue>0.0</numberValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>columns</name>
+                <value>
+                    <stringValue>[{&quot;apiName&quot;:&quot;pse__Category__c&quot;,&quot;guid&quot;:&quot;column-afc4&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:0,&quot;label&quot;:&quot;Category&quot;,&quot;type&quot;:&quot;text&quot;},{&quot;apiName&quot;:&quot;Accounting_Line_Description__c&quot;,&quot;guid&quot;:&quot;column-3132&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:1,&quot;label&quot;:&quot;Accounting Line Description&quot;,&quot;type&quot;:&quot;customRichText&quot;},{&quot;apiName&quot;:&quot;pse__Amount__c&quot;,&quot;guid&quot;:&quot;column-7857&quot;,&quot;editable&quot;:false,&quot;hasCustomHeaderLabel&quot;:false,&quot;customHeaderLabel&quot;:&quot;&quot;,&quot;wrapText&quot;:true,&quot;order&quot;:2,&quot;label&quot;:&quot;Amount&quot;,&quot;type&quot;:&quot;currency&quot;}]</stringValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>shouldDisplayLabel</name>
+                <value>
+                    <booleanValue>true</booleanValue>
+                </value>
+            </inputParameters>
+            <inputParameters>
+                <name>label</name>
+                <value>
+                    <stringValue>Billing Narrative:</stringValue>
+                </value>
+            </inputParameters>
+            <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
+            <isRequired>true</isRequired>
+            <storeOutputAutomatically>true</storeOutputAutomatically>
+        </fields>
+        <fields>
+            <name>Summary_Amount_Screen</name>
+            <fieldText>&lt;p style=&quot;text-align: right;&quot;&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-size: 14px;&quot;&gt;&lt;span class=&quot;ql-cursor&quot;&gt;﻿&lt;/span&gt;Summary Amount: &lt;/strong&gt;&lt;span style=&quot;background-color: rgb(255, 255, 255); color: rgb(68, 68, 68); font-size: 14px;&quot;&gt;{!Get_Billing_Event_Details.ffpsai__BillingEventCurrency__r.Name} {!Get_Billing_Event_Details.pse__Summary_Amount__c} &lt;/span&gt;&lt;/p&gt;</fieldText>
             <fieldType>DisplayText</fieldType>
         </fields>
         <nextOrFinishButtonLabel>OK</nextOrFinishButtonLabel>
@@ -875,8 +902,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Select_Project_Partner</name>
         <label>Select Project Partner</label>
-        <locationX>490</locationX>
-        <locationY>1490</locationY>
+        <locationX>50</locationX>
+        <locationY>1382</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -931,10 +958,10 @@ This is needed because the flow does not throw an error if the user does not hav
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>485</locationX>
+        <locationX>606</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Get</targetReference>
+            <targetReference>Get_Billing_Event_Details</targetReference>
         </connector>
     </start>
     <status>Active</status>
@@ -944,6 +971,16 @@ This is needed because the flow does not throw an error if the user does not hav
         <isCollection>true</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>ENABLED</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>false</booleanValue>
+        </value>
     </variables>
     <variables>
         <name>MileStoneIds</name>
@@ -961,6 +998,13 @@ This is needed because the flow does not throw an error if the user does not hav
         <value>
             <booleanValue>false</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>NewAccountID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>ProjectPartnerUserId</name>
