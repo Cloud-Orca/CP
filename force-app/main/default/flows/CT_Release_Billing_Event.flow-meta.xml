@@ -4,8 +4,8 @@
     <assignments>
         <name>Add_to_AccountIds</name>
         <label>Add to AccountIds</label>
-        <locationX>996</locationX>
-        <locationY>2546</locationY>
+        <locationX>1436</locationX>
+        <locationY>2654</locationY>
         <assignmentItems>
             <assignToReference>AccountIds</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Add_to_Milestone_Ids</name>
         <label>Add to Milestone Ids</label>
-        <locationX>820</locationX>
-        <locationY>566</locationY>
+        <locationX>1260</locationX>
+        <locationY>674</locationY>
         <assignmentItems>
             <assignToReference>MileStoneIds</assignToReference>
             <operator>Add</operator>
@@ -36,8 +36,8 @@
     <assignments>
         <name>Assign_Project_Partner_from_Project</name>
         <label>Assign Project Partner from Project</label>
-        <locationX>578</locationX>
-        <locationY>1382</locationY>
+        <locationX>1018</locationX>
+        <locationY>1490</locationY>
         <assignmentItems>
             <assignToReference>ProjectPartnerUserId</assignToReference>
             <operator>Assign</operator>
@@ -52,8 +52,8 @@
     <assignments>
         <name>Assign_Project_Partner_from_Screen</name>
         <label>Assign Project Partner from Screen</label>
-        <locationX>50</locationX>
-        <locationY>1490</locationY>
+        <locationX>490</locationX>
+        <locationY>1598</locationY>
         <assignmentItems>
             <assignToReference>ProjectPartnerUserId</assignToReference>
             <operator>Assign</operator>
@@ -68,8 +68,8 @@
     <assignments>
         <name>Multiple_Accounts_Detected</name>
         <label>Multiple Accounts Detected</label>
-        <locationX>1260</locationX>
-        <locationY>2546</locationY>
+        <locationX>1700</locationX>
+        <locationY>2654</locationY>
         <assignmentItems>
             <assignToReference>MultipleAccountsDetected</assignToReference>
             <operator>Assign</operator>
@@ -85,8 +85,8 @@
     <assignments>
         <name>Release_Billing_Event</name>
         <label>Release Billing Event</label>
-        <locationX>732</locationX>
-        <locationY>3554</locationY>
+        <locationX>1172</locationX>
+        <locationY>3662</locationY>
         <assignmentItems>
             <assignToReference>Get_Billing_Event_Details.pse__Is_Released__c</assignToReference>
             <operator>Assign</operator>
@@ -101,8 +101,8 @@
     <assignments>
         <name>Save_Account_on_billing_event</name>
         <label>Save Account on billing event</label>
-        <locationX>468</locationX>
-        <locationY>3254</locationY>
+        <locationX>908</locationX>
+        <locationY>3362</locationY>
         <assignmentItems>
             <assignToReference>Get_Billing_Event_Details.ffpsai__Account__c</assignToReference>
             <operator>Assign</operator>
@@ -124,8 +124,8 @@
     <assignments>
         <name>Save_Default_Account_on_billing_event</name>
         <label>Save Default Account on billing event</label>
-        <locationX>996</locationX>
-        <locationY>2654</locationY>
+        <locationX>1436</locationX>
+        <locationY>2762</locationY>
         <assignmentItems>
             <assignToReference>Get_Billing_Event_Details.ffpsai__Account__c</assignToReference>
             <operator>Assign</operator>
@@ -145,10 +145,42 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Approval_required</name>
+        <label>Approval required?</label>
+        <locationX>611</locationX>
+        <locationY>242</locationY>
+        <defaultConnector>
+            <targetReference>Get_Billing_Event_Items</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Managers_need_to_approve_this_Billing_Event</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Billing_Event_Details.pse__Project__r.Manager_approval_required_for_billing__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Billing_Event_Details.pse__Is_Approved__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Manager_approval_Needed_message</targetReference>
+            </connector>
+            <label>Managers need to approve this Billing Event</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Are_all_billable_milestones_billed</name>
         <label>Are all billable milestones billed?</label>
-        <locationX>94</locationX>
-        <locationY>1058</locationY>
+        <locationX>534</locationX>
+        <locationY>1166</locationY>
         <defaultConnector>
             <targetReference>Approval_required_Message_Screen</targetReference>
         </defaultConnector>
@@ -172,8 +204,8 @@
     <decisions>
         <name>Are_multiple_accounts_selected</name>
         <label>Are multiple accounts selected?</label>
-        <locationX>732</locationX>
-        <locationY>2930</locationY>
+        <locationX>1172</locationX>
+        <locationY>3038</locationY>
         <defaultConnector>
             <targetReference>Select_Billing_Account</targetReference>
         </defaultConnector>
@@ -197,8 +229,8 @@
     <decisions>
         <name>Check_Project_Partner</name>
         <label>Check Project Partner</label>
-        <locationX>314</locationX>
-        <locationY>1274</locationY>
+        <locationX>754</locationX>
+        <locationY>1382</locationY>
         <defaultConnector>
             <targetReference>Assign_Project_Partner_from_Project</targetReference>
         </defaultConnector>
@@ -222,8 +254,8 @@
     <decisions>
         <name>Different_Account</name>
         <label>Different Account?</label>
-        <locationX>1040</locationX>
-        <locationY>2438</locationY>
+        <locationX>1480</locationX>
+        <locationY>2546</locationY>
         <defaultConnector>
             <targetReference>Multiple_Accounts_Detected</targetReference>
         </defaultConnector>
@@ -271,8 +303,8 @@
 NO APPROVAL REQUIRED.</description>
         <name>Is_Project_recovery_rate_below_70_and_not_approved_yest</name>
         <label>Is Project recovery rate below 70% and not approved yes</label>
-        <locationX>732</locationX>
-        <locationY>842</locationY>
+        <locationX>1172</locationX>
+        <locationY>950</locationY>
         <defaultConnector>
             <targetReference>Get_Milestone_Details</targetReference>
         </defaultConnector>
@@ -312,8 +344,8 @@ NO APPROVAL REQUIRED.</description>
 This is needed because the flow does not throw an error if the user does not have sufficient access to the required fields on the Billing Event.</description>
         <name>Record_saved_correctly</name>
         <label>Record saved correctly?</label>
-        <locationX>732</locationX>
-        <locationY>3878</locationY>
+        <locationX>1172</locationX>
+        <locationY>3986</locationY>
         <defaultConnector>
             <targetReference>Error_Screen_Access_problem</targetReference>
         </defaultConnector>
@@ -341,8 +373,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <decisions>
         <name>Related_To_Milestone</name>
         <label>Related To Milestone?</label>
-        <locationX>952</locationX>
-        <locationY>458</locationY>
+        <locationX>1392</locationX>
+        <locationY>566</locationY>
         <defaultConnector>
             <targetReference>For_All_Items</targetReference>
         </defaultConnector>
@@ -369,8 +401,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <loops>
         <name>For_All_Items</name>
         <label>For All Items</label>
-        <locationX>732</locationX>
-        <locationY>350</locationY>
+        <locationX>1172</locationX>
+        <locationY>458</locationY>
         <collectionReference>Get_Billing_Event_Items</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -383,8 +415,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <loops>
         <name>Loop_trough_Milestones</name>
         <label>Loop trough Milestones</label>
-        <locationX>732</locationX>
-        <locationY>2330</locationY>
+        <locationX>1172</locationX>
+        <locationY>2438</locationY>
         <collectionReference>Get_Milestone_Details</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -416,8 +448,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordLookups>
         <name>Get_Accounts</name>
         <label>Get Accounts</label>
-        <locationX>468</locationX>
-        <locationY>3038</locationY>
+        <locationX>908</locationX>
+        <locationY>3146</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Copy_1_of_Select_Billing_Account</targetReference>
@@ -441,11 +473,11 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordLookups>
         <name>Get_Billing_Event_Details</name>
         <label>Get Billing Event Details</label>
-        <locationX>732</locationX>
+        <locationX>611</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Get_Billing_Event_Items</targetReference>
+            <targetReference>Approval_required</targetReference>
         </connector>
         <faultConnector>
             <isGoTo>true</isGoTo>
@@ -466,8 +498,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordLookups>
         <name>Get_Billing_Event_Items</name>
         <label>Get Billing Event Items</label>
-        <locationX>732</locationX>
-        <locationY>242</locationY>
+        <locationX>1172</locationX>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>For_All_Items</targetReference>
@@ -491,8 +523,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordLookups>
         <name>Get_Billing_Event_saved_Details</name>
         <label>Get Billing Event saved Details</label>
-        <locationX>732</locationX>
-        <locationY>3770</locationY>
+        <locationX>1172</locationX>
+        <locationY>3878</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Record_saved_correctly</targetReference>
@@ -512,8 +544,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordLookups>
         <name>Get_Milestone_Details</name>
         <label>Get Milestone Details</label>
-        <locationX>732</locationX>
-        <locationY>2222</locationY>
+        <locationX>1172</locationX>
+        <locationY>2330</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Loop_trough_Milestones</targetReference>
@@ -538,8 +570,8 @@ This is needed because the flow does not throw an error if the user does not hav
         <description>Retrieves the remaining unbilled billable milestones</description>
         <name>Get_unbilled_Milestones</name>
         <label>Get unbilled Milestones</label>
-        <locationX>94</locationX>
-        <locationY>950</locationY>
+        <locationX>534</locationX>
+        <locationY>1058</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Are_all_billable_milestones_billed</targetReference>
@@ -577,8 +609,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordUpdates>
         <name>Project_Partner_approval_required_set_to_TRUE</name>
         <label>Project Partner approval required set to TRUE</label>
-        <locationX>314</locationX>
-        <locationY>1838</locationY>
+        <locationX>754</locationX>
+        <locationY>1946</locationY>
         <faultConnector>
             <isGoTo>true</isGoTo>
             <targetReference>Error_Screen</targetReference>
@@ -608,8 +640,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordUpdates>
         <name>Update_Billing_Event</name>
         <label>Update Billing Event</label>
-        <locationX>732</locationX>
-        <locationY>3662</locationY>
+        <locationX>1172</locationX>
+        <locationY>3770</locationY>
         <connector>
             <targetReference>Get_Billing_Event_saved_Details</targetReference>
         </connector>
@@ -621,8 +653,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <recordUpdates>
         <name>Update_Project_Partner_on_Project</name>
         <label>Update Project Partner on Project</label>
-        <locationX>50</locationX>
-        <locationY>1598</locationY>
+        <locationX>490</locationX>
+        <locationY>1706</locationY>
         <connector>
             <targetReference>Project_Partner_approval_required_set_to_TRUE</targetReference>
         </connector>
@@ -649,8 +681,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Approval_required_Message_Screen</name>
         <label>Approval required Message Screen</label>
-        <locationX>314</locationX>
-        <locationY>1166</locationY>
+        <locationX>754</locationX>
+        <locationY>1274</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -668,8 +700,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Copy_1_of_Select_Billing_Account</name>
         <label>Select Billing Account</label>
-        <locationX>468</locationX>
-        <locationY>3146</locationY>
+        <locationX>908</locationX>
+        <locationY>3254</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -736,8 +768,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Error_Screen</name>
         <label>Error Screen</label>
-        <locationX>1546</locationX>
-        <locationY>3770</locationY>
+        <locationX>1986</locationX>
+        <locationY>3878</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -752,8 +784,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Error_Screen_Access_problem</name>
         <label>Error Screen Access Problem</label>
-        <locationX>864</locationX>
-        <locationY>3986</locationY>
+        <locationX>1304</locationX>
+        <locationY>4094</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -766,10 +798,26 @@ This is needed because the flow does not throw an error if the user does not hav
         <showHeader>false</showHeader>
     </screens>
     <screens>
+        <name>Manager_approval_Needed_message</name>
+        <label>Manager_approval_Needed_message</label>
+        <locationX>50</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Manager_approval_required_for_billing</name>
+            <fieldText>&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(255, 0, 0);&quot;&gt;The manager needs to approve this Billing Event before it can be released.&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;After this billing event is approved by the manager the Billing Event can be released for billing,&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
         <name>Select_Billing_Account</name>
         <label>Confirm Release</label>
-        <locationX>732</locationX>
-        <locationY>3446</locationY>
+        <locationX>1172</locationX>
+        <locationY>3554</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -782,15 +830,53 @@ This is needed because the flow does not throw an error if the user does not hav
             <fields>
                 <name>Select_Billing_Account_Section1_Column1</name>
                 <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Select_Billing_Account_Section1_Column2</name>
+                <fieldType>Region</fieldType>
                 <fields>
                     <name>Account_Name_Screen</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;﻿Account:&lt;/strong&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;  &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.Name} &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;Project Name: &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.pse__Project__r.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;﻿Account :&lt;/strong&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;  &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.Name} &lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
-                        <stringValue>12</stringValue>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Select_Billing_Account_Section1_Column3</name>
+                <fieldType>Region</fieldType>
+                <fields>
+                    <name>Invoice_Email</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif;&quot;&gt;Invoice Email&lt;/strong&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.c2g__CODAInvoiceEmail__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
+                    </value>
+                </inputParameters>
+                <isRequired>false</isRequired>
+            </fields>
+            <fields>
+                <name>Select_Billing_Account_Section1_Column4</name>
+                <fieldType>Region</fieldType>
+                <inputParameters>
+                    <name>width</name>
+                    <value>
+                        <stringValue>3</stringValue>
                     </value>
                 </inputParameters>
                 <isRequired>false</isRequired>
@@ -864,8 +950,8 @@ This is needed because the flow does not throw an error if the user does not hav
     <screens>
         <name>Select_Project_Partner</name>
         <label>Select Project Partner</label>
-        <locationX>50</locationX>
-        <locationY>1382</locationY>
+        <locationX>490</locationX>
+        <locationY>1490</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -920,7 +1006,7 @@ This is needed because the flow does not throw an error if the user does not hav
         <showHeader>false</showHeader>
     </screens>
     <start>
-        <locationX>606</locationX>
+        <locationX>485</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Billing_Event_Details</targetReference>
