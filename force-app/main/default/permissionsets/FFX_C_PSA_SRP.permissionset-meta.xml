@@ -1,52 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Access to object:
-- SIN
-- SCR
-- Products</description>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.cer_Chasing_Notes_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.cer_Chasing_Notes_Modified_By2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.cer_Chasing_Notes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
+    <description>Accelerate PSA &amp; Accounting (SRP) - Spring 2024 Permission Set</description>
     <fieldPermissions>
         <editable>true</editable>
         <field>CT_Expense_VAT_Types__c.Vat_Rate__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaCreditNoteLineItem__c.cer_Milestone_Name__c</field>
+        <editable>true</editable>
+        <field>c2g__codaDimension1__c.ffpsai__Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>c2g__codaInvoice__c.cer_Consolidate_Invoice__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaTransactionLineItem__c.cer_Milestone_Name__c</field>
+        <field>c2g__codaDimension2__c.ffpsai__Practice__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ffscpq__Estimate_Line_Set__c.CT_MS_Bill_Amount__c</field>
+        <field>c2g__codaDimension3__c.ffpsai__Group__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>ffscpq__Estimate__c.CT_Fee_Amount__c</field>
+        <field>c2g__codaDimension4__c.ffpsai__Project__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -61,12 +38,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>pse__Billing_Event__c.cer_Sales_Invoice__c</field>
+        <field>pse__Billing_Event_Item__c.FFX_PSA_Dimension_1_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Billing_Event_Item__c.FFX_PSA_Dimension_2_Practice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Billing_Event_Item__c.FFX_PSA_Dimension_3_Group__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Billing_Event_Item__c.FFX_PSA_Dimension_4_Project__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>pse__Milestone__c.CT_Recognisable_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Milestone__c.FFX_FFA_Company_from_Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -95,6 +92,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Proj__c.FFX_FFA_Company_from_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>pse__Proj__c.Original_Fee_Amount__c</field>
         <readable>true</readable>
@@ -104,41 +106,11 @@
         <field>pse__Resource_Request__c.CT_Estimated_Revenue__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>pse__Timecard__c.FFX_Service_Product_Record_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Certinia: Cooper Parry Custom PS</label>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>Product2</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>c2g__codaCreditNote__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>c2g__codaInvoice__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <tabSettings>
-        <tab>c2g__codaCreditNote__c</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
-    <tabSettings>
-        <tab>c2g__codaInvoice__c</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
+    <label>FFX C-PSA-SRP</label>
 </PermissionSet>

@@ -78,11 +78,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>ffscpq__Estimate__c.OriginalProject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>ffscpq__Estimate__c.Total_Cost_Amount__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -733,10 +728,6 @@
         <recordType>Contact.PSA_Resource</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
-    <tabSettings>
-        <tab>CP_Project_Management_Workspace</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
     <tabSettings>
         <tab>CP_Resource_Management_Workspace</tab>
         <visibility>Visible</visibility>
