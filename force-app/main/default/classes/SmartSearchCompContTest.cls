@@ -78,6 +78,10 @@ public class SmartSearchCompContTest {
 
     @TestSetup
     static void makeData(){
+        Org_Wide_Settings__c setting = new Org_Wide_Settings__c();
+        setting.Disable_Validation_Rules__c = true;
+        insert setting;
+        
         Smart_Search_Setting__c sett = new Smart_Search_Setting__c();
         sett.app_id__c = '123';
         sett.base_url__c = '1234';
