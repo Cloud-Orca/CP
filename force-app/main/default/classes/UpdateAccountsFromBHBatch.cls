@@ -104,19 +104,21 @@ global class UpdateAccountsFromBHBatch implements Database.Batchable<sObject>, S
                                 Id accId = bhIdToAccountIdMap.get(resultId);
 
                                 List<Object> fundraisings_lst = (List<Object>)resultItem.get('fundraisings');
-                                Map<String, Object> fundraisings_obj = (Map<String, Object>)fundraisings_lst[0];
+                                if(!fundraisings_lst.isEmpty()){
+                                    Map<String, Object> fundraisings_obj = (Map<String, Object>)fundraisings_lst[0];
 
-                                Account acc = new Account(Id=accId);
-                                if(accountsToUpdateMap.containsKey(accId)){
-                                    acc = accountsToUpdateMap.get(accId);   
+                                    Account acc = new Account(Id=accId);
+                                    if(accountsToUpdateMap.containsKey(accId)){
+                                        acc = accountsToUpdateMap.get(accId);   
+                                    }
+                                    if(fundraisings_obj.get('date_raised') != null){
+                                        acc.Date_Of_Last_Funding_Round__c = BeauhurstAPIUtility.stringToDate(String.valueOf(fundraisings_obj.get('date_raised')));
+                                    }
+                                    if(fundraisings_obj.get('amount_raised_gbp') != null){
+                                        acc.Amount_in_Latest_Fundraise__c = Double.valueOf(fundraisings_obj.get('amount_raised_gbp'));
+                                    }
+                                    accountsToUpdateMap.put(accId, acc);
                                 }
-                                if(fundraisings_obj.get('date_raised') != null){
-                                    acc.Date_Of_Last_Funding_Round__c = BeauhurstAPIUtility.stringToDate(String.valueOf(fundraisings_obj.get('date_raised')));
-                                }
-                                if(fundraisings_obj.get('amount_raised_gbp') != null){
-                                    acc.Amount_in_Latest_Fundraise__c = Double.valueOf(fundraisings_obj.get('amount_raised_gbp'));
-                                }
-                                accountsToUpdateMap.put(accId, acc);
                             }
                         }
                     }
