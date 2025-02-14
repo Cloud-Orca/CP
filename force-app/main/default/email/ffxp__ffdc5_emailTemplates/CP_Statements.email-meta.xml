@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>APXTConga4__Conga_Email_Letterhead</letterhead>
+    <name>Cooper Statements</name>
+    <style>freeForm</style>
+    <subject>Statement for {!Account.Name}</subject>
+    <textOnly>Good morning/afternoon,
+
+
+I hope you are well.
+
+
+Please find attached a copy of your statement with us.
+
+
+
+Kind Regards
+
+
+
+{!c2g__codaCompany__c.Name}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
