@@ -53,13 +53,15 @@ public class BeauhurstAPIUtility {
                                     Map<String, Object> tranResultItem = (Map<String, Object>)tranResults[0];
                                     if(tranResultItem.get('companies_house_id') != null && tranResultItem.get('fundraisings') != null){
                                         List<Object> fundraisings_lst = (List<Object>)tranResultItem.get('fundraisings');
-                                        Map<String, Object> fundraisings_obj = (Map<String, Object>)fundraisings_lst[0];
+                                        if(!fundraisings_lst.isEmpty()){
+                                            Map<String, Object> fundraisings_obj = (Map<String, Object>)fundraisings_lst[0];
 
-                                        if(fundraisings_obj.get('date_raised') != null){
-                                            rec.Date_Of_Last_Funding_Round__c = stringToDate(String.valueOf(fundraisings_obj.get('date_raised')));
-                                        }
-                                        if(fundraisings_obj.get('amount_raised_gbp') != null){
-                                            rec.Amount_in_Latest_Fundraise__c = Double.valueOf(fundraisings_obj.get('amount_raised_gbp'));
+                                            if(fundraisings_obj.get('date_raised') != null){
+                                                rec.Date_Of_Last_Funding_Round__c = stringToDate(String.valueOf(fundraisings_obj.get('date_raised')));
+                                            }
+                                            if(fundraisings_obj.get('amount_raised_gbp') != null){
+                                                rec.Amount_in_Latest_Fundraise__c = Double.valueOf(fundraisings_obj.get('amount_raised_gbp'));
+                                            }
                                         }
                                     }
                                 }
@@ -152,15 +154,17 @@ public class BeauhurstAPIUtility {
                 List<Object> stage_of_evolution_lst = (List<Object>)classification.get('stage_of_evolution_transitions');
                 acc.Stage_of_Evolution_Transitions__c = JSON.serialize(stage_of_evolution_lst);
 
-                Map<String, Object> stage_of_evolution_obj = (Map<String, Object>)stage_of_evolution_lst[0];
-                if(stage_of_evolution_obj.get('primary_date') != null){
-                    acc.Primary_Date__c = stringToDate(String.valueOf(stage_of_evolution_obj.get('primary_date')));
-                }
-                if(stage_of_evolution_obj.get('stage_before') != null){
-                    acc.Stage_Before__c = String.valueOf(stage_of_evolution_obj.get('stage_before'));
-                }
-                if(stage_of_evolution_obj.get('stage_after') != null){
-                    acc.Stage_After__c = String.valueOf(stage_of_evolution_obj.get('stage_after'));
+                if(!stage_of_evolution_lst.isEmpty()){
+                    Map<String, Object> stage_of_evolution_obj = (Map<String, Object>)stage_of_evolution_lst[0];
+                    if(stage_of_evolution_obj.get('primary_date') != null){
+                        acc.Primary_Date__c = stringToDate(String.valueOf(stage_of_evolution_obj.get('primary_date')));
+                    }
+                    if(stage_of_evolution_obj.get('stage_before') != null){
+                        acc.Stage_Before__c = String.valueOf(stage_of_evolution_obj.get('stage_before'));
+                    }
+                    if(stage_of_evolution_obj.get('stage_after') != null){
+                        acc.Stage_After__c = String.valueOf(stage_of_evolution_obj.get('stage_after'));
+                    }
                 }
             }
             if(classification.get('legal_form') != null){
