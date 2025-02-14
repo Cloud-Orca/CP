@@ -88,8 +88,62 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>pse:ws_weeklySummary</componentName>
-                <identifier>pse_ws_weeklySummary</identifier>
+                <componentInstanceProperties>
+                    <name>allowAssignments</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>allowMilestones</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>allowProjectTasks</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>editableFieldSetApiName</name>
+                    <value>CT_Out_Of_Scope</value>
+                </componentInstanceProperties>
+                <componentName>pse:tm_timeEntry</componentName>
+                <identifier>pse_tm_timeEntry</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>editableFieldSetApiName</name>
+                    <value>ExpenseHeaderRowEditableColumns</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>editableNotesFieldSetApiName</name>
+                    <value>CT_Expense_Info</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>isAssignmentAllowed</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>isMilestoneAllowed</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>readOnlyFieldSetApiName</name>
+                    <value>ExpenseHeaderRowReadOnlyColumns</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>readOnlyNotesFieldSetApiName</name>
+                    <value>ExpenseNotesFieldsReadOnlyColumns</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showBillableInformation</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showReimbursementInformation</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>pse:em_expenseEntry</componentName>
+                <identifier>pse_em_expenseEntry</identifier>
             </componentInstance>
         </itemInstances>
         <name>region1</name>
@@ -289,61 +343,8 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowAssignments</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>allowMilestones</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>allowProjectTasks</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>editableFieldSetApiName</name>
-                    <value>CT_Out_Of_Scope</value>
-                </componentInstanceProperties>
-                <componentName>pse:tm_timeEntry</componentName>
-                <identifier>pse_tm_timeEntry</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>editableFieldSetApiName</name>
-                    <value>pse__ExpenseHeaderRowEditableColumns</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>editableNotesFieldSetApiName</name>
-                    <value>CT_Expense_Info</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>isAssignmentAllowed</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>isMilestoneAllowed</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>readOnlyFieldSetApiName</name>
-                    <value>pse__ExpenseHeaderRowReadOnlyColumns</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>readOnlyNotesFieldSetApiName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showBillableInformation</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showReimbursementInformation</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentName>pse:em_expenseEntry</componentName>
-                <identifier>pse_em_expenseEntry</identifier>
+                <componentName>pse:ws_weeklySummary</componentName>
+                <identifier>pse_ws_weeklySummary</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

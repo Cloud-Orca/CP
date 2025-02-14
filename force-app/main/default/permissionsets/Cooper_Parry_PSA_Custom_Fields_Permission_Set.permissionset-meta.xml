@@ -11,11 +11,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.OriginalProject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>ffscpq__Estimate__c.Total_Cost_Amount__c</field>
         <readable>true</readable>
@@ -101,5 +96,5 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Cooper Parry PSA Custom Fields Permission Set</label>
+    <label>zz Depric. Cooper Parry PSA Custom Fields Permission Set</label>
 </PermissionSet>
