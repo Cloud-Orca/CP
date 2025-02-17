@@ -98,6 +98,12 @@ public class SmartSearchCompContTest {
         newAccount.Name = 'test';
         insert newAccount;
 
+        AccountTeamMember actm = new AccountTeamMember();
+        actm.AccountId = newAccount.Id;
+        actm.TeamMemberRole = 'Lifecycle Coordinator';
+        actm.UserId = UserInfo.getUserId();
+        insert actm;
+
         Case cas = new Case();
         cas.Subject = 'Test';
         cas.AccountId = newAccount.Id;
