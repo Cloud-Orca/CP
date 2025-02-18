@@ -164,7 +164,7 @@
     <formulas>
         <name>formula_7Days</name>
         <dataType>Date</dataType>
-        <expression>{!$Record.Created_Date_Custom__c} + 7</expression>
+        <expression>{!$Record.CreatedDate} + 7</expression>
     </formulas>
     <interviewLabel>Survey Invitation - Scheduled Flow: Send Follow up Survey Invitations {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Survey - Invitation reminder 7 and 14 days</label>
