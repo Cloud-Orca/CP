@@ -17369,21 +17369,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__InterestPaidKeywords1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__InterestPaidKeywords2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__InterestPaidKeywords3__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>c2g__codaBankAccount__c.c2g__InterestReceivedDimension1__c</field>
         <readable>true</readable>
     </fieldPermissions>
