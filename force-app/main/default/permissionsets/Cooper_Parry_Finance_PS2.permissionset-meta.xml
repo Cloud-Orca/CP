@@ -13407,11 +13407,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>fferpcore__AsyncJobRecord__c.fferpcore__FinalizerApexRequestId__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>fferpcore__AsyncJobRecord__c.fferpcore__FinalizerCallableName__c</field>
         <readable>true</readable>
     </fieldPermissions>
