@@ -18337,11 +18337,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>c2g__MultipleCompaniesAccountConfig__c.c2g__OutputVATCode__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>c2g__MultipleCompaniesProductConfig__c.c2g__PlaceOfSupply__c</field>
         <readable>true</readable>
     </fieldPermissions>
