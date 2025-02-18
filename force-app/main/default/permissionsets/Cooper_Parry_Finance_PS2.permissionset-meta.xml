@@ -3637,21 +3637,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__BankChargesKeywords1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__BankChargesKeywords2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__BankChargesKeywords3__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>c2g__codaBankAccount__c.c2g__City__c</field>
         <readable>true</readable>
     </fieldPermissions>
