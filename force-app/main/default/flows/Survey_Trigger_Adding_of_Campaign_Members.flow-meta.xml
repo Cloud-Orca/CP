@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>61.0</apiVersion>
+    <apiVersion>63.0</apiVersion>
     <decisions>
         <name>Account_is_a_Client</name>
         <label>Account is a Client</label>
-        <locationX>2558</locationX>
-        <locationY>252</locationY>
+        <locationX>2514</locationX>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Client</name>
@@ -34,7 +34,10 @@
         <name>Check_Month</name>
         <label>Check Month</label>
         <locationX>1634</locationX>
-        <locationY>360</locationY>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Update_Contact</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>January</name>
@@ -47,7 +50,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_Jan</targetReference>
+                <targetReference>Get_Campaign_1</targetReference>
             </connector>
             <label>January</label>
         </rules>
@@ -62,7 +65,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_Feb</targetReference>
+                <targetReference>Get_Campaign_2</targetReference>
             </connector>
             <label>February</label>
         </rules>
@@ -77,7 +80,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_March</targetReference>
+                <targetReference>Get_Campaign_3</targetReference>
             </connector>
             <label>March</label>
         </rules>
@@ -92,7 +95,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_April</targetReference>
+                <targetReference>Get_Campaign_4</targetReference>
             </connector>
             <label>April</label>
         </rules>
@@ -107,7 +110,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_May</targetReference>
+                <targetReference>Get_Campaign_5</targetReference>
             </connector>
             <label>May</label>
         </rules>
@@ -122,7 +125,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_June</targetReference>
+                <targetReference>Get_Campaign_6</targetReference>
             </connector>
             <label>June</label>
         </rules>
@@ -137,7 +140,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_July</targetReference>
+                <targetReference>Get_Campaign_7</targetReference>
             </connector>
             <label>July</label>
         </rules>
@@ -152,7 +155,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_August</targetReference>
+                <targetReference>Get_Campaign_8</targetReference>
             </connector>
             <label>August</label>
         </rules>
@@ -167,7 +170,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_Sept</targetReference>
+                <targetReference>Get_Campaign_9</targetReference>
             </connector>
             <label>September</label>
         </rules>
@@ -182,7 +185,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_Oct</targetReference>
+                <targetReference>Get_Campaign_10</targetReference>
             </connector>
             <label>October</label>
         </rules>
@@ -197,7 +200,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_Nov</targetReference>
+                <targetReference>Get_Campaign_11</targetReference>
             </connector>
             <label>November</label>
         </rules>
@@ -212,24 +215,14 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Campaign_December</targetReference>
+                <targetReference>Get_Campaign_12</targetReference>
             </connector>
             <label>December</label>
         </rules>
     </decisions>
     <environments>Default</environments>
-    <formulas>
-        <name>THISYEAR</name>
-        <dataType>Boolean</dataType>
-        <expression>YEAR({!$Record.Field_Advocacy_Survey_Send_Month_Calc__c}) = YEAR(TODAY())</expression>
-    </formulas>
-    <formulas>
-        <name>THISYEAR2</name>
-        <dataType>Boolean</dataType>
-        <expression>YEAR({!$Record.Field_Advocacy_Survey_Send_Month_Calc__c}) = YEAR(TODAY())</expression>
-    </formulas>
-    <interviewLabel>Survey - Adding Campaign Members {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Survey - Adding Campaign Members</label>
+    <interviewLabel>Survey - Trigger Adding of Campaign Members {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Survey - Trigger Adding of Campaign Members</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -250,278 +243,17 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordCreates>
-        <name>Create_Campaign_Member_Apr</name>
-        <label>Create Campaign Member Apr</label>
-        <locationX>842</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_April.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Aug</name>
-        <label>Create Campaign Member Aug</label>
-        <locationX>1898</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_August.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Dec</name>
-        <label>Create Campaign Member Dec</label>
-        <locationX>2954</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_December.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Feb</name>
-        <label>Create Campaign Member Feb</label>
-        <locationX>314</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_Feb.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Jan</name>
-        <label>Create Campaign Member Jan</label>
-        <locationX>50</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_Jan.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Jul</name>
-        <label>Create Campaign Member Jul</label>
-        <locationX>1634</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_July.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Jun</name>
-        <label>Create Campaign Member Jun</label>
-        <locationX>1370</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_June.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Mar</name>
-        <label>Create Campaign Member Mar</label>
-        <locationX>578</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_March.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_May</name>
-        <label>Create Campaign Member May</label>
-        <locationX>1106</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_May.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Nov</name>
-        <label>Create Campaign Member Nov</label>
+        <name>Copy_10_of_Create_Campaign_Member_1</name>
+        <label>Copy 10 of Create Campaign Member - 1</label>
         <locationX>2690</locationX>
-        <locationY>576</locationY>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Update_Contact</targetReference>
         </connector>
         <inputAssignments>
             <field>CampaignId</field>
             <value>
-                <elementReference>Get_Campaign_Nov.Id</elementReference>
+                <elementReference>store_Campaign.Id</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -540,155 +272,332 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
     <recordCreates>
-        <name>Create_Campaign_Member_Oct</name>
-        <label>Create Campaign Member Oct</label>
-        <locationX>2426</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_Oct.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordCreates>
-        <name>Create_Campaign_Member_Sep</name>
-        <label>Create Campaign Member Sep</label>
-        <locationX>2162</locationX>
-        <locationY>576</locationY>
-        <connector>
-            <targetReference>Update_Contact</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>CampaignId</field>
-            <value>
-                <elementReference>Get_Campaign_Sept.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>ContactId</field>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <stringValue>Added</stringValue>
-            </value>
-        </inputAssignments>
-        <object>CampaignMember</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordCreates>
-    <recordLookups>
-        <name>Get_Campaign_April</name>
-        <label>Get Campaign - April</label>
-        <locationX>842</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Campaign_Member_Apr</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>April - Advocacy Survey</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_August</name>
-        <label>Get Campaign - August</label>
-        <locationX>1898</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Campaign_Member_Aug</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>August - Advocacy Survey</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_December</name>
-        <label>Get Campaign - December</label>
+        <name>Copy_11_of_Create_Campaign_Member_1</name>
+        <label>Copy 11 of Create Campaign Member - 1</label>
         <locationX>2954</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <locationY>647</locationY>
         <connector>
-            <targetReference>Create_Campaign_Member_Dec</targetReference>
+            <targetReference>Update_Contact</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
+        <inputAssignments>
+            <field>CampaignId</field>
             <value>
-                <stringValue>December - Advocacy Survey</stringValue>
+                <elementReference>store_Campaign.Id</elementReference>
             </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_Feb</name>
-        <label>Get Campaign - Feb</label>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_1_of_Create_Campaign_Member_1</name>
+        <label>Copy 1 of Create Campaign Member - 1</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_2_of_Create_Campaign_Member_1</name>
+        <label>Copy 2 of Create Campaign Member - 1</label>
         <locationX>314</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <locationY>647</locationY>
         <connector>
-            <targetReference>Create_Campaign_Member_Feb</targetReference>
+            <targetReference>Update_Contact</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
+        <inputAssignments>
+            <field>CampaignId</field>
             <value>
-                <stringValue>February - Advocacy Survey</stringValue>
+                <elementReference>store_Campaign.Id</elementReference>
             </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_Jan</name>
-        <label>Get Campaign - Jan</label>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_3_of_Create_Campaign_Member_1</name>
+        <label>Copy 3 of Create Campaign Member - 1</label>
+        <locationX>842</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_4_of_Create_Campaign_Member_1</name>
+        <label>Copy 4 of Create Campaign Member - 1</label>
+        <locationX>1106</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_5_of_Create_Campaign_Member_1</name>
+        <label>Copy 5 of Create Campaign Member - 1</label>
+        <locationX>1370</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_6_of_Create_Campaign_Member_1</name>
+        <label>Copy 6 of Create Campaign Member - 1</label>
+        <locationX>1634</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_7_of_Create_Campaign_Member_1</name>
+        <label>Copy 7 of Create Campaign Member - 1</label>
+        <locationX>1898</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_8_of_Create_Campaign_Member_1</name>
+        <label>Copy 8 of Create Campaign Member - 1</label>
+        <locationX>2162</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Copy_9_of_Create_Campaign_Member_1</name>
+        <label>Copy 9 of Create Campaign Member - 1</label>
+        <locationX>2426</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordCreates>
+        <name>Create_Campaign_Member_1</name>
+        <label>Create Campaign Member - 1</label>
         <locationX>50</locationX>
-        <locationY>468</locationY>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>Update_Contact</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>CampaignId</field>
+            <value>
+                <elementReference>store_Campaign.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>ContactId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Added</stringValue>
+            </value>
+        </inputAssignments>
+        <object>CampaignMember</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Campaign_1</name>
+        <label>Get Campaign - 1</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_Campaign_Member_Jan</targetReference>
+            <targetReference>Create_Campaign_Member_1</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -698,123 +607,18 @@
                 <stringValue>January - Advocacy Survey</stringValue>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordLookups>
-        <name>Get_Campaign_July</name>
-        <label>Get Campaign - July</label>
-        <locationX>1634</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Campaign_Member_Jul</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>July - Advocacy Survey</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_June</name>
-        <label>Get Campaign - June</label>
-        <locationX>1370</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Campaign_Member_Jun</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>June - Advocacy Survey</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_March</name>
-        <label>Get Campaign - March</label>
-        <locationX>578</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Campaign_Member_Mar</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>March - Advocacy Survey</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_May</name>
-        <label>Get Campaign - May</label>
-        <locationX>1106</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Campaign_Member_May</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>May - Advocacy Survey</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_Nov</name>
-        <label>Get Campaign - Nov</label>
-        <locationX>2690</locationX>
-        <locationY>468</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>Create_Campaign_Member_Nov</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Name</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>November - Advocacy Survey</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <name>Get_Campaign_Oct</name>
-        <label>Get Campaign - Oct</label>
+        <name>Get_Campaign_10</name>
+        <label>Get Campaign - 10</label>
         <locationX>2426</locationX>
-        <locationY>468</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_Campaign_Member_Oct</targetReference>
+            <targetReference>Copy_9_of_Create_Campaign_Member_1</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -824,18 +628,207 @@
                 <stringValue>October - Advocacy Survey</stringValue>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordLookups>
-        <name>Get_Campaign_Sept</name>
-        <label>Get Campaign - Sept</label>
-        <locationX>2162</locationX>
-        <locationY>468</locationY>
+        <name>Get_Campaign_11</name>
+        <label>Get Campaign - 11</label>
+        <locationX>2690</locationX>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Create_Campaign_Member_Sep</targetReference>
+            <targetReference>Copy_10_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>November - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_12</name>
+        <label>Get Campaign - 12</label>
+        <locationX>2954</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_11_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>December - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_2</name>
+        <label>Get Campaign - 2</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_2_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>February - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_3</name>
+        <label>Get Campaign - 3</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_1_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>March - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_4</name>
+        <label>Get Campaign - 4</label>
+        <locationX>842</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_3_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>April - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_5</name>
+        <label>Get Campaign - 5</label>
+        <locationX>1106</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_4_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>May - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_6</name>
+        <label>Get Campaign - 6</label>
+        <locationX>1370</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_5_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>June - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_7</name>
+        <label>Get Campaign - 7</label>
+        <locationX>1634</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_6_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>July - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_8</name>
+        <label>Get Campaign - 8</label>
+        <locationX>1898</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_7_of_Create_Campaign_Member_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Name</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>August - Advocacy Survey</stringValue>
+            </value>
+        </filters>
+        <object>Campaign</object>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Campaign_9</name>
+        <label>Get Campaign - 9</label>
+        <locationX>2162</locationX>
+        <locationY>539</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Copy_8_of_Create_Campaign_Member_1</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -845,15 +838,15 @@
                 <stringValue>September - Advocacy Survey</stringValue>
             </value>
         </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>Campaign</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputReference>store_Campaign</outputReference>
+        <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_Contact</name>
         <label>Update Contact</label>
         <locationX>1634</locationX>
-        <locationY>768</locationY>
+        <locationY>839</locationY>
         <inputAssignments>
             <field>Contact_added_to_Campaign__c</field>
             <value>
@@ -863,7 +856,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>2432</locationX>
+        <locationX>2388</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Account_is_a_Client</targetReference>
@@ -890,20 +883,17 @@
                 <booleanValue>false</booleanValue>
             </value>
         </filters>
-        <filters>
-            <field>Field_Advocacy_Survey_Send_Month__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <object>Contact</object>
-        <schedule>
-            <frequency>Once</frequency>
-            <startDate>2025-02-19</startDate>
-            <startTime>11:45:00.000Z</startTime>
-        </schedule>
-        <triggerType>Scheduled</triggerType>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
+    <variables>
+        <name>store_Campaign</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Campaign</objectType>
+    </variables>
 </Flow>
