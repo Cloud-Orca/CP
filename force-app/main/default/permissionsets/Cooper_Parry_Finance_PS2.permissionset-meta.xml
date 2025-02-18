@@ -32,11 +32,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.attachCustomerStatementPdf__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Account.c2g__AverageDaysToPay__c</field>
         <readable>true</readable>
     </fieldPermissions>
