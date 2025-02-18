@@ -22627,16 +22627,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>c2g__codaCreditNoteLineItem__c.c2g__ShipFrom__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaCreditNoteLineItem__c.c2g__ShipTo__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>c2g__codaCreditNoteLineItem__c.c2g__TaxCode1__c</field>
         <readable>true</readable>
     </fieldPermissions>
