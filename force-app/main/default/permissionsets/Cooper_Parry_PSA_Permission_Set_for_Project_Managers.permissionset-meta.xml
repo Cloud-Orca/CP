@@ -14565,7 +14565,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Cooper Parry PSA Permission Set for Project Managers</label>
+    <label>zz Depric. Cooper Parry PSA Permission Set for Project Managers</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
