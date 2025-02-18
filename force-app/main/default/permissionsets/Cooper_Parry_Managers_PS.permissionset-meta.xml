@@ -16474,31 +16474,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>c2g__MultiAccountContact__c.c2g__Company__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__MultiAccountContact__c.c2g__Email__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__MultiAccountContact__c.c2g__Phone__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__MultiAccountContact__c.c2g__PrimaryContact__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__MultiAccountContact__c.c2g__Title__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>c2g__MultiAccountCreditTerms__c.c2g__BaseDate1__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -47770,15 +47745,6 @@
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>c2g__InvoiceGroupingFields__c</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>c2g__MultiAccountContact__c</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>

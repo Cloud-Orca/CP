@@ -253,10 +253,6 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>fferpcore__exp_l10n</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>fferpcore__exp_labHelper</apexClass>
         <enabled>true</enabled>
     </classAccesses>
