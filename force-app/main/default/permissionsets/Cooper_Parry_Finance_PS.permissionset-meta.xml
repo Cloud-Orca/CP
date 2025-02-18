@@ -24732,16 +24732,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>c2g__codaInvoiceLineItem__c.c2g__ShipFrom__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaInvoiceLineItem__c.c2g__ShipTo__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>c2g__codaInvoiceLineItem__c.c2g__StartDate__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -27537,16 +27527,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>c2g__codaPurchaseCreditNoteExpLineItem__c.c2g__ShipFrom__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaPurchaseCreditNoteExpLineItem__c.c2g__ShipTo__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>c2g__codaPurchaseCreditNoteExpLineItem__c.c2g__TaxCode2__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -27738,16 +27718,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaPurchaseCreditNoteLineItem__c.c2g__SetTaxCodetoDefault__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaPurchaseCreditNoteLineItem__c.c2g__ShipFrom__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaPurchaseCreditNoteLineItem__c.c2g__ShipTo__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -28292,16 +28262,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>c2g__codaPurchaseInvoiceExpenseLineItem__c.c2g__ShipFrom__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaPurchaseInvoiceExpenseLineItem__c.c2g__ShipTo__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>c2g__codaPurchaseInvoiceExpenseLineItem__c.c2g__TaxCode2__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -28498,16 +28458,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>c2g__codaPurchaseInvoiceLineItem__c.c2g__SetTaxCodetoDefault__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaPurchaseInvoiceLineItem__c.c2g__ShipFrom__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>c2g__codaPurchaseInvoiceLineItem__c.c2g__ShipTo__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
