@@ -17719,11 +17719,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>c2g__codaBankStatementLineItem__c.c2g__Transaction__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>c2g__codaBankStatementLineItem__c.c2g__UnitOfWork__c</field>
         <readable>true</readable>
     </fieldPermissions>
