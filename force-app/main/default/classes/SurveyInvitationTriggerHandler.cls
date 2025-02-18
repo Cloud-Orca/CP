@@ -122,9 +122,9 @@ public class SurveyInvitationTriggerHandler {
             }
 
 
-            for (SurveyInvitation invitation : invitations) {
+            for (SurveyInvitation invitation : invitations) { 
                 // invitation.ParticipantId
-                if(recentInvitationPerContact.containsKey(invitation.ParticipantId)){
+                if(recentInvitationPerContact.containsKey(invitation.ParticipantId)){ 
                     if(recentInvitationPerContact.get(invitation.ParticipantId).X2nd_Survey_Invitation__c){
                         invitation.X3rd_Survey_Invitation__c = true;
                     }else{
