@@ -17374,21 +17374,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__InterestReceivedKeywords1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__InterestReceivedKeywords2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__codaBankAccount__c.c2g__InterestReceivedKeywords3__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>c2g__codaBankAccount__c.c2g__OwnerCompany__c</field>
         <readable>true</readable>
     </fieldPermissions>
