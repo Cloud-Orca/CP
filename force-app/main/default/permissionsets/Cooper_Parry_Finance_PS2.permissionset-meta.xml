@@ -13422,26 +13422,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>fferpcore__AsyncJobRecord__c.fferpcore__Parameters2__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>fferpcore__AsyncJobRecord__c.fferpcore__Parameters3__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>fferpcore__AsyncJobRecord__c.fferpcore__Parameters4__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>fferpcore__AsyncJobRecord__c.fferpcore__Parameters__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>fferpcore__AsyncJobRecord__c.fferpcore__ProcessDescription__c</field>
         <readable>true</readable>
     </fieldPermissions>
