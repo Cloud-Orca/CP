@@ -88,8 +88,62 @@
         </itemInstances>
         <itemInstances>
             <componentInstance>
-                <componentName>pse:ws_weeklySummary</componentName>
-                <identifier>pse_ws_weeklySummary</identifier>
+                <componentInstanceProperties>
+                    <name>allowAssignments</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>allowMilestones</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>allowProjectTasks</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>editableFieldSetApiName</name>
+                    <value>CT_Out_Of_Scope</value>
+                </componentInstanceProperties>
+                <componentName>pse:tm_timeEntry</componentName>
+                <identifier>pse_tm_timeEntry</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>editableFieldSetApiName</name>
+                    <value>ExpenseHeaderRowEditableColumns</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>editableNotesFieldSetApiName</name>
+                    <value>CT_Expense_Info</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>isAssignmentAllowed</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>isMilestoneAllowed</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>readOnlyFieldSetApiName</name>
+                    <value>ExpenseHeaderRowReadOnlyColumns</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>readOnlyNotesFieldSetApiName</name>
+                    <value>ExpenseNotesFieldsReadOnlyColumns</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showBillableInformation</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>showReimbursementInformation</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentName>pse:em_expenseEntry</componentName>
+                <identifier>pse_em_expenseEntry</identifier>
             </componentInstance>
         </itemInstances>
         <name>region1</name>
@@ -99,51 +153,19 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>alertDescription</name>
-                    <value>Missing Time from last week</value>
+                    <name>cacheAge</name>
+                    <value>1440</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>alertTitle</name>
-                    <value>Missing Time</value>
+                    <name>reportName</name>
+                    <value>My_billable_hours_YTD_y18</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>listViewApiName</name>
-                    <value>psaws__My_Time_Variance_For_Last_Week</value>
+                    <name>showRefreshButton</name>
+                    <value>true</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiCalculation</name>
-                    <value>sum</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiDescription</name>
-                    <value>Hours Missing</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>majorKpiFieldName</name>
-                    <value>psaws__Time_Variance_Difference__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1Calculation</name>
-                    <value>sum</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi1FieldName</name>
-                    <value>pse__Work_Calendar_Hours__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2Calculation</name>
-                    <value>sum</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>minorKpi2FieldName</name>
-                    <value>pse__Total_Hours__c</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>objectApiName</name>
-                    <value>pse__Time_Variance_Detail__c</value>
-                </componentInstanceProperties>
-                <componentName>fferpcore:exp_customAlertCard</componentName>
-                <identifier>fferpcore_exp_customAlertCard</identifier>
+                <componentName>flexipage:reportChart</componentName>
+                <identifier>flexipage_reportChart</identifier>
             </componentInstance>
         </itemInstances>
         <name>region2</name>
@@ -188,6 +210,20 @@
                 <identifier>fferpcore_exp_customAlertCard2</identifier>
             </componentInstance>
         </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>listViewApiName</name>
+                    <value>psaws__My_Active_Assignments</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>objectApiName</name>
+                    <value>pse__Assignment__c</value>
+                </componentInstanceProperties>
+                <componentName>fferpcore:exp_customCountCard</componentName>
+                <identifier>fferpcore_exp_customCountCard</identifier>
+            </componentInstance>
+        </itemInstances>
         <name>region3</name>
         <type>Region</type>
     </flexiPageRegions>
@@ -229,46 +265,6 @@
                 <identifier>fferpcore_exp_customAlertCard3</identifier>
             </componentInstance>
         </itemInstances>
-        <name>region4</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>listViewApiName</name>
-                    <value>psaws__My_Active_Assignments</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>objectApiName</name>
-                    <value>pse__Assignment__c</value>
-                </componentInstanceProperties>
-                <componentName>fferpcore:exp_customCountCard</componentName>
-                <identifier>fferpcore_exp_customCountCard</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>region5</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>listViewApiName</name>
-                    <value>psaws__My_Overdue_Tasks</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>objectApiName</name>
-                    <value>pse__Project_Task_Assignment__c</value>
-                </componentInstanceProperties>
-                <componentName>fferpcore:exp_customCountCard</componentName>
-                <identifier>fferpcore_exp_customCountCard2</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>region6</name>
-        <type>Region</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
@@ -283,67 +279,26 @@
                 <identifier>fferpcore_exp_customCountCard3</identifier>
             </componentInstance>
         </itemInstances>
+        <name>region4</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>region5</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <name>region6</name>
+        <type>Region</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <name>region7</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
-                <componentInstanceProperties>
-                    <name>allowAssignments</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>allowMilestones</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>allowProjectTasks</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>editableFieldSetApiName</name>
-                    <value>CT_Out_Of_Scope</value>
-                </componentInstanceProperties>
-                <componentName>pse:tm_timeEntry</componentName>
-                <identifier>pse_tm_timeEntry</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>editableFieldSetApiName</name>
-                    <value>pse__ExpenseHeaderRowEditableColumns</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>editableNotesFieldSetApiName</name>
-                    <value>CT_Expense_Info</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>isAssignmentAllowed</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>isMilestoneAllowed</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>readOnlyFieldSetApiName</name>
-                    <value>pse__ExpenseHeaderRowReadOnlyColumns</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>readOnlyNotesFieldSetApiName</name>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showBillableInformation</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showReimbursementInformation</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentName>pse:em_expenseEntry</componentName>
-                <identifier>pse_em_expenseEntry</identifier>
+                <componentName>pse:ws_weeklySummary</componentName>
+                <identifier>pse_ws_weeklySummary</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
