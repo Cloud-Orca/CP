@@ -4,7 +4,7 @@
     <assignments>
         <name>Check_Include_In_financials_Checkbox</name>
         <label>Check Include In financials Checkbox</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>1490</locationY>
         <assignmentItems>
             <assignToReference>Get_Milestone.pse__Include_In_Financials__c</assignToReference>
@@ -20,7 +20,7 @@
     <assignments>
         <name>Check_the_Billed_checkbox</name>
         <label>Check the Billed checkbox</label>
-        <locationX>94</locationX>
+        <locationX>226</locationX>
         <locationY>1706</locationY>
         <assignmentItems>
             <assignToReference>Get_Milestone.pse__Billed__c</assignToReference>
@@ -36,7 +36,7 @@
     <assignments>
         <name>Uncheck_Include_In_financials_Checkbox</name>
         <label>Uncheck Include In financials Checkbox</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>1058</locationY>
         <assignmentItems>
             <assignToReference>Get_Milestone.pse__Include_In_Financials__c</assignToReference>
@@ -59,7 +59,7 @@
     <decisions>
         <name>Billed_status</name>
         <label>Billed status</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>242</locationY>
         <defaultConnector>
             <targetReference>Uncheck_Include_In_financials_Checkbox</targetReference>
@@ -75,10 +75,32 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Milestone.pse__Invoiced__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Get_Finance_Public_Group</targetReference>
             </connector>
             <label>Billed</label>
+        </rules>
+        <rules>
+            <name>Billed_and_invoiced</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Milestone.pse__Invoiced__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Error_message_screen_Invoiced</targetReference>
+            </connector>
+            <label>Billed and invoiced</label>
         </rules>
     </decisions>
     <decisions>
@@ -109,7 +131,7 @@
     <decisions>
         <name>Was_billed</name>
         <label>Was billed?</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>1598</locationY>
         <defaultConnector>
             <targetReference>Save_3</targetReference>
@@ -205,7 +227,7 @@
     <recordLookups>
         <name>Get_Milestone</name>
         <label>Get Milestone</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -226,34 +248,45 @@
     <recordUpdates>
         <name>Save_1</name>
         <label>Save 1</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>1166</locationY>
         <connector>
             <targetReference>Actual_Date</targetReference>
         </connector>
+        <faultConnector>
+            <targetReference>Save_Error_Message_Screen</targetReference>
+        </faultConnector>
         <inputReference>Get_Milestone</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Save_2</name>
         <label>Save 2</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>1382</locationY>
         <connector>
             <targetReference>Check_Include_In_financials_Checkbox</targetReference>
         </connector>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Save_Error_Message_Screen</targetReference>
+        </faultConnector>
         <inputReference>Get_Milestone</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Save_3</name>
         <label>Save 3</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>1898</locationY>
+        <faultConnector>
+            <isGoTo>true</isGoTo>
+            <targetReference>Save_Error_Message_Screen</targetReference>
+        </faultConnector>
         <inputReference>Get_Milestone</inputReference>
     </recordUpdates>
     <screens>
         <name>Actual_Date</name>
         <label>Actual Date</label>
-        <locationX>226</locationX>
+        <locationX>358</locationX>
         <locationY>1274</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
@@ -286,8 +319,40 @@
         <showFooter>true</showFooter>
         <showHeader>true</showHeader>
     </screens>
+    <screens>
+        <name>Error_message_screen_Invoiced</name>
+        <label>Error message screen Invoiced</label>
+        <locationX>402</locationX>
+        <locationY>350</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Copy_1_of_ErrorMessage</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 14px;&quot;&gt;No access&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;This milestone in already invoiced and can&apos;t be changed.&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <screens>
+        <name>Save_Error_Message_Screen</name>
+        <label>Save Error Message Screen</label>
+        <locationX>1370</locationX>
+        <locationY>1274</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <fields>
+            <name>Copy_2_of_ErrorMessage</name>
+            <fieldText>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;b style=&quot;font-size: 14px;&quot;&gt;Error&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;An error occurred while saving this milestone. &lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;Error details: &lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;{!$Flow.FaultMessage}&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/p&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
     <start>
-        <locationX>100</locationX>
+        <locationX>232</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Milestone</targetReference>
