@@ -821,7 +821,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Cooper Parry PSA Permission Set</label>
+    <label>zz Depric. Cooper Parry PSA Permission Set</label>
     <objectPermissions>
         <allowCreate>false</allowCreate>
         <allowDelete>false</allowDelete>
