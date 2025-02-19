@@ -2,6 +2,7 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>56.0</apiVersion>
     <decisions>
+        <description>.</description>
         <name>Should_Project_Be_Active_Again</name>
         <label>Should Project Be Active Again</label>
         <locationX>182</locationX>

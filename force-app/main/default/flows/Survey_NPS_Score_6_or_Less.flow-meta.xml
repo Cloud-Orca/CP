@@ -1,12 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>Copy_2_of_Create_a_New_Task_Action</name>
+        <label>Copy 2 of Create a New Task Action</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <actionName>NewTask</actionName>
+        <actionType>quickAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <stringValue>Passive NPS Score follow up</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActivityDate</name>
+            <value>
+                <elementReference>FutureDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhoId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhatId</name>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>NewTask</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Copy_3_of_Create_a_New_Task_Action</name>
+        <label>Copy 3 of Create a New Task Action</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <actionName>NewTask</actionName>
+        <actionType>quickAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <stringValue>Promoter NPS Score follow up</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActivityDate</name>
+            <value>
+                <elementReference>FutureDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhoId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhatId</name>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>NewTask</nameSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Create_a_New_Task_Action</name>
+        <label>Create a New Task Action</label>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
+        <actionName>NewTask</actionName>
+        <actionType>quickAction</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>Subject</name>
+            <value>
+                <stringValue>Detractor NPS Score follow up</stringValue>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>ActivityDate</name>
+            <value>
+                <elementReference>FutureDate</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>OwnerId</name>
+            <value>
+                <elementReference>$Record.OwnerId</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhoId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>WhatId</name>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>NewTask</nameSegment>
+    </actionCalls>
+    <actionCalls>
         <name>Survey_NPS_Score_Greater_than_7</name>
         <label>Survey NPS Score Greater than 7</label>
         <locationX>314</locationX>
         <locationY>431</locationY>
         <actionName>Contact.Survey_NPS_Score_Greater_than_7</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Copy_2_of_Create_a_New_Task_Action</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -23,6 +146,9 @@
         <locationY>431</locationY>
         <actionName>Contact.Survey_NPS_Score_Greater_than_9</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Copy_3_of_Create_a_New_Task_Action</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -39,6 +165,9 @@
         <locationY>431</locationY>
         <actionName>Contact.Survey_NPS_Score_Less_than_6</actionName>
         <actionType>emailAlert</actionType>
+        <connector>
+            <targetReference>Create_a_New_Task_Action</targetReference>
+        </connector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>SObjectRowId</name>
@@ -117,6 +246,11 @@
     </decisions>
     <description>This flow sends a notification to specific internal users depending on a Contact&apos;s survey response score, specifically their NPS score.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>FutureDate</name>
+        <dataType>Date</dataType>
+        <expression>TODAY() + 4</expression>
+    </formulas>
     <interviewLabel>Survey NPS Score 6 or Less {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Survey - NPS Score Internal Notification</label>
     <processMetadataValues>
@@ -160,7 +294,7 @@
             </value>
         </filters>
         <object>Contact</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
