@@ -278,7 +278,7 @@
         <connector>
             <targetReference>Current_NPS_Score_Decision</targetReference>
         </connector>
-        <filterLogic>1 AND 2</filterLogic>
+        <filterLogic>1 AND (2 OR 3)</filterLogic>
         <filters>
             <field>How_likely_is_it_you_would_recommend_CP__c</field>
             <operator>GreaterThanOrEqualTo</operator>
@@ -288,6 +288,13 @@
         </filters>
         <filters>
             <field>How_likely_is_it_you_would_recommend_CP__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Tell_us_why_you_ve_chosen_this_rating__c</field>
             <operator>IsChanged</operator>
             <value>
                 <booleanValue>true</booleanValue>
