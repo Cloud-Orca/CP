@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MutingPermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>c2g__Accounting_Lightning</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>c2g__Billing_Lightning</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>fferpcore__ERP_Common_Concepts</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>fferpcore__ERP_Common_Concepts_Lightning</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>ffr__ActionViews</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>ffr__ActionViewsLightning</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>pse__PS_Enterprise</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>pse__PS_Enterprise_Lightning</application>
+        <visible>true</visible>
+    </applicationVisibilities>
     <label>Cooper Parry Finance part2 Muted2</label>
     <tabSettings>
         <tab>CP_Resource_Management_Workspace</tab>
