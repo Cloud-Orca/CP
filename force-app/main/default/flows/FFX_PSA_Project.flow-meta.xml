@@ -21,7 +21,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Project_Daily_Notes_Required_to_TRUE</targetReference>
+                <targetReference>Update_Bookings</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
@@ -55,7 +55,7 @@
         <name>Is_Project_Not_WAR_Anymore</name>
         <label>Is Project Billable &amp; Changed from Working at Risk?</label>
         <locationX>336</locationX>
-        <locationY>1655</locationY>
+        <locationY>1547</locationY>
         <defaultConnector>
             <targetReference>Stage_Changed</targetReference>
         </defaultConnector>
@@ -94,7 +94,7 @@
         <name>Is_Project_Work_at_Risk</name>
         <label>Is Project Billable &amp; Work at Risk</label>
         <locationX>336</locationX>
-        <locationY>1355</locationY>
+        <locationY>1247</locationY>
         <defaultConnector>
             <targetReference>Is_Project_Not_WAR_Anymore</targetReference>
         </defaultConnector>
@@ -126,7 +126,7 @@
         <name>Stage_Changed</name>
         <label>Stage Changed?</label>
         <locationX>336</locationX>
-        <locationY>1955</locationY>
+        <locationY>1847</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Completed_or_Canceled</name>
@@ -152,6 +152,7 @@
             <label>Completed or Canceled</label>
         </rules>
     </decisions>
+    <description>Update formula &apos;ProjectName&apos;</description>
     <environments>Default</environments>
     <formulas>
         <name>IsNew_Project</name>
@@ -161,8 +162,15 @@
     <formulas>
         <name>ProjectName</name>
         <dataType>String</dataType>
-        <expression>IF({!$Record.pse__Account__r.IsPersonAccount==TRUE}, {!$Record.pse__Account__r.LastName}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})), 
-{!$Record.pse__Account__r.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})))</expression>
+        <expression>IF(
+    {!$Record.pse__Account__r.IsPersonAccount} = TRUE,
+    {!$Record.pse__Account__r.LastName} &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp; TEXT(YEAR({!$Record.CT_Year_End_Date__c})),
+    IF(
+        LEN({!$Record.pse__Account__r.Name} &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name}) &gt; 80,
+        LEFT({!$Record.pse__Account__r.Name} &amp; &apos; - &apos; &amp; &apos;PC&apos;, 80 - LEN(TEXT(YEAR({!$Record.CT_Year_End_Date__c}))) - 3) &amp; &apos; - &apos; &amp; TEXT(YEAR({!$Record.CT_Year_End_Date__c})),
+        {!$Record.pse__Account__r.Name} &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp; TEXT(YEAR({!$Record.CT_Year_End_Date__c}))
+    )
+)</expression>
     </formulas>
     <interviewLabel>FFX PSA Project {!$Flow.CurrentDateTime}</interviewLabel>
     <label>FFX PSA Project</label>
@@ -282,7 +290,7 @@
         <name>Update_Bookings</name>
         <label>Update Bookings</label>
         <locationX>50</locationX>
-        <locationY>1079</locationY>
+        <locationY>971</locationY>
         <connector>
             <targetReference>Is_Project_Work_at_Risk</targetReference>
         </connector>
@@ -349,7 +357,7 @@
         <name>Update_Exclude_from_Billing_to_FALSE</name>
         <label>Update Exclude from Billing to FALSE</label>
         <locationX>204</locationX>
-        <locationY>1763</locationY>
+        <locationY>1655</locationY>
         <connector>
             <targetReference>Stage_Changed</targetReference>
         </connector>
@@ -365,7 +373,7 @@
         <name>Update_Exclude_from_Billing_to_TRUE</name>
         <label>Update Exclude from Billing to TRUE</label>
         <locationX>204</locationX>
-        <locationY>1463</locationY>
+        <locationY>1355</locationY>
         <connector>
             <targetReference>Is_Project_Not_WAR_Anymore</targetReference>
         </connector>
@@ -378,39 +386,11 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Project_Daily_Notes_Required_to_TRUE</name>
-        <label>Update Project Daily Notes Required to TRUE</label>
-        <locationX>50</locationX>
-        <locationY>971</locationY>
-        <connector>
-            <targetReference>Update_Bookings</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>pse__Allow_Self_Staffing__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>pse__Daily_Timecard_Notes_Required__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>pse__Include_In_Forecasting__c</field>
-            <value>
-                <booleanValue>true</booleanValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
-    </recordUpdates>
-    <recordUpdates>
         <description>Sets Active to FALSE, Closed for Time Entry = TRUE, Closed for Expense Entry = TRUE</description>
         <name>Update_Project_fields_to_Close</name>
         <label>Update Project fields to Close</label>
         <locationX>204</locationX>
-        <locationY>2063</locationY>
+        <locationY>1955</locationY>
         <inputAssignments>
             <field>pse__Closed_for_Expense_Entry__c</field>
             <value>
