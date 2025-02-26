@@ -152,6 +152,7 @@
             <label>Completed or Canceled</label>
         </rules>
     </decisions>
+    <description>Update formula &apos;ProjectName&apos;</description>
     <environments>Default</environments>
     <formulas>
         <name>IsNew_Project</name>
@@ -161,8 +162,15 @@
     <formulas>
         <name>ProjectName</name>
         <dataType>String</dataType>
-        <expression>IF({!$Record.pse__Account__r.IsPersonAccount==TRUE}, {!$Record.pse__Account__r.LastName}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})), 
-{!$Record.pse__Account__r.Name}   &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp;  TEXT(YEAR({!$Record.CT_Year_End_Date__c})))</expression>
+        <expression>IF(
+    {!$Record.pse__Account__r.IsPersonAccount} = TRUE,
+    {!$Record.pse__Account__r.LastName} &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp; TEXT(YEAR({!$Record.CT_Year_End_Date__c})),
+    IF(
+        LEN({!$Record.pse__Account__r.Name} &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name}) &gt; 80,
+        LEFT({!$Record.pse__Account__r.Name} &amp; &apos; - &apos; &amp; &apos;PC&apos;, 80 - LEN(TEXT(YEAR({!$Record.CT_Year_End_Date__c}))) - 3) &amp; &apos; - &apos; &amp; TEXT(YEAR({!$Record.CT_Year_End_Date__c})),
+        {!$Record.pse__Account__r.Name} &amp; &apos; - &apos; &amp; {!$Record.pse__Practice__r.Name} &amp; &apos; - &apos; &amp; TEXT(YEAR({!$Record.CT_Year_End_Date__c}))
+    )
+)</expression>
     </formulas>
     <interviewLabel>FFX PSA Project {!$Flow.CurrentDateTime}</interviewLabel>
     <label>FFX PSA Project</label>
