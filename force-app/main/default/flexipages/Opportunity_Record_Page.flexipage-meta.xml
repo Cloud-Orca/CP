@@ -214,16 +214,6 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Est_Close_Date__c</fieldItem>
-                <identifier>RecordEst_Close_Date_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
                     <value>required</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.Amount</fieldItem>
@@ -248,6 +238,16 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.CP_Confidential_Area__c</fieldItem>
                 <identifier>RecordCP_Confidential_Area_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CP_Office__c</fieldItem>
+                <identifier>RecordCP_Office_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-f31cfb4a-cff9-4183-ab78-8e77ec6894f0</name>
