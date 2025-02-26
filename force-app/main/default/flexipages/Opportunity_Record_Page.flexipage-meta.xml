@@ -78,16 +78,6 @@
                         <valueListItems>
                             <value>Opportunity.Manage_Opportunity_Team</value>
                         </valueListItems>
-                        <valueListItems>
-                            <value>Opportunity.CP_Digital</value>
-                            <visibilityRule>
-                                <criteria>
-                                    <leftValue>{!Record.Account.Did_you_ask_about_CRM_ERP__c}</leftValue>
-                                    <operator>EQUAL</operator>
-                                    <rightValue>No</rightValue>
-                                </criteria>
-                            </visibilityRule>
-                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
@@ -649,130 +639,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.What_CRM_do_you_use__c</fieldItem>
-                <identifier>RecordWhat_CRM_do_you_use_cField</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Account.What_CRM_do_you_use__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Don&apos;t Know</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Account.Did_you_ask_about_CRM_ERP__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>No</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.What_Finance_system_do_you_use__c</fieldItem>
-                <identifier>RecordWhat_Finance_system_do_you_use_cField</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Account.What_Finance_system_do_you_use__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Don&apos;t Know</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Account.Did_you_ask_about_CRM_ERP__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>No</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-c5be4177-3e18-463f-b7ad-2b74c7d6a52c</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Who_is_the_best_contact_for_the_CRM__c</fieldItem>
-                <identifier>RecordWho_is_the_best_contact_for_the_CRM_cField</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Account.What_CRM_do_you_use__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Don&apos;t Know</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Account.Did_you_ask_about_CRM_ERP__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>No</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Best_contact_for_the_finance_system__c</fieldItem>
-                <identifier>RecordBest_contact_for_the_finance_system_cField</identifier>
-                <visibilityRule>
-                    <booleanFilter>1 OR 2</booleanFilter>
-                    <criteria>
-                        <leftValue>{!Record.Account.What_Finance_system_do_you_use__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>Don&apos;t Know</rightValue>
-                    </criteria>
-                    <criteria>
-                        <leftValue>{!Record.Account.Did_you_ask_about_CRM_ERP__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>No</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </fieldInstance>
-        </itemInstances>
-        <name>Facet-77f9c2fa-ed89-4cb6-b5fd-4dabbadb7a69</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-c5be4177-3e18-463f-b7ad-2b74c7d6a52c</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column15</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-77f9c2fa-ed89-4cb6-b5fd-4dabbadb7a69</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:column</componentName>
-                <identifier>flexipage_column16</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-49663954-21b8-43cd-b975-10b468075128</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.Loss_Reason__c</fieldItem>
                 <identifier>RecordLoss_Reason_cField</identifier>
             </fieldInstance>
@@ -1099,31 +965,6 @@
                         <leftValue>{!Record.Opportunity_Type_Area__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>PC Compliance</rightValue>
-                    </criteria>
-                </visibilityRule>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>columns</name>
-                    <value>Facet-49663954-21b8-43cd-b975-10b468075128</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>horizontalAlignment</name>
-                    <value>false</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>label</name>
-                    <value>CP Digital</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:fieldSection</componentName>
-                <identifier>flexipage_fieldSection12</identifier>
-                <visibilityRule>
-                    <criteria>
-                        <leftValue>{!Record.Account.Did_you_ask_about_CRM_ERP__c}</leftValue>
-                        <operator>EQUAL</operator>
-                        <rightValue>No</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
