@@ -20,11 +20,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Opportunity.OriginalProject__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>c2g__codaInvoiceLineItem__c.cer_Milestone_Name__c</field>
         <readable>true</readable>
@@ -1270,7 +1265,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
-    <label>Cooper Parry Accounting Permission Set</label>
+    <label>zz Depric. Cooper Parry Accounting Permission Set</label>
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>true</allowDelete>
