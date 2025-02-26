@@ -7,7 +7,6 @@
     <customButtons>pse__Project_Billing</customButtons>
     <customButtons>pse__View_Unfilled_Resource_Requests</customButtons>
     <customButtons>pse__Run_Revenue_Forecast</customButtons>
-    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -24,7 +23,7 @@
                 <field>Name</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>pse__Account__c</field>
             </layoutItems>
             <layoutItems>
@@ -92,7 +91,7 @@
                 <field>CT_Total_Submitted_Hours_Bill_Rate__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>CT_Year_End_Date__c</field>
             </layoutItems>
             <layoutItems>
@@ -218,7 +217,7 @@
                 <field>CurrencyIsoCode</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>pse__Start_Date__c</field>
             </layoutItems>
             <layoutItems>
@@ -226,7 +225,7 @@
                 <field>pse__Baseline_Start_Date__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>pse__End_Date__c</field>
             </layoutItems>
             <layoutItems>
@@ -238,7 +237,7 @@
                 <field>pse__Region__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>pse__Practice__c</field>
             </layoutItems>
             <layoutItems>
