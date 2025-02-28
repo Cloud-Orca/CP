@@ -75,7 +75,9 @@
     <formulas>
         <name>F_OppName</name>
         <dataType>String</dataType>
-        <expression>{!$Record.Account.Name} + &quot; - &quot; + TEXT({!$Record.Opportunity_Area__c})</expression>
+        <expression>IF({!$Record.Account.IsPersonAccount} = false, 
+{!$Record.Account.Name} + &quot; - &quot; + TEXT({!$Record.Opportunity_Area__c}), 
+{!$Record.Account.FirstName} + &quot; &quot; +{!$Record.Account.LastName} + &quot; - &quot; + TEXT({!$Record.Opportunity_Area__c}))</expression>
     </formulas>
     <formulas>
         <name>renewalOppName_formula</name>
