@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>New</masterLabel>
+    <openType>noSidebar</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/lightning/o/pse__Proj__c/new?defaultFieldValues=
+ffpsai__ServicesProduct__c=01tJ5000000MJZRIA4,
+pse__Is_Billable__c=true,
+pse__Allow_Expenses_Without_Assignment__c=true,
+pse__Allow_Timecards_Without_Assignment__c=true</url>
+</WebLink>
