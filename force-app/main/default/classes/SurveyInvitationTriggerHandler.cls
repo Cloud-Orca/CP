@@ -111,7 +111,7 @@ public class SurveyInvitationTriggerHandler {
         }
         
         if(!contactIds.isEmpty()){
-            for (SurveyInvitation childInvitation : [SELECT Id, Name, ParticipantId, CreatedDate, X2nd_Survey_Invitation__c FROM SurveyInvitation WHERE ParticipantId IN :contactIds AND Created_Date_Custom__c = LAST_N_DAYS:7 ORDER BY CreatedDate DESC]) {
+            for (SurveyInvitation childInvitation : [SELECT Id, Name, ParticipantId, CreatedDate, X2nd_Survey_Invitation__c FROM SurveyInvitation WHERE ParticipantId IN :contactIds AND CreatedDate = LAST_N_DAYS:7 ORDER BY CreatedDate DESC]) {
                 if(recentInvitationPerContact.containsKey(childInvitation.ParticipantId)){
                     if(recentInvitationPerContact.get(childInvitation.ParticipantId).CreatedDate < childInvitation.CreatedDate){
                         recentInvitationPerContact.put(childInvitation.ParticipantId, childInvitation);
