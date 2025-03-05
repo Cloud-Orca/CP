@@ -2289,8 +2289,8 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
                 <name>BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section24_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>aTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;1.The type of non-audit service giving as much detail as possible, including the fee level? &lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>auditservicesdisplaytext</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;When adding non-audit services to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4124,8 +4124,8 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
                 <name>View_of_BUSINESS_TRUSTS_AND_NON_PERSONAL_CLIENTS_Section23_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Copy_1_of_aTxt1</name>
-                    <fieldText>&lt;p&gt;&lt;span style=&quot;font-size: 10pt; font-family: Arial, sans-serif;&quot;&gt;1.The type of non-audit service giving as much detail as possible, including the fee level? &lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>addingnonauditservicesdisplaytext</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;When adding non-audit services to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
