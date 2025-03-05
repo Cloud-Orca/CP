@@ -2290,7 +2290,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>auditservicesdisplaytext</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;When adding non-audit services to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;When adding non-audit services to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -4169,7 +4169,7 @@ TEXT({!Date}) &lt;&gt; &quot;&quot;,
                 <fieldType>Region</fieldType>
                 <fields>
                     <name>addingnonauditservicesdisplaytext</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;When adding non-audit services to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;</fieldText>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);&quot;&gt;When adding non-audit services to an Audit client please complete the questions below.&lt;/strong&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
