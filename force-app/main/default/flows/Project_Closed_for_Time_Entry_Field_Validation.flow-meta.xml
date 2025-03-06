@@ -1,60 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
-    <assignments>
-        <name>Add_to_Collection_LC</name>
-        <label>Add to Collection (LC)</label>
-        <locationX>50</locationX>
-        <locationY>755</locationY>
-        <assignmentItems>
-            <assignToReference>varGroupMemberCollection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Get_Lifecycle_Coordinator_Group_Members</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_Project_Manager_Group</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Add_to_Collection_Project_Managers</name>
-        <label>Add to Collection (Project Managers)</label>
-        <locationX>50</locationX>
-        <locationY>1463</locationY>
-        <assignmentItems>
-            <assignToReference>varGroupMemberCollection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Get_Project_Managers_Group_Members</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Get_Project_Partners_Group</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Add_to_Collection_Project_Partners</name>
-        <label>Add to Collection (Project Partners)</label>
-        <locationX>50</locationX>
-        <locationY>2171</locationY>
-        <assignmentItems>
-            <assignToReference>varGroupMemberCollection</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <elementReference>Get_Project_Partners_Group_Members</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Collection_is_not_Null</targetReference>
-        </connector>
-    </assignments>
     <customErrors>
         <description>Validation that current user is not allowed to update the account name</description>
         <name>Error_Message</name>
         <label>Error Message</label>
-        <locationX>468</locationX>
-        <locationY>2771</locationY>
+        <locationX>182</locationX>
+        <locationY>2171</locationY>
         <customErrorMessages>
             <errorMessage>You do not have permission to update this field.</errorMessage>
             <fieldSelection>pse__Closed_for_Time_Entry__c</fieldSelection>
@@ -62,39 +14,10 @@
         </customErrorMessages>
     </customErrors>
     <decisions>
-        <name>Collection_is_not_Null</name>
-        <label>Collection is not Null?</label>
-        <locationX>336</locationX>
-        <locationY>2447</locationY>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes3</name>
-            <conditionLogic>or</conditionLogic>
-            <conditions>
-                <leftValueReference>varGroupMemberCollection</leftValueReference>
-                <operator>IsEmpty</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>varGroupMemberCollection</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Loop_on_Each_Member</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
         <description>Check if group exist</description>
         <name>Copy_2_of_Found_Group</name>
         <label>Found Group?</label>
-        <locationX>336</locationX>
+        <locationX>248</locationX>
         <locationY>1139</locationY>
         <defaultConnector>
             <targetReference>Get_Project_Partners_Group</targetReference>
@@ -120,7 +43,7 @@
         <description>Check if there are existing members</description>
         <name>Copy_2_of_Found_Member</name>
         <label>Found Member?</label>
-        <locationX>182</locationX>
+        <locationX>94</locationX>
         <locationY>1355</locationY>
         <defaultConnector>
             <targetReference>Get_Project_Partners_Group</targetReference>
@@ -136,9 +59,6 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Add_to_Collection_Project_Managers</targetReference>
-            </connector>
             <label>Yes</label>
         </rules>
     </decisions>
@@ -146,11 +66,8 @@
         <description>Check if group exist</description>
         <name>Copy_3_of_Found_Group</name>
         <label>Found Group?</label>
-        <locationX>336</locationX>
+        <locationX>248</locationX>
         <locationY>1847</locationY>
-        <defaultConnector>
-            <targetReference>Collection_is_not_Null</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Copy_4_of_Yes</name>
@@ -172,10 +89,10 @@
         <description>Check if there are existing members</description>
         <name>Copy_3_of_Found_Member</name>
         <label>Found Member?</label>
-        <locationX>182</locationX>
+        <locationX>50</locationX>
         <locationY>2063</locationY>
         <defaultConnector>
-            <targetReference>Collection_is_not_Null</targetReference>
+            <targetReference>Error_Message</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -188,35 +105,6 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Add_to_Collection_Project_Partners</targetReference>
-            </connector>
-            <label>Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <description>Check if current user is added, if added, don&apos;t trigger the validation</description>
-        <name>Current_User_Found</name>
-        <label>Current User Found?</label>
-        <locationX>380</locationX>
-        <locationY>2663</locationY>
-        <defaultConnector>
-            <targetReference>Error_Message</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Yes</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Loop_on_Each_Member.UserOrGroupId</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <elementReference>$User.Id</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Loop_on_Each_Member</targetReference>
-            </connector>
             <label>Yes</label>
         </rules>
     </decisions>
@@ -224,7 +112,7 @@
         <description>Check if group exist</description>
         <name>Found_Group</name>
         <label>Found Group?</label>
-        <locationX>336</locationX>
+        <locationX>248</locationX>
         <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Get_Project_Manager_Group</targetReference>
@@ -250,7 +138,7 @@
         <description>Check if there are existing members</description>
         <name>Found_Member</name>
         <label>Found Member?</label>
-        <locationX>182</locationX>
+        <locationX>94</locationX>
         <locationY>647</locationY>
         <defaultConnector>
             <targetReference>Get_Project_Manager_Group</targetReference>
@@ -260,33 +148,18 @@
             <name>Yes2</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Get_Lifecycle_Coordinator_Group</leftValueReference>
+                <leftValueReference>Get_Lifecycle_Coordinator_Group_Members</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>Add_to_Collection_LC</targetReference>
-            </connector>
             <label>Yes</label>
         </rules>
     </decisions>
     <environments>Default</environments>
     <interviewLabel>Project - {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Project - Closed for Time Entry Field Validation</label>
-    <loops>
-        <description>Loop on each member</description>
-        <name>Loop_on_Each_Member</name>
-        <label>Loop on Each Member</label>
-        <locationX>204</locationX>
-        <locationY>2555</locationY>
-        <collectionReference>varGroupMemberCollection</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
-        <nextValueConnector>
-            <targetReference>Current_User_Found</targetReference>
-        </nextValueConnector>
-    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -310,7 +183,7 @@
         <description>Get Risk Team</description>
         <name>Get_Lifecycle_Coordinator_Group</name>
         <label>Get Lifecycle Coordinator Group</label>
-        <locationX>336</locationX>
+        <locationX>248</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -339,7 +212,7 @@
         <description>Get all members of the team</description>
         <name>Get_Lifecycle_Coordinator_Group_Members</name>
         <label>Get Lifecycle Coordinator Group Members</label>
-        <locationX>182</locationX>
+        <locationX>94</locationX>
         <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -353,7 +226,14 @@
                 <elementReference>Get_Lifecycle_Coordinator_Group.Id</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>GroupMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
@@ -361,7 +241,7 @@
         <description>Get Project Manager Team</description>
         <name>Get_Project_Manager_Group</name>
         <label>Get Project Manager Group</label>
-        <locationX>336</locationX>
+        <locationX>248</locationX>
         <locationY>1031</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -390,7 +270,7 @@
         <description>Get all members of the team</description>
         <name>Get_Project_Managers_Group_Members</name>
         <label>Get Project Managers Group Members</label>
-        <locationX>182</locationX>
+        <locationX>94</locationX>
         <locationY>1247</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -404,7 +284,14 @@
                 <elementReference>Get_Project_Manager_Group.Id</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>GroupMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
@@ -412,7 +299,7 @@
         <description>Get Project Partners Team</description>
         <name>Get_Project_Partners_Group</name>
         <label>Get Project Partners Group</label>
-        <locationX>336</locationX>
+        <locationX>248</locationX>
         <locationY>1739</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -441,7 +328,7 @@
         <description>Get all members of the team</description>
         <name>Get_Project_Partners_Group_Members</name>
         <label>Get Project Partners Group Members</label>
-        <locationX>182</locationX>
+        <locationX>50</locationX>
         <locationY>1955</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -455,12 +342,19 @@
                 <elementReference>Get_Project_Partners_Group.Id</elementReference>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$User.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
         <object>GroupMember</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>210</locationX>
+        <locationX>122</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Lifecycle_Coordinator_Group</targetReference>

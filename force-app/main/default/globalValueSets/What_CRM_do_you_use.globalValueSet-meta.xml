@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Salesforce</fullName>
+        <default>false</default>
+        <label>Salesforce</label>
+    </customValue>
+    <customValue>
+        <fullName>Microsoft</fullName>
+        <default>false</default>
+        <label>Microsoft</label>
+    </customValue>
+    <customValue>
+        <fullName>Hubspot</fullName>
+        <default>false</default>
+        <label>Hubspot</label>
+    </customValue>
+    <customValue>
+        <fullName>Zoho</fullName>
+        <default>false</default>
+        <label>Zoho</label>
+    </customValue>
+    <customValue>
+        <fullName>Sugar</fullName>
+        <default>false</default>
+        <label>Sugar</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <customValue>
+        <fullName>Don&apos;t Know</fullName>
+        <default>false</default>
+        <label>Don&apos;t Know</label>
+    </customValue>
+    <masterLabel>What CRM do you use?</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
