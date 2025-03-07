@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CRM_Finance_System_Populated__c</fullName>
+    <externalId>false</externalId>
+    <formula>OR(
+  ISBLANK(Who_is_the_best_contact_for_the_CRM__c ),
+  ISBLANK(Best_contact_for_the_finance_system__c)
+ )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>CRM &amp; Finance System Populated</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>
