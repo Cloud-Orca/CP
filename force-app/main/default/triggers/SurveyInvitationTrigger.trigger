@@ -1,4 +1,4 @@
-trigger SurveyInvitationTrigger on SurveyInvitation (before insert, after update) {
+trigger SurveyInvitationTrigger on SurveyInvitation (before insert, after insert, after update) {
 
     if(trigger.isBefore){
         if(trigger.isInsert){
@@ -8,6 +8,10 @@ trigger SurveyInvitationTrigger on SurveyInvitation (before insert, after update
     }
 
     if(trigger.isAfter){
+        if(trigger.isInsert){
+            SurveyInvitationTriggerHandler.onAfterInsert(trigger.new);
+        }
+
         if(trigger.isUpdate){
             SurveyInvitationTriggerHandler.onAfterUpdate(trigger.new, trigger.oldMap);
         }
