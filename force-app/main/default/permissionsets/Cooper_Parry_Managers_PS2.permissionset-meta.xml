@@ -20838,7 +20838,7 @@
     <objectPermissions>
         <allowCreate>true</allowCreate>
         <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
+        <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>Contact</object>
@@ -22903,6 +22903,10 @@
     </tabSettings>
     <tabSettings>
         <tab>standard-Dashboard</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>standard-SemanticModel</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
