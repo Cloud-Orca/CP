@@ -80,10 +80,16 @@
                 <componentName>flexipage:visualforcePage</componentName>
                 <identifier>flexipage_visualforcePage</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Email</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Note</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -105,10 +111,16 @@
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection3</identifier>
                 <visibilityRule>
+                    <booleanFilter>1 AND 2</booleanFilter>
                     <criteria>
                         <leftValue>{!Record.Type__c}</leftValue>
                         <operator>NE</operator>
                         <rightValue>Email</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Type__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Note</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
