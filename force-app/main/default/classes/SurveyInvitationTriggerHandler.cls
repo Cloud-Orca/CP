@@ -4,8 +4,38 @@ public class SurveyInvitationTriggerHandler {
         markInvitationCheckbox(invitations);
     }
 
+    public static void onAfterInsert(List<SurveyInvitation> invitations){
+        populateLastAdvocacySendDate(invitations);
+    }
+
     public static void onAfterUpdate(List<SurveyInvitation> invitations, Map<Id, SurveyInvitation> oldInvitations){
         populateNPScore(invitations, oldInvitations);
+    }
+
+    public static void populateLastAdvocacySendDate(List<SurveyInvitation> invitations){
+        Map<Id, SurveyInvitation> contactIdToInvitationMap = new Map<Id, SurveyInvitation>();
+        for(SurveyInvitation inv : invitations){
+            if(inv.ParticipantId != null && inv.ParticipantId.getSObjectType() == Contact.sObjectType){
+                Boolean isPut = !contactIdToInvitationMap.containsKey(inv.ParticipantId) ? true : (contactIdToInvitationMap.get(inv.ParticipantId).CreatedDate < inv.CreatedDate);
+
+                if(isPut){
+                    contactIdToInvitationMap.put(inv.ParticipantId, inv);
+                }
+            }
+        }
+
+        if(!contactIdToInvitationMap.isEmpty()){
+            List<Contact> updateContacts = new List<Contact>();
+            for(Id conId : contactIdToInvitationMap.keySet()){
+                Contact updCon = new Contact(Id=conId);
+                updCon.Last_Advocacy_Survey_Send_Date__c = Date.valueOf(contactIdToInvitationMap.get(conId).CreatedDate);
+                updateContacts.add(updCon);
+            }
+
+            if(!updateContacts.isEmpty()){
+                update updateContacts;
+            }
+        }
     }
 
     public static void populateNPScore(List<SurveyInvitation> invitations, Map<Id, SurveyInvitation> oldInvitations){
