@@ -19041,11 +19041,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>c2g__StatementRule__c.c2g__UseCongaAttachments__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>c2g__Statement__c.c2g__ApexJobId__c</field>
         <readable>true</readable>
@@ -56131,6 +56126,10 @@
     </tabSettings>
     <tabSettings>
         <tab>standard-Dashboard</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>standard-SemanticModel</tab>
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
