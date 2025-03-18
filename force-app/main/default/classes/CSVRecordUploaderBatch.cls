@@ -1,3 +1,6 @@
+/**
+ * Created By: Clifford U
+ */
 public class CSVRecordUploaderBatch implements Database.Batchable<String>, Database.Stateful{
     private List<string> csvRows;
     private string obj;
@@ -6,7 +9,7 @@ public class CSVRecordUploaderBatch implements Database.Batchable<String>, Datab
     private Boolean isFirstBatch = true;
     public CSVRecordUploaderBatch(List<String> csvData, String obj){
         this.csvRows = csvData;
-        System.debug('this.csvRows' + this.csvRows);
+        
         this.obj = obj;
         this.headers = csvData[0].split(',');
     }
@@ -19,9 +22,55 @@ public class CSVRecordUploaderBatch implements Database.Batchable<String>, Datab
         Map<String, Id> regNumAcc = new Map<String, Id>();
         Map<String, Id> dataOriginationMap = new Map<String, Id>();
         
-        // for (String row : rows) {
-        //     System.debug('row: ' + row);
-        // }
+        if(obj == 'Contact'){
+            List<String> regNumbers = new List<String>();
+            for (Integer i = 1; i < rows.size(); i++) {
+                String csvLine = CSVRecordUploaderController.removeCommaValueCSV(rows[i]);
+                List<String> rowValues = csvLine.split(',');
+                for (Integer j = 0; j < rowValues.size(); j++) {
+                    String columnHeader = headers[j];
+                    if(columnHeader == 'Registered Number'){
+                        String regNum = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');
+                        regNumbers.add( regNum );
+                    }
+                }
+            }
+            if(!regNumbers.isEmpty()){
+                List<Account> parentAccounts = [SELECT Id, Beauhurst_ID__c FROM Account WHERE Beauhurst_ID__c IN:regNumbers];
+                if(!parentAccounts.isEmpty()){
+                    for (Account parentAccount : parentAccounts) {
+                        regNumAcc.put(parentAccount.Beauhurst_ID__c, parentAccount.Id);
+                    }    
+                }
+            }
+        }
+
+
+        if(obj == 'Account'){
+            List<String> dataOriginationNames = new List<String>();
+            for (Integer i = 1; i < rows.size(); i++) {
+                String csvLine = CSVRecordUploaderController.removeCommaValueCSV(rows[i]);
+                List<String> rowValues = csvLine.split(',');
+                for (Integer j = 0; j < rowValues.size(); j++) {
+                    String columnHeader = headers[j];
+                    if(columnHeader == 'Data Origination ID'){
+                        String regNum = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');
+                        dataOriginationNames.add( regNum );
+                    }
+                }
+            }
+
+            if(!dataOriginationNames.isEmpty()){
+                List<Data_Origination__c> dataOr = [SELECT Id, Name FROM Data_Origination__c WHERE Name IN :dataOriginationNames];
+                if (dataOr.size() > 0) {
+                    for (Data_Origination__c dtOr : dataOr) {
+                        if(!dataOriginationMap.containsKey(dtOr.Name)){
+                            dataOriginationMap.put(dtOr.Name, dtOr.Id);
+                        }
+                    }
+                }
+            }
+        }
 
         Map<String, Object> accDynamic = CSVRecordUploaderController.fieldColumnMapping(uploadAccountMapping, rows, this.headers, obj, regNumAcc, dataOriginationMap, this.isFirstBatch);
         String errorFile = (String)accDynamic.get('errorFile');
@@ -37,11 +86,11 @@ public class CSVRecordUploaderBatch implements Database.Batchable<String>, Datab
         String successCSVRows = '';
         String errorCSVRows = '';
         if (res.containsKey('successFile')) {
-            successHeader = res.get('successFile').replace('\r\n', '\n').replace('\r', '\n').split('\n')[0];
+            successHeader = res.get('successFile').split('\n')[0];
             successCSVRows = res.get('successFile').remove(res.get('successFile').mid(0, res.get('successFile').indexOf('\n')+1));
         }
         if (res.containsKey('errorFile')) {
-            errorHeader = res.get('errorFile').replace('\r\n', '\n').replace('\r', '\n').split('\n')[0];
+            errorHeader = res.get('errorFile').split('\n')[0];
             errorCSVRows = res.get('errorFile').remove(res.get('errorFile').mid(0, res.get('errorFile').indexOf('\n')+1));
         }
 
@@ -68,20 +117,13 @@ public class CSVRecordUploaderBatch implements Database.Batchable<String>, Datab
 
     public void finish(Database.BatchableContext info){
         // Send email here
-        System.debug(this.result.get('csvError'));
-        String errorCsv = null;
-        String successCsv = null;
-        if(this.result.get('csvError').replace('\r\n', '\n').replace('\r', '\n').split('\n').size() > 1){
-            errorCsv = this.result.get('csvError');
-        }
-        if (this.result.get('csvSuccess').replace('\r\n', '\n').replace('\r', '\n').split('\n').size() > 1) {
-            successCsv = this.result.get('csvSuccess');
-        }
+        String emailAddress = UserInfo.getUserEmail();
+        System.debug('emailAddress: ' + emailAddress);
         CSVRecordUploaderController.sendEmail('iamclifford321@gmail.com', 
                                                 'Record Upload Complete', 
-                                                'Bulk Upload completed, please see the attached CSV file!', 
-                                                successCsv, 
-                                                errorCsv);
+                                                'Bulk Upload completed, please see the attached CSV file!',
+                                                this.result.get('csvSuccess'), 
+                                                this.result.get('csvError'));
     }
 
 }
