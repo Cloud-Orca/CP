@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>V1_Restrict_Account_Name_Edit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT($Setup.Org_Wide_Settings__c.Disable_Validation_Rules__c),
+ISCHANGED(Name),
+OR(
+TEXT(Type) = &apos;Client&apos;,
+TEXT(Type) = &apos;Client - Dormant&apos;,
+TEXT(Type) = &apos;Lost Client&apos;,
+TEXT(Type) = &apos;Inactive&apos;				
+),
+NOT(
+OR(
+$Profile.Name = &quot;System Administrator&quot;,
+$User.FirstName = &quot;Alice&quot; &amp;&amp; $User.LastName = &quot;Fidler&quot;,
+$User.FirstName = &quot;Caroline&quot; &amp;&amp; $User.LastName = &quot;Gray&quot;,
+$User.FirstName = &quot;Ginnie&quot; &amp;&amp; $User.LastName = &quot;Collier&quot;,
+$User.FirstName = &quot;Jo&quot; &amp;&amp; $User.LastName = &quot;Stephens&quot;,
+$User.FirstName = &quot;Joanne&quot; &amp;&amp; $User.LastName = &quot;Blenkiron&quot;,
+$User.FirstName = &quot;Maria&quot; &amp;&amp; $User.LastName = &quot;Zheleva&quot;,
+$User.FirstName = &quot;Michelle&quot; &amp;&amp; $User.LastName = &quot;McDonald&quot;,
+$User.FirstName = &quot;Mike&quot; &amp;&amp; $User.LastName = &quot;Joy&quot;,
+$User.FirstName = &quot;Roy&quot; &amp;&amp; $User.LastName = &quot;Dennis&quot;,
+$User.FirstName = &quot;Simon&quot; &amp;&amp; $User.LastName = &quot;Atkins&quot;,
+$User.FirstName = &quot;Uygar&quot; &amp;&amp; $User.LastName = &quot;Hacet&quot;
+)
+)
+)</errorConditionFormula>
+    <errorDisplayField>CT_Account_access__c</errorDisplayField>
+    <errorMessage>Client Name cannot be modified. Please contact your system administrator</errorMessage>
+</ValidationRule>
