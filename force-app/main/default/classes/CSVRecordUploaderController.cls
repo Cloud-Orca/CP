@@ -1,6 +1,8 @@
+/**
+ * Created by: Clifford U.
+ */
 public with sharing class CSVRecordUploaderController {
     
-
     /**
     * @description: counts the number of rows a given csv content has
     * @param: (String) content of the csv file
@@ -15,83 +17,16 @@ public with sharing class CSVRecordUploaderController {
     
 
     @AuraEnabled
-    public static Map<String, String> createRecord(String csvData, String obj) {
-        
-        Map<String, String> result = new Map<String, String>();
+    public static void createRecord(String csvData, String obj) {
         csvData = csvData.replace('\r\n', '\n').replace('\r', '\n');
         List<String> rows = csvData.split('\n');
-        Database.executeBatch(new CSVRecordUploaderBatch(rows, obj), 150);
-        return result;
-
-
-        // List<String> headers = rows[0].split(',');
-        // List<Uploader_Mapping__mdt> uploadAccountMapping = [SELECT Column_Name__c, Field_API_Name__c, Object_Name__c FROM Uploader_Mapping__mdt WHERE (Object_Name__c  = :obj OR Object_Name__c  = :obj.toLowerCase()) AND Column_Name__c IN :headers];
-        // Map<String, Id> regNumAcc = new Map<String, Id>();
-        // if(obj == 'Contact'){
-        //     List<String> regNumbers = new List<String>();
-        //     for (Integer i = 1; i < rows.size(); i++) {
-        //         String csvLine = removeCommaValueCSV(rows[i]);
-        //         List<String> rowValues = csvLine.split(',');
-        //         for (Integer j = 0; j < rowValues.size(); j++) {
-        //             String columnHeader = headers[j];
-        //             if(columnHeader == 'Registered Number'){
-        //                 String regNum = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');
-        //                 regNumbers.add( regNum );
-        //             }
-        //         }
-        //     }
-        //     if(!regNumbers.isEmpty()){
-        //         List<Account> parentAccounts = [SELECT Id, Beauhurst_ID__c FROM Account WHERE Beauhurst_ID__c IN:regNumbers];
-        //         if(!parentAccounts.isEmpty()){
-        //             for (Account parentAccount : parentAccounts) {
-        //                 regNumAcc.put(parentAccount.Beauhurst_ID__c, parentAccount.Id);
-        //             }    
-        //         }
-        //     }
-        // }
-
-        // Map<String, Id> dataOriginationMap = new Map<String, Id>();
-        // if(obj == 'Account'){
-        //     List<String> dataOriginationNames = new List<String>();
-        //     for (Integer i = 1; i < rows.size(); i++) {
-        //         String csvLine = removeCommaValueCSV(rows[i]);
-        //         List<String> rowValues = csvLine.split(',');
-        //         for (Integer j = 0; j < rowValues.size(); j++) {
-        //             String columnHeader = headers[j];
-        //             if(columnHeader == 'Data Origination ID'){
-        //                 String regNum = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');
-        //                 dataOriginationNames.add( regNum );
-        //             }
-        //         }
-        //     }
-
-        //     if(!dataOriginationNames.isEmpty()){
-        //         List<Data_Origination__c> dataOr = [SELECT Id, Name FROM Data_Origination__c WHERE Name IN :dataOriginationNames];
-        //         if (dataOr.size() > 0) {
-        //             for (Data_Origination__c dtOr : dataOr) {
-        //                 if(!dataOriginationMap.containsKey(dtOr.Name)){
-        //                     dataOriginationMap.put(dtOr.Name, dtOr.Id);
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
-
-        // System.debug('dataOriginationMap: ' + dataOriginationMap);
-        // Map<String, Object> accDynamic = fieldColumnMapping(uploadAccountMapping, rows, headers, obj, regNumAcc, dataOriginationMap);
-        // String errorFile = (String)accDynamic.get('errorFile');
-        // String successFile = (String)accDynamic.get('successFile');
-        // List<String> validatedRcrds = (List<String>) accDynamic.get('validatedRcrds');
-        // List<SObject> retSObj = (List<SObject>) accDynamic.get('retSObj');
-        // result = dmlFunction(retSObj, validatedRcrds, successFile, errorFile);
-        // return result;
+        Database.executeBatch(new CSVRecordUploaderBatch(rows, obj), 100);
     }
 
 
     public static Map<String, String> dmlFunction(list<SObject> recs, List<String> validatedRcrds, String successFile, String errorFile) {
 
         Map<String, String> mapRet = new Map<String, String>();
-        System.debug('recs: ' + recs);
         if (!recs.isEmpty()) {
             Database.SaveResult[] res = Database.Insert(recs, false);
             Integer count = 0; // determines specific validated item from the list.
@@ -124,8 +59,13 @@ public with sharing class CSVRecordUploaderController {
         String errorFile = 'Error';
         String successFile = 'RecordId';
         List<String> validatedRcrds = new List<String>(); // Validated Lead records for CSV generation.
+        Map<String, String> fieldTypeMap = new Map<String, String>();
         for (Uploader_Mapping__mdt mapping : uploadMapping) {
             uploadMap.put(mapping.Column_Name__c, mapping.Field_API_Name__c);
+        }
+
+        for (FieldDefinition fieldType : [SELECT DataType, QualifiedApiName FROM FieldDefinition WHERE EntityDefinitionId=:objType AND QualifiedApiName IN :uploadMap.values()]) {
+            fieldTypeMap.put(fieldType.QualifiedApiName, fieldType.DataType);
         }
         List<SObject> retSObj = new List<SObject>();
         Map<String, Object> mapRet = new Map<String, Object>();
@@ -136,7 +76,6 @@ public with sharing class CSVRecordUploaderController {
         }
         errorFile += '\n';
         Integer leapCol = (isFirstBatch) ? 1 : 0; // Exclude the CSV header
-
         for (Integer i = leapCol; i < csvRows.size(); i++) {
             String csvLine = removeCommaValueCSV(csvRows[i]);
             List<String> rowValues = csvLine.split(',');
@@ -144,7 +83,6 @@ public with sharing class CSVRecordUploaderController {
             Boolean hasError = false;
             String errorMessage = ' ';
             List<String> potentialRecs = new List<String>();
-            List<String> fieldsMappingError = new List<String>();
             for (Integer j = 0; j < rowValues.size(); j++) {
                 String columnHeader = headers[j];
 
@@ -152,9 +90,40 @@ public with sharing class CSVRecordUploaderController {
                     String field = uploadMap.get(columnHeader);
                     if (field != null) {
                         try {
-          
-                            String val = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');
-                            obj.put(field, val);
+                            String val = rowValues[j].replaceAll(':quotes:', '').replaceAll(':comma:', ',');      
+                            if (!String.isBlank(val)) {
+                                if(fieldTypeMap.get(field) != null && fieldTypeMap.get(field).trim() != '' && (fieldTypeMap.get(field).contains('Number') || fieldTypeMap.get(field).contains('Currency') || fieldTypeMap.get(field).contains('Percent'))){
+                                    obj.put(field, Decimal.valueOf(val));
+                                }else if(fieldTypeMap.get(field) != null && fieldTypeMap.get(field).trim() != '' && fieldTypeMap.get(field).contains('Checkbox')){
+                                    obj.put(field, Boolean.valueOf(val));
+                                }else if(fieldTypeMap.get(field) != null && fieldTypeMap.get(field).trim() != '' && fieldTypeMap.get(field) == 'Date/Time'){
+                                    obj.put(field, Datetime.valueOf(val));
+                                }else if(fieldTypeMap.get(field) != null && fieldTypeMap.get(field).trim() != '' && fieldTypeMap.get(field) == 'Date'){
+                                    obj.put(field, Date.valueOf(val));
+                                }else if(fieldTypeMap.get(field) != null && fieldTypeMap.get(field).trim() != '' && fieldTypeMap.get(field) == 'Time'){
+                                    List<String> timeStr = val.trim().split(':');
+                                    if(timeStr.size() == 3){
+                                        if(!timeStr[0].isNumeric()){
+                                            hasError = true;
+                                        }else if(!timeStr[1].isNumeric()){
+                                            hasError = true;
+                                        }else if(!timeStr[2].isNumeric()){
+                                            hasError = true;
+                                        }
+                                    }else{
+                                        hasError = true;
+                                    }
+                                    if(!hasError){
+                                        Time timeValue = Time.newInstance(Integer.valueOf(timeStr[0]), Integer.valueOf(timeStr[1]), Integer.valueOf(timeStr[2]), 0);
+                                        obj.put(field, timeValue);
+                                    }else{
+                                        errorMessage += 'Time format should be HH:MM:SS;';
+                                    }
+
+                                }else{
+                                    obj.put(field, val);
+                                }
+                            }
                             
                         }catch (Exception e) {
                             hasError = true;
@@ -167,7 +136,6 @@ public with sharing class CSVRecordUploaderController {
                     if(regNumAcc.containsKey(rowValues[j])){
                         obj.put(uploadMap.get('Registered Number'), regNumAcc.get(rowValues[j]));
                     }else{
-                        
                         if(rowValues[j] != null && rowValues[j] != ''){
                             errorMessage += 'Registered Number Does not Exist';
                             hasError = true;
@@ -241,18 +209,18 @@ public with sharing class CSVRecordUploaderController {
     }
 
     public static void sendEmail(String address, String subject, String body, String csvSuccessData, String csvErrorData){
-        List<Messaging.EmailFileAttachment> csvAttachments = new List<Messaging.EmailFileAttachment>();
 
+        List<Messaging.EmailFileAttachment> csvAttachments = new List<Messaging.EmailFileAttachment>();
         if (csvSuccessData != null) {
             Messaging.EmailFileAttachment csvSuccessAttachment = new Messaging.EmailFileAttachment();
-            csvSuccessAttachment.setFileName('Success_File.csv');
+            csvSuccessAttachment.setFileName('Success_File('+ System.Now() + ').csv');
             csvSuccessAttachment.setBody(blob.valueOf(csvSuccessData));
             csvAttachments.add(csvSuccessAttachment);
         }
-        
+
         if (csvErrorData != null) {
             Messaging.EmailFileAttachment csvErrorAttachment = new Messaging.EmailFileAttachment();
-            csvErrorAttachment.setFileName('Error_File.csv');
+            csvErrorAttachment.setFileName('Error_File('+ System.Now() + ').csv');
             csvErrorAttachment.setBody(blob.valueOf(csvErrorData));
             csvAttachments.add(csvErrorAttachment);
         }
@@ -272,6 +240,7 @@ public with sharing class CSVRecordUploaderController {
                 System.debug('The following errors occurred: ' + res.getErrors());                 
             }
         }
+        
     }
     
 }

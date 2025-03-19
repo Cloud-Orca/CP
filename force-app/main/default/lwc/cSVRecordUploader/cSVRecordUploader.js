@@ -2,7 +2,7 @@ import { LightningElement, wire, track } from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 import getNumberOfRows from '@salesforce/apex/CSVRecordUploaderController.getNumberOfRows';
 import createRecord from '@salesforce/apex/CSVRecordUploaderController.createRecord';
-
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 
 export default class CSVRecordUploader extends LightningElement {
@@ -73,7 +73,7 @@ export default class CSVRecordUploader extends LightningElement {
 
     async getNumberOfRows(){
         try{
-            console.log('@@@ fileContents 1: ' + this.fileContents);
+            // console.log('@@@ fileContents 1: ' + this.fileContents);
             let numRows = await getNumberOfRows({ csvData: this.fileContents });
             if(numRows){
                 this.numberOfRows = numRows - 1;
@@ -98,14 +98,14 @@ export default class CSVRecordUploader extends LightningElement {
                     }
                     createRecord({ csvData: this.fileContents, obj: objName }).then(result => {
                         this.isLoading = false;
-                        if (result.successFile) {
-                            this.successFile = result.successFile;
-                            this.numberOfSuccess = this.successFile.split('\n').length - 2; // skip first 2 lines
-                        }
-                        if (result.errorFile) {
-                            this.errorFile = result.errorFile;
-                            this.numberOfErrors = this.errorFile.split('\n').length - 2; // skip first 2 lines
-                        }
+                        
+                        const evt = new ShowToastEvent({
+                            title: 'CSV has been submitted',
+                            message: 'The system is now processing the CSV, an email will be sent separately after the process.',
+                            variant: 'success'
+                          });
+                          this.dispatchEvent(evt);
+
                         this.isSubmitted = true;
                     })
                     .catch(error => {
