@@ -119,7 +119,7 @@ public class CSVRecordUploaderBatch implements Database.Batchable<String>, Datab
         // Send email here
         String emailAddress = UserInfo.getUserEmail();
         System.debug('emailAddress: ' + emailAddress);
-        CSVRecordUploaderController.sendEmail('iamclifford321@gmail.com', 
+        CSVRecordUploaderController.sendEmail(emailAddress, 
                                                 'Record Upload Complete', 
                                                 'Bulk Upload completed, please see the attached CSV file!',
                                                 this.result.get('csvSuccess'), 
