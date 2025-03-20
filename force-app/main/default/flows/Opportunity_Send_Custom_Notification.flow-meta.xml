@@ -4,7 +4,7 @@
         <name>Send_Partner_Notification</name>
         <label>Send Partner Notification</label>
         <locationX>314</locationX>
-        <locationY>1163</locationY>
+        <locationY>1379</locationY>
         <actionName>customNotificationAction</actionName>
         <actionType>customNotificationAction</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -45,7 +45,7 @@
         <name>Assign_Recipient</name>
         <label>Assign Recipient</label>
         <locationX>578</locationX>
-        <locationY>647</locationY>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>varRecipient</assignToReference>
             <operator>Add</operator>
@@ -61,7 +61,7 @@
         <name>PartnerApprovedDecision</name>
         <label>PartnerApprovedDecision</label>
         <locationX>50</locationX>
-        <locationY>971</locationY>
+        <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>varDecision</assignToReference>
             <operator>Assign</operator>
@@ -77,7 +77,7 @@
         <name>PartnerRejectedDecision</name>
         <label>PartnerRejectedDecision</label>
         <locationX>314</locationX>
-        <locationY>971</locationY>
+        <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>varDecision</assignToReference>
             <operator>Assign</operator>
@@ -92,7 +92,7 @@
     <decisions>
         <name>Check_Account_Team_LC_Member</name>
         <label>Check Account Team LC Member</label>
-        <locationX>798</locationX>
+        <locationX>1106</locationX>
         <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -106,7 +106,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assign_Recipient</targetReference>
+                <targetReference>Get_Active_User</targetReference>
             </connector>
             <label>LC Member Found</label>
         </rules>
@@ -115,7 +115,7 @@
         <name>Check_Approval_Notification</name>
         <label>Check Approval Notification</label>
         <locationX>578</locationX>
-        <locationY>755</locationY>
+        <locationY>971</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Partner_Approved_Rejected</name>
@@ -144,7 +144,7 @@
         <name>Check_Partner_Approval_Status</name>
         <label>Check Partner Approval Status</label>
         <locationX>314</locationX>
-        <locationY>863</locationY>
+        <locationY>1079</locationY>
         <defaultConnectorLabel>N/A</defaultConnectorLabel>
         <rules>
             <name>Partner_Approved</name>
@@ -177,6 +177,28 @@
             <label>Partner Rejected</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>LC_Member_is_Active</name>
+        <label>LC Member is Active?</label>
+        <locationX>842</locationX>
+        <locationY>755</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Active</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Active_User</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Recipient</targetReference>
+            </connector>
+            <label>Active</label>
+        </rules>
+    </decisions>
     <environments>Default</environments>
     <interviewLabel>Opportunity: Send Custom Notification {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Opportunity: Send Custom Notification</label>
@@ -200,9 +222,37 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>Get_Active_User</name>
+        <label>Get Active User</label>
+        <locationX>842</locationX>
+        <locationY>647</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>LC_Member_is_Active</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_LC_Account_Team_Member.UserId</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>IsActive</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>User</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Custom_Notification</name>
         <label>Get Custom Notification</label>
-        <locationX>798</locationX>
+        <locationX>1106</locationX>
         <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -223,7 +273,7 @@
     <recordLookups>
         <name>Get_LC_Account_Team_Member</name>
         <label>Get LC Account Team Member</label>
-        <locationX>798</locationX>
+        <locationX>1106</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -249,7 +299,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>672</locationX>
+        <locationX>980</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_LC_Account_Team_Member</targetReference>
