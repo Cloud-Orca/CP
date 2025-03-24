@@ -75,6 +75,12 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>SF_Record_ID__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Unique_ID__c</field>
             <value>
                 <elementReference>Get_Error_Log.Unique_ID__c</elementReference>
@@ -107,6 +113,12 @@
             <field>Original_Payload__c</field>
             <value>
                 <elementReference>Get_Error_Log.Original_Payload__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>SF_Record_ID__c</field>
+            <value>
+                <elementReference>recordId</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
