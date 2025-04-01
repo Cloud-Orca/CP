@@ -6,5 +6,5 @@ trigger ProjectTrigger on pse__Proj__c (after insert, after update) {
         if(trigger.isUpdate){
             ProjectTriggerHandler.onAfterUpdate(trigger.new, trigger.oldMap);
         }
-    }
+    } 
 }

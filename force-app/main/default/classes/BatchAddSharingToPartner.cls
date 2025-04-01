@@ -5,12 +5,14 @@ global with sharing class BatchAddSharingToPartner implements Database.Batchable
         this.projectIds = projectIds; 
     }
 
-    global BatchAddSharingToPartner() {}
+    global BatchAddSharingToPartner() {
+        this.projectIds = new Set<Id>();
+    }
 
     global Database.QueryLocator start(Database.BatchableContext BC){
-        String query = 'SELECT Id, CT_Project_Partner__c FROM pse__Proj__c WHERE CT_Project_Partner__c != null';
+        String query = 'SELECT Id FROM pse__Proj__c';
         if(!projectIds.isEmpty()){
-            query += ' AND Id IN: projectIds';
+            query += ' WHERE Id IN: projectIds';
         }
         return Database.getQueryLocator(query);
     }
@@ -26,13 +28,6 @@ global with sharing class BatchAddSharingToPartner implements Database.Batchable
             expenseShare.AccessLevel = 'Read';
             expenseShare.RowCause = Schema.pse__Expense__Share.RowCause.Manual;
             expenseShareList.add(expenseShare);
-
-            pse__Expense__Share expenseShare2 = new pse__Expense__Share();
-            expenseShare2.ParentId = expense.Id;
-            expenseShare2.UserOrGroupId = proj.CT_Project_Partner__c;
-            expenseShare2.AccessLevel = 'Read';
-            expenseShare2.RowCause = Schema.pse__Expense__Share.RowCause.Manual;
-            expenseShareList.add(expenseShare2);
         }
 
         List<pse__Miscellaneous_Adjustment__Share> miscAdjustmentShareList = new List<pse__Miscellaneous_Adjustment__Share>();
@@ -43,13 +38,6 @@ global with sharing class BatchAddSharingToPartner implements Database.Batchable
             miscAdjustmentShare.AccessLevel = 'Read';
             miscAdjustmentShare.RowCause = Schema.pse__Miscellaneous_Adjustment__Share.RowCause.Manual;
             miscAdjustmentShareList.add(miscAdjustmentShare);
-
-            pse__Miscellaneous_Adjustment__Share miscAdjustmentShare2 = new pse__Miscellaneous_Adjustment__Share();
-            miscAdjustmentShare2.ParentId = miscAdjustment.Id;
-            miscAdjustmentShare2.UserOrGroupId = proj.CT_Project_Partner__c;
-            miscAdjustmentShare2.AccessLevel = 'Read';
-            miscAdjustmentShare2.RowCause = Schema.pse__Miscellaneous_Adjustment__Share.RowCause.Manual;
-            miscAdjustmentShareList.add(miscAdjustmentShare2);
         }
 
         List<pse__Timecard_Header__Share> timecardShareList = new List<pse__Timecard_Header__Share>();
@@ -60,13 +48,6 @@ global with sharing class BatchAddSharingToPartner implements Database.Batchable
             timecardShare.AccessLevel = 'Read';
             timecardShare.RowCause = Schema.pse__Timecard_Header__Share.RowCause.Manual;
             timecardShareList.add(timecardShare);
-
-            pse__Timecard_Header__Share timecardShare2 = new pse__Timecard_Header__Share();
-            timecardShare2.ParentId = timecard.Id;
-            timecardShare2.UserOrGroupId = proj.CT_Project_Partner__c;
-            timecardShare2.AccessLevel = 'Read';
-            timecardShare2.RowCause = Schema.pse__Timecard_Header__Share.RowCause.Manual;
-            timecardShareList.add(timecardShare2);
         }
 
         if(!expenseShareList.isEmpty()){

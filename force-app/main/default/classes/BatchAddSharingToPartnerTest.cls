@@ -1,7 +1,6 @@
 @isTest(SeeAllData = true)
 public class BatchAddSharingToPartnerTest {
 
-
     @isTest static void testMethodAddSharingToPartnerExpense(){
         Id projectId = [SELECT Id, pse__Project__c FROM pse__Expense__c WHERE pse__Project__c != null LIMIT 1].pse__Project__c;
         Set<Id> projectIds = new Set<Id>{projectId};
