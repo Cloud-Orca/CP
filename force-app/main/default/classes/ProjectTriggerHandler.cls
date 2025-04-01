@@ -21,5 +21,5 @@ public with sharing class ProjectTriggerHandler {
         if(!projectIds.isEmpty() && !System.isFuture()){
             Database.executeBatch(new BatchAddSharingToPartner(projectIds), 1);
         }
-    }
+    } 
 }
