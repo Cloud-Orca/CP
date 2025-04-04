@@ -28,7 +28,7 @@
                             <value>CreateSurveyInvitation</value>
                         </valueListItems>
                         <valueListItems>
-                            <value>Contact.Send_Survey</value>
+                            <value>Contact.Send_Survey_List</value>
                         </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
@@ -98,6 +98,12 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Linkedin__c</fieldItem>
                 <identifier>RecordLinkedin_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldItem>Record.Acquisition_Marker__c</fieldItem>
+                <identifier>RecordAcquisition_Marker__cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-45318f46-ec1b-4137-a71c-ffafedb486c8</name>
