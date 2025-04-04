@@ -4,6 +4,37 @@
     <active>true</active>
     <label>CRM Contact</label>
     <picklistValues>
+        <picklist>Acquisition_Marker__c</picklist>
+        <values>
+            <fullName>Chamberlyns</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cloud Orca</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HW Reading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HWSE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mazars</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Madrid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UHY - Manchester</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Audit_Family__c</picklist>
         <values>
             <fullName>Blue</fullName>
