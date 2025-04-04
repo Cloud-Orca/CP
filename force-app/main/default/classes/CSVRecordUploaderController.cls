@@ -7,7 +7,7 @@ public with sharing class CSVRecordUploaderController {
     * @description: counts the number of rows a given csv content has
     * @param: (String) content of the csv file
     * @return: (Decimal) the total number of rows
-    */
+    */ 
     @AuraEnabled
     public static Decimal getNumberOfRows(String csvData){
         csvData = csvData.replace('\r\n', '\n').replace('\r', '\n');

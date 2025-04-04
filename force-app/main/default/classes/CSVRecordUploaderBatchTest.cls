@@ -1,7 +1,7 @@
 @IsTest
 public class CSVRecordUploaderBatchTest {
     @TestSetup
-    static void makeData(){
+    static void makeData(){ 
         
         Account acc = New Account();
         acc.Name = 'test';

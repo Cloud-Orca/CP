@@ -8,7 +8,7 @@ public class CSVRecordUploaderBatch implements Database.Batchable<String>, Datab
     private List<String> headers = new List<String>();
     private Boolean isFirstBatch = true;
     public CSVRecordUploaderBatch(List<String> csvData, String obj){
-        this.csvRows = csvData;
+        this.csvRows = csvData; 
         
         this.obj = obj;
         this.headers = csvData[0].split(',');
