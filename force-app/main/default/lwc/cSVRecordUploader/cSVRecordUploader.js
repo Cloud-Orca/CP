@@ -141,7 +141,7 @@ export default class CSVRecordUploader extends LightningElement {
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
-    }
+    } 
 
 
     downloadSuccessFileMultiple(){
