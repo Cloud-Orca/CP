@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>attachCustomerStatementPdf__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;&amp;solmgr=1&quot; + 
+&quot;&amp;id=&quot; + Id +
+&quot;&amp;queryid=[CMPSTMT]0Q_2012AO257008?pv0={QVar0},[ACTSTMT]0Q_2022AO257008,[TOTOUTSTMT]0Q_2032AO257009?pv0={QVar0}~pv1=&quot; + Id + &quot;,[ADSTMT]0Q_2042AO257009?pv0=&quot; + Id + &quot;~pv1={QVar0},[JDSTMT]0Q_2052AO257009?pv0=&quot; + Id + &quot;~pv1={QVar0},[StmtCT]0Q_2062AO257009,[CSHDSTMT]0Q_2072AO257009?pv0=&quot; + Id + &quot;~pv1={QVar0},[BANK]0Q_1962AO000177?pv0={QVar0}&quot; + 
+&quot;&amp;qmode=Attachments&quot; + 
+&quot;&amp;defaultpdf=1&quot; + 
+&quot;&amp;ofn=&quot; + $Setup.c2g__CollectionsPlusSettings__c.c2g__CustomerStatementCongaAttachmentPrefix__c + &quot;{QVar2}_&quot; + Name +
+&quot;&amp;currencyculture=&quot; + ffaci__CurrencyCulture__c +
+&quot;&amp;templateid={QVar1}&quot; + 
+&quot;&amp;dv0=&quot; + ffaci__CurrencyCulture__c +
+&quot;&amp;qvar1id=a09KG000000StgS&quot; + 
+&quot;&amp;qvar0id=a09KG000000StgR?pv0=&quot; + $User.Id +
+&quot;&amp;qvar2id=a09KG000000StgT?pv0=&quot; + $User.Id</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Attach Customer Statement PDF</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
