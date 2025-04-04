@@ -4,6 +4,33 @@
     <active>true</active>
     <label>PSA Resource</label>
     <picklistValues>
+        <picklist>Audit_Family__c</picklist>
+        <values>
+            <fullName>Blue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Green</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Orange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pink</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purple</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yellow</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Field_Advocacy_Survey_Send_Month__c</picklist>
         <values>
             <fullName>April</fullName>
@@ -19,6 +46,10 @@
         </values>
         <values>
             <fullName>February</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invalid Month</fullName>
             <default>false</default>
         </values>
         <values>
