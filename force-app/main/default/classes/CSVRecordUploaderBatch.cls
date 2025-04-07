@@ -5,7 +5,7 @@ public class CSVRecordUploaderBatch implements Database.Batchable<String>, Datab
     private List<string> csvRows;
     private string obj;
     private Map<String, String> result = new Map<String, String>();
-    private List<String> headers = new List<String>();
+    private List<String> headers = new List<String>(); 
     private Boolean isFirstBatch = true;
     public CSVRecordUploaderBatch(List<String> csvData, String obj){
         this.csvRows = csvData; 

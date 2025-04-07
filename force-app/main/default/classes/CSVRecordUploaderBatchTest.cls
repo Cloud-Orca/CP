@@ -7,7 +7,7 @@ public class CSVRecordUploaderBatchTest {
         acc.Name = 'test';
         acc.Beauhurst_ID__c = '12345986';
         Insert acc;
-
+ 
         Data_Origination__c dataOri = new Data_Origination__c();
         dataOri.Name = 'test';
         Insert dataOri;
