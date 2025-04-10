@@ -77,6 +77,21 @@ public class SharepointCompCont {
 
                         driveItem.currentDriveItemId = driveItem.parentReference?.id;
                         driveItem.isPublic = true;
+
+                        if(driveItem.createdDateTime != null){
+                            String dateString = driveItem.createdDateTime;
+                            dateString = dateString.replace('T', ' ').replace('Z', '');
+                            DateTime dt = DateTime.valueOfGmt(dateString);
+                            driveItem.createdDateTimeFinal = dt;
+                        }
+
+                        if(driveItem.lastModifiedDateTime != null){
+                            String dateString = driveItem.lastModifiedDateTime;
+                            dateString = dateString.replace('T', ' ').replace('Z', '');
+                            DateTime dt = DateTime.valueOfGmt(dateString);
+                            driveItem.lastModifiedDateTimeFinal = dt;
+                        }
+
                         driveItemListToReturn.add(driveItem);
                     }
 
@@ -91,6 +106,21 @@ public class SharepointCompCont {
 
                         driveItem.currentDriveItemId = driveItem.parentReference?.id;
                         driveItem.isPublic = false;
+
+                        if(driveItem.createdDateTime != null){
+                            String dateString = driveItem.createdDateTime;
+                            dateString = dateString.replace('T', ' ').replace('Z', '');
+                            DateTime dt = DateTime.valueOfGmt(dateString);
+                            driveItem.createdDateTimeFinal = dt;
+                        }
+
+                        if(driveItem.lastModifiedDateTime != null){
+                            String dateString = driveItem.lastModifiedDateTime;
+                            dateString = dateString.replace('T', ' ').replace('Z', '');
+                            DateTime dt = DateTime.valueOfGmt(dateString);
+                            driveItem.lastModifiedDateTimeFinal = dt;
+                        }
+                        
                         driveItemListToReturn.add(driveItem);
                     }
 
@@ -133,6 +163,20 @@ public class SharepointCompCont {
                             driveItem.modifiedByName = driveItem.lastModifiedBy?.user?.displayName;
                             driveItem.createdByName = driveItem.createdBy?.user?.displayName;
                             driveItem.isPublic = isPublic;
+
+                            if(driveItem.createdDateTime != null){
+                                String dateString = driveItem.createdDateTime;
+                                dateString = dateString.replace('T', ' ').replace('Z', '');
+                                DateTime dt = DateTime.valueOfGmt(dateString);
+                                driveItem.createdDateTimeFinal = dt;
+                            }
+
+                            if(driveItem.lastModifiedDateTime != null){
+                                String dateString = driveItem.lastModifiedDateTime;
+                                dateString = dateString.replace('T', ' ').replace('Z', '');
+                                DateTime dt = DateTime.valueOfGmt(dateString);
+                                driveItem.lastModifiedDateTimeFinal = dt;
+                            }
                         }
 
                         if(isUpdateAccessToken){
@@ -236,6 +280,10 @@ public class SharepointCompCont {
         @AuraEnabled public String createdByName;
         @AuraEnabled public String currentDriveItemId;
         @AuraEnabled public Boolean isPublic;
+        @AuraEnabled public String createdDateTime;
+        @AuraEnabled public String lastModifiedDateTime;
+        @AuraEnabled public DateTime createdDateTimeFinal;
+        @AuraEnabled public DateTime lastModifiedDateTimeFinal;
 
         @AuraEnabled public UserInfoDetail createdBy;
         @AuraEnabled public UserInfoDetail lastModifiedBy;

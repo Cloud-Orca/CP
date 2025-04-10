@@ -54,11 +54,17 @@
                     <th scope="col" style="width: 10%;">
                         <div class="slds-truncate" title="Size">Size</div>
                     </th>
-                    <th scope="col" style="width: 25%;">
+                    <th scope="col" style="width: 15%;">
                         <div class="slds-truncate" title="Created By">Created By</div>
                     </th>
-                    <th scope="col" style="width: 25%;">
+                    <th scope="col" style="width: 10%;">
+                        <div class="slds-truncate" title="Created By">Created Date</div>
+                    </th>
+                    <th scope="col" style="width: 15%;">
                         <div class="slds-truncate" title="Modified By">Modified By</div>
+                    </th>
+                    <th scope="col" style="width: 10%;">
+                        <div class="slds-truncate" title="Modified By">Modified Date</div>
                     </th>
                 </tr>
             </thead>
@@ -75,10 +81,20 @@
                             <div class="slds-truncate slds-p-vertical_medium" title={item.sizeToDisplay}>{item.sizeToDisplay}</div>
                         </td>
                         <td>
-                            <div class="slds-truncate slds-p-vertical_medium" title={item.createdByName}>{item.createdByName}</div>
+                            <div class="slds-truncate slds-p-vertical_medium wrap-text" title={item.createdByName}>{item.createdByName}</div>
                         </td>
                         <td>
-                            <div class="slds-truncate slds-p-vertical_medium" title={item.modifiedByName}>{item.modifiedByName}</div>
+                            <div class="slds-truncate slds-p-vertical_medium wrap-text">
+                                <lightning-formatted-date-time value={item.createdDateTimeFinal} ></lightning-formatted-date-time>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate slds-p-vertical_medium wrap-text" title={item.modifiedByName}>{item.modifiedByName}</div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate slds-p-vertical_medium wrap-text">
+                                <lightning-formatted-date-time value={item.lastModifiedDateTimeFinal} ></lightning-formatted-date-time>
+                            </div>
                         </td>
                     </tr>
                 </template>
