@@ -238,6 +238,16 @@
                 <identifier>RecordBH_Audit_Fee__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Primary_Account_ID__c</fieldItem>
+                <identifier>RecordPrimary_Account_ID__cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-4a56caba-370a-4ba5-b87e-477dd176c696</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -340,6 +350,52 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Previously_Onboarded__c</fieldItem>
                 <identifier>RecordPreviously_Onboarded_cField</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>System Administrator</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Lifecycle Coordinators</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Risk and Compliance</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>readonly</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Previously_Onboarded__c</fieldItem>
+                <identifier>RecordPreviously_Onboarded_cField2</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>System Administrator</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Risk and Compliance</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Profile.Name}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Lifecycle Coordinators</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <itemInstances>
@@ -1023,6 +1079,164 @@
             <fieldInstance>
                 <fieldInstanceProperties>
                     <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Did_you_ask_about_CRM_ERP__c</fieldItem>
+                <identifier>RecordDid_you_ask_about_CRM_ERP_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.What_CRM_do_you_use__c</fieldItem>
+                <identifier>RecordWhat_CRM_do_you_use_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Other_CRM_System__c</fieldItem>
+                <identifier>RecordOther_CRM_System_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.What_CRM_do_you_use__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Other</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-34f378c7-0d52-4ac7-9847-9f4eee6f0db6</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.CP_Digital_Team__c</fieldItem>
+                <identifier>RecordCP_Digital_Team_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.What_Finance_system_do_you_use__c</fieldItem>
+                <identifier>RecordWhat_Finance_system_do_you_use_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Other_Finance_System__c</fieldItem>
+                <identifier>RecordOther_Finance_System_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.What_Finance_system_do_you_use__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Other</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-9d83603c-5aeb-41e2-bb89-ca31c5a34ed2</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-34f378c7-0d52-4ac7-9847-9f4eee6f0db6</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column42</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-9d83603c-5aeb-41e2-bb89-ca31c5a34ed2</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column43</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-59e5b6b2-9aaf-45f0-8daa-43f1228088b9</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Best_contact_for_the_finance_system__c</fieldItem>
+                <identifier>RecordBest_contact_for_the_finance_system_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-ac8ae22a-45ed-49b9-b165-55160f3f68e2</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Who_is_the_best_contact_for_the_CRM__c</fieldItem>
+                <identifier>RecordWho_is_the_best_contact_for_the_CRM_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <name>Facet-fbd56aed-3a40-408b-8796-24dc38778756</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-ac8ae22a-45ed-49b9-b165-55160f3f68e2</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column44</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-fbd56aed-3a40-408b-8796-24dc38778756</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:column</componentName>
+                <identifier>flexipage_column45</identifier>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-2fdf2a59-6cbd-4053-b634-0ee1f420e504</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
                     <value>readonly</value>
                 </fieldInstanceProperties>
                 <fieldItem>Record.CreatedById</fieldItem>
@@ -1252,7 +1466,7 @@
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection11</identifier>
                 <visibilityRule>
-                    <booleanFilter>1 OR 2 OR 3</booleanFilter>
+                    <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
                     <criteria>
                         <leftValue>{!$User.Department}</leftValue>
                         <operator>EQUAL</operator>
@@ -1267,6 +1481,11 @@
                         <leftValue>{!$User.Department}</leftValue>
                         <operator>EQUAL</operator>
                         <rightValue>Deals - Corporate Finance</rightValue>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!$User.Department}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Operations - Business Services</rightValue>
                     </criteria>
                 </visibilityRule>
             </componentInstance>
@@ -1323,6 +1542,59 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:fieldSection</componentName>
                 <identifier>flexipage_fieldSection14</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-59e5b6b2-9aaf-45f0-8daa-43f1228088b9</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                    <value>CP Digital</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection23</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Did_you_ask_about_CRM_ERP__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Yes</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>columns</name>
+                    <value>Facet-2fdf2a59-6cbd-4053-b634-0ee1f420e504</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>horizontalAlignment</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>label</name>
+                </componentInstanceProperties>
+                <componentName>flexipage:fieldSection</componentName>
+                <identifier>flexipage_fieldSection24</identifier>
+                <visibilityRule>
+                    <booleanFilter>1 OR 2</booleanFilter>
+                    <criteria>
+                        <leftValue>{!Record.Best_contact_for_the_finance_system__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                    <criteria>
+                        <leftValue>{!Record.Who_is_the_best_contact_for_the_CRM__c}</leftValue>
+                        <operator>NE</operator>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
