@@ -9,6 +9,7 @@
     <customButtons>pse__Create_Change_Request</customButtons>
     <excludeButtons>ChangeOwnerOne</excludeButtons>
     <excludeButtons>ChangeRecordType</excludeButtons>
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
@@ -287,6 +288,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>pse__Billed__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Estimated_Costs__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
