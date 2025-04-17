@@ -207,7 +207,7 @@
         <locationX>1172</locationX>
         <locationY>3038</locationY>
         <defaultConnector>
-            <targetReference>Select_Billing_Account</targetReference>
+            <targetReference>Get_Account_Record</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>No</defaultConnectorLabel>
         <rules>
@@ -445,6 +445,27 @@ This is needed because the flow does not throw an error if the user does not hav
         </value>
     </processMetadataValues>
     <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_Account_Record</name>
+        <label>Get Account Record</label>
+        <locationX>1436</locationX>
+        <locationY>3146</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Select_Billing_Account</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>Get_Billing_Event_Details.ffpsai__Account__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Account</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordLookups>
         <name>Get_Accounts</name>
         <label>Get Accounts</label>
@@ -830,6 +851,11 @@ This is needed because the flow does not throw an error if the user does not hav
             <fields>
                 <name>Select_Billing_Account_Section1_Column1</name>
                 <fieldType>Region</fieldType>
+                <fields>
+                    <name>Account_Name_Screen</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;﻿Account :&lt;/strong&gt;&lt;strong style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;  &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.Name}{!Get_Account_Record.Name}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <fieldType>DisplayText</fieldType>
+                </fields>
                 <inputParameters>
                     <name>width</name>
                     <value>
@@ -842,8 +868,8 @@ This is needed because the flow does not throw an error if the user does not hav
                 <name>Select_Billing_Account_Section1_Column2</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Account_Name_Screen</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;﻿Account :&lt;/strong&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;  &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.Name} &lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Invoice_Email</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif;&quot;&gt;Invoice Email&lt;/strong&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.c2g__CODAInvoiceEmail__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
@@ -858,8 +884,8 @@ This is needed because the flow does not throw an error if the user does not hav
                 <name>Select_Billing_Account_Section1_Column3</name>
                 <fieldType>Region</fieldType>
                 <fields>
-                    <name>Invoice_Email</name>
-                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif;&quot;&gt;Invoice Email&lt;/strong&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255); font-size: 14px;&quot;&gt;: &lt;/span&gt;&lt;span style=&quot;color: rgb(68, 68, 68); background-color: rgb(255, 255, 255);&quot;&gt;{!Get_Billing_Event_Details.ffpsai__Account__r.c2g__CODAInvoiceEmail__c}&lt;/span&gt;&lt;/p&gt;</fieldText>
+                    <name>Invoice_Date</name>
+                    <fieldText>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; color: rgb(34, 34, 34); background-color: rgb(255, 255, 255); font-family: Arial, Helvetica, sans-serif;&quot;&gt;Invoice Date&lt;/strong&gt;&lt;span style=&quot;font-size: 14px; background-color: rgb(255, 255, 255);&quot;&gt;: &lt;/span&gt;&lt;/p&gt;&lt;p&gt;{!Get_Billing_Event_Details.pse__Invoice_Date__c}&lt;/p&gt;</fieldText>
                     <fieldType>DisplayText</fieldType>
                 </fields>
                 <inputParameters>
