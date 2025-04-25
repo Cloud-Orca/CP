@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>System_Administrator_edit_only</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+ NOT(ISNEW()),
+ NOT($Profile.Name = &apos;System Administrator&apos;)
+)</errorConditionFormula>
+    <errorMessage>Please contact Tech Support for any amendments to contact details.</errorMessage>
+</ValidationRule>
