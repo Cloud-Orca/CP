@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MutingPermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <applicationVisibilities>
+        <application>psaws__Project_Management</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>psaws__Resource_Management</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>psaws__Services_Delivery</application>
+        <visible>true</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>psaws__Services_Forecasting</application>
+        <visible>true</visible>
+    </applicationVisibilities>
     <label>Cooper Parry Business Support Team Part 2 Muted</label>
     <tabSettings>
         <tab>CP_Resource_Management_Workspace</tab>
