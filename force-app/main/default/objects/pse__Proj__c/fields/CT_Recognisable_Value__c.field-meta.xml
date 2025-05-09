@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CT_Recognisable_Value__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(pse__Practice__r.CT_Project_or_Milestone_Recognition__c, &quot;Milestone&quot;) &amp;&amp; TEXT(pse__Stage__c) &lt;&gt; &quot;Completed&quot;, CT_Manual_Recovery_Rate__c * CP_Total_Costs__c,
+IF( CP_Complete__c &gt; 1,1 * CT_Fee_Amount__c,CP_Complete__c * CT_Fee_Amount__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Recognisable Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
